@@ -19,7 +19,7 @@ class TwitterSpider(scrapy.Spider):
 
         self.api = tu.get_api(consumer_key, consumer_secret, access_key, access_secret)
 
-    def data_get(self, response):
+    def data_get(self):
         for keyword in self.keywords:
             results = tu.dataget(self.api, keyword)
             for result in results:

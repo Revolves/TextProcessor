@@ -9,7 +9,7 @@
 import datetime
 import os
 
-BOT_NAME = 'data_scrapy'
+BOT_NAME = 'TextProcessorScrapy'
 
 # 保存未检验代理的Redis key
 PROXIES_UNCHECKED_LIST = 'proxies:unchecked:list'
@@ -28,8 +28,8 @@ DEFAULT_REQUEST_HEADERS = {
     'Connection': 'keep-alive'
 }
 
-SPIDER_MODULES = ['TextProcessor.spiders']
-NEWSPIDER_MODULE = 'TextProcessor.spiders'
+SPIDER_MODULES = ['TextProcessorScrapy.spiders']
+NEWSPIDER_MODULE = 'TextProcessorScrapy.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'data_scrapy (+http://www.yourdomain.com)'
@@ -89,16 +89,16 @@ COOKIES_ENABLED = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    'TextProcessor.middlewares.HsNasaSpiderMiddleware': 543,
-    'TextProcessor.middlewares.RandomUserAgentMiddleware': 515,
-    # 'TextProcessor.middlewares.HttpProxymiddleware': 541
+    'TextProcessorScrapy.middlewares.HsNasaSpiderMiddleware': 543,
+    'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
+    # 'TextProcessorScrapy.middlewares.HttpProxymiddleware': 541
 }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'TextProcessor.middlewares.HsNasaDownloaderMiddleware': 543,
-    # 'TextProcessor.middlewares.RandomProxyMiddleware': 123,
+    'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware': 543,
+    # 'TextProcessorScrapy.middlewares.RandomProxyMiddleware': 123,
 }
 
 # Enable or disable extensions
@@ -112,7 +112,7 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
     # 'TextProcessor.pipelines.HsNasaPipeline': 300,
     # 'TextProcessor.pipelines.ProxyPoolPipeline': 300
-    'TextProcessor.pipelines.TwitterPipeline': 300
+    'TextProcessorScrapy.pipelines.TwitterPipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

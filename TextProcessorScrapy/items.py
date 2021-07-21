@@ -8,7 +8,7 @@ import re
 import sys, os
 
 sys.path.append(os.path.dirname(__file__) + os.sep + '../')
-from TextProcessor.settings import PROXY_URL_FORMATTER
+from TextProcessorScrapy.settings import PROXY_URL_FORMATTER
 
 schema_pattern = re.compile(r'http|https$', re.I)
 ip_pattern = re.compile(r'^([0-9]{1,3}.){3}[0-9]{1,3}$', re.I)

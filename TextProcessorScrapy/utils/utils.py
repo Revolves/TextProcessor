@@ -222,15 +222,15 @@ def insert_to_db(cursor, tag, item):
     :param item:
     :return:
     """
-    # try:
-    key_str = ",".join(list(item.keys()))
-    value_str = ",".join(map(lambda x: "{}".format(x) if str(x).isdigit() else "'{}'".format(x), item.values()))
-    cursor.execute("""0
-    INSERT INTO data_{} ({}) 
-    VALUES ({})
-    """.format(tag, key_str, value_str))
-    # except:
-    #     print('table is not exist')
+    try:
+        key_str = ",".join(list(item.keys()))
+        value_str = ",".join(map(lambda x: "{}".format(x) if str(x).isdigit() else "'{}'".format(x), item.values()))
+        cursor.execute("""
+        INSERT INTO data_{} ({}) 
+        VALUES ({})
+        """.format(tag, key_str, value_str))
+    except Exception as e:
+        print('insert error, detail:{}'.format(e))
 
 
 def load_json_to_db():

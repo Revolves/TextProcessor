@@ -56,7 +56,7 @@ class nasaSpider(scrapy.Spider):
             item["source"] = "NASA"
             item["title"] = result.xpath('./h4/a/text()').extract_first().replace("'", "''")
             item["url"] = result.xpath('./span[1]/text()').extract_first()
-            item["data"] = 0
+            item["date"] = 0
             # description = result.xpath('string(./span[@class="description"])').extract_first()
             # item["description"] = description.replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0',' ')
             if item["url"][-3:] == "pdf":

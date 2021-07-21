@@ -9,15 +9,15 @@ import datetime
 import json
 import os
 # from data_scrapy.settings import REDIS_HOST, REDIS_PORT, REDIS_PARAMS, PROXIES_UNCHECKED_LIST, PROXIES_UNCHECKED_SET
-from data_scrapy.utils import connect_db, create_table, delete_table, insert_to_db, mkdirs
+from TextProcessorScrapy.utils.utils import connect_db, create_table, delete_table, insert_to_db, mkdirs
 import json
 import logging
 import os
-from data_scrapy.twitter_utils import get_api, dataget
+from TextProcessorScrapy.utils.twitter_utils import get_api, dataget
 
 from scrapy.utils.project import get_project_settings
 
-from data_scrapy.items import Tweet, User
+from TextProcessorScrapy.items import Tweet, User
 
 logger = logging.getLogger(__name__)
 SETTINGS = get_project_settings()
@@ -118,16 +118,16 @@ class TwitterPipeline:
             detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
                       "时间": result["date"], "内容": result["content"]}
             self.data.append(detail_)
-            self.count += 1
-            if self.count == 50:
-                json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-                for data in self.data:
-                    insert_to_db(self.cursor, self.tag, data)
-                self.count = 0
-                self.data = []
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
+        #     self.count += 1
+        #     if self.count == 100:
+        #         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        #         for data in self.data:
+        #             insert_to_db(self.cursor, self.tag, data)
+        #         self.count = 0
+        #         self.data = []
+        # json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
         return item
 
     def close_spider(self, spider):

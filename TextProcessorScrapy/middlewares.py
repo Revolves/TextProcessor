@@ -7,12 +7,11 @@ import random
 
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
-from data_scrapy.settings import USER_AGENTS_LIST
+from TextProcessorScrapy.settings import USER_AGENTS_LIST
 from scrapy import signals
 from twisted.internet import defer
 from twisted.internet.error import TCPTimedOutError, ConnectionDone, ConnectError, ConnectionLost
-from data_scrapy.utils import get_random_ip
-from data_scrapy.utils import logger
+from TextProcessorScrapy.utils.utils import get_random_ip, logger
 import redis
 
 
