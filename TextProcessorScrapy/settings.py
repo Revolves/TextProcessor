@@ -69,14 +69,14 @@ REACTOR_THREADPOOL_MAXSIZE = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 32
 CONCURRENT_REQUESTS_PER_IP = 128
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = False
-
+# HTTPERROR_ALLOWED_CODES = [404]
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
 
@@ -110,9 +110,11 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 'TextProcessor.pipelines.HsNasaPipeline': 300,
+    'TextProcessorScrapy.pipelines.HsNasaPipeline': 400,
     # 'TextProcessor.pipelines.ProxyPoolPipeline': 300
-    'TextProcessorScrapy.pipelines.TwitterPipeline': 300
+    'TextProcessorScrapy.pipelines.TwitterPipeline': 500,
+    'TextProcessorScrapy.pipelines.FacebookPipeline': 300
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

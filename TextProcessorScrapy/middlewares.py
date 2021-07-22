@@ -11,7 +11,7 @@ from TextProcessorScrapy.settings import USER_AGENTS_LIST
 from scrapy import signals
 from twisted.internet import defer
 from twisted.internet.error import TCPTimedOutError, ConnectionDone, ConnectError, ConnectionLost
-from TextProcessorScrapy.utils.utils import get_random_ip, logger
+from TextProcessorScrapy.utils.utils import get_random_ip
 import redis
 
 
@@ -161,8 +161,6 @@ class RandomUserAgentMiddleware(object):
         # return None
 
     def process_response(self, request, response, spider):
-        # 验证 User-Agent 设置是否生效
-        logger.info("headers ::> User-Agent = " + str(request.headers['User-Agent'], encoding="utf8"))
         return response
 
 
@@ -183,7 +181,6 @@ class HttpProxymiddleware(object):
         key = random.choice(keys)
         # 用eval函数转换为dict
         proxy = eval(self.rds.hget("xila_hash", key))
-        logger.warning("-----------------" + str(proxy) + "试用中------------------------")
         # 将代理ip 和 key存入mate
         request.meta["proxy"] = proxy["ip"]
         request.meta["accountText"] = key
@@ -220,5 +217,4 @@ class HttpProxymiddleware(object):
             proxy = eval(self.rds.hget("xila_hash", key))
             if proxy["times"] < 10:
                 self.rds.hdel("xila_hash", key)
-            logger.debug("Proxy {}链接出错{}.".format(request.meta['proxy'], exception))
             return request.replace(dont_filter=True)

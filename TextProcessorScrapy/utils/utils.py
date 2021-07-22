@@ -34,7 +34,6 @@ logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
                     datefmt='%Y-%m-%d %T'
                     )
-logger = logging.getLogger(__name__)
 
 
 # Truncate header and tailer blanks
