@@ -110,10 +110,10 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'TextProcessorScrapy.pipelines.HsNasaPipeline': 400,
-    # 'TextProcessor.pipelines.ProxyPoolPipeline': 300
-    'TextProcessorScrapy.pipelines.TwitterPipeline': 500,
-    'TextProcessorScrapy.pipelines.FacebookPipeline': 300
+    # 'TextProcessorScrapy.pipelines.HsNasaPipeline': 400,
+    # # 'TextProcessor.pipelines.ProxyPoolPipeline': 300
+    # 'TextProcessorScrapy.pipelines.TwitterPipeline': 500,
+    # 'TextProcessorScrapy.pipelines.FacebookPipeline': 300
 
 }
 

@@ -15,9 +15,9 @@ from ..items import FacebookItem
 
 class FacebookSpider(scrapy.Spider):
     name = 'facebook'
-    allowed_domains = ['facebook.com']
-    start_urls = ['https://facebook.com/']
-
+    custom_settings = {
+        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.FacebookPipeline': 300},
+    }
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ['facebook.com']

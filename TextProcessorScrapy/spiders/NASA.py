@@ -8,6 +8,9 @@ global count
 
 class nasaSpider(scrapy.Spider):
     name = "NASA"
+    custom_settings = {
+        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.HsNasaPipeline': 400},
+    }
     index_url = "https://nasasearch.nasa.gov"
     allowed_domains = ['nasa.gov']
     url_header = 'https://nasasearch.nasa.gov/search?query='

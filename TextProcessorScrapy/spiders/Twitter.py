@@ -5,6 +5,9 @@ from ..items import TwitterKeywordItem
 
 class TwitterSpider(scrapy.Spider):
     name = 'twitter'
+    custom_settings = {
+        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.TwitterPipeline': 500},
+    }
 
     def __init__(self):
         super().__init__()
