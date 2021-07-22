@@ -198,4 +198,44 @@ class ProxyPoolPipeline(object):
     #     added = server.sadd(PROXIES_UNCHECKED_SET, item._get_url())
     #     return added == 0
 
+class AiaaPipeline:
+    def __init__(self):
+        self.tag = 'aiaa'
+        self.file = CreatePath(SavePath, self.tag)
+        self.data = []
+        self.count = 0
+        self.connect = connect_db()
+        self.cursor = self.connect.cursor()
+        # delete_table(self.cursor, self.tag)
+        create_table(self.cursor, self.tag)
+
+    def process_item(self, item, spider):
+        results = dataget(self.api, item['keyword'])
+        for result in results:
+            detail_ = {"keyword": result["keyword"], "source": result["source"], "title": result["title"],
+                       "url": result["url"],
+                       "date": result["date"], "content": result["content"]}
+            detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
+                      "时间": result["date"], "内容": result["content"]}
+            self.data.append(detail_)
+            self.count += 1
+            if self.count == 50:
+                json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+                for data in self.data:
+                    insert_to_db(self.cursor, self.tag, data)
+                self.count = 0
+                self.data = []
+        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        for data in self.data:
+            insert_to_db(self.cursor, self.tag, data)
+        return item
+
+    def close_spider(self, spider):
+        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        for data in self.data:
+            insert_to_db(self.cursor, self.tag, data)
+        self.file.close()
+        self.cursor.close()
+        self.connect.close()
+
 

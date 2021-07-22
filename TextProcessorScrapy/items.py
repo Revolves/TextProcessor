@@ -48,6 +48,16 @@ class FacebookItem(scrapy.Item):
     content = scrapy.Field()
 
 
+class AiaaItem(scrapy.Item):
+    keyword = scrapy.Field()  # 标签
+    source = scrapy.Field()  # 来源
+    title = scrapy.Field()  # 标题
+    url = scrapy.Field()  # 网址
+    date = scrapy.Field()  #
+    # description = scrapy.Field()
+    content = scrapy.Field()
+
+
 class VideoItem(scrapy.Item):
     title = scrapy.Field()
     video = scrapy.Field()
