@@ -17,19 +17,19 @@ class AiaaSpider(scrapy.Spider):
         super().__init__(**kwargs)
         self.allowed_domains = ["www.aiaa.org"]
         url_head = 'https://arc.aiaa.org/action/doSearch?AllField='
-        url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
+        url_end = "&sortBy=Earliest&startPage=0"
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
         self.start_urls.append(url_head + self.keyword + url_end)
         print(span1 + self.start_urls[0] + span2)
 
-    # def start_requests(self):
-    #     yield scrapy.Request(self.start_urls[0], callback=self.parse, meta={'dont_redirect': True, 'handle_httpstatus_list': [302]})
+    def start_requests(self):
+        yield scrapy.Request(self.start_urls[0], callback=self.parse, dont_filter=True)
 
     def parse(self, response):
-        print(span1 + 'parse' + response.url + span2)
+        print(span1 + 'response.text:\n' + response.text + span2)
         part_url = response.xpath("//h4[@class='search-item__title']")
-        print(part_url)
+        print(span1 + 'part_url:' + str(part_url) + span2)
         for url in part_url:
             url = "https://arc.aiaa.org" + str(url.xpath("./a/@href").get())
             print("报告地址" + url)

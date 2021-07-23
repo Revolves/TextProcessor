@@ -25,7 +25,8 @@ DEFAULT_REQUEST_HEADERS = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7',
-    'Connection': 'keep-alive'
+    'Connection': 'keep-alive',
+    'cookie': 'xxxxxxxxx'
 }
 
 SPIDER_MODULES = ['TextProcessorScrapy.spiders']
@@ -53,12 +54,12 @@ USER_AGENTS_LIST = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24",
     "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/535.24 (KHTML, like Gecko) Chrome/19.0.1055.1 Safari/535.24"
 ]
-PROXIES = [
-    "https://171.13.92.212:9797",
-    "https://164.163.234.210:8080",
-    "https://143.202.73.219:8080",
-    "https://103.75.166.15:8080"
-]
+# PROXIES = [
+#     "https://171.13.92.212:9797",
+#     "https://164.163.234.210:8080",
+#     "https://143.202.73.219:8080",
+#     "https://103.75.166.15:8080"
+# ]
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -91,8 +92,8 @@ REDIRECT_ENABLED = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    'TextProcessorScrapy.middlewares.HsNasaSpiderMiddleware': 543,
-    'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
+    # 'TextProcessorScrapy.middlewares.HsNasaSpiderMiddleware': 543,
+
     # 'TextProcessorScrapy.middlewares.HttpProxymiddleware': 541
 }
 
@@ -100,6 +101,7 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware': 543,
+    'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
     # 'TextProcessorScrapy.middlewares.RandomProxyMiddleware': 123,
 }
 
