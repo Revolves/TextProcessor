@@ -10,8 +10,12 @@ import hashlib
 from selenium.webdriver import ActionChains
 from utils.facebook_utiles import options
 from items import FacebookItem
-from utils.utils import logger
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
 
 class FacebookSpider(scrapy.Spider):
     name = 'facebook'

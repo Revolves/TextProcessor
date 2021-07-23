@@ -1,7 +1,13 @@
+import logging
+
 import scrapy
 from utils import twitter_utils as tu
 from items import TwitterKeywordItem
-from utils.utils import logger
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
 
 class TwitterSpider(scrapy.Spider):
     name = 'twitter'

@@ -1,7 +1,15 @@
+import logging
+
 import scrapy
 
 from items import HsNasaItem
-from utils.utils import parse_pdf, logger
+from utils.utils import parse_pdf
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
 
 
 class nasaSpider(scrapy.Spider):
@@ -28,7 +36,9 @@ class nasaSpider(scrapy.Spider):
         #                                                                                                     ' ').replace(
         #     '\xa0', ' ')
         content_list = response.xpath('//p/text()|//ol/text()').extract()
-        content = ''.join(content_list).replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0', ' ').replace("'", "''")
+        content = ''.join(content_list).replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0',
+                                                                                                       ' ').replace("'",
+                                                                                                                    "''")
         item = response.meta['item']
         item['content'] = content
         yield item

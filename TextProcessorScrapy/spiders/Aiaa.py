@@ -1,11 +1,16 @@
+import logging
 from datetime import datetime
 from items import AiaaItem
-from utils.utils import logger
+
 import scrapy
 
 span1 = '-' * 100 + '\n'
 span2 = '\n' + '-' * 100
-
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
 
 class AiaaSpider(scrapy.Spider):
     name = "aiaa"
