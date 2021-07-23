@@ -8,9 +8,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import hashlib
 from selenium.webdriver import ActionChains
-from ..utils.facebook_utiles import options
-from ..items import FacebookItem
-
+from utils.facebook_utiles import options
+from items import FacebookItem
+from utils.utils import logger
 
 
 class FacebookSpider(scrapy.Spider):
@@ -24,12 +24,14 @@ class FacebookSpider(scrapy.Spider):
         head_url = "https://www.facebook.com/search/posts/?q="
         self.driver = webdriver.Chrome(options= options)
         self.driver.implicitly_wait(10)
+        self.keyword = 't'
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
         self.start_urls.append(head_url + self.keyword)
         #
 
     def parse(self, response):
+        logger.info("Facebook Spider starting!")
         # results = response.xpath(
         #     '//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
         # for result in results:

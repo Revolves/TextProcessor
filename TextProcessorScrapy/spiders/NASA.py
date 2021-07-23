@@ -1,9 +1,7 @@
 import scrapy
 
 from items import HsNasaItem
-from utils.utils import parse_pdf
-
-global count
+from utils.utils import parse_pdf, logger
 
 
 class nasaSpider(scrapy.Spider):
@@ -11,23 +9,19 @@ class nasaSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.HsNasaPipeline': 400},
     }
-    index_url = "https://nasasearch.nasa.gov"
-    allowed_domains = ['nasa.gov']
-    url_header = 'https://nasasearch.nasa.gov/search?query='
-    url_late = '&affiliate=nasa&utf8=%E2%9C%93'
-    keyword_file = open("../file/keywords.txt")
-    # keywords = 'time sensitive target'
-    global count
-    url_list = []
-    keyword_list = []
-    keyword = keyword_file.readline()
-    while keyword:
-        keyword_list.append(keyword)
-        url_list.append(url_header + keyword.replace(' ', '+') + url_late)
-        keyword = keyword_file.readline()
-    start_urls = url_list
-    # start_urls = ['https://nasasearch.nasa.gov/search?query=cyberspace+target&affiliate=nasa&utf8=%E2%9C%93']
-    count = 0
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        self.index_url = "https://nasasearch.nasa.gov"
+        self.allowed_domains = ['nasa.gov']
+        url_header = 'https://nasasearch.nasa.gov/search?query='
+        url_late = '&affiliate=nasa&utf8=%E2%9C%93'
+        self.keywords = 't'
+        if 'keyword' in kwargs:
+            self.keywords = kwargs['keyword']
+        for keyword in self.keywords:
+            self.start_urls.append(url_header + keyword + url_late)
 
     def parse_detail(self, response):
         # content = response.xpath('string(//p|//ol)').extract_first().replace('\r', '').replace('\t', '').replace('\n',
@@ -46,16 +40,15 @@ class nasaSpider(scrapy.Spider):
         item['content'] = content
         yield item
 
-    def parse(self, response, keyword_list=keyword_list):
+    def parse(self, response):
+        logger.info('NASA Spider starting!')
         results = response.xpath('//div[@class="content-block-item result"]')
-        global count
-        count += 1
         for result in results:
             """
             提取字段
             """
             item = HsNasaItem()
-            item["keyword"] = keyword_list[count - 1].replace('\n', '')
+            item["keyword"] = self.keywords
             item["source"] = "NASA"
             item["title"] = result.xpath('./h4/a/text()').extract_first().replace("'", "''")
             item["url"] = result.xpath('./span[1]/text()').extract_first()
@@ -73,7 +66,7 @@ class nasaSpider(scrapy.Spider):
         获取下一页链接
         """
 
-        next_page = response.xpath('//a[@class="next_page"]/@href').extract_first()
-        if next_page is not None:
-            next_page = response.urljoin(next_page)
-            yield scrapy.Request(next_page, callback=self.parse)
+        # next_page = response.xpath('//a[@class="next_page"]/@href').extract_first()
+        # if next_page is not None:
+        #     next_page = response.urljoin(next_page)
+        #     yield scrapy.Request(next_page, callback=self.parse)

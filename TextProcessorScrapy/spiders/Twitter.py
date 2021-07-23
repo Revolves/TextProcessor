@@ -1,7 +1,7 @@
 import scrapy
 from utils import twitter_utils as tu
 from items import TwitterKeywordItem
-
+from utils.utils import logger
 
 class TwitterSpider(scrapy.Spider):
     name = 'twitter'
@@ -15,10 +15,12 @@ class TwitterSpider(scrapy.Spider):
         self.name = 'twitter'
         self.allowed_domains = ['twitter.com']
         self.start_urls = ['https://twitter.com/explore']
+        self.keywords = 't'
         if 'keyword' in kwargs:
             self.keywords = kwargs['keyword']
 
     def parse(self, response):
+        logger.info("Twitter Spider starting!")
         item = TwitterKeywordItem()
         for keyword in self.keywords:
             item['keyword'] = keyword

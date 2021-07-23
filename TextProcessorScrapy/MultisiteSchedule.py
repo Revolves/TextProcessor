@@ -20,6 +20,8 @@ from scrapy.utils.log import configure_logging
 from scrapy.cmdline import execute
 from spiders.Twitter import TwitterSpider
 from spiders.NASA import nasaSpider
+from spiders.Facebook import FacebookSpider
+from spiders.Aiaa import AiaaSpider
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -34,7 +36,7 @@ def ControlInfo():
     :return: 爬取站点列表、关键词
     """
     Info = {
-        "sites": ['NASA', 'twitter'],
+        "sites": ['NASA', 'Twitter', 'Facebook', 'Aiaa'],
         "keywords": ['target']
     }
     return Info
@@ -55,13 +57,20 @@ def SpiderStart(site, keyword):
 
 
 if __name__ == '__main__':
-    info = ControlInfo()
-    Crawler_list = {'NASA': nasaSpider, 'twitter': TwitterSpider}
-    for site in info['sites']:
-        # SpiderStart(Crawler_list[site], info['keywords'])
-        logger.info('Spider {} is starting!'.format(site))
-        execute(['scrapy', 'crawl', site, '--nolog', '-a', 'keyword={}'.format(info['keywords'])])
-        time.sleep(1)
+    # info = ControlInfo()
+    # Crawler_list = {'NASA': nasaSpider, 'twitter': TwitterSpider}
+    # for site in info['sites']:
+    #     # SpiderStart(Crawler_list[site], info['keywords'])
+    #     logger.info('Spider {} is starting!'.format(site))
+    #     execute(['scrapy', 'crawl', site, '--nolog', '-a', 'keyword={}'.format(info['keywords'])])
+    #     time.sleep(1)
+    Crawler_list = {'NASA': nasaSpider, 'Twitter': TwitterSpider, 'Facebook': FacebookSpider, 'Aiaa': AiaaSpider}
+    while True:
+        info = ControlInfo()
+        process = CrawlerProcess(get_project_settings())
+        for site in info['sites']:
+            process.crawl(Crawler_list[site])
+        process.start()  # the script will block here until all crawling jobs are finished
 
     # t = testThread()
     # t.start()

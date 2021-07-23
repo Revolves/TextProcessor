@@ -60,29 +60,29 @@ class HsNasaPipeline:
         """
         保存
         """
-        insert_to_db(self.cursor, self.tag, item)
+        # insert_to_db(self.cursor, self.tag, item)
         detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
                   "时间": item["date"], "内容": item["content"]}
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
-        self.count += 1
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
-        if self.count == 50:
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-            self.count = 0
-            self.data = []
-            self.file = CreatePath(SavePath)
+        # self.count += 1
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
+        # if self.count == 50:
+        #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        #     self.count = 0
+        #     self.data = []
+        #     self.file = CreatePath(SavePath)
         # return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, data)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, data)
         self.file.close()
-        self.cursor.close()
-        self.connect.close()
+        # self.cursor.close()
+        # self.connect.close()
 
 
 class TwitterPipeline:

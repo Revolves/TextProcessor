@@ -1,6 +1,6 @@
 from datetime import datetime
-from ..items import AiaaItem
-
+from items import AiaaItem
+from utils.utils import logger
 import scrapy
 
 span1 = '-' * 100 + '\n'
@@ -18,6 +18,7 @@ class AiaaSpider(scrapy.Spider):
         self.allowed_domains = ["www.aiaa.org"]
         url_head = 'https://arc.aiaa.org/action/doSearch?AllField='
         url_end = "&sortBy=Earliest&startPage=0"
+        self.keyword = 't'
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
         self.start_urls.append(url_head + self.keyword + url_end)
@@ -27,6 +28,7 @@ class AiaaSpider(scrapy.Spider):
         yield scrapy.Request(self.start_urls[0], callback=self.parse, dont_filter=True)
 
     def parse(self, response):
+        logger.info("Aiaa Spider Starting!")
         print(span1 + 'response.text:\n' + response.text + span2)
         part_url = response.xpath("//h4[@class='search-item__title']")
         print(span1 + 'part_url:' + str(part_url) + span2)
