@@ -1,12 +1,13 @@
 import scrapy
-from ..utils import twitter_utils as tu
-from ..items import TwitterKeywordItem
+from utils import twitter_utils as tu
+from items import TwitterKeywordItem
 
 
 class TwitterSpider(scrapy.Spider):
     name = 'twitter'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.TwitterPipeline': 500},
+        'CONCURRENT_REQUESTS': 2
     }
 
     def __init__(self, **kwargs):

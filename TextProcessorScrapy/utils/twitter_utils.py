@@ -49,10 +49,8 @@ def dataget(api, keyword):
     count = 0
     for Status in tweepy.Cursor(api.search, keyword, tweet_mode='extended', show_user=True).items():
         # print(Status)
-        item = {}
-        item['keyword'] = 'target'
-        item['date'] = get_publishTime(Status.created_at)
-        item['url'] = get_twitter_url(Status.author.screen_name, Status.id)
+        item = {'keyword': keyword, 'date': get_publishTime(Status.created_at),
+                'url': get_twitter_url(Status.author.screen_name, Status.id)}
         count += 1
         # retweet
         try:

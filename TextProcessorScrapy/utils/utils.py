@@ -16,6 +16,13 @@ from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 
 
+# 设置日志输出格式
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
+
 def CreatePath(path):
     """
     判断保存路径是否存在，如果不存在则创建
@@ -28,12 +35,6 @@ def CreatePath(path):
     else:
         print("保存路径已存在： ", path)
 
-
-# 设置日志输出格式
-logging.basicConfig(level=logging.DEBUG,
-                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
-                    datefmt='%Y-%m-%d %T'
-                    )
 
 
 # Truncate header and tailer blanks
@@ -189,7 +190,7 @@ def delete_table(cursor, tag):
         DROP TABLE data_{}
         """.format(tag))
     except:
-        print("table not exist")
+        logger.info("table not exist")
 
 
 def create_table(cursor, tag):
@@ -211,7 +212,7 @@ def create_table(cursor, tag):
             )
             """.format(tag))
     except:
-        print("table existed!")
+        logger.warning("Table data_{} existed!".format(tag))
 
 
 def insert_to_db(cursor, tag, item):
@@ -229,7 +230,7 @@ def insert_to_db(cursor, tag, item):
         VALUES ({})
         """.format(tag, key_str, value_str))
     except Exception as e:
-        print('insert error, detail:{}'.format(e))
+        logger.exception('insert error, detail:{}'.format(e))
 
 
 def load_json_to_db():

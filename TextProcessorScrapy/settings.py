@@ -65,7 +65,7 @@ USER_AGENTS_LIST = [
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 1
 REACTOR_THREADPOOL_MAXSIZE = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -143,13 +143,13 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
-LOG_LEVEL = 'DEBUG'
+# LOG_LEVEL = 'INFO'
 to_day = datetime.datetime.now()
 count = 0
 log_file_path = '../log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
 while os.path.isfile(log_file_path) is True:
-   count += 1
-   log_file_path = '../log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
+    count += 1
+    log_file_path = '../log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
 LOG_FILE = log_file_path
 #
 # # 配置Scrapy-Redis

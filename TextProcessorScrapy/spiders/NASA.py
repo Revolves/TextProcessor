@@ -1,7 +1,7 @@
 import scrapy
 
-from ..items import HsNasaItem
-from ..utils.utils import parse_pdf
+from items import HsNasaItem
+from utils.utils import parse_pdf
 
 global count
 

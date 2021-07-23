@@ -91,10 +91,10 @@ class TwitterPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
         # delete_table(self.cursor, self.tag)
-        create_table(self.cursor, self.tag)
+        # create_table(self.cursor, self.tag)
 
         # test
         consumer_key = "ioTGfhxK3Fylub82QJmLMB6mB"
@@ -130,11 +130,11 @@ class TwitterPipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
         self.file.close()
-        self.cursor.close()
-        self.connect.close()
+        # self.cursor.close()
+        # self.connect.close()
 
 
 class FacebookPipeline:
