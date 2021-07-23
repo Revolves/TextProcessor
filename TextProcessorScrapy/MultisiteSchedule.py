@@ -29,6 +29,10 @@ logger = logging.getLogger(__name__)
 
 
 def ControlInfo():
+    """
+    解析控制信息
+    :return: 爬取站点列表、关键词
+    """
     Info = {
         "sites": ['NASA', 'twitter'],
         "keywords": ['target']
@@ -58,5 +62,6 @@ if __name__ == '__main__':
         logger.info('Spider {} is starting!'.format(site))
         execute(['scrapy', 'crawl', site, '--nolog', '-a', 'keyword={}'.format(info['keywords'])])
         time.sleep(1)
+
     # t = testThread()
     # t.start()

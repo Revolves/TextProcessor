@@ -1,0 +1,456 @@
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet Password: bf2ee7e874149216
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet Password: bf2ee7e874149216
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet Password: cc9636b110cb0fc7
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet Password: cc9636b110cb0fc7
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TwitterPipeline']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TwitterPipeline']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TwitterPipeline']
+2021-07-23 16:48:56 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TwitterPipeline']
+2021-07-23 16:48:56 [scrapy.core.engine] INFO: Spider opened
+2021-07-23 16:48:56 [scrapy.core.engine] INFO: Spider opened
+2021-07-23 16:48:56 [scrapy.core.engine] INFO: Spider opened
+2021-07-23 16:48:56 [scrapy.core.engine] INFO: Spider opened
+2021-07-23 16:48:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-07-23 16:48:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-07-23 16:48:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-07-23 16:48:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-07-23 16:48:56 [twitter] INFO: Spider opened: twitter
+2021-07-23 16:48:56 [twitter] INFO: Spider opened: twitter
+2021-07-23 16:48:56 [twitter] INFO: Spider opened: twitter
+2021-07-23 16:48:56 [twitter] INFO: Spider opened: twitter
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-07-23 16:48:56 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 503, in fireEvent
+    DeferredList(beforeResults).addCallback(self._continueFiring)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 339, in addCallback
+    return self.addCallbacks(callback, callbackArgs=args, callbackKeywords=kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 330, in addCallbacks
+    self._runCallbacks()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 662, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+--- <exception caught here> ---
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 515, in _continueFiring
+    callable(*args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1419, in _reallyStartRunning
+    self._handleSignals()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\posixbase.py", line 341, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1386, in _handleSignals
+    signal.signal(signal.SIGINT, reactorBaseSelf.sigInt)
+  File "D:\Anaconda\envs\HS\lib\signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+builtins.ValueError: signal only works in main thread
+
+2021-07-23 16:48:56 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 503, in fireEvent
+    DeferredList(beforeResults).addCallback(self._continueFiring)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 339, in addCallback
+    return self.addCallbacks(callback, callbackArgs=args, callbackKeywords=kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 330, in addCallbacks
+    self._runCallbacks()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 662, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+--- <exception caught here> ---
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 515, in _continueFiring
+    callable(*args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1419, in _reallyStartRunning
+    self._handleSignals()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\posixbase.py", line 341, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1386, in _handleSignals
+    signal.signal(signal.SIGINT, reactorBaseSelf.sigInt)
+  File "D:\Anaconda\envs\HS\lib\signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+builtins.ValueError: signal only works in main thread
+
+2021-07-23 16:48:56 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 503, in fireEvent
+    DeferredList(beforeResults).addCallback(self._continueFiring)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 339, in addCallback
+    return self.addCallbacks(callback, callbackArgs=args, callbackKeywords=kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 330, in addCallbacks
+    self._runCallbacks()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 662, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+--- <exception caught here> ---
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 515, in _continueFiring
+    callable(*args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1419, in _reallyStartRunning
+    self._handleSignals()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\posixbase.py", line 341, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1386, in _handleSignals
+    signal.signal(signal.SIGINT, reactorBaseSelf.sigInt)
+  File "D:\Anaconda\envs\HS\lib\signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+builtins.ValueError: signal only works in main thread
+
+2021-07-23 16:48:56 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 503, in fireEvent
+    DeferredList(beforeResults).addCallback(self._continueFiring)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 339, in addCallback
+    return self.addCallbacks(callback, callbackArgs=args, callbackKeywords=kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 330, in addCallbacks
+    self._runCallbacks()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 662, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+--- <exception caught here> ---
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 515, in _continueFiring
+    callable(*args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1419, in _reallyStartRunning
+    self._handleSignals()
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\posixbase.py", line 341, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\base.py", line 1386, in _handleSignals
+    signal.signal(signal.SIGINT, reactorBaseSelf.sigInt)
+  File "D:\Anaconda\envs\HS\lib\signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+builtins.ValueError: signal only works in main thread
+
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-07-23 16:48:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-07-23 16:48:57 [scrapy.core.engine] DEBUG: Crawled (302) <GET https://twitter.com/explore> (referer: None)
+2021-07-23 16:48:57 [scrapy.core.engine] DEBUG: Crawled (302) <GET https://twitter.com/explore> (referer: None)
+2021-07-23 16:48:57 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:48:57 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '128252110465716227871627030137'), ('oauth_timestamp', '1627030137'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '128252110465716227871627030137'), ('oauth_timestamp', '1627030137'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=128252110465716227871627030137&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030137&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=128252110465716227871627030137&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030137&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D128252110465716227871627030137%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030137%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D128252110465716227871627030137%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030137%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Signature: GhJnAUZZLCQyH2N7WbYv5RYcB1A=
+2021-07-23 16:48:57 [oauthlib.oauth1.rfc5849] DEBUG: Signature: GhJnAUZZLCQyH2N7WbYv5RYcB1A=
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&tweet_mode=extended&show_user=True
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&tweet_mode=extended&show_user=True
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="128252110465716227871627030137", oauth_timestamp="1627030137", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="GhJnAUZZLCQyH2N7WbYv5RYcB1A%3D"'}
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="128252110465716227871627030137", oauth_timestamp="1627030137", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="GhJnAUZZLCQyH2N7WbYv5RYcB1A%3D"'}
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:48:57 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:48:57 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:48:57 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:48:58 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&tweet_mode=extended&show_user=True HTTP/1.1" 200 88945
+2021-07-23 16:48:58 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&tweet_mode=extended&show_user=True HTTP/1.1" 200 88945
+2021-07-23 16:48:58 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:48:58 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:48:58 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493278366883839', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:48:58 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493278366883839', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493278366883839'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '127606908325287722711627030138'), ('oauth_timestamp', '1627030138'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493278366883839'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '127606908325287722711627030138'), ('oauth_timestamp', '1627030138'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493278366883839&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=127606908325287722711627030138&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030138&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493278366883839&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=127606908325287722711627030138&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030138&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493278366883839%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D127606908325287722711627030138%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030138%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493278366883839%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D127606908325287722711627030138%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030138%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Signature: Vvv9ii1egEh1AsNlUOURyRjLhDk=
+2021-07-23 16:48:58 [oauthlib.oauth1.rfc5849] DEBUG: Signature: Vvv9ii1egEh1AsNlUOURyRjLhDk=
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493278366883839&tweet_mode=extended&show_user=True
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493278366883839&tweet_mode=extended&show_user=True
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="127606908325287722711627030138", oauth_timestamp="1627030138", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="Vvv9ii1egEh1AsNlUOURyRjLhDk%3D"'}
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="127606908325287722711627030138", oauth_timestamp="1627030138", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="Vvv9ii1egEh1AsNlUOURyRjLhDk%3D"'}
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:48:58 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:48:58 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:48:58 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:48:59 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493278366883839&tweet_mode=extended&show_user=True HTTP/1.1" 200 88415
+2021-07-23 16:48:59 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493278366883839&tweet_mode=extended&show_user=True HTTP/1.1" 200 88415
+2021-07-23 16:49:00 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:00 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:00 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493215196340226', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:00 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493215196340226', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493215196340226'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '87167587675275416781627030140'), ('oauth_timestamp', '1627030140'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493215196340226'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '87167587675275416781627030140'), ('oauth_timestamp', '1627030140'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493215196340226&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=87167587675275416781627030140&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030140&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493215196340226&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=87167587675275416781627030140&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030140&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493215196340226%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D87167587675275416781627030140%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030140%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493215196340226%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D87167587675275416781627030140%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030140%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Signature: ENiR3KGqLOyHJUlL3ytd3jwQipY=
+2021-07-23 16:49:00 [oauthlib.oauth1.rfc5849] DEBUG: Signature: ENiR3KGqLOyHJUlL3ytd3jwQipY=
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493215196340226&tweet_mode=extended&show_user=True
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493215196340226&tweet_mode=extended&show_user=True
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="87167587675275416781627030140", oauth_timestamp="1627030140", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="ENiR3KGqLOyHJUlL3ytd3jwQipY%3D"'}
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="87167587675275416781627030140", oauth_timestamp="1627030140", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="ENiR3KGqLOyHJUlL3ytd3jwQipY%3D"'}
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:00 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:00 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:00 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:01 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493215196340226&tweet_mode=extended&show_user=True HTTP/1.1" 200 84435
+2021-07-23 16:49:01 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493215196340226&tweet_mode=extended&show_user=True HTTP/1.1" 200 84435
+2021-07-23 16:49:01 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:01 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:01 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493150163701763', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:01 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493150163701763', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493150163701763'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '41160107843500234361627030141'), ('oauth_timestamp', '1627030141'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493150163701763'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '41160107843500234361627030141'), ('oauth_timestamp', '1627030141'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493150163701763&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=41160107843500234361627030141&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030141&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493150163701763&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=41160107843500234361627030141&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030141&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493150163701763%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D41160107843500234361627030141%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030141%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493150163701763%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D41160107843500234361627030141%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030141%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Signature: wWVbBFQ/+a+6GlR4essZz2jAUb8=
+2021-07-23 16:49:01 [oauthlib.oauth1.rfc5849] DEBUG: Signature: wWVbBFQ/+a+6GlR4essZz2jAUb8=
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493150163701763&tweet_mode=extended&show_user=True
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493150163701763&tweet_mode=extended&show_user=True
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="41160107843500234361627030141", oauth_timestamp="1627030141", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="wWVbBFQ%2F%2Ba%2B6GlR4essZz2jAUb8%3D"'}
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="41160107843500234361627030141", oauth_timestamp="1627030141", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="wWVbBFQ%2F%2Ba%2B6GlR4essZz2jAUb8%3D"'}
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:01 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:01 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:01 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:02 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493150163701763&tweet_mode=extended&show_user=True HTTP/1.1" 200 80245
+2021-07-23 16:49:02 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493150163701763&tweet_mode=extended&show_user=True HTTP/1.1" 200 80245
+2021-07-23 16:49:02 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:02 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:02 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493107998322688', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:02 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493107998322688', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493107998322688'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '115144128659600421981627030142'), ('oauth_timestamp', '1627030142'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493107998322688'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '115144128659600421981627030142'), ('oauth_timestamp', '1627030142'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493107998322688&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=115144128659600421981627030142&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030142&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493107998322688&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=115144128659600421981627030142&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030142&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493107998322688%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D115144128659600421981627030142%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030142%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493107998322688%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D115144128659600421981627030142%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030142%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Signature: LLBHy6a7UrQf62k+apyD3O8/kDI=
+2021-07-23 16:49:02 [oauthlib.oauth1.rfc5849] DEBUG: Signature: LLBHy6a7UrQf62k+apyD3O8/kDI=
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493107998322688&tweet_mode=extended&show_user=True
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493107998322688&tweet_mode=extended&show_user=True
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="115144128659600421981627030142", oauth_timestamp="1627030142", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="LLBHy6a7UrQf62k%2BapyD3O8%2FkDI%3D"'}
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="115144128659600421981627030142", oauth_timestamp="1627030142", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="LLBHy6a7UrQf62k%2BapyD3O8%2FkDI%3D"'}
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:02 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:04 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493107998322688&tweet_mode=extended&show_user=True HTTP/1.1" 200 82168
+2021-07-23 16:49:04 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493107998322688&tweet_mode=extended&show_user=True HTTP/1.1" 200 82168
+2021-07-23 16:49:04 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:04 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:04 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493068433522688', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:04 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493068433522688', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493068433522688'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '167119373199386382151627030144'), ('oauth_timestamp', '1627030144'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493068433522688'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '167119373199386382151627030144'), ('oauth_timestamp', '1627030144'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493068433522688&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=167119373199386382151627030144&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030144&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493068433522688&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=167119373199386382151627030144&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030144&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493068433522688%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D167119373199386382151627030144%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030144%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493068433522688%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D167119373199386382151627030144%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030144%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Signature: ru9xodpk+SM6Vy/A44rxJkVx44k=
+2021-07-23 16:49:04 [oauthlib.oauth1.rfc5849] DEBUG: Signature: ru9xodpk+SM6Vy/A44rxJkVx44k=
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493068433522688&tweet_mode=extended&show_user=True
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493068433522688&tweet_mode=extended&show_user=True
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="167119373199386382151627030144", oauth_timestamp="1627030144", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="ru9xodpk%2BSM6Vy%2FA44rxJkVx44k%3D"'}
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="167119373199386382151627030144", oauth_timestamp="1627030144", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="ru9xodpk%2BSM6Vy%2FA44rxJkVx44k%3D"'}
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:04 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:04 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:04 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:05 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493068433522688&tweet_mode=extended&show_user=True HTTP/1.1" 200 78440
+2021-07-23 16:49:05 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493068433522688&tweet_mode=extended&show_user=True HTTP/1.1" 200 78440
+2021-07-23 16:49:05 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:05 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:05 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493021419499526', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:05 [tweepy.binder] DEBUG: PARAMS: {'q': b'target', 'max_id': b'1418493021419499526', 'tweet_mode': b'extended', 'show_user': b'True'}
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Signing request <PreparedRequest [GET]> using client <Client client_key=ioTGfhxK3Fylub82QJmLMB6mB, client_secret=****, resource_owner_key=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Including body in call to sign: False
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493021419499526'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '170122272087419432811627030145'), ('oauth_timestamp', '1627030145'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Collected params: [('q', 'target'), ('max_id', '1418493021419499526'), ('tweet_mode', 'extended'), ('show_user', 'True'), ('oauth_nonce', '170122272087419432811627030145'), ('oauth_timestamp', '1627030145'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'ioTGfhxK3Fylub82QJmLMB6mB'), ('oauth_token', '1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56')]
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493021419499526&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=170122272087419432811627030145&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030145&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Normalized params: max_id=1418493021419499526&oauth_consumer_key=ioTGfhxK3Fylub82QJmLMB6mB&oauth_nonce=170122272087419432811627030145&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1627030145&oauth_token=1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56&oauth_version=1.0&q=target&show_user=True&tweet_mode=extended
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493021419499526%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D170122272087419432811627030145%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030145%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&max_id%3D1418493021419499526%26oauth_consumer_key%3DioTGfhxK3Fylub82QJmLMB6mB%26oauth_nonce%3D170122272087419432811627030145%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1627030145%26oauth_token%3D1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56%26oauth_version%3D1.0%26q%3Dtarget%26show_user%3DTrue%26tweet_mode%3Dextended
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Signature: FZcJMmPMaRSwdLcUXha2GGlCvQ0=
+2021-07-23 16:49:05 [oauthlib.oauth1.rfc5849] DEBUG: Signature: FZcJMmPMaRSwdLcUXha2GGlCvQ0=
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493021419499526&tweet_mode=extended&show_user=True
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Updated url: https://api.twitter.com/1.1/search/tweets.json?q=target&max_id=1418493021419499526&tweet_mode=extended&show_user=True
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="170122272087419432811627030145", oauth_timestamp="1627030145", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="FZcJMmPMaRSwdLcUXha2GGlCvQ0%3D"'}
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Updated headers: {'Host': 'api.twitter.com', 'Cookie': 'guest_id=v1%3A162703013774992320; personalization_id="v1_60QpJAbbg6rR3+ieGxxYfg=="; lang=zh-cn', 'Authorization': 'OAuth oauth_nonce="170122272087419432811627030145", oauth_timestamp="1627030145", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="ioTGfhxK3Fylub82QJmLMB6mB", oauth_token="1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56", oauth_signature="FZcJMmPMaRSwdLcUXha2GGlCvQ0%3D"'}
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:05 [requests_oauthlib.oauth1_auth] DEBUG: Updated body: None
+2021-07-23 16:49:05 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:05 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): api.twitter.com:443
+2021-07-23 16:49:07 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493021419499526&tweet_mode=extended&show_user=True HTTP/1.1" 200 77048
+2021-07-23 16:49:07 [urllib3.connectionpool] DEBUG: https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=target&max_id=1418493021419499526&tweet_mode=extended&show_user=True HTTP/1.1" 200 77048
+2021-07-23 16:49:07 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:07 [tweepy.binder] DEBUG: PARAMS: {'create': b'True'}
+2021-07-23 16:49:07 [scrapy.core.scraper] DEBUG: Scraped from <302 https://twitter.com/explore>
+{'keyword': 'target'}
+2021-07-23 16:49:07 [scrapy.core.scraper] DEBUG: Scraped from <302 https://twitter.com/explore>
+{'keyword': 'target'}
+2021-07-23 16:49:07 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-07-23 16:49:07 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-07-23 16:49:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 402,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 642,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 11.055559,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 23, 8, 49, 7, 395720),
+ 'item_scraped_count': 1,
+ 'log_count/CRITICAL': 2,
+ 'log_count/DEBUG': 100,
+ 'log_count/INFO': 21,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 7, 23, 8, 48, 56, 340161)}
+2021-07-23 16:49:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 402,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 642,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 11.055559,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 23, 8, 49, 7, 395720),
+ 'item_scraped_count': 1,
+ 'log_count/CRITICAL': 2,
+ 'log_count/DEBUG': 100,
+ 'log_count/INFO': 21,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 7, 23, 8, 48, 56, 340161)}
+2021-07-23 16:49:07 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-07-23 16:49:07 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-07-23 16:49:07 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://twitter.com/explore> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-07-23 16:49:07 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://twitter.com/explore> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]

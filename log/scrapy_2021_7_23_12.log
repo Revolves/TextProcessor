@@ -1,0 +1,50 @@
+2021-07-23 10:28:15 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: TextProcessorScrapy)
+2021-07-23 10:28:15 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.7.9 (default, Aug 31 2020, 17:10:11) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 20.0.1 (OpenSSL 1.1.1k  25 Mar 2021), cryptography 3.4.7, Platform Windows-10-10.0.19041-SP0
+2021-07-23 10:28:15 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2021-07-23 10:28:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'CONCURRENT_REQUESTS': 32,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 2,
+ 'LOG_FILE': '../log/scrapy_2021_7_23_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'REDIRECT_ENABLED': False,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-07-23 10:28:15 [scrapy.extensions.telnet] INFO: Telnet Password: 2ad579d7aec642a7
+2021-07-23 10:28:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-07-23 10:28:16 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-07-23 10:28:16 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "d:\anaconda\envs\hs\lib\site-packages\twisted\internet\defer.py", line 1445, in _inlineCallbacks
+    result = current_context.run(g.send, result)
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\crawler.py", line 87, in crawl
+    self.engine = self._create_engine()
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\crawler.py", line 101, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\core\engine.py", line 69, in __init__
+    self.downloader = downloader_cls(crawler)
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\core\downloader\__init__.py", line 83, in __init__
+    self.middleware = DownloaderMiddlewareManager.from_crawler(crawler)
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\middleware.py", line 53, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\middleware.py", line 34, in from_settings
+    mwcls = load_object(clspath)
+  File "d:\anaconda\envs\hs\lib\site-packages\scrapy\utils\misc.py", line 61, in load_object
+    mod = import_module(module)
+  File "d:\anaconda\envs\hs\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 10, in <module>
+    from TextProcessorScrapy.settings import USER_AGENTS_LIST
+ImportError: cannot import name 'USER_AGENTS_LIST' from 'TextProcessorScrapy.settings' (E:\workspace\TextProcessor\TextProcessorScrapy\settings.py)
