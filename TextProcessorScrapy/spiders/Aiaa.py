@@ -3,6 +3,9 @@ from ..items import AiaaItem
 
 import scrapy
 
+span1 = '-' * 100 + '\n'
+span2 = '\n' + '-' * 100
+
 
 class AiaaSpider(scrapy.Spider):
     name = "aiaa"
@@ -14,15 +17,19 @@ class AiaaSpider(scrapy.Spider):
         super().__init__(**kwargs)
         self.allowed_domains = ["www.aiaa.org"]
         url_head = 'https://arc.aiaa.org/action/doSearch?AllField='
-        url_end = "&sortBy=Earliest&startPage=0&pageSize=20"
+        url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
         self.start_urls.append(url_head + self.keyword + url_end)
+        print(span1 + self.start_urls[0] + span2)
 
-    '''回调函数，子类必须重写这个方法，否侧抛出异常'''
+    # def start_requests(self):
+    #     yield scrapy.Request(self.start_urls[0], callback=self.parse, meta={'dont_redirect': True, 'handle_httpstatus_list': [302]})
 
     def parse(self, response):
+        print(span1 + 'parse' + response.url + span2)
         part_url = response.xpath("//h4[@class='search-item__title']")
+        print(part_url)
         for url in part_url:
             url = "https://arc.aiaa.org" + str(url.xpath("./a/@href").get())
             print("报告地址" + url)

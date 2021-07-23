@@ -76,7 +76,9 @@ CONCURRENT_REQUESTS_PER_IP = 128
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = False
-# HTTPERROR_ALLOWED_CODES = [404]
+HTTPERROR_ALLOWED_CODES = [302]
+# 重定向
+REDIRECT_ENABLED = False
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
 
