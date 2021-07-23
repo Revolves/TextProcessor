@@ -9,7 +9,6 @@ span2 = '\n' + '-' * 100
 
 class AiaaSpider(scrapy.Spider):
     name = "aiaa"
-
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.AiaaPipeline': 500},
     }
@@ -19,19 +18,16 @@ class AiaaSpider(scrapy.Spider):
         self.allowed_domains = ["www.aiaa.org"]
         url_head = 'https://arc.aiaa.org/action/doSearch?AllField='
         url_end = "&sortBy=Earliest&startPage=0"
-        self.keyword = ''
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
-            self.start_urls.append(url_head + self.keyword + url_end)
-        self.start_urls = ['https://arc.aiaa.org/action/doSearch?AllField=underwater&sortBy=Earliest&startPage=0']
-
+        self.start_urls.append(url_head + self.keyword + url_end)
         print(span1 + self.start_urls[0] + span2)
 
     def start_requests(self):
         yield scrapy.Request(self.start_urls[0], callback=self.parse, dont_filter=True)
 
     def parse(self, response):
-        print(span1 + 'response.text:\n' + str(response.url) + span2)
+        print(span1 + 'response.text:\n' + response.text + span2)
         part_url = response.xpath("//h4[@class='search-item__title']")
         print(span1 + 'part_url:' + str(part_url) + span2)
         for url in part_url:
