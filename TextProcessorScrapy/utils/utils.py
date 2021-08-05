@@ -9,12 +9,12 @@ import pdfplumber
 import pymssql
 import pymysql
 import redis
+import pyodbc
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
-
 
 # 设置日志输出格式
 logging.basicConfig(level=logging.DEBUG,
@@ -22,6 +22,25 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%Y-%m-%d %T'
                     )
 logger = logging.getLogger(__name__)
+
+
+class DbConnect:
+    def __init__(self, dsn):
+        connect = pyodbc.connect('DSN=Inceptor Server')
+        cursor = connect.cursor()
+        sql = """
+                    CREATE TABLE hs.text_crawl (
+                        keyword STRING,
+                        source STRING,
+                        title STRING,
+                        url STRING,
+                        date STRING,
+                        content STRING
+                    );
+                    """
+        cursor.execute(sql)
+        print(cursor.execute("show tables in hs").fetchall())
+
 
 def CreatePath(path):
     """
@@ -34,7 +53,6 @@ def CreatePath(path):
         print("创建保存路径:", path)
     else:
         print("保存路径已存在： ", path)
-
 
 
 # Truncate header and tailer blanks
@@ -253,14 +271,4 @@ def mkdirs(dirs):
 
 
 if __name__ == '__main__':
-    #     # get_random_ip()
-    #     connect = connect_db()
-    url = "https://history.nasa.gov/nltr30-2.pdf"
-    print(parse_pdf(url, 1))
-#     # connect = connect_db()
-#     cursor = connect.cursor()
-#     delete_table(cursor, 'nasa')
-#     create_table(cursor, 'nasa')
-#     item = {"keyword": 'keyword_list', "source": "NASA",
-#             "title": 'result', "url": 'url', "data": 0, "content": "content"}
-#     insert_to_db(cursor, item)
+    pass

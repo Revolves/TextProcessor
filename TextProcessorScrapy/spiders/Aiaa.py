@@ -1,6 +1,6 @@
 import logging
 from datetime import datetime
-from items import AiaaItem
+from ..items import AiaaItem
 
 import scrapy
 

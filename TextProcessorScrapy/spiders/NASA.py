@@ -2,8 +2,8 @@ import logging
 
 import scrapy
 
-from items import HsNasaItem
-from utils.utils import parse_pdf
+from ..items import HsNasaItem
+from ..utils.utils import parse_pdf
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -25,11 +25,11 @@ class nasaSpider(scrapy.Spider):
         self.allowed_domains = ['nasa.gov']
         url_header = 'https://nasasearch.nasa.gov/search?query='
         url_late = '&affiliate=nasa&utf8=%E2%9C%93'
-        self.keywords = 't'
+        self.keywords = 'target'
         if 'keyword' in kwargs:
             self.keywords = kwargs['keyword']
-        for keyword in self.keywords:
-            self.start_urls.append(url_header + keyword + url_late)
+        # for keyword in self.keywords:
+        self.start_urls.append(url_header + self.keywords + url_late)
 
     def parse_detail(self, response):
         # content = response.xpath('string(//p|//ol)').extract_first().replace('\r', '').replace('\t', '').replace('\n',
@@ -75,7 +75,6 @@ class nasaSpider(scrapy.Spider):
         """
         获取下一页链接
         """
-
         # next_page = response.xpath('//a[@class="next_page"]/@href').extract_first()
         # if next_page is not None:
         #     next_page = response.urljoin(next_page)

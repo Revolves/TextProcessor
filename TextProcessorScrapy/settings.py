@@ -80,6 +80,7 @@ COOKIES_ENABLED = False
 HTTPERROR_ALLOWED_CODES = [302]
 # 重定向
 REDIRECT_ENABLED = False
+COMMANDS_MODULE = 'TextProcessorScrapy.commands'
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
 

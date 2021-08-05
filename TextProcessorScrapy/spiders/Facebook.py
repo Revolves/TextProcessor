@@ -1,5 +1,6 @@
 import scrapy
 import xlrd
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -8,8 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import hashlib
 from selenium.webdriver import ActionChains
-from utils.facebook_utiles import options
-from items import FacebookItem
+from ..utils.facebook_utiles import options
+from ..items import FacebookItem
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',

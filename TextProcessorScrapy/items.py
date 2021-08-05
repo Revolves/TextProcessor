@@ -63,6 +63,15 @@ class VideoItem(scrapy.Item):
     video = scrapy.Field()
 
 
+class DataItem(scrapy.Item):
+    keyword = scrapy.Field()  # 标签
+    source = scrapy.Field()  # 来源
+    title = scrapy.Field()  # 标题
+    url = scrapy.Field()  # 网址
+    date = scrapy.Field()  # 日期
+    content = scrapy.Field()  # 内容
+
+
 class ProxyPoolItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
