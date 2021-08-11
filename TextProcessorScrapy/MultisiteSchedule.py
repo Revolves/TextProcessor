@@ -9,11 +9,6 @@ import threading
 
 from scrapy.cmdline import execute
 
-# from spiders.Twitter import TwitterSpider
-# from spiders.NASA import nasaSpider
-
-# from spiders.Facebook import FacebookSpider
-# from spiders.Aiaa import AidaSpider
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -83,7 +78,7 @@ def proc_recv(pipe):
 
 
 if __name__ == '__main__':
-    info = ControlInfo() # 控制信息
+    info = ControlInfo()  # 控制信息
     execute(['scrapy', 'RunAll', '-a', 'keyword=LOL'])
     # info = ControlInfo()
     # Crawler_list = {'NASA': nasaSpider, 'Twitter': TwitterSpider, 'Facebook': FacebookSpider, 'Aiaa': AiaaSpider}

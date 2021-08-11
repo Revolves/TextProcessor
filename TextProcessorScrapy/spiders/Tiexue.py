@@ -53,14 +53,14 @@ class TiexueSpider(scrapy.Spider):
             '//div [@class="postContent border"]//div [@class="contents"]//div [@class="contRow_2"]//div [@class="bbsPosTit"]/h1/text()').extract_first()
         Website = response.request.url
 
-        Date = response.xpath('//div [@class="postContent border"]//div [@class="date"]/text()').extract_first().strip()
+        Date = response.xpath('//div [@class="postContent border"]//div [@class="date"]/text()').extract_first()
         # Date = "".join(Date).strip()
         Date = str(Date).replace(":", "").replace("/", "").replace(" ", "")
         # Date = int(Date)
 
         Content = response.xpath(
             '//div [@class="postContent border"]//div [@class="contents"]//div [@class="contRow_2"]//div [@id="postContent"]//text()').getall()
-        Content = "".join(Content).strip()
+        Content = "".join(Content)
 
         # Name = response.xpath('//div [@class="postContent border"]//div [@class="postStart"]//ul//li [@class= "userName"]//div [@class="user_01"]//strong//a/text()').get()
 
