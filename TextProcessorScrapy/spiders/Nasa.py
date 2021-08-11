@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class nasaSpider(scrapy.Spider):
-    name = "NASA"
+    name = "nasa"
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.HsNasaPipeline': 400},
     }

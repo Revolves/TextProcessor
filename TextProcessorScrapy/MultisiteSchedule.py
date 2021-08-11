@@ -6,22 +6,14 @@ IDE: PyCharm
 """
 import logging
 import threading
-import multiprocessing
-import time
-import scrapy
-from multiprocessing import Process
-from scrapy.crawler import CrawlerProcess, CrawlerRunner
-from threading import Thread
-from twisted.internet import reactor
-from scrapy.utils.project import get_project_settings
-from scrapy.utils.log import configure_logging
+
 from scrapy.cmdline import execute
 
 # from spiders.Twitter import TwitterSpider
 # from spiders.NASA import nasaSpider
 
 # from spiders.Facebook import FacebookSpider
-# from spiders.Aiaa import AiaaSpider
+# from spiders.Aiaa import AidaSpider
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -91,16 +83,7 @@ def proc_recv(pipe):
 
 
 if __name__ == '__main__':
-    # 父进程创建pipe，并传给各个子进程
-    # Nasa_pipe = multiprocessing.Pipe()
-    # p1 = multiprocessing.Process(target=proc_send, args=(Nasa_pipe[0], 'NASA', True))
-    # p2 = multiprocessing.Process(target=proc_recv, args=(Nasa_pipe[1],))
-    # # 启动子进程，写入
-    # p1.start()
-    # p2.start()
-    #
-    # p1.join()
-    # p2.terminate()
+    info = ControlInfo() # 控制信息
     execute(['scrapy', 'RunAll', '-a', 'keyword=LOL'])
     # info = ControlInfo()
     # Crawler_list = {'NASA': nasaSpider, 'Twitter': TwitterSpider, 'Facebook': FacebookSpider, 'Aiaa': AiaaSpider}

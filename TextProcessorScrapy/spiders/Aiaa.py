@@ -12,6 +12,7 @@ logging.basicConfig(level=logging.DEBUG,
                     )
 logger = logging.getLogger(__name__)
 
+
 class AiaaSpider(scrapy.Spider):
     name = "aiaa"
     custom_settings = {
@@ -34,7 +35,7 @@ class AiaaSpider(scrapy.Spider):
 
     def parse(self, response):
         logger.info("Aiaa Spider Starting!")
-        print(span1 + 'response.text:\n' + response.text + span2)
+        # print(span1 + 'response.text:\n' + response.text + span2)
         part_url = response.xpath("//h4[@class='search-item__title']")
         print(span1 + 'part_url:' + str(part_url) + span2)
         for url in part_url:
