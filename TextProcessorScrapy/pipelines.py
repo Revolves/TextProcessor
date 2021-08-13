@@ -20,7 +20,7 @@ from scrapy.utils.project import get_project_settings
 from TextProcessorScrapy.items import Tweet, User
 
 
-SavePath = '../result'
+SavePath = 'result'
 
 
 # server = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PARAMS['password'])
@@ -52,9 +52,9 @@ class HsNasaPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
-        create_table(self.cursor, self.tag)
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
+        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
@@ -143,10 +143,10 @@ class FacebookPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
-        # delete_table(self.cursor, self.tag)
-        create_table(self.cursor, self.tag)
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
+        # # delete_table(self.cursor, self.tag)
+        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         results = dataget(self.api, item['keyword'])
@@ -157,25 +157,25 @@ class FacebookPipeline:
             detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
                       "时间": result["date"], "内容": result["content"]}
             self.data.append(detail_)
-            self.count += 1
-            if self.count == 50:
-                json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-                for data in self.data:
-                    insert_to_db(self.cursor, self.tag, data)
-                self.count = 0
-                self.data = []
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
+            # self.count += 1
+            # if self.count == 50:
+            #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+            #     for data in self.data:
+            #         insert_to_db(self.cursor, self.tag, data)
+            #     self.count = 0
+            #     self.data = []
+        # json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
         self.file.close()
-        self.cursor.close()
-        self.connect.close()
+        # self.cursor.close()
+        # self.connect.close()
 
 
 class ViedoPipeline:
@@ -204,10 +204,10 @@ class AiaaPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
-        # delete_table(self.cursor, self.tag)
-        create_table(self.cursor, self.tag)
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
+        # # delete_table(self.cursor, self.tag)
+        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         results = dataget(self.api, item['keyword'])
@@ -218,25 +218,25 @@ class AiaaPipeline:
             detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
                       "时间": result["date"], "内容": result["content"]}
             self.data.append(detail_)
-            self.count += 1
-            if self.count == 50:
-                json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-                for data in self.data:
-                    insert_to_db(self.cursor, self.tag, data)
-                self.count = 0
-                self.data = []
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
+        #     self.count += 1
+        #     if self.count == 50:
+        #         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        #         for data in self.data:
+        #             insert_to_db(self.cursor, self.tag, data)
+        #         self.count = 0
+        #         self.data = []
+        # json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        for data in self.data:
-            insert_to_db(self.cursor, self.tag, data)
+        # for data in self.data:
+        #     insert_to_db(self.cursor, self.tag, data)
         self.file.close()
-        self.cursor.close()
-        self.connect.close()
+        # self.cursor.close()
+        # self.connect.close()
 
 class WikiPipeline:
     def __init__(self):
@@ -244,9 +244,9 @@ class WikiPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
-        create_table(self.cursor, self.tag)
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
+        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
@@ -282,9 +282,9 @@ class BaiduPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
-        create_table(self.cursor, self.tag)
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
+        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
@@ -320,9 +320,9 @@ class JanesPipeline:
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
-        self.connect = connect_db()
-        self.cursor = self.connect.cursor()
-        create_table(self.cursor, self.tag)
+        # self.connect = connect_db()
+        # self.cursor = self.connect.cursor()
+        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """

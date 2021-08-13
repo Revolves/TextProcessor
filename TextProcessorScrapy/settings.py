@@ -147,10 +147,10 @@ ITEM_PIPELINES = {
 # LOG_LEVEL = 'INFO'
 to_day = datetime.datetime.now()
 count = 0
-log_file_path = '../log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
+log_file_path = 'log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
 while os.path.isfile(log_file_path) is True:
     count += 1
-    log_file_path = '../log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
+    log_file_path = 'log/scrapy_{}_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day, count)
 LOG_FILE = log_file_path
 #
 # # 配置Scrapy-Redis

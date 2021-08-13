@@ -79,6 +79,6 @@ def proc_recv(pipe):
 
 if __name__ == '__main__':
     info = ControlInfo()  # 控制信息
-    execute(['scrapy', 'RunAll', '-a', 'keyword=LOL'])
+    execute(['scrapy', 'RunAll', '-a', 'keyword=gun'])
     # info = ControlInfo()
     # Crawler_list = {'NASA': nasaSpider, 'Twitter': TwitterSpider, 'Facebook': FacebookSpider, 'Aiaa': AiaaSpider}

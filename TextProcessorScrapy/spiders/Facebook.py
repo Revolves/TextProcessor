@@ -10,7 +10,7 @@ import time
 import hashlib
 from selenium.webdriver import ActionChains
 from ..utils.facebook_utiles import options
-from ..items import FacebookItem
+from ..items import DataItem
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -73,7 +73,7 @@ class FacebookSpider(scrapy.Spider):
             self.scroll_to_bottom()
             results = self.driver.find_elements_by_xpath('//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
             for result in results:
-                item = FacebookItem()
+                item = DataItem()
                 item['keyword'] = self.keyword
                 item['source'] = 'facebook'
                 item['url'] = result.find_element_by_xpath('/a').get_attribute("href")

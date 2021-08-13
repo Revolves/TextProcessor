@@ -15,49 +15,6 @@ ip_pattern = re.compile(r'^([0-9]{1,3}.){3}[0-9]{1,3}$', re.I)
 port_pattern = re.compile(r'^[0-9]{2,5}$', re.I)
 
 
-class HsNasaItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    keyword = scrapy.Field()  # 标签
-    source = scrapy.Field()  # 来源
-    title = scrapy.Field()  # 标题
-    url = scrapy.Field()  # 网址
-    date = scrapy.Field()  #
-    # description = scrapy.Field()
-    content = scrapy.Field()
-    pass
-
-
-class TwitterItem(scrapy.Item):
-    keyword = scrapy.Field()  # 标签
-    source = scrapy.Field()  # 来源
-    title = scrapy.Field()  # 标题
-    url = scrapy.Field()  # 网址
-    date = scrapy.Field()  #
-    # description = scrapy.Field()
-    content = scrapy.Field()
-
-
-class FacebookItem(scrapy.Item):
-    keyword = scrapy.Field()  # 标签
-    source = scrapy.Field()  # 来源
-    title = scrapy.Field()  # 标题
-    url = scrapy.Field()  # 网址
-    date = scrapy.Field()  #
-    # description = scrapy.Field()
-    content = scrapy.Field()
-
-
-class AiaaItem(scrapy.Item):
-    keyword = scrapy.Field()  # 标签
-    source = scrapy.Field()  # 来源
-    title = scrapy.Field()  # 标题
-    url = scrapy.Field()  # 网址
-    date = scrapy.Field()  #
-    # description = scrapy.Field()
-    content = scrapy.Field()
-
-
 class VideoItem(scrapy.Item):
     title = scrapy.Field()
     video = scrapy.Field()
@@ -70,6 +27,7 @@ class DataItem(scrapy.Item):
     url = scrapy.Field()  # 网址
     date = scrapy.Field()  # 日期
     content = scrapy.Field()  # 内容
+    attributes = scrapy.Field()  # 属性描述
 
 
 class ProxyPoolItem(scrapy.Item):

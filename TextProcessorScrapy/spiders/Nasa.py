@@ -2,8 +2,8 @@ import logging
 
 import scrapy
 
-from ..items import HsNasaItem
-from ..utils.utils import parse_pdf
+from ..items import DataItem
+# from ..utils.utils import parse_pdf
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -57,7 +57,7 @@ class nasaSpider(scrapy.Spider):
             """
             提取字段
             """
-            item = HsNasaItem()
+            item = DataItem()
             item["keyword"] = self.keywords
             item["source"] = "NASA"
             item["title"] = result.xpath('./h4/a/text()').extract_first().replace("'", "''")

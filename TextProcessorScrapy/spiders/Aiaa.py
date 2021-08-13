@@ -1,7 +1,6 @@
 import logging
 from datetime import datetime
-from ..items import AiaaItem
-
+from ..items import DataItem
 import scrapy
 
 span1 = '-' * 100 + '\n'
@@ -66,7 +65,7 @@ class AiaaSpider(scrapy.Spider):
             print("正文是图片")
             content = ""
         print("发布时间为：" + str(publish_time))
-        item = AiaaItem()
+        item = DataItem()
         item['keyword'] = self.keyword
         item['source'] = "AIAA"
         item['title'] = str(title)
