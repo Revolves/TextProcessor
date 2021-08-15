@@ -6,7 +6,7 @@ import scrapy
 from ..items import BaiduWikiItem
 
 class WikiSpider(scrapy.Spider):
-    name = 'Wiki'
+    name = 'wiki'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.WikiPipeline': 400},
     }
@@ -19,6 +19,7 @@ class WikiSpider(scrapy.Spider):
 
         url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
         self.start_urls.append(url)
+        self.count = 0
 
     # 进入一级解析，starturl解析
     def parse(self, response):
@@ -53,8 +54,10 @@ class WikiSpider(scrapy.Spider):
 
         # 进入二级解析，具体网址解析
         for href in hreflist:
+            self.count += 1
             yield scrapy.Request(url=href, callback=self.new_parse)
-
+            if self.count > 50:
+                return
         # 迭代
         yield scrapy.Request(url=next_page_url, callback=self.parse)
 

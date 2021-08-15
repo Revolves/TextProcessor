@@ -16,6 +16,7 @@ class AiaaSpider(scrapy.Spider):
     name = "aiaa"
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.AiaaPipeline': 500},
+        'REDIRECT_ENABLED': False
     }
 
     def __init__(self, **kwargs):

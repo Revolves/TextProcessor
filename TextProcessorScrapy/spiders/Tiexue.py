@@ -19,6 +19,7 @@ class TiexueSpider(scrapy.Spider):
             self.keyword = kwargs['keyword']
         url = "https://www.baidu.com/baidu?word=" + self.keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
         self.start_urls.append(url)
+        self.count = 0
 
     def parse(self, response):
         hreflist = []
@@ -27,7 +28,7 @@ class TiexueSpider(scrapy.Spider):
         # hreflist.append(web_node_list[0])
 
         # 获取取下一页url
-        nextpagehref = response.xpath('//div [@class="page-inner"]/a [last()]/@href').extract()
+        nextpagehref = response.xpath('//div [@class="page-inner"]/a[last()]/@href').extract()
         temp = nextpagehref[0]
         nextpageurl = "https://www.baidu.com" + temp
 
@@ -45,7 +46,9 @@ class TiexueSpider(scrapy.Spider):
             searchword = searchkeyword[0]
 
             yield scrapy.Request(url=href, callback=self.new_parse)
-
+        self.count += 1
+        if self.count > 5:
+            return
         #迭代下一页
         yield scrapy.Request(url=nextpageurl, callback=self.parse)
 

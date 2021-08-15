@@ -37,19 +37,6 @@ class FacebookSpider(scrapy.Spider):
 
     def parse(self, response):
         logger.info("Facebook Spider starting!")
-        # results = response.xpath(
-        #     '//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
-        # for result in results:
-        #     item = FacebookItem()
-        #     item['keyword'] = self.keyword
-        #     item['source'] = 'facebook'
-        #     item['url'] = result.xpath('/a/text()').extract_first()
-        #     item['content'] = result.xpath(
-        #         '//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]/text()').extract_first()
-        #     item['date'] = result.xpath(
-        #         '//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]/span').extract_first()
-        #     item['title'] = item['content'][0:30]
-        #     yield item
         try:
             try:
                 self.driver.get('https://www.facebook.com/')

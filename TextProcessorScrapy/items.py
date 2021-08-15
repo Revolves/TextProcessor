@@ -27,7 +27,6 @@ class DataItem(scrapy.Item):
     url = scrapy.Field()  # 网址
     date = scrapy.Field()  # 日期
     content = scrapy.Field()  # 内容
-    attributes = scrapy.Field()  # 属性描述
 
 
 class BaiduWikiItem(scrapy.Item):

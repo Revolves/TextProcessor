@@ -62,9 +62,9 @@ class HsNasaPipeline:
         """
         # insert_to_db(self.cursor, self.tag, item)
         detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"], "属性": item["attributes"]}
+                  "时间": item["date"], "内容": item["content"]}
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
-                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
+                   "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
         # self.count += 1
         # for data in self.data:
@@ -256,7 +256,7 @@ class WikiPipeline:
         detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
                   "时间": item["date"], "内容": item["content"]}
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
-                   "date": item["date"], "content": item["content"]}
+                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
         # self.count += 1
         # for data in self.data:
@@ -294,7 +294,7 @@ class BaiduPipeline:
         detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
                   "时间": item["date"], "内容": item["content"]}
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
-                   "date": item["date"], "content": item["content"]}
+                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
         # self.count += 1
         # for data in self.data:

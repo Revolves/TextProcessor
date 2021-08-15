@@ -1,3 +1,4 @@
+import logging
 import math
 import re
 import time
@@ -6,6 +7,11 @@ from ..items import DataItem
 import scrapy
 from selenium import webdriver
 
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
 
 class JanesSpider(scrapy.Spider):
     task_id = 0
@@ -22,33 +28,38 @@ class JanesSpider(scrapy.Spider):
         url = 'https://www.janes.com/search-results?indexCatalogue=all---production&searchQuery=' + self.keyword + \
               '&wordsMode=AllWords&orderBy=Newest'
         self.start_urls.append(url)
+        self.count = 0
 
     def parse(self, response):
-        time.sleep(5)
-        news_num = response.xpath("//div[@class = 'search-results-wrp']/@data-search-count").get()
-        # news_num = response.xpath("//*[@id='collapseSearch']/small").get()
-        print("多少页？" + str(news_num))
-        try:
-            news_num = int(re.findall("\d+", str(news_num))[0])
-            # 可以查询多少页,向上取整
-            news_page = math.ceil(news_num / 20)
-        except:
-            print("未找到数据")
+        news_urls = []
+        news_list = response.xpath("//div[@class = 'sf-search-results media-list extra-small-list']")
+        # 如果没有找到信息
+        item = DataItem()
+        if len(news_list) == 0:
+            item['title'] = ''
+            item['date'] = '0'
+            item['keyword'] = self.keyword
+            item['url'] = ''
+            item['poster'] = ''
+            item['content'] = ''
+            yield item
             return
-        yield scrapy.Request(url=response.url, callback=self.parse_more_page, dont_filter=True)
-        # 因为每个关键词只爬一条，所以不需要
-        for i in range(2, news_page):
-            url = "https://www.janes.com/search-results/" + str(i) + \
-                  "?indexCatalogue=all---production&searchQuery=target&wordsMode=AllWords"
-            yield scrapy.Request(url=url, callback=self.parse_more_page, dont_filter=True)
+        for news in news_list:
+            new = news.xpath("./div")
+            for n in new:
+                href = n.xpath("./a/@href").get()
+                self.count += 1
+                if self.count > 20:
+                    break
+                news_urls.append(href)
+        for news_url in news_urls:
+            yield scrapy.Request(news_url, callback=self.parse_dir_contents)
 
     def parse_more_page(self, response):
         news_urls = []
         news_list = response.xpath("//div[@class = 'sf-search-results media-list extra-small-list']")
-
         # 如果没有找到信息
         if len(news_list) == 0:
-            print("无此信息")
             item = DataItem()
             item['title'] = ''
             item['date'] = '0'
@@ -62,10 +73,13 @@ class JanesSpider(scrapy.Spider):
             new = news.xpath("./div")
             for n in new:
                 href = n.xpath("./a/@href").get()
-                news_urls.append(href)
-                # print(href)
-        print("查找到了多少消息：")
-        print(len(news_urls))
+                self.count += 1
+                print(self.count)
+                if self.count > 20:
+                    break
+            if self.count > 20:
+                break
+            news_urls.append(href)
         for news_url in news_urls:
             yield scrapy.Request(news_url, callback=self.parse_dir_contents)
             # break
@@ -73,8 +87,6 @@ class JanesSpider(scrapy.Spider):
     def parse_dir_contents(self, response):
         # 爬取标题
         news_title = response.xpath("//h1/text()").get()
-        print("爬取到的标题为：")
-        print(news_title)
         # 爬取时间
         try:
             news_time = response.xpath("//p[@itemprop = 'dateModified']/span/text()").get()
@@ -83,7 +95,6 @@ class JanesSpider(scrapy.Spider):
             publish_time = str(datetime.strptime(news_time, gmt_format))[0:10].replace(' ', '') \
                 .replace(':', '').replace('-', '')
         except:
-            print("无时间")
             publish_time = '0'
 
         # 获取昨天时间
@@ -114,21 +125,18 @@ class JanesSpider(scrapy.Spider):
         try:
             news_author = response.xpath("//h1/../p[2]/text()").extract()[1]
         except:
-            print("无作者")
             news_author = ''
-        news_author = str(news_author).replace("\n", '')
-        news_author = str(news_author).replace(" ", '')
-        print('作者为：')
-        print(news_author)
+        news_author = str(news_author).replace("\n", '').replace(" ",'')
 
         item = DataItem()
-        item['source'] = 'baidu'
+        item['source'] = 'janes'
         item['title'] = str(news_title)
         item['date'] = str(publish_time)
         item['keyword'] = self.keyword
         item['url'] = response.url
         item['content'] = str(news_text)
         yield item
+
 
     @staticmethod
     def get_driver():

@@ -65,8 +65,7 @@ def dataget(api, keyword):
         item['source'] = 'Twitter'
         item['title'] = get_title(item['content'])
         result.append(item)
-        print(item)
-        if count > 100:
+        if count > 20:
             break
     return result
 
