@@ -9,6 +9,9 @@ import json
 import logging
 import os
 
+import pymysql
+import pyodbc
+
 to_day = datetime.datetime.now()
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -24,6 +27,7 @@ class DataCleaning:
         self.EnableData = 0
         self.UselessData = 0
         self.FilePath = file_path
+        self.CommitData = []
 
     def get_dirs(self, main_dir):
         """
@@ -67,12 +71,50 @@ class DataCleaning:
                     for _data in Data:
                         if len(_data['content'].replace(' ', '').replace("\n", '')) <= 20 or _data['content'] == '':
                             self.UselessData += 1
-        useful_pre = (self.TotalData - self.UselessData) / self.TotalData
-        logger.info('数据可用率为：{}'.format(useful_pre))
+                        else:
+                            self.CommitData.append(_data)
+                if len(self.CommitData) > 500:
+                    self.commit_data(self.CommitData, self.connect_db())
+                    self.CommitData = []
+        self.commit_data(self.CommitData, self.connect_db())
+        Precision = (self.TotalData - self.UselessData) / self.TotalData
+        logger.info('Precision：{}'.format(Precision))
+        print('查准率：{}'.format(Precision))
         return (self.TotalData - self.UselessData) / self.TotalData
 
     def connect_db(self):
-        pass
+        # return pyodbc.connect('DSN=Inceptor Server') # HS远程数据库
+        connect = pymysql.connect(host='127.0.0.1', user="root", database="HSDB", password='root', autocommit=True,
+                                  port=3306)
+        return connect
+
+    def commit_data(self, data, connect):
+        cursor = connect.cursor()
+        _sql = '''
+        INSERT into text_crawl (keyword, source, title, url, date, content, attributes) VALUES
+        (%s, %s, %s, %s, %s, %s, %s)
+                '''
+        for _data in data:
+            if 'attributes' in _data:
+                _params = (_data['keyword'],
+                           _data['source'],
+                           _data['title'],
+                           _data['url'],
+                           _data['date'],
+                           _data['content'],
+                           str(_data['attributes']))
+            else:
+                _params = (_data['keyword'],
+                           _data['source'],
+                           _data['title'],
+                           _data['url'],
+                           _data['date'],
+                           _data['content'],
+                           '')
+            cursor.execute(_sql, _params)
+        connect.commit()
+        logger.info('this time commit {} data'.format(len(data)))
+        print('this time commit {} data'.format(len(data)))
 
 
 if __name__ == '__main__':

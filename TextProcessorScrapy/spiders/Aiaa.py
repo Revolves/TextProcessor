@@ -3,8 +3,6 @@ from datetime import datetime
 from ..items import DataItem
 import scrapy
 
-span1 = '-' * 100 + '\n'
-span2 = '\n' + '-' * 100
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
                     datefmt='%Y-%m-%d %T'
@@ -22,16 +20,15 @@ class AiaaSpider(scrapy.Spider):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ["www.aiaa.org"]
-        url_head = 'https://arc.aiaa.org/action/doSearch?AllField='
-        url_end = "&sortBy=Earliest&startPage=0"
-        self.keyword = 't'
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
-        self.start_urls.append(url_head + self.keyword + url_end)
-        print(span1 + self.start_urls[0] + span2)
+        self.start_urls.append("https://arc.aiaa.org/action/doSearch?AllField=target")
 
     def start_requests(self):
-        yield scrapy.Request(self.start_urls[0], callback=self.parse, dont_filter=True)
+        url_head = "https://arc.aiaa.org/action/doSearch?AllField="
+        url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
+        url = (url_head + self.keyword + url_end)
+        yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
         logger.info("Aiaa Spider Starting!")

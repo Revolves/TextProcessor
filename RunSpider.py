@@ -6,4 +6,4 @@ IDE: PyCharm
 """
 from scrapy.cmdline import execute
 
-execute(['scrapy', 'crawl', 'wiki', '-a', 'keyword=gun'])
+execute(['scrapy', 'crawl', 'aiaa', '-a', 'keyword=target'])
