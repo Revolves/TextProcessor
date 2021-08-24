@@ -23,45 +23,46 @@ class FacebookSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.FacebookPipeline': 300},
     }
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ['facebook.com']
         head_url = "https://www.facebook.com/search/posts/?q="
         self.driver = webdriver.Chrome(options= options)
         self.driver.implicitly_wait(10)
-        self.keyword = 't'
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
-        self.start_urls.append(head_url + self.keyword)
-        #
+        if args:
+            self.keywords = args
+        for keyword in self.keywords:
+            self.start_urls.append(head_url + keyword)
+        self.count = -1
+         # 登录账户
+        try:
+            self.driver.get('https://www.facebook.com/')
+        except:
+            self.driver.find_element_by_id('reload-button').click()
+        # 输入账户密码
+        self.driver.find_element_by_id('email').clear()
+        self.driver.find_element_by_id('email').send_keys('liuleyuan0114@qq.com')
+        self.driver.find_element_by_id('pass').clear()
+        self.driver.find_element_by_id('pass').send_keys('zxcvbnm1234')
+
+        # 模拟点击登录按钮，两种不同的点击方法
+        try:
+            self.driver.find_element_by_xpath("//button[contains(@id,'u_0_d_')]").send_keys(Keys.ENTER)
+        except:
+            self.driver.find_element_by_xpath('//a[@href="https://www.facebook.com/?ref=logo"]').send_keys(
+                Keys.ENTER)
+        time.sleep(5)
 
     def parse(self, response):
         logger.info("Facebook Spider starting!")
+        self.count += 1
         try:
-            try:
-                self.driver.get('https://www.facebook.com/')
-            except:
-                self.driver.find_element_by_id('reload-button').click()
-                print('重新刷新页面~')
-            # 输入账户密码
-            self.driver.find_element_by_id('email').clear()
-            self.driver.find_element_by_id('email').send_keys('liuleyuan0114@qq.com')
-            self.driver.find_element_by_id('pass').clear()
-            self.driver.find_element_by_id('pass').send_keys('zxcvbnm1234')
-
-            # 模拟点击登录按钮，两种不同的点击方法
-            try:
-                self.driver.find_element_by_xpath("//button[contains(@id,'u_0_d_')]").send_keys(Keys.ENTER)
-            except:
-                self.driver.find_element_by_xpath('//a[@href="https://www.facebook.com/?ref=logo"]').send_keys(
-                    Keys.ENTER)
-            time.sleep(5)
             self.driver.get(response.url)
             self.scroll_to_bottom()
             results = self.driver.find_elements_by_xpath('//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
             for result in results:
                 item = DataItem()
-                item['keyword'] = self.keyword
+                item['keyword'] = self.keywords[self.count]
                 item['source'] = 'facebook'
                 item['url'] = result.find_element_by_xpath('/a').get_attribute("href")
                 item['content'] = result.find_element_by_xpath('//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]').get_attribute("textContent")
@@ -69,7 +70,7 @@ class FacebookSpider(scrapy.Spider):
                 item['title'] = item['content'][0:30]
                 yield item
         except:
-            print('url parse error!')
+            pass
 
 
     def scroll_to_bottom(self):

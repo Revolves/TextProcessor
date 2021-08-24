@@ -57,6 +57,10 @@ class DataCleaning:
         return list_json  # 得到所有的jpg文件和json文件的列表(包含路径)
 
     def data_clean(self):
+        """
+        数据处理并存入数据库
+        :return:
+        """
         DataFile = self.get_file(self.get_dirs(self.FilePath))
         Useful = True  # 数据可用性
         for File in DataFile:
@@ -83,15 +87,15 @@ class DataCleaning:
         return (self.TotalData - self.UselessData) / self.TotalData
 
     def connect_db(self):
-        # return pyodbc.connect('DSN=Inceptor Server') # HS远程数据库
-        connect = pymysql.connect(host='127.0.0.1', user="root", database="HSDB", password='root', autocommit=True,
-                                  port=3306)
-        return connect
+        return pyodbc.connect('DSN=Inceptor Server') # HS远程数据库
+        # connect = pymysql.connect(host='127.0.0.1', user="root", database="HSDB", password='root', autocommit=True,
+        #                           port=3306)
+        # return connect
 
     def commit_data(self, data, connect):
         cursor = connect.cursor()
         _sql = '''
-        INSERT into text_crawl (keyword, source, title, url, date, content, attributes) VALUES
+        INSERT INTO text_crawl(keyword, source, title, url, date, content, attributes) VALUES
         (%s, %s, %s, %s, %s, %s, %s)
                 '''
         for _data in data:
@@ -113,6 +117,8 @@ class DataCleaning:
                            '')
             cursor.execute(_sql, _params)
         connect.commit()
+        cursor.close()
+        connect.close()
         logger.info('this time commit {} data'.format(len(data)))
         print('this time commit {} data'.format(len(data)))
 

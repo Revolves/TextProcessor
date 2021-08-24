@@ -13,6 +13,7 @@ logging.basicConfig(level=logging.DEBUG,
                     )
 logger = logging.getLogger(__name__)
 
+
 class JanesSpider(scrapy.Spider):
     task_id = 0
     name = 'janes'
@@ -23,14 +24,18 @@ class JanesSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(JanesSpider, self).__init__(*args, **kwargs)
         self.allowed_domains = ['janes.com']
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
-        url = 'https://www.janes.com/search-results?indexCatalogue=all---production&searchQuery=' + self.keyword + \
+        if args:
+            self.keywords = args
+        for keyword in self.keywords:
+            url = 'https://www.janes.com/search-results?indexCatalogue=all---production&searchQuery=' + keyword + \
               '&wordsMode=AllWords&orderBy=Newest'
-        self.start_urls.append(url)
-        self.count = 0
+            self.start_urls.append(url)
+        self.num = 0
+        self.count = -1
 
     def parse(self, response):
+        logger.info("Jane's Spider Starting!")
+        self.count += 1
         news_urls = []
         news_list = response.xpath("//div[@class = 'sf-search-results media-list extra-small-list']")
         # 如果没有找到信息
@@ -38,7 +43,7 @@ class JanesSpider(scrapy.Spider):
         if len(news_list) == 0:
             item['title'] = ''
             item['date'] = '0'
-            item['keyword'] = self.keyword
+            item['keyword'] = self.keywords[self.count]
             item['url'] = ''
             item['poster'] = ''
             item['content'] = ''
@@ -48,8 +53,8 @@ class JanesSpider(scrapy.Spider):
             new = news.xpath("./div")
             for n in new:
                 href = n.xpath("./a/@href").get()
-                self.count += 1
-                if self.count > 20:
+                self.num += 1
+                if self.num > 20:
                     break
                 news_urls.append(href)
         for news_url in news_urls:
@@ -63,7 +68,7 @@ class JanesSpider(scrapy.Spider):
             item = DataItem()
             item['title'] = ''
             item['date'] = '0'
-            item['keyword'] = self.keyword
+            item['keyword'] = self.keywords[self.count]
             item['url'] = ''
             item['poster'] = ''
             item['content'] = ''
@@ -73,11 +78,10 @@ class JanesSpider(scrapy.Spider):
             new = news.xpath("./div")
             for n in new:
                 href = n.xpath("./a/@href").get()
-                self.count += 1
-                print(self.count)
-                if self.count > 20:
+                self.num += 1
+                if self.num > 20:
                     break
-            if self.count > 20:
+            if self.num > 20:
                 break
             news_urls.append(href)
         for news_url in news_urls:
@@ -126,17 +130,16 @@ class JanesSpider(scrapy.Spider):
             news_author = response.xpath("//h1/../p[2]/text()").extract()[1]
         except:
             news_author = ''
-        news_author = str(news_author).replace("\n", '').replace(" ",'')
+        news_author = str(news_author).replace("\n", '').replace(" ", '')
 
         item = DataItem()
         item['source'] = 'janes'
         item['title'] = str(news_title)
         item['date'] = str(publish_time)
-        item['keyword'] = self.keyword
+        item['keyword'] = self.keywords[self.count]
         item['url'] = response.url
         item['content'] = str(news_text)
         yield item
-
 
     @staticmethod
     def get_driver():

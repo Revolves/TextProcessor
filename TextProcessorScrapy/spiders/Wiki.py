@@ -10,20 +10,23 @@ class WikiSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.WikiPipeline': 400},
     }
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.allowed_domains = ['en.wikipedia.org']
     # 获取每个关键词的wiki搜索初始网址（第一页）
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
-
-        url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
-        self.start_urls.append(url)
+        if args:
+            self.keywords = args
+        for keyword in self.keywords:
+            url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + keyword + "&ns0=1"
+            self.start_urls.append(url)
         self.count = 0
+        self.number = -1
 
     # 进入一级解析，starturl解析
     def parse(self, response):
         hreflist = []
+        self.number += 1
+        self.keyword = self.keywords[self.number]
         # 只爬一条
         # web_node_list = response.xpath('//div[@id="content_left"]//div [@class="result c-container new-pmd"][1]//h3/a/@href').extract()
         # hreflist.append(web_node_list[0])
@@ -37,6 +40,7 @@ class WikiSpider(scrapy.Spider):
 
         # 获取下一页url
         next_page_list = response.xpath('//p [@class="mw-search-pager-bottom"]/a')
+        next_page_url = ''
         for next_link in next_page_list:
             link_href_text = next_link.xpath('./text()').extract_first()
 
@@ -59,7 +63,8 @@ class WikiSpider(scrapy.Spider):
             if self.count > 50:
                 return
         # 迭代
-        yield scrapy.Request(url=next_page_url, callback=self.parse)
+        if next_page_url:
+            yield scrapy.Request(url=next_page_url, callback=self.parse)
 
     def new_parse(self, response):
         item = BaiduWikiItem()
@@ -69,7 +74,10 @@ class WikiSpider(scrapy.Spider):
         UTCDate = response.xpath('//li [@id="footer-info-lastmod"]/text()').extract_first().strip()
         strlist = UTCDate.split(" ")
         monthlist = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October","November", "December"]
+        # monthlist = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月",
+        #              "11月", "12月"]
         for i in range(len(monthlist)):
+            # break
             if strlist[7] == monthlist[i]:
                 month = i + 1
                 if month < 10:
@@ -79,12 +87,11 @@ class WikiSpider(scrapy.Spider):
                 if int(strlist[6]) < 10:
                     strlist[6] = "0" + strlist[6]
                 date = strlist[8] + month + strlist[6] + strlist[10]
-
                 Date = date.replace(",", "").replace(":", "")
                 break
 
         # 该时间是UTC时间
-        Date = int(Date)
+        Date =  int(Date)
 
         # 内容出现{/displaystyle }字样，大多是数学公式或是其他的图片（数字或字母）的alt属性值
         Content = response.xpath('//div [@id="mw-content-text"]//p//text()').getall()

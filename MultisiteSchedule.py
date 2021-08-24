@@ -79,6 +79,12 @@ def proc_recv(pipe):
 
 if __name__ == '__main__':
     info = ControlInfo()  # 控制信息
-    execute(['scrapy', 'RunAll', '-a', 'keyword=gun'])
+    f = open('file/keys.txt', 'r')
+    keyword = []
+    _f = f.readline()
+    while _f:
+        keyword.append(_f)
+        _f = f.readline()
+    execute(['scrapy', 'RunAll', '-a', '{}'.format(keyword)])
     # info = ControlInfo()
     # Crawler_list = {'NASA': nasaSpider, 'Twitter': TwitterSpider, 'Facebook': FacebookSpider, 'Aiaa': AiaaSpider}

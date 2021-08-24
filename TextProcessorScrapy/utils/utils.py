@@ -25,21 +25,17 @@ logger = logging.getLogger(__name__)
 
 
 class DbConnect:
-    def __init__(self, dsn):
+    def __init__(self):
         connect = pyodbc.connect('DSN=Inceptor Server')
         cursor = connect.cursor()
         sql = """
-                    CREATE TABLE hs.text_crawl (
-                        keyword STRING,
-                        source STRING,
-                        title STRING,
-                        url STRING,
-                        date STRING,
-                        content STRING
-                    );
-                    """
-        cursor.execute(sql)
+        #             ALTER TABLE hs.text_crawl ADD COLUMNS(
+        #                 attributes STRING
+        #             );
+        #             """
+        # cursor.execute(sql)
         print(cursor.execute("show tables in hs").fetchall())
+        print(cursor.execute("SHOW COLUMNS in text_crawl in hs").fetchall())
 
 
 def CreatePath(path):

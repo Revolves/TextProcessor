@@ -17,30 +17,24 @@ class AiaaSpider(scrapy.Spider):
         'REDIRECT_ENABLED': False
     }
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ["www.aiaa.org"]
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
-        self.start_urls.append("https://arc.aiaa.org/action/doSearch?AllField=target")
-
-    def start_requests(self):
+        if args:
+            self.keywords = args
         url_head = "https://arc.aiaa.org/action/doSearch?AllField="
         url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
-        url = (url_head + self.keyword + url_end)
-        yield scrapy.Request(url, callback=self.parse, dont_filter=True)
+        for keyword in self.keywords:
+            self.start_urls.append((url_head + keyword + url_end))
+        self.count = -1
 
     def parse(self, response):
         logger.info("Aiaa Spider Starting!")
-        # print(span1 + 'response.text:\n' + response.text + span2)
+        self.count += 1
         part_url = response.xpath("//h4[@class='search-item__title']")
-        print(span1 + 'part_url:' + str(part_url) + span2)
         for url in part_url:
             url = "https://arc.aiaa.org" + str(url.xpath("./a/@href").get())
-            print("报告地址" + url)
             yield scrapy.Request(url, callback=self.parse_crawl, dont_filter=True)
-            # 每个关键词只读一条
-            # break
 
     def parse_crawl(self, response):
         title = response.xpath("//h1[@class='citation__title']/text()").get()
@@ -53,18 +47,15 @@ class AiaaSpider(scrapy.Spider):
         # content = response.xpath("//div[@class='hlFld-Abstract']//text()").extract()
         try:
             content1 = response.xpath("//div[@class='article__body ']//text()").extract()
-            print(content1)
             content = ""
             for con in content1:
                 if str(con).find('window.figureViewer=') >= 0:
                     break
                 content = content + con
         except:
-            print("正文是图片")
             content = ""
-        print("发布时间为：" + str(publish_time))
         item = DataItem()
-        item['keyword'] = self.keyword
+        item['keyword'] = self.keywords[self.count]
         item['source'] = "AIAA"
         item['title'] = str(title)
         item['date'] = str(publish_time)

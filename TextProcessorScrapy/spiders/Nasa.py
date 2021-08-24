@@ -18,23 +18,25 @@ class nasaSpider(scrapy.Spider):
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.HsNasaPipeline': 400},
     }
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
         self.index_url = "https://nasasearch.nasa.gov"
         self.allowed_domains = ['nasa.gov']
         url_header = 'https://nasasearch.nasa.gov/search?query='
         url_late = '&affiliate=nasa&utf8=%E2%9C%93'
-        self.keywords = 'target'
-        if 'keyword' in kwargs:
-            self.keywords = kwargs['keyword']
-        # for keyword in self.keywords:
-        self.start_urls.append(url_header + self.keywords + url_late)
+        if args:
+            self.keywords = args
+        for keyword in self.keywords:
+            self.start_urls.append(url_header + keyword + url_late)
+        self.count = -1
 
     def parse_detail(self, response):
-        # content = response.xpath('string(//p|//ol)').extract_first().replace('\r', '').replace('\t', '').replace('\n',
-        #                                                                                                     ' ').replace(
-        #     '\xa0', ' ')
+        """
+        获取正文内容
+        :param response:
+        :return:
+        """
         content_list = response.xpath('//p/text()|//ol/text()').extract()
         content = ''.join(content_list).replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0',
                                                                                                        ' ').replace("'",
@@ -44,6 +46,11 @@ class nasaSpider(scrapy.Spider):
         yield item
 
     def parse_detail_pdf(self, response):
+        """
+        解析pdf页面
+        :param response:
+        :return:
+        """
         content = parse_pdf(response.url)
         content.replace('\n', ' ').replace("'", "")
         item = response.meta['item']
@@ -51,7 +58,8 @@ class nasaSpider(scrapy.Spider):
         yield item
 
     def parse(self, response):
-        logger.info('NASA Spider starting!')
+        logger.info('NASA Spider Starting!')
+        self.count += 1
         results = response.xpath('//div[@class="content-block-item result"]')
         for result in results:
             """

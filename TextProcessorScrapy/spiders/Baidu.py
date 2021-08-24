@@ -16,18 +16,37 @@ class BaidubaikeSpider(scrapy.Spider):
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.BaiduPipeline': 400},
     }
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.allowed_domains = ['www.baike.baidu.com']
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
-        self.start_urls.append("https://baike.baidu.com/item/" + self.keyword)
+        # if 'keywords' in kwargs:
+        #     self.keywords = kwargs['keywords']
+        if args:
+            self.keywords = args
+        for keyword in self.keywords:
+            self.start_urls.append("https://baike.baidu.com/item/" + keyword)
+        self.number = -1
 
-    def start_requests(self):
-        yield scrapy.Request(self.start_urls[0], callback=self.parse,  meta={'url': self.start_urls[0]}, dont_filter=True)
+        options = webdriver.ChromeOptions()
+        prefs = {
+            'profile.default_content_setting_values':
+                {'notifications': 2,
+                 'images': 2}  # 禁止谷歌浏览器弹出通知消息
+        }
+        options.add_experimental_option('prefs', prefs)
+        # 设置chrome浏览器无界面模式
+        options.add_argument('--headless')
+        # options.binary_location = r'G:\Anaconda3\chromedriver.exe'
+
+        self.browser = webdriver.Chrome(options=options)
+        # browser.maximize_window()  # 浏览器窗口最大化
+        self.browser.implicitly_wait(10)  # 隐形等待10秒
 
     '''回调函数，子类必须重写这个方法，否侧抛出异常'''
+
     def parse(self, response):
+        self.number += 1
+        self.keyword = self.keywords[self.number]
         name = response.xpath("//dl/dd/h1/text()").get()
         print(name)
         item = BaiduWikiItem()
@@ -66,36 +85,23 @@ class BaidubaikeSpider(scrapy.Spider):
         # 加载所有图片
         cnt = 0
         # 设置浏览器
-        options = webdriver.ChromeOptions()
-        prefs = {
-            'profile.default_content_setting_values':
-                {'notifications': 2,
-                 'images': 2}  # 禁止谷歌浏览器弹出通知消息
-        }
-        options.add_experimental_option('prefs', prefs)
-        # 设置chrome浏览器无界面模式
-        options.add_argument('--headless')
-        # options.binary_location = r'G:\Anaconda3\chromedriver.exe'
 
-        browser = webdriver.Chrome(options=options)
-        # browser.maximize_window()  # 浏览器窗口最大化
-        browser.implicitly_wait(10)  # 隐形等待10秒
-        browser.get(response.meta['url'])
+        self.browser.get(response.url)
 
         # 下拉滑动条至底部，加载出所有帖子信息
         t = True
         start = time.time()
         end1 = time.time()
         while t and (end1 - start) < 5:
-            check_height = browser.execute_script("return document.body.scrollHeight;")
+            check_height = self.browser.execute_script("return document.body.scrollHeight;")
             for r in range(4):
                 time.sleep(2)
-                browser.execute_script("window.scrollBy(0,1500)")
-            check_height1 = browser.execute_script("return document.body.scrollHeight;")
+                self.browser.execute_script("window.scrollBy(0,1500)")
+            check_height1 = self.browser.execute_script("return document.body.scrollHeight;")
             end1 = time.time()
             if check_height == check_height1:
                 t = False
-        image_urls = browser.find_elements_by_xpath("//img[contains(@alt, '" + str(self.keyword) + "')]")
+        image_urls = self.browser.find_elements_by_xpath("//img[contains(@alt, '" + str(self.keyword) + "')]")
         print(image_urls)
         img_url = dict()
         # 得到图片url
@@ -115,4 +121,3 @@ class BaidubaikeSpider(scrapy.Spider):
         item['url'] = response.url
         item['date'] = ''
         yield item
-

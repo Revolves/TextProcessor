@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
+import logging
 import re
 import time
 import scrapy
 
 from ..items import DataItem
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+                    datefmt='%Y-%m-%d %T'
+                    )
+logger = logging.getLogger(__name__)
 
 
 class TiexueSpider(scrapy.Spider):
@@ -12,16 +19,20 @@ class TiexueSpider(scrapy.Spider):
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.TiexuePipeline': 400},
     }
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.allowed_domains = ['bbs.tiexue.net', 'www.baidu.com']
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
-        url = "https://www.baidu.com/baidu?word=" + self.keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
-        self.start_urls.append(url)
-        self.count = 0
+        if args:
+            self.keywords = args
+        for keyword in self.keywords:
+            url = "https://www.baidu.com/baidu?word=" + keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
+            self.start_urls.append(url)
+        self.num = 0
+        self.count = -1
 
     def parse(self, response):
+        logger.info("Tiexue Spider Starting!")
+        self.count += 1
         hreflist = []
         # 只爬一条
         # web_node_list = response.xpath('//div[@id="content_left"]//div [@class="result c-container new-pmd"][1]//h3/a/@href').extract()
@@ -46,10 +57,10 @@ class TiexueSpider(scrapy.Spider):
             searchword = searchkeyword[0]
 
             yield scrapy.Request(url=href, callback=self.new_parse)
-        self.count += 1
-        if self.count > 5:
+        self.num += 1
+        if self.num > 5:
             return
-        #迭代下一页
+        # 迭代下一页
         yield scrapy.Request(url=nextpageurl, callback=self.parse)
 
     def new_parse(self, response):
@@ -66,11 +77,11 @@ class TiexueSpider(scrapy.Spider):
 
         Content = response.xpath(
             '//div [@class="postContent border"]//div [@class="contents"]//div [@class="contRow_2"]//div [@id="postContent"]//text()').getall()
-        Content = "".join(Content).replace("\"","\'").replace("\\","/").strip()
+        Content = "".join(Content).replace("\"", "\'").replace("\\", "/").strip()
 
         # Name = response.xpath('//div [@class="postContent border"]//div [@class="postStart"]//ul//li [@class= "userName"]//div [@class="user_01"]//strong//a/text()').get()
 
-        Keyword = self.keyword
+        Keyword = self.keywords[self.count]
         item = DataItem()
         item = {"keyword": Keyword, "source": Source, "title": Title, "url": Website, "date": Date,
                 "content": Content}

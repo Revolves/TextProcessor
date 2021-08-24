@@ -19,18 +19,18 @@ class TwitterSpider(scrapy.Spider):
         "HTTPERROR_ALLOWED_CODES": [400]
     }
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__()
         self.name = 'twitter'
         self.allowed_domains = ['twitter.com']
         self.start_urls = ['https://twitter.com/explore']
-        self.keywords = 't'
-        if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
+        if args:
+            self.keywords = args
 
     def parse(self, response):
         logger.info("Twitter Spider starting!")
-        item = TwitterKeywordItem()
-        item['keyword'] = self.keyword
-        yield item
+        for keyword in self.keywords:
+            item = TwitterKeywordItem()
+            item['keyword'] = keyword
+            yield item
 
