@@ -4,11 +4,13 @@ date: 2021/8/15
 time: 16:07
 IDE: PyCharm  
 """
+import csv
 import datetime
 import json
 import logging
 import os
 
+import jpype
 import pymysql
 import pyodbc
 
@@ -28,6 +30,7 @@ class DataCleaning:
         self.UselessData = 0
         self.FilePath = file_path
         self.CommitData = []
+        self.connect_db()
 
     def get_dirs(self, main_dir):
         """
@@ -52,7 +55,7 @@ class DataCleaning:
             for root, dirs, files in os.walk(_dir):
                 for file in files:
                     if file.endswith(".json"):  # 过滤得到json文件
-                        list_json.append(os.path.join(root, file))  # json文件只有一个，就不用列表了
+                        list_json.append(os.path.join(root, file))
 
         return list_json  # 得到所有的jpg文件和json文件的列表(包含路径)
 
@@ -78,47 +81,83 @@ class DataCleaning:
                         else:
                             self.CommitData.append(_data)
                 if len(self.CommitData) > 500:
-                    self.commit_data(self.CommitData, self.connect_db())
+                    self.commit_data(self.CommitData)
                     self.CommitData = []
-        self.commit_data(self.CommitData, self.connect_db())
+        # self.save_csv(self.CommitData)
+        self.commit_data(self.CommitData)
         Precision = (self.TotalData - self.UselessData) / self.TotalData
         logger.info('Precision：{}'.format(Precision))
         print('查准率：{}'.format(Precision))
         return (self.TotalData - self.UselessData) / self.TotalData
 
     def connect_db(self):
-        return pyodbc.connect('DSN=Inceptor Server') # HS远程数据库
-        # connect = pymysql.connect(host='127.0.0.1', user="root", database="HSDB", password='root', autocommit=True,
-        #                           port=3306)
-        # return connect
+        """
+        使用jar jdbc连接数据库
+        :return:
+        """
+        jarpath = os.path.join(os.path.abspath("."), r"E:\workspace\ConnectDB\out\artifacts\DB\DB.jar")
+        dependency_path = os.path.join(os.path.abspath('.'), r'E:\workspace\ConnectDB\libs')
+        # 获取jvm.dll 的文件路径
+        jvmPath = jpype.getDefaultJVMPath()
 
-    def commit_data(self, data, connect):
-        cursor = connect.cursor()
-        _sql = '''
-        INSERT INTO text_crawl(keyword, source, title, url, date, content, attributes) VALUES
-        (%s, %s, %s, %s, %s, %s, %s)
-                '''
+        # 开启jvm
+        jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % jarpath, "-Djava.ext.dirs=%s" % dependency_path)
+        self.javaClass = jpype.JClass("DB.ConnectDB")
+        javaInstance = self.javaClass()
+        self.javaClass.LinkDB()
+
+    def save_csv(self, data):
+        """
+        将数据保存为csv
+        :return:
+        """
+        csv_file = open("data.csv", "w+", encoding='utf-8')
+        csv_writer = csv.writer(csv_file)
         for _data in data:
             if 'attributes' in _data:
-                _params = (_data['keyword'],
-                           _data['source'],
-                           _data['title'],
-                           _data['url'],
-                           _data['date'],
-                           _data['content'],
+                _params = (str(_data['keyword']),
+                           str(_data['source']),
+                           str(_data['title']),
+                           str(_data['url']),
+                           str(_data['date']),
+                           str(_data['content']),
                            str(_data['attributes']))
             else:
-                _params = (_data['keyword'],
-                           _data['source'],
-                           _data['title'],
-                           _data['url'],
-                           _data['date'],
-                           _data['content'],
+                _params = (str(_data['keyword']),
+                           str(_data['source']),
+                           str(_data['title']),
+                           str(_data['url']),
+                           str(_data['date']),
+                           str(_data['content']),
                            '')
-            cursor.execute(_sql, _params)
-        connect.commit()
-        cursor.close()
-        connect.close()
+            csv_writer.writerow(_params)
+        csv_file.close()
+
+    def commit_data(self, data):
+        """
+        提交数据
+        :param data:
+        :param connect:
+        :return:
+        """
+        for _data in data:
+            if 'attributes' in _data:
+                _params = [str(_data['keyword']),
+                           str(_data['source']),
+                           str(_data['title']),
+                           str(_data['url']),
+                           str(_data['date']),
+                           str(_data['content']),
+                           str(_data['attributes'])]
+            else:
+                _params = [str(_data['keyword']),
+                           str(_data['source']),
+                           str(_data['title']),
+                           str(_data['url']),
+                           str(_data['date']),
+                           str(_data['content']),
+                           '']
+            self.javaClass.InsertData(_params)
         logger.info('this time commit {} data'.format(len(data)))
         print('this time commit {} data'.format(len(data)))
 
@@ -126,3 +165,4 @@ class DataCleaning:
 if __name__ == '__main__':
     DC = DataCleaning('result')
     DC.data_clean()
+

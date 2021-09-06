@@ -51,7 +51,7 @@ class FacebookSpider(scrapy.Spider):
         except:
             self.driver.find_element_by_xpath('//a[@href="https://www.facebook.com/?ref=logo"]').send_keys(
                 Keys.ENTER)
-        time.sleep(5)
+        time.sleep(1)
 
     def parse(self, response):
         logger.info("Facebook Spider starting!")

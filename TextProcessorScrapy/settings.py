@@ -65,7 +65,7 @@ USER_AGENTS_LIST = [
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 32
 REACTOR_THREADPOOL_MAXSIZE = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -93,15 +93,14 @@ COMMANDS_MODULE = 'TextProcessorScrapy.commands'
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    # 'TextProcessorScrapy.middlewares.HsNasaSpiderMiddleware': 543,
-
+    'TextProcessorScrapy.middlewares.TextCrawlSpiderMiddleware': 543,
     # 'TextProcessorScrapy.middlewares.HttpProxymiddleware': 541
 }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'TextProcessorScrapy.middlewares.HsNasaDownloaderMiddleware': 543,
+    'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware': 543,
     'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
     # 'TextProcessorScrapy.middlewares.RandomProxyMiddleware': 123,
 }

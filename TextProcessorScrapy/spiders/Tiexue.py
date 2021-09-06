@@ -28,11 +28,10 @@ class TiexueSpider(scrapy.Spider):
             url = "https://www.baidu.com/baidu?word=" + keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
             self.start_urls.append(url)
         self.num = 0
-        self.count = -1
+        self.count = 0
 
     def parse(self, response):
         logger.info("Tiexue Spider Starting!")
-        self.count += 1
         hreflist = []
         # 只爬一条
         # web_node_list = response.xpath('//div[@id="content_left"]//div [@class="result c-container new-pmd"][1]//h3/a/@href').extract()
@@ -62,6 +61,7 @@ class TiexueSpider(scrapy.Spider):
             return
         # 迭代下一页
         yield scrapy.Request(url=nextpageurl, callback=self.parse)
+        self.count += 1
 
     def new_parse(self, response):
         Source = '铁血社区'

@@ -20,12 +20,11 @@ class WikiSpider(scrapy.Spider):
             url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + keyword + "&ns0=1"
             self.start_urls.append(url)
         self.count = 0
-        self.number = -1
+        self.number = 0
 
     # 进入一级解析，starturl解析
     def parse(self, response):
         hreflist = []
-        self.number += 1
         self.keyword = self.keywords[self.number]
         # 只爬一条
         # web_node_list = response.xpath('//div[@id="content_left"]//div [@class="result c-container new-pmd"][1]//h3/a/@href').extract()
@@ -65,6 +64,7 @@ class WikiSpider(scrapy.Spider):
         # 迭代
         if next_page_url:
             yield scrapy.Request(url=next_page_url, callback=self.parse)
+        self.number += 1
 
     def new_parse(self, response):
         item = BaiduWikiItem()

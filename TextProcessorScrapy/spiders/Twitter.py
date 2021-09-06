@@ -20,7 +20,7 @@ class TwitterSpider(scrapy.Spider):
     }
 
     def __init__(self, *args, **kwargs):
-        super().__init__()
+        super().__init__(*args, **kwargs)
         self.name = 'twitter'
         self.allowed_domains = ['twitter.com']
         self.start_urls = ['https://twitter.com/explore']

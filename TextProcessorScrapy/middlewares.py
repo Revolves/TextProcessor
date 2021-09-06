@@ -13,59 +13,47 @@ from twisted.internet import defer
 from twisted.internet.error import TCPTimedOutError, ConnectionDone, ConnectError, ConnectionLost
 from TextProcessorScrapy.utils.utils import get_random_ip
 import redis
-
+from twisted.internet import task
 
 # useful for handling different item types with a single interface
 
 
-class HsNasaSpiderMiddleware:
+class TextCrawlSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
 
+    def __init__(self, stats):
+        self.stats = stats
+        # 每隔多少秒监控一次已抓取数量
+        self.time = 10.0
+
     @classmethod
-    def from_crawler(cls, crawler):
-        # This method is used by Scrapy to create your spiders.
-        s = cls()
-        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
-        return s
+    def from_crawler(cls, crawler, *args, **kwargs):
+        instance = cls(crawler.stats)
+        crawler.signals.connect(instance.spider_opened, signal=signals.spider_opened)
+        crawler.signals.connect(instance.spider_closed, signal=signals.spider_closed)
+        return instance
 
-    def process_spider_input(self, response, spider):
-        # Called for each response that goes through the spider
-        # middleware and into the spider.
+    def spider_opened(self):
+        self.tsk = task.LoopingCall(self.collect)
+        self.tsk.start(self.time, now=True)
 
-        # Should return None or raise an exception.
-        return None
+    def spider_closed(self):
+        scrapy_count = self.stats.get_value('item_scraped_count')
+        logging.info("crawl speed :{}".format(scrapy_count))
+        if self.tsk.running:
+            self.tsk.stop()
 
-    def process_spider_output(self, response, result, spider):
-        # Called with the results returned from the Spider, after
-        # it has processed the response.
-
-        # Must return an iterable of Request, or item objects.
-        for i in result:
-            yield i
-
-    def process_spider_exception(self, response, exception, spider):
-        # Called when a spider or process_spider_input() method
-        # (from other spider middleware) raises an exception.
-
-        # Should return either None or an iterable of Request or item objects.
-        pass
-
-    def process_start_requests(self, start_requests, spider):
-        # Called with the start requests of the spider, and works
-        # similarly to the process_spider_output() method, except
-        # that it doesn’t have a response associated.
-
-        # Must return only requests (not items).
-        for r in start_requests:
-            yield r
-
-    def spider_opened(self, spider):
-        spider.logger.info('Spider opened: %s' % spider.name)
+    def collect(self):
+        # 这里收集stats并写入相关的储存。
+        # 目前展示是输出到终端
+        scrapy_count = self.stats.get_value('item_scraped_count')
+        if scrapy_count:
+            logging.info("crawl speed :{}".format(scrapy_count))
 
 
-class HsNasaDownloaderMiddleware:
+class TextCrawlDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.

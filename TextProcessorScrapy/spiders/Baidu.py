@@ -36,11 +36,9 @@ class BaidubaikeSpider(scrapy.Spider):
         options.add_experimental_option('prefs', prefs)
         # 设置chrome浏览器无界面模式
         options.add_argument('--headless')
-        # options.binary_location = r'G:\Anaconda3\chromedriver.exe'
-
         self.browser = webdriver.Chrome(options=options)
         # browser.maximize_window()  # 浏览器窗口最大化
-        self.browser.implicitly_wait(10)  # 隐形等待10秒
+        self.browser.implicitly_wait(1)  # 隐形等待10秒
 
     '''回调函数，子类必须重写这个方法，否侧抛出异常'''
 
@@ -48,7 +46,6 @@ class BaidubaikeSpider(scrapy.Spider):
         self.number += 1
         self.keyword = self.keywords[self.number]
         name = response.xpath("//dl/dd/h1/text()").get()
-        print(name)
         item = BaiduWikiItem()
         # 简介
         try:
@@ -65,7 +62,6 @@ class BaidubaikeSpider(scrapy.Spider):
             else:
                 return item
         except:
-            print("无正文")
             content = ""
         # 属性
         attr = dict()
@@ -102,12 +98,10 @@ class BaidubaikeSpider(scrapy.Spider):
             if check_height == check_height1:
                 t = False
         image_urls = self.browser.find_elements_by_xpath("//img[contains(@alt, '" + str(self.keyword) + "')]")
-        print(image_urls)
         img_url = dict()
         # 得到图片url
         for image_url in image_urls:
             image_url = image_url.get_attribute('src')
-            print(image_url)
             cnt = cnt + 1
             # img_url = img_url + ", \"图片" + str(cnt) + "\" : \"" + str(image_url) + "\""
             img_url["图片" + str(cnt)] = str(image_url)

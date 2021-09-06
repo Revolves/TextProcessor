@@ -28,14 +28,43 @@ class DbConnect:
     def __init__(self):
         connect = pyodbc.connect('DSN=Inceptor Server')
         cursor = connect.cursor()
+        drop_sql = "DROP TABLE IF EXISTS hs.text_crawl;"
         sql = """
-        #             ALTER TABLE hs.text_crawl ADD COLUMNS(
-        #                 attributes STRING
-        #             );
-        #             """
+                create table hs.text_crawl(
+                keyword STRING,
+                source STRING,
+                title STRING,
+                url STRING,
+                date STRING,
+                content STRING,
+                attributes STRING
+                ) 
+                CLUSTERED BY (keyword) into 1 buckets stored 
+                as orc TBLProperties (\"transactional\"=\"true\")
+                 """
+        create_sql = """
+                        create table hs.jh_test(
+                        content STRING
+                        ) 
+                        CLUSTERED BY (content) into 1 buckets stored 
+                        as orc TBLProperties (\"transactional\"=\"true\")
+                         """
+        # cursor.execute(drop_sql)
         # cursor.execute(sql)
-        print(cursor.execute("show tables in hs").fetchall())
-        print(cursor.execute("SHOW COLUMNS in text_crawl in hs").fetchall())
+        # # print(cursor.execute("show tables in hs").fetchall())
+        # print(cursor.execute("show create table hs.jh_test").fetchall())
+        # print(cursor.execute("SHOW COLUMNS in jh_test in hs").fetchall())
+        # insert_pram = "abc", "abc", "abc", "abc", "abc", "abc", "abc"
+        # insert_sql = """insert into hs.text_crawl values (?,?,?,?,?,?,?)"""
+        # # insert_ = "insert into hs.jh_test values (?)".format('test')
+        # # cursor.execute(
+        # # """insert into hs.text_crawl(keyword, source, title, url, date, content, attributes) values ("abc", "abc", "abc", "abc", "abc", "abc", "abc")""")
+        # cursor.execute("insert into hs.jh_test value (?)".format('test'))
+        rows = cursor.execute("select * from hs.text_crawl").fetchall()
+        print(rows)
+
+
+DB = DbConnect()
 
 
 def CreatePath(path):
