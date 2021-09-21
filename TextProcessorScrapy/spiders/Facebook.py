@@ -29,10 +29,9 @@ class FacebookSpider(scrapy.Spider):
         head_url = "https://www.facebook.com/search/posts/?q="
         self.driver = webdriver.Chrome(options= options)
         self.driver.implicitly_wait(10)
-        if args:
-            self.keywords = args
-        for keyword in self.keywords:
-            self.start_urls.append(head_url + keyword)
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        self.start_urls.append(head_url + self.keyword)
         self.count = -1
          # 登录账户
         try:
@@ -62,12 +61,14 @@ class FacebookSpider(scrapy.Spider):
             results = self.driver.find_elements_by_xpath('//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
             for result in results:
                 item = DataItem()
-                item['keyword'] = self.keywords[self.count]
+                item['keyword'] = self.keyword
                 item['source'] = 'facebook'
                 item['url'] = result.find_element_by_xpath('/a').get_attribute("href")
                 item['content'] = result.find_element_by_xpath('//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]').get_attribute("textContent")
                 item['date'] = result.find_element_by_xpath('//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]/span').get_attribute("textContent")
                 item['title'] = item['content'][0:30]
+                if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+                    return
                 yield item
         except:
             pass

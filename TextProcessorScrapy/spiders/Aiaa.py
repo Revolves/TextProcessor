@@ -20,12 +20,13 @@ class AiaaSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ["www.aiaa.org"]
-        if args:
-            self.keywords = args
+        # if args:
+        #     self.keywords = args
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
         url_head = "https://arc.aiaa.org/action/doSearch?AllField="
         url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
-        for keyword in self.keywords:
-            self.start_urls.append((url_head + keyword + url_end))
+        self.start_urls.append((url_head + self.keyword + url_end))
         self.count = -1
 
     def parse(self, response):
@@ -55,11 +56,13 @@ class AiaaSpider(scrapy.Spider):
         except:
             content = ""
         item = DataItem()
-        item['keyword'] = self.keywords[self.count]
+        item['keyword'] = self.keyword
         item['source'] = "AIAA"
         item['title'] = str(title)
         item['date'] = str(publish_time)
         item['url'] = response.url
         item['content'] = str(content)
         # yield scrapy.Request(url=href, callback=self.new_parse), item
+        if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+            return
         yield item

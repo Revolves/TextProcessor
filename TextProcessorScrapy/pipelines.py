@@ -45,56 +45,47 @@ def CreatePath(path, tag):
         file = open(SaveFile, "a+", newline="", encoding="utf-8-sig")
     return file
 
+def create_count_file(path, tag):
+    index_path = path + '/count'
+    if os.path.exists(index_path) is False:
+        os.makedirs((index_path))
+    count_file = index_path + '/{}.txt'.format(tag)
+    return open(count_file, 'w', encoding='utf-8')
 
 class HsNasaPipeline:
     def __init__(self):
         self.tag = 'nasa'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
         保存
         """
-        # insert_to_db(self.cursor, self.tag, item)
         detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
                   "时间": item["date"], "内容": item["content"]}
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
-        # self.count += 1
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
-        # if self.count == 50:
-        #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #     self.count = 0
-        #     self.data = []
-        #     self.file = CreatePath(SavePath)
+        self.count += 1
         # return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
 
 
 class TwitterPipeline:
     def __init__(self):
         self.tag = 'twitter'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # delete_table(self.cursor, self.tag)
-        # create_table(self.cursor, self.tag)
 
         # test
         consumer_key = "ioTGfhxK3Fylub82QJmLMB6mB"
@@ -115,67 +106,40 @@ class TwitterPipeline:
                        "date": result["date"], "content": result["content"]}
             detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
                       "时间": result["date"], "内容": result["content"]}
+            if len(detail_['content'].replace(' ', '').replace("\n", '')) <= 20 or detail_['content'] == '':
+                continue
             self.data.append(detail_)
-        #     self.count += 1
-        #     if self.count == 100:
-        #         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #         for data in self.data:
-        #             insert_to_db(self.cursor, self.tag, data)
-        #         self.count = 0
-        #         self.data = []
-        # json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
+            self.count += 1
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
-
 
 class FacebookPipeline:
     def __init__(self):
         self.tag = 'facebook'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # # delete_table(self.cursor, self.tag)
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
-        results = dataget(self.api, item['keyword'])
-        for result in results:
-            detail_ = {"keyword": result["keyword"], "source": result["source"], "title": result["title"],
-                       "url": result["url"],
-                       "date": result["date"], "content": result["content"]}
-            detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
-                      "时间": result["date"], "内容": result["content"]}
-            self.data.append(detail_)
-            # self.count += 1
-            # if self.count == 50:
-            #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-            #     for data in self.data:
-            #         insert_to_db(self.cursor, self.tag, data)
-            #     self.count = 0
-            #     self.data = []
-        # json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
+        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
+                  "时间": item["date"], "内容": item["content"]}
+        detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
+                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
+        self.data.append(detail_)
+        self.count += 1
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
 
 
 class ViedoPipeline:
@@ -202,51 +166,32 @@ class AiaaPipeline:
     def __init__(self):
         self.tag = 'aiaa'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # # delete_table(self.cursor, self.tag)
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
-        results = dataget(self.api, item['keyword'])
-        for result in results:
-            detail_ = {"keyword": result["keyword"], "source": result["source"], "title": result["title"],
-                       "url": result["url"],
-                       "date": result["date"], "content": result["content"]}
-            detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
-                      "时间": result["date"], "内容": result["content"]}
-            self.data.append(detail_)
-        #     self.count += 1
-        #     if self.count == 50:
-        #         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #         for data in self.data:
-        #             insert_to_db(self.cursor, self.tag, data)
-        #         self.count = 0
-        #         self.data = []
-        # json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
+        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
+                  "时间": item["date"], "内容": item["content"]}
+        detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
+                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
+        self.data.append(detail_)
+        self.count += 1
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
 
 class WikiPipeline:
     def __init__(self):
         self.tag = 'wiki'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
@@ -258,33 +203,22 @@ class WikiPipeline:
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
-        # self.count += 1
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
-        # if self.count == 50:
-        #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #     self.count = 0
-        #     self.data = []
-        #     self.file = CreatePath(SavePath)
-        # return item
+        self.count += 1
+        return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
 
 class BaiduPipeline:
     def __init__(self):
         self.tag = 'baidu'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
@@ -296,71 +230,46 @@ class BaiduPipeline:
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
-        # self.count += 1
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
-        # if self.count == 50:
-        #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #     self.count = 0
-        #     self.data = []
-        #     self.file = CreatePath(SavePath)
-        # return item
+        return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, data)
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
+        self.count_file.write(str(self.count))
+        self.count_file.close()
 
 class JanesPipeline:
     def __init__(self):
         self.tag = 'janes'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
         保存
         """
-        # insert_to_db(self.cursor, self.tag, item)
         detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
                   "时间": item["date"], "内容": item["content"]}
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
-        # self.count += 1
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
-        # if self.count == 50:
-        #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #     self.count = 0
-        #     self.data = []
-        #     self.file = CreatePath(SavePath)
-        # return item
+        return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()
 
 class TiexuePipeline:
     def __init__(self):
         self.tag = 'tiexue'
         self.file = CreatePath(SavePath, self.tag)
+        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
-        # self.connect = connect_db()
-        # self.cursor = self.connect.cursor()
-        # create_table(self.cursor, self.tag)
 
     def process_item(self, item, spider):
         """
@@ -384,8 +293,6 @@ class TiexuePipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        # for data in self.data:
-        #     insert_to_db(self.cursor, data)
+        self.count_file.write(str(self.count))
+        self.count_file.close()
         self.file.close()
-        # self.cursor.close()
-        # self.connect.close()

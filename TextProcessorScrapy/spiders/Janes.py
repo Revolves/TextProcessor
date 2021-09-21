@@ -24,12 +24,11 @@ class JanesSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(JanesSpider, self).__init__(*args, **kwargs)
         self.allowed_domains = ['janes.com']
-        if args:
-            self.keywords = args
-        for keyword in self.keywords:
-            url = 'https://www.janes.com/search-results?indexCatalogue=all---production&searchQuery=' + keyword + \
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        url = 'https://www.janes.com/search-results?indexCatalogue=all---production&searchQuery=' + self.keyword + \
               '&wordsMode=AllWords&orderBy=Newest'
-            self.start_urls.append(url)
+        self.start_urls.append(url)
         self.num = 0
         self.count = -1
 
@@ -43,10 +42,12 @@ class JanesSpider(scrapy.Spider):
         if len(news_list) == 0:
             item['title'] = ''
             item['date'] = '0'
-            item['keyword'] = self.keywords[self.count]
+            item['keyword'] = self.keyword
             item['url'] = ''
             item['poster'] = ''
             item['content'] = ''
+            if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+                return
             yield item
             return
         for news in news_list:
@@ -68,10 +69,12 @@ class JanesSpider(scrapy.Spider):
             item = DataItem()
             item['title'] = ''
             item['date'] = '0'
-            item['keyword'] = self.keywords[self.count]
+            item['keyword'] = self.keyword
             item['url'] = ''
             item['poster'] = ''
             item['content'] = ''
+            if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+                return
             yield item
             return
         for news in news_list:
@@ -136,9 +139,11 @@ class JanesSpider(scrapy.Spider):
         item['source'] = 'janes'
         item['title'] = str(news_title)
         item['date'] = str(publish_time)
-        item['keyword'] = self.keywords[self.count]
+        item['keyword'] = self.keyword
         item['url'] = response.url
         item['content'] = str(news_text)
+        if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+            return
         yield item
 
     @staticmethod

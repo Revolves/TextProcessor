@@ -14,18 +14,18 @@ class WikiSpider(scrapy.Spider):
         super().__init__(*args, **kwargs)
         self.allowed_domains = ['en.wikipedia.org']
     # 获取每个关键词的wiki搜索初始网址（第一页）
-        if args:
-            self.keywords = args
-        for keyword in self.keywords:
-            url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + keyword + "&ns0=1"
-            self.start_urls.append(url)
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
+        self.start_urls.append(url)
         self.count = 0
         self.number = 0
 
     # 进入一级解析，starturl解析
     def parse(self, response):
         hreflist = []
-        self.keyword = self.keywords[self.number]
+        # self.keyword = self.keywords[self.number]
+        self.number += 1
         # 只爬一条
         # web_node_list = response.xpath('//div[@id="content_left"]//div [@class="result c-container new-pmd"][1]//h3/a/@href').extract()
         # hreflist.append(web_node_list[0])
@@ -64,7 +64,7 @@ class WikiSpider(scrapy.Spider):
         # 迭代
         if next_page_url:
             yield scrapy.Request(url=next_page_url, callback=self.parse)
-        self.number += 1
+
 
     def new_parse(self, response):
         item = BaiduWikiItem()

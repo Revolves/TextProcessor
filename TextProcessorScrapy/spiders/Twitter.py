@@ -15,22 +15,20 @@ class TwitterSpider(scrapy.Spider):
     name = 'twitter'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.TwitterPipeline': 500},
-        'CONCURRENT_REQUESTS': 2,
+        'CONCURRENT_REQUESTS': 1,
         "HTTPERROR_ALLOWED_CODES": [400]
     }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.name = 'twitter'
         self.allowed_domains = ['twitter.com']
         self.start_urls = ['https://twitter.com/explore']
-        if args:
-            self.keywords = args
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
 
     def parse(self, response):
         logger.info("Twitter Spider starting!")
-        for keyword in self.keywords:
-            item = TwitterKeywordItem()
-            item['keyword'] = keyword
-            yield item
+        item = TwitterKeywordItem()
+        item['keyword'] = self.keyword
+        yield item
 

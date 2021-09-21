@@ -95,8 +95,8 @@ class DataCleaning:
         使用jar jdbc连接数据库
         :return:
         """
-        jarpath = os.path.join(os.path.abspath("."), r"E:\workspace\ConnectDB\out\artifacts\DB\DB.jar")
-        dependency_path = os.path.join(os.path.abspath('.'), r'E:\workspace\ConnectDB\libs')
+        jarpath = os.path.join(os.path.abspath("."), r"file\DB.jar")
+        dependency_path = os.path.join(os.path.abspath('.'), r'file\libs')
         # 获取jvm.dll 的文件路径
         jvmPath = jpype.getDefaultJVMPath()
 

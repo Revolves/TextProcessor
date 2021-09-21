@@ -21,10 +21,9 @@ class BaidubaikeSpider(scrapy.Spider):
         self.allowed_domains = ['www.baike.baidu.com']
         # if 'keywords' in kwargs:
         #     self.keywords = kwargs['keywords']
-        if args:
-            self.keywords = args
-        for keyword in self.keywords:
-            self.start_urls.append("https://baike.baidu.com/item/" + keyword)
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        self.start_urls.append("https://baike.baidu.com/item/" + self.keyword)
         self.number = -1
 
         options = webdriver.ChromeOptions()
@@ -44,7 +43,7 @@ class BaidubaikeSpider(scrapy.Spider):
 
     def parse(self, response):
         self.number += 1
-        self.keyword = self.keywords[self.number]
+        # self.keyword = self.keywords[self.number]
         name = response.xpath("//dl/dd/h1/text()").get()
         item = BaiduWikiItem()
         # 简介
@@ -114,4 +113,6 @@ class BaidubaikeSpider(scrapy.Spider):
         item['attributes'] = attr
         item['url'] = response.url
         item['date'] = ''
+        if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+            return
         yield item

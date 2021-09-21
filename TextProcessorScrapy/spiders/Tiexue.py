@@ -22,11 +22,10 @@ class TiexueSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.allowed_domains = ['bbs.tiexue.net', 'www.baidu.com']
-        if args:
-            self.keywords = args
-        for keyword in self.keywords:
-            url = "https://www.baidu.com/baidu?word=" + keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
-            self.start_urls.append(url)
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        url = "https://www.baidu.com/baidu?word=" + self.keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
+        self.start_urls.append(url)
         self.num = 0
         self.count = 0
 
@@ -81,8 +80,10 @@ class TiexueSpider(scrapy.Spider):
 
         # Name = response.xpath('//div [@class="postContent border"]//div [@class="postStart"]//ul//li [@class= "userName"]//div [@class="user_01"]//strong//a/text()').get()
 
-        Keyword = self.keywords[self.count]
+        Keyword = self.keyword
         item = DataItem()
         item = {"keyword": Keyword, "source": Source, "title": Title, "url": Website, "date": Date,
                 "content": Content}
+        if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+            return
         yield item

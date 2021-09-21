@@ -29,17 +29,16 @@ class DbConnect:
         connect = pyodbc.connect('DSN=Inceptor Server')
         cursor = connect.cursor()
         drop_sql = "DROP TABLE IF EXISTS hs.text_crawl;"
-        sql = """
-                create table hs.text_crawl(
-                keyword STRING,
-                source STRING,
-                title STRING,
-                url STRING,
-                date STRING,
-                content STRING,
-                attributes STRING
-                ) 
-                CLUSTERED BY (keyword) into 1 buckets stored 
+        create_sql = """
+                CREATE  TABLE hs.log_crawl(
+                  timestamp string DEFAULT NULL, 
+                  level string DEFAULT NULL, 
+                  thread string DEFAULT NULL, 
+                  logger_name string DEFAULT NULL, 
+                  message string DEFAULT NULL, 
+                  host string DEFAULT NULL
+                )
+                CLUSTERED BY (timestamp) into 1 buckets stored 
                 as orc TBLProperties (\"transactional\"=\"true\")
                  """
         create_sql = """
@@ -49,9 +48,44 @@ class DbConnect:
                         CLUSTERED BY (content) into 1 buckets stored 
                         as orc TBLProperties (\"transactional\"=\"true\")
                          """
-        # cursor.execute(drop_sql)
-        # cursor.execute(sql)
-        # # print(cursor.execute("show tables in hs").fetchall())
+        create_sql = """
+                        create table hs.text_crawl_file(
+                            date STRING,
+                            filename STRING,
+                            size STRING,
+                            format STRING,
+                            path STRING
+                        ) 
+                        CLUSTERED BY (date) into 1 buckets stored 
+                        as orc TBLProperties (\"transactional\"=\"true\")
+                                 """
+        create_sql = """
+                                create table hs.text_crawl_stats(
+                                    crawlerID STRING,
+                                    keywords STRING,
+                                    count STRING
+                                ) 
+                                CLUSTERED BY (crawlerID) into 1 buckets stored 
+                                as orc TBLProperties (\"transactional\"=\"true\")
+                                         """
+        sql = """
+                SELECT DISTINCT (keyword, source, title, url, date, attributes) FROM hs.text_crawl;
+            """
+        create_new_sql = """
+                            CREATE TABLE hs.temp_table LIKE hs.text_crawl;
+                    """
+        insert_sql = """
+                    INSERT INTO TABLE hs.temp_table (keyword, source, title, url, date, content, attributes) 
+							SELECT DISTINCT keyword, source, title, url, date, content, attributes 
+                                FROM (SELECT * FROM hs.text_crawl WHERE length(keyword) > 1);
+                    """
+        sql = """SELECT DISTINCT (keyword, source, title, url, date, content, attributes) FROM 
+                                (SELECT * FROM hs.text_crawl WHERE length(keyword) > 1);"""
+        rename_sql = """ALTER TABLE hs.temp_table RENAME TO text_crawl;"""
+
+        cursor.execute(create_sql)
+        # print(cursor.execute(sql).fetchall())
+        # print(cursor.execute("show tables in hs").fetchall())
         # print(cursor.execute("show create table hs.jh_test").fetchall())
         # print(cursor.execute("SHOW COLUMNS in jh_test in hs").fetchall())
         # insert_pram = "abc", "abc", "abc", "abc", "abc", "abc", "abc"
@@ -60,11 +94,11 @@ class DbConnect:
         # # cursor.execute(
         # # """insert into hs.text_crawl(keyword, source, title, url, date, content, attributes) values ("abc", "abc", "abc", "abc", "abc", "abc", "abc")""")
         # cursor.execute("insert into hs.jh_test value (?)".format('test'))
-        rows = cursor.execute("select * from hs.text_crawl").fetchall()
-        print(rows)
+        # rows = cursor.execute("select * from hs.text_crawl").fetchall()
+        # print(rows)
 
 
-DB = DbConnect()
+# DB = DbConnect()
 
 
 def CreatePath(path):

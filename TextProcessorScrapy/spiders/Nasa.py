@@ -25,10 +25,9 @@ class nasaSpider(scrapy.Spider):
         self.allowed_domains = ['nasa.gov']
         url_header = 'https://nasasearch.nasa.gov/search?query='
         url_late = '&affiliate=nasa&utf8=%E2%9C%93'
-        if args:
-            self.keywords = args
-        for keyword in self.keywords:
-            self.start_urls.append(url_header + keyword + url_late)
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        self.start_urls.append(url_header + self.keyword + url_late)
         self.count = -1
 
     def parse_detail(self, response):
@@ -39,10 +38,11 @@ class nasaSpider(scrapy.Spider):
         """
         content_list = response.xpath('//p/text()|//ol/text()').extract()
         content = ''.join(content_list).replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0',
-                                                                                                       ' ').replace("'",
-                                                                                                                    "''")
+                  ' ').replace("'","''")
         item = response.meta['item']
         item['content'] = content
+        if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+            return
         yield item
 
     def parse_detail_pdf(self, response):
@@ -66,7 +66,7 @@ class nasaSpider(scrapy.Spider):
             提取字段
             """
             item = DataItem()
-            item["keyword"] = self.keywords
+            item["keyword"] = self.keyword
             item["source"] = "NASA"
             item["title"] = result.xpath('./h4/a/text()').extract_first().replace("'", "''")
             item["url"] = result.xpath('./span[1]/text()').extract_first()

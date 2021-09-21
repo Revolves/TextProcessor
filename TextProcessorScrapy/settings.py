@@ -65,7 +65,7 @@ USER_AGENTS_LIST = [
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 8
 REACTOR_THREADPOOL_MAXSIZE = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -101,7 +101,7 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware': 543,
-    'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
+    # 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
     # 'TextProcessorScrapy.middlewares.RandomProxyMiddleware': 123,
 }
 
