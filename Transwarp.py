@@ -40,6 +40,7 @@ class Transwarp:
     def connect_incpetor(self):
         """
         建立Inceptor连接
+
         :return:
         """
         self.inceptor.Connect()
@@ -47,6 +48,7 @@ class Transwarp:
     def execute_sql(self, sql, prams):
         """
         Inceptor执行sql语句
+
         :param sql: sql语句
         :param prams: sql语句中的参数（该属性为string数组）
         :return:
@@ -57,6 +59,7 @@ class Transwarp:
     def upload_file(self, path_from, path_to):
         """
         上传文件到hdfs
+
         :param path_from: 本地路径
         :param path_to: 上传hdfs路径
         :return:成功返回保存路径，失败返回upload failure
@@ -66,6 +69,7 @@ class Transwarp:
     def download_file(self, path_from, path_to):
         """
         hdfs下载文件
+
         :param path_from:源路径（文件/文件夹）
         :param path_to:目标文件夹
         :return:成功返回保存路径，download failure
@@ -75,6 +79,7 @@ class Transwarp:
     def delete_file(self, path):
         """
         hdfs删除文件
+
         :param path: 目标路径
         :return:None
         """
@@ -83,6 +88,7 @@ class Transwarp:
     def make_dir(self, path):
         """
         hdfs创建文件夹
+
         :param path:
         :return:None
         """
@@ -91,7 +97,8 @@ class Transwarp:
     def get_file(self, path):
         """
         获取服务器hdfs系统里指定文件  以字节流的形式返回
-        :param path:目标路径
+
+        :param path: 目标路径
         :return:
         """
         self.hdfs.getFile(path)
@@ -99,15 +106,17 @@ class Transwarp:
     def upload_files(self, path_from, path_to):
         """
         上传文件夹或者文件到hdfs
-        :param path_from:源路径
-        :param path_to:目的路径
-        :return:成功返回保存路径，失败upload failure
+
+        :param path_from: 源路径
+        :param path_to: 目的路径
+        :return: 成功返回保存路径，失败upload failure
         """
         return self.hdfs.uploadFiles(path_from, path_to)
 
     def close(self):
         """
         断开连接
+
         :return:
         """
         self.hdfs.CloseHdfs()

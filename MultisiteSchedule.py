@@ -71,7 +71,8 @@ class CrawlRunner:
 def control_status(url):
     """
     获取当前爬取启动状态,开始运行则返回True
-    :param url:启动接口
+
+    :param url: 启动接口
     :return:
     """
     response = requests.get(url).text
@@ -84,11 +85,14 @@ def control_status(url):
 def control_info(url):
     """
     解析控制信息
+
     :param url:
     :return: 爬取站点列表、关键词
     """
     response = requests.get(url).text
     info_json = json.loads(response)[0]
+    if int(info_json['status']) == 0:
+        return False
     info = None
     if "文本" in info_json['data_type']:
         info = {"sites": [], "keywords": [], "crawl_id": info_json['crawl_id']}
@@ -104,7 +108,7 @@ def get_count(keyword):
     """
     获取本轮爬取数量信息
 
-    :return:爬取数量(str类型）
+    :return: 爬取数量(str类型）
     """
     count = 0
     count_path = './result/count/'
@@ -198,17 +202,18 @@ def start_spider():
 
 
 if __name__ == '__main__':
+    from Transwarp import Transwarp
     transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
     transwarp.connect_incpetor()
     transwarp.connect_hdfs()
     status_url = "http://localhost:8080/text/textCrawler"
     info_url = "http://localhost:8080/site/siteJobManage"
     while True:
+        # info = control_info(info_url)  # 控制信息
+        info = {"sites": ['nasa', 'wiki'], "keywords": ['target', 'under water'], "crawl_id": "crawler1"}
         # while control_status(status_url):
-        while True:
+        if info is not False:
             logger.info('TextCrawler On!')
-            # info = control_info(info_url)  # 控制信息
-            info = {"sites": ['nasa', 'wiki'], "keywords": ['target', 'under water'], "crawl_id": "crawler1"}
             if info is not None:
                 keywords = info['keywords']
                 sites = info['sites']
@@ -219,7 +224,6 @@ if __name__ == '__main__':
                         runner.crawl(site, keyword=keyword, crawl_id=info['crawl_id'])
                         d = runner.join()
                         d.addBoth(stop)
-                    # defer.DeferredList(set()).addBoth(stop)
                 reactor.run()
                 for keyword in keywords:
                     logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
