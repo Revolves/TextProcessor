@@ -16,6 +16,8 @@ class WikiSpider(scrapy.Spider):
     # 获取每个关键词的wiki搜索初始网址（第一页）
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
+        if "crawl_id" in kwargs:
+            print(kwargs['crawl_id'])
         url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
         self.start_urls.append(url)
         self.count = 0

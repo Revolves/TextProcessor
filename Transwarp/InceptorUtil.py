@@ -24,5 +24,5 @@ class InceptorUtil:
         self.inceptor.Connect()
 
 
-# ic = InceptorUtil('JavaJar/InceptorUtil.jar', 'libs')
-# ic.connect()
+ic = InceptorUtil('JavaJar/InceptorUtil.jar', 'libs')
+ic.connect()

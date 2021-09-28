@@ -13,6 +13,8 @@ class Transwarp:
     def __init__(self, jar_path, dependency_path):
         self.jarpath = os.path.join(os.path.abspath("."), jar_path)
         self.dependency_path = os.path.join(os.path.abspath('.'), dependency_path)
+        print("jar_path:{}".format(self.jarpath))
+        print("dependency_path:".format(self.dependency_path))
         # 获取jvm.dll 的文件路径
         jvmPath = jpype.getDefaultJVMPath()
         # 开启jvm
@@ -24,7 +26,7 @@ class Transwarp:
                            "-Djava.ext.dirs=%s" % self.dependency_path)
         self.hdfs = jpype.JClass("DB.HdfsUtil")
         self.inceptor = jpype.JClass("DB.InceptorUtil")
-        javaInstance = self.hdfs("hdfs\\")
+        javaInstance = self.hdfs("Transwarp\\hdfs\\")
 
     def connect_hdfs(self):
         """
@@ -111,5 +113,5 @@ class Transwarp:
         self.hdfs.CloseHdfs()
 
 
-# hdfs_util = HdfsUtil()
-# hdfs_util.GetHdfsClient()
+# hdfs_util = Transwarp('JavaJar/Util.jar', 'libs/')
+# hdfs_util.connect_hdfs()

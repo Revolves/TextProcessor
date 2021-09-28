@@ -4,6 +4,7 @@ date: 2021/7/23
 time: 15:21
 IDE: PyCharm  
 """
+import datetime
 import json
 import logging
 import os
@@ -13,8 +14,9 @@ from scrapy import signals
 from scrapy.crawler import CrawlerRunner, Crawler
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings
-from twisted.internet import reactor, defer
+from twisted.internet import reactor, defer, error
 from TextProcessorScrapy.spiders.Baidu import BaidubaikeSpider
+from Transwarp import Transwarp
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -89,7 +91,7 @@ def control_info(url):
     info_json = json.loads(response)[0]
     info = None
     if "文本" in info_json['data_type']:
-        info = {"sites": [], "keywords": [], "crawlerID": info_json['crawl_id']}
+        info = {"sites": [], "keywords": [], "crawl_id": info_json['crawl_id']}
         for _website in info_json['website']:
             if _website in WEB_MAP:
                 info["sites"].append(WEB_MAP[_website])
@@ -98,46 +100,107 @@ def control_info(url):
     return info
 
 
-def get_count():
+def get_count(keyword):
     """
     获取本轮爬取数量信息
-    :return:
+
+    :return:爬取数量(str类型）
     """
     count = 0
     count_path = './result/count/'
     for file in os.listdir(count_path):
-        with open(count_path + file, 'r') as f:
-            count += int(f.readline())
-    return count
+        if file.endswith(keyword):
+            with open(count_path + file, 'r') as f:
+                count += int(f.readline())
+                f.close()
+            os.remove(count_path + file)
+    return str(count)
 
 
 def crawl_file_list(root):
     """
     获取本次爬取文件路径列表
-    :param root:
+
+    :param root: 爬取文件的保存主目录
     :return: 文件列表
     """
-    file_list = []
-    for _dir in root:
-        for root, dirs, files in os.walk(_dir):
-            for file in files:
-                if file.endswith(".json"):  # 过滤得到json文件
-                    file_list.append(os.path.join(root, file))
+    file_list = {}
+    for root, dirs, files in os.walk(root):
+        for file in files:
+            if file.endswith(".json"):  # 过滤得到json文件
+                file_path = os.path.join(os.path.abspath("."), os.path.join(root, file))
+                file_size = os.stat(file_path).st_size  # 文件大小
+                if file_size <= 10:
+                    continue
+                # print("file_path:{}, file_size:{}".format(file_path, file_size))
+                file_size = round(file_size / 1024, 2)
+                file_list[file_path] = str(file_size) + 'KB'
     return file_list
     pass
 
 
-def upload_crawl_file(path_list):
-    for file in path_list:
-        pass
+def upload_crawl_file(path_list, connect):
+    """
+    上传本次爬取保存文件
+
+    :param path_list: 爬取文件路径列表
+    :param connect: Transwarp连接（包括hdfs和Inceptor）
+    :return: 上传状态
+    """
+    try:
+        for file in path_list:
+            size_ = path_list[file]
+            # print(file)
+            connect.upload_file(file, "\\text_crawl_file\\")
+            os.remove(file)
+            sql_ = "INSERT INTO hs.text_crawl_file  VALUES (?, ?, ?, ?, ?)"
+            date_ = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            filename_ = file.split("\\")[-1]
+            format_ = file.split('.')[-1]
+            path_ = "/hs/text_crawl_file/"
+            pram_ = [date_, filename_, size_, format_, path_]
+            connect.execute_sql(sql_, pram_)
+        return "upload crawl file success"
+    except:
+        return "upload crawl file failure"
     pass
 
 
+def insert_crawl_stats(crawl_id, keyword, connect):
+    """
+    向数据库表中插入当前轮次爬取数量状态
+
+    :param connect: Transwarp连接（包括hdfs和Inceptor）
+    :param crawl_id: 爬虫id，由前端接口获取
+    :param keyword: 本轮爬取关键字
+    :return: 执行状态
+    """
+    try:
+        sql_ = "INSERT INTO  hs.text_crawl_stats  VALUES (?, ?, ?)"
+        pram_ = [crawl_id, keyword, get_count(keyword)]
+        connect.execute_sql(sql_, pram_)
+        return "insert crawl stats success"
+    except Exception as e:
+        print(e)
+        return "insert crawl stats failure"
+
+
 def stop(*args, **kwargs):
-    reactor.stop()
+    if reactor.running:
+        try:
+            reactor.stop()
+        except error.ReactorNotRunning:
+            pass
+
+
+def start_spider():
+    pass
 
 
 if __name__ == '__main__':
+    transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
+    transwarp.connect_incpetor()
+    transwarp.connect_hdfs()
     status_url = "http://localhost:8080/text/textCrawler"
     info_url = "http://localhost:8080/site/siteJobManage"
     while True:
@@ -145,24 +208,21 @@ if __name__ == '__main__':
         while True:
             logger.info('TextCrawler On!')
             # info = control_info(info_url)  # 控制信息
-            info = {"sites": ['nasa', 'wiki'], "keywords": ['target', 'under water']}
+            info = {"sites": ['nasa', 'wiki'], "keywords": ['target', 'under water'], "crawl_id": "crawler1"}
             if info is not None:
-                stats_file = open('stats.txt', 'a')
                 keywords = info['keywords']
                 sites = info['sites']
                 configure_logging()
                 runner = CrawlerRunner(get_project_settings())
                 for keyword in keywords:
                     for site in sites:
-                        runner.crawl(site, keyword=keyword)
+                        runner.crawl(site, keyword=keyword, crawl_id=info['crawl_id'])
                         d = runner.join()
                         d.addBoth(stop)
                     # defer.DeferredList(set()).addBoth(stop)
-                try:
-                    reactor.run()
-                except:
-                    stop()
-                # reactor.run()
-            crawl_numbers = get_count()
-            print("crawl_numbers:{}".format(crawl_numbers))
+                reactor.run()
+                for keyword in keywords:
+                    logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
+                logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
             break
+        break

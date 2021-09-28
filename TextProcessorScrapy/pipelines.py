@@ -9,6 +9,8 @@ import datetime
 import json
 import os
 # from data_scrapy.settings import REDIS_HOST, REDIS_PORT, REDIS_PARAMS, PROXIES_UNCHECKED_LIST, PROXIES_UNCHECKED_SET
+import time
+
 from TextProcessorScrapy.utils.utils import connect_db, create_table, delete_table, insert_to_db, mkdirs
 import json
 import logging
@@ -45,27 +47,32 @@ def CreatePath(path, tag):
         file = open(SaveFile, "a+", newline="", encoding="utf-8-sig")
     return file
 
-def create_count_file(path, tag):
+def create_count_file(path, tag, keyword):
     index_path = path + '/count'
     if os.path.exists(index_path) is False:
         os.makedirs((index_path))
-    count_file = index_path + '/{}.txt'.format(tag)
-    return open(count_file, 'w', encoding='utf-8')
+    count_file = index_path + '/{}_{}_{}'.format(str(datetime.datetime.now().strftime("%Y%m%d%H%M%S")), tag, keyword)
+    try:
+        return open(count_file, 'w', encoding='utf-8')
+    except:
+        time.sleep(1)
+        return open(count_file, 'w', encoding='utf-8')
 
 class HsNasaPipeline:
     def __init__(self):
         self.tag = 'nasa'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
         self.data = []
         self.count = 0
+        self.first = True
 
     def process_item(self, item, spider):
         """
         保存
         """
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
@@ -83,7 +90,7 @@ class TwitterPipeline:
     def __init__(self):
         self.tag = 'twitter'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
@@ -99,13 +106,14 @@ class TwitterPipeline:
         """
         保存
         """
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         results = dataget(self.api, item['keyword'])
         for result in results:
             detail_ = {"keyword": result["keyword"], "source": result["source"], "title": result["title"],
                        "url": result["url"],
                        "date": result["date"], "content": result["content"]}
-            detail = {"标签": result["keyword"], "来源": result["source"], "标题": result["title"], "网址": result["url"],
-                      "时间": result["date"], "内容": result["content"]}
             if len(detail_['content'].replace(' ', '').replace("\n", '')) <= 20 or detail_['content'] == '':
                 continue
             self.data.append(detail_)
@@ -122,13 +130,15 @@ class FacebookPipeline:
     def __init__(self):
         self.tag = 'facebook'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
     def process_item(self, item, spider):
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
+
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -166,13 +176,14 @@ class AiaaPipeline:
     def __init__(self):
         self.tag = 'aiaa'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
     def process_item(self, item, spider):
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -189,7 +200,7 @@ class WikiPipeline:
     def __init__(self):
         self.tag = 'wiki'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
@@ -197,9 +208,9 @@ class WikiPipeline:
         """
         保存
         """
-        # insert_to_db(self.cursor, self.tag, item)
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -216,7 +227,7 @@ class BaiduPipeline:
     def __init__(self):
         self.tag = 'baidu'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
@@ -224,9 +235,9 @@ class BaiduPipeline:
         """
         保存
         """
-        # insert_to_db(self.cursor, self.tag, item)
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -242,7 +253,7 @@ class JanesPipeline:
     def __init__(self):
         self.tag = 'janes'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
@@ -250,8 +261,9 @@ class JanesPipeline:
         """
         保存
         """
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
@@ -267,7 +279,7 @@ class TiexuePipeline:
     def __init__(self):
         self.tag = 'tiexue'
         self.file = CreatePath(SavePath, self.tag)
-        self.count_file = create_count_file(SavePath, self.tag)
+        self.first = True
         self.data = []
         self.count = 0
 
@@ -275,20 +287,12 @@ class TiexuePipeline:
         """
         保存
         """
-        # insert_to_db(self.cursor, self.tag, item)
-        detail = {"标签": item["keyword"], "来源": item["source"], "标题": item["title"], "网址": item["url"],
-                  "时间": item["date"], "内容": item["content"]}
+        if self.first:
+            self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
-        # self.count += 1
-        # for data in self.data:
-        #     insert_to_db(self.cursor, self.tag, data)
-        # if self.count == 50:
-        #     json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        #     self.count = 0
-        #     self.data = []
-        #     self.file = CreatePath(SavePath)
         # return item
 
     def close_spider(self, spider):
