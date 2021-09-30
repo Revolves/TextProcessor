@@ -70,16 +70,16 @@ REACTOR_THREADPOOL_MAXSIZE = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 2
+# DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 32
 CONCURRENT_REQUESTS_PER_IP = 128
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = False
-HTTPERROR_ALLOWED_CODES = [302]
+# COOKIES_ENABLED = True
+
 # 重定向
-REDIRECT_ENABLED = True
+# REDIRECT_ENABLED = True
 COMMANDS_MODULE = 'TextProcessorScrapy.commands'
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
@@ -101,7 +101,7 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware': 543,
-    # 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
+    'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
     # 'TextProcessorScrapy.middlewares.RandomProxyMiddleware': 123,
 }
 

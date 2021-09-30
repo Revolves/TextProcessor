@@ -81,8 +81,9 @@ class HsNasaPipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()
 
 
@@ -122,8 +123,9 @@ class TwitterPipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()
 
 class FacebookPipeline:
@@ -140,15 +142,16 @@ class FacebookPipeline:
             self.first = False
 
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
-                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
+                   "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
         self.count += 1
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()
 
 
@@ -185,15 +188,16 @@ class AiaaPipeline:
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
-                   "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
+                   "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
         self.count += 1
         return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()
 
 class WikiPipeline:
@@ -219,8 +223,9 @@ class WikiPipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()
 
 class BaiduPipeline:
@@ -246,8 +251,9 @@ class BaiduPipeline:
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
         self.file.close()
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
 
 class JanesPipeline:
     def __init__(self):
@@ -271,8 +277,9 @@ class JanesPipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()
 
 class TiexuePipeline:
@@ -297,6 +304,7 @@ class TiexuePipeline:
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.count_file.write(str(self.count))
-        self.count_file.close()
+        if self.first is False:
+            self.count_file.write(str(self.count))
+            self.count_file.close()
         self.file.close()

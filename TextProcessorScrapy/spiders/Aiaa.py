@@ -1,5 +1,8 @@
 import logging
 from datetime import datetime
+
+import requests
+
 from ..items import DataItem
 import scrapy
 
@@ -14,7 +17,7 @@ class AiaaSpider(scrapy.Spider):
     name = "aiaa"
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.AiaaPipeline': 500},
-        'REDIRECT_ENABLED': False
+        'HTTPERROR_ALLOWED_CODES': [302, 301]
     }
 
     def __init__(self, *args, **kwargs):
@@ -24,15 +27,18 @@ class AiaaSpider(scrapy.Spider):
         #     self.keywords = args
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
-        url_head = "https://arc.aiaa.org/action/doSearch?AllField="
+
+    def start_requests(self):
+        url_head = "http://arc.aiaa.org/action/doSearch?AllField="
         url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
-        self.start_urls.append((url_head + self.keyword + url_end))
-        self.count = -1
+        logger.info("Aiaa Spider Starting!")
+        yield  scrapy.Request(url_head + self.keyword + url_end, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
-        logger.info("Aiaa Spider Starting!")
-        self.count += 1
-        part_url = response.xpath("//h4[@class='search-item__title']")
+        if "The URL has moved " in response.text or response.text == '':
+            part_url = requests.get(response.url).xpath("//h4[@class='search-item__title']")
+        else:
+            part_url = response.xpath("//h4[@class='search-item__title']")
         for url in part_url:
             url = "https://arc.aiaa.org" + str(url.xpath("./a/@href").get())
             yield scrapy.Request(url, callback=self.parse_crawl, dont_filter=True)
@@ -61,7 +67,7 @@ class AiaaSpider(scrapy.Spider):
         item['title'] = str(title)
         item['date'] = str(publish_time)
         item['url'] = response.url
-        item['content'] = str(content)
+        item['content'] = str(content).replace("\n", "").replace("\\", "/").strip().replace("\xa0", '').replace('\\u', ',')
         # yield scrapy.Request(url=href, callback=self.new_parse), item
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return
