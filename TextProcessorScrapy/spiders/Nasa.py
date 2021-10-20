@@ -3,7 +3,6 @@ import logging
 import scrapy
 
 from ..items import DataItem
-# from ..utils.utils import parse_pdf
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -25,8 +24,12 @@ class nasaSpider(scrapy.Spider):
         self.allowed_domains = ['nasa.gov']
         url_header = 'https://nasasearch.nasa.gov/search?query='
         url_late = '&affiliate=nasa&utf8=%E2%9C%93'
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
+        if 'database' in kwargs:
+            self.database = kwargs['database']
         self.start_urls.append(url_header + self.keyword + url_late)
         self.count = -1
 
@@ -45,17 +48,6 @@ class nasaSpider(scrapy.Spider):
             return
         yield item
 
-    def parse_detail_pdf(self, response):
-        """
-        解析pdf页面
-        :param response:
-        :return:
-        """
-        content = parse_pdf(response.url)
-        content.replace('\n', ' ').replace("'", "")
-        item = response.meta['item']
-        item['content'] = content
-        yield item
 
     def parse(self, response):
         logger.info('NASA Spider Starting!')
@@ -75,8 +67,6 @@ class nasaSpider(scrapy.Spider):
             # item["description"] = description.replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0',' ')
             if item["url"][-3:] == "pdf":
                 continue
-                # item["content"] = "Cannot get"
-                yield scrapy.Request(url=item["url"], callback=self.parse_detail_pdf, meta={'item': item})
             else:
                 yield scrapy.Request(url=item["url"], callback=self.parse_detail, meta={'item': item})
 

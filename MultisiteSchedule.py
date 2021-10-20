@@ -33,6 +33,7 @@ WEB_MAP = {"百度百科": 'baidu',
            "jane's": "janes"
            }
 SITE_to_SPIDER = {"百度百科": BaidubaikeSpider}
+NUM = 0
 
 
 class CrawlRunner:
@@ -131,7 +132,7 @@ def crawl_file_list(root):
     file_list = {}
     for root, dirs, files in os.walk(root):
         for file in files:
-            if file.endswith(".json"):  # 过滤得到json文件
+            if file.endswith(".json") or file.endswith(".pdf"):  # 过滤得到json文件
                 file_path = os.path.join(os.path.abspath("."), os.path.join(root, file))
                 file_size = os.stat(file_path).st_size  # 文件大小
                 if file_size <= 10:
@@ -156,9 +157,9 @@ def upload_crawl_file(path_list, connect):
             size_ = path_list[file]
             # print(file)
             connect.upload_file(file, "\\text_crawl_file\\")
-            os.remove(file)
+            # os.remove(file)
             sql_ = "INSERT INTO hs.text_crawl_file  VALUES (?, ?, ?, ?, ?)"
-            date_ = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            date_ = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
             filename_ = file.split("\\")[-1]
             format_ = file.split('.')[-1]
             path_ = "/hs/text_crawl_file/"
@@ -197,20 +198,22 @@ def stop(*args, **kwargs):
             pass
 
 
-def start_spider():
-    pass
+def start_spiders(transwarp):
+    """
+    启动爬虫
 
+    :return:
+    """
+    # transwarp = Transwarp("Transwarp/JavaJar/DB.jar", "Transwarp/libs")
+    # transwarp.connect_incpetor()
+    # transwarp.connect_hdfs()
 
-if __name__ == '__main__':
-    from Transwarp import Transwarp
-    transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
-    transwarp.connect_incpetor()
-    transwarp.connect_hdfs()
     status_url = "http://localhost:8080/text/textCrawler"
     info_url = "http://localhost:8080/site/siteJobManage"
     while True:
         # info = control_info(info_url)  # 控制信息
-        info = {"sites": ['nasa', 'wiki'], "keywords": ['target', 'under water'], "crawl_id": "crawler1"}
+        info = {"sites": ['nasa', 'wiki', 'baidu', 'twitter', 'tiexue', 'aiaa', 'facebook'],
+                "keywords": ['target', 'under water'], "crawl_id": "crawler1"}
         # while control_status(status_url):
         if info is not False:
             logger.info('TextCrawler On!')
@@ -221,12 +224,25 @@ if __name__ == '__main__':
                 runner = CrawlerRunner(get_project_settings())
                 for keyword in keywords:
                     for site in sites:
-                        runner.crawl(site, keyword=keyword, crawl_id=info['crawl_id'])
+                        runner.crawl(site, keyword=keyword, crawl_id=info['crawl_id'], database=transwarp)
                         d = runner.join()
                         d.addBoth(stop)
                 reactor.run()
-                for keyword in keywords:
-                    logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
-                logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
+                # for keyword in keywords:
+                #     logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
+                # logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
+                # sql_ = "DELETE FROM hs.text_crawl_http_interact WHERE crawl_id = ? "
+                # pram_ = [info['crawl_id']]
+                # transwarp.execute_sql(sql_, pram_)
             break
         break
+    pass
+
+
+if __name__ == '__main__':
+    'TODO:'
+    # start_spiders()
+    transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
+    transwarp.connect_inceptor()
+    start_spiders(transwarp)
+    # transwarp.connect_hdfs()

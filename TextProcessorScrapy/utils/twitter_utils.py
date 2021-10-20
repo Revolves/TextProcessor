@@ -1,16 +1,4 @@
 import tweepy
-import csv
-import json
-import pprint
-import os
-import time
-import datetime
-import hashlib
-import shutil
-import pandas as pd
-import socket
-from urllib.request import Request, urlopen
-import requests
 
 # import argparse
 # API setting
@@ -21,7 +9,7 @@ site_name = 'twitter'
 
 
 def get_api(consumer_key, consumer_secret, access_key, access_secret):
-    "获取API"
+    """获取API"""
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth, wait_on_rate_limit=True,

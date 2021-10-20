@@ -1,16 +1,12 @@
-import scrapy
-import xlrd
 import logging
+import time
+
+import scrapy
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
-import hashlib
-from selenium.webdriver import ActionChains
-from ..utils.facebook_utiles import options
+
 from ..items import DataItem
+from ..utils.facebook_utiles import options
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -22,37 +18,51 @@ class FacebookSpider(scrapy.Spider):
     name = 'facebook'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.FacebookPipeline': 300},
+        'REDIRECT_ENABLED' : False,
+        'HTTPERROR_ALLOWED_CODES': [302, 301],
+        'CONCURRENT_REQUESTS' : 8,
+        'COOKIES_ENABLED': True
     }
     def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ['facebook.com']
-        head_url = "https://www.facebook.com/search/posts/?q="
-        self.driver = webdriver.Chrome(options= options)
-        self.driver.implicitly_wait(10)
+        self.driver = webdriver.Chrome("file/chromedriver.exe", options=options)
+        self.driver.implicitly_wait(3)
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
-        self.start_urls.append(head_url + self.keyword)
+        if 'database' in kwargs:
+            self.database = kwargs['database']
+
+    def start_requests(self):
         self.count = -1
          # 登录账户
         try:
-            self.driver.get('https://www.facebook.com/')
-        except:
-            self.driver.find_element_by_id('reload-button').click()
-        # 输入账户密码
-        self.driver.find_element_by_id('email').clear()
-        self.driver.find_element_by_id('email').send_keys('liuleyuan0114@qq.com')
-        self.driver.find_element_by_id('pass').clear()
-        self.driver.find_element_by_id('pass').send_keys('zxcvbnm1234')
+            try:
+                self.driver.get('https://facebook.com/?stype=lo&jlou=AfcFaK2ov8XLonPVvzBvlW-hIShxrA1nbAwDVg1CPMo5TSXJNtdG7Xb_KE6SOxa2sv2Gnk4o43Lvgt9NoSXSq-tsR0H1-eUxIGf-rgp1P5hTAg&smuh=47658&lh=Ac8jNUuHrt8XoyfC-hU')
+            except:
+                self.driver.find_element_by_id('reload-button').click()
+            # 输入账户密码
+            self.driver.find_element_by_id('email').clear()
+            self.driver.find_element_by_id('email').send_keys('liuleyuan0114@qq.com')
+            self.driver.find_element_by_id('pass').clear()
+            self.driver.find_element_by_id('pass').send_keys('zxcvbnm1234')
 
-        # 模拟点击登录按钮，两种不同的点击方法
-        try:
-            self.driver.find_element_by_xpath("//button[contains(@id,'u_0_d_')]").send_keys(Keys.ENTER)
+            # 模拟点击登录按钮，两种不同的点击方法
+            try:
+                self.driver.find_element_by_xpath("//button[contains(@id,'u_0_d_')]").send_keys(Keys.ENTER)
+            except:
+                self.driver.find_element_by_xpath('//a[@href="https://www.facebook.com/?ref=logo"]').send_keys(
+                    Keys.ENTER)
+            time.sleep(1)
         except:
-            self.driver.find_element_by_xpath('//a[@href="https://www.facebook.com/?ref=logo"]').send_keys(
-                Keys.ENTER)
-        time.sleep(1)
+            pass
+        head_url = "https://facebook.com/search/posts/?q="
+        yield scrapy.Request(head_url + self.keyword, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
+        print(response.url)
         logger.info("Facebook Spider starting!")
         self.count += 1
         try:

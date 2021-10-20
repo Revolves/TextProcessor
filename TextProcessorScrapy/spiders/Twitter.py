@@ -1,7 +1,7 @@
 import logging
 
 import scrapy
-from ..utils import twitter_utils as tu
+
 from ..items import TwitterKeywordItem
 
 logging.basicConfig(level=logging.DEBUG,
@@ -23,8 +23,12 @@ class TwitterSpider(scrapy.Spider):
         super().__init__(*args, **kwargs)
         self.allowed_domains = ['twitter.com']
         self.start_urls = ['https://twitter.com/explore']
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
+        if 'database' in kwargs:
+            self.database = kwargs['database']
 
     def parse(self, response):
         logger.info("Twitter Spider starting!")

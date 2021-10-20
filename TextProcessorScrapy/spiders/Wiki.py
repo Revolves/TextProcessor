@@ -14,10 +14,12 @@ class WikiSpider(scrapy.Spider):
         super().__init__(*args, **kwargs)
         self.allowed_domains = ['en.wikipedia.org']
     # 获取每个关键词的wiki搜索初始网址（第一页）
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
-        if "crawl_id" in kwargs:
-            print(kwargs['crawl_id'])
+        if 'database' in kwargs:
+            self.database = kwargs['database']
         url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
         self.start_urls.append(url)
         self.count = 0
@@ -44,7 +46,6 @@ class WikiSpider(scrapy.Spider):
         next_page_url = ''
         for next_link in next_page_list:
             link_href_text = next_link.xpath('./text()').extract_first()
-
             if link_href_text == "next 20":
                 next_href = next_link.xpath('./@href').extract_first()
                 if next_href != None:

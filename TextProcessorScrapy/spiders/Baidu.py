@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
-import scrapy
-from ..items import BaiduWikiItem
-import json
 import time
 
 import scrapy
-from datetime import datetime
-
 from selenium import webdriver
+
+from ..items import BaiduWikiItem
 
 
 class BaidubaikeSpider(scrapy.Spider):
@@ -21,8 +18,12 @@ class BaidubaikeSpider(scrapy.Spider):
         self.allowed_domains = ['www.baike.baidu.com']
         # if 'keywords' in kwargs:
         #     self.keywords = kwargs['keywords']
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
+        if 'database' in kwargs:
+            self.database = kwargs['database']
         self.start_urls.append("https://baike.baidu.com/item/" + self.keyword)
         self.number = -1
 

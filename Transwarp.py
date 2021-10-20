@@ -5,8 +5,8 @@ time: 11:21
 IDE: PyCharm
 """
 import os
+
 import jpype
-from jpype import *
 
 
 class Transwarp:
@@ -25,6 +25,7 @@ class Transwarp:
             jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath,
                            "-Djava.ext.dirs=%s" % self.dependency_path)
         self.hdfs = jpype.JClass("DB.HdfsUtil")
+        # self.hdfs = jpype.JClass("java.lang.Class").forName("DB.HdfsUtil")
         self.inceptor = jpype.JClass("DB.InceptorUtil")
         javaInstance = self.hdfs("Transwarp\\hdfs\\")
 
@@ -37,7 +38,7 @@ class Transwarp:
         except Exception as e:
             print("{}/n 连接失败")
 
-    def connect_incpetor(self):
+    def connect_inceptor(self):
         """
         建立Inceptor连接
 

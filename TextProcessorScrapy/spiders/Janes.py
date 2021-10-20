@@ -1,11 +1,10 @@
 import logging
-import math
-import re
-import time
 from datetime import datetime, date, timedelta
-from ..items import DataItem
+
 import scrapy
 from selenium import webdriver
+
+from ..items import DataItem
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -24,8 +23,12 @@ class JanesSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(JanesSpider, self).__init__(*args, **kwargs)
         self.allowed_domains = ['janes.com']
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
+        if 'database' in kwargs:
+            self.database = kwargs['database']
         url = 'https://www.janes.com/search-results?indexCatalogue=all---production&searchQuery=' + self.keyword + \
               '&wordsMode=AllWords&orderBy=Newest'
         self.start_urls.append(url)

@@ -5,18 +5,16 @@
 import logging
 import random
 
-from scrapy.downloadermiddlewares.retry import RetryMiddleware
+from scrapy import signals
+# from TextProcessorScrapy.utils.utils import get_random_ip
+from twisted.internet import task
 
 from TextProcessorScrapy.settings import USER_AGENTS_LIST
-from scrapy import signals
-from twisted.internet import defer
-from twisted.internet.error import TCPTimedOutError, ConnectionDone, ConnectError, ConnectionLost
-from TextProcessorScrapy.utils.utils import get_random_ip
-import redis
-from twisted.internet import task
 
 # useful for handling different item types with a single interface
 
+CRAWL_ID = None
+DATABASE = None
 
 class TextCrawlSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -27,6 +25,7 @@ class TextCrawlSpiderMiddleware:
         self.stats = stats
         # 每隔多少秒监控一次已抓取数量
         self.time = 10.0
+        self.last_count = 0
 
     @classmethod
     def from_crawler(cls, crawler, *args, **kwargs):
@@ -40,36 +39,44 @@ class TextCrawlSpiderMiddleware:
         self.tsk.start(self.time, now=True)
 
     def spider_closed(self):
-        scrapy_count = self.stats.get_value('item_scraped_count')
-        logging.info("crawl speed :{}".format(scrapy_count))
-        stats_file = open('stats.txt', 'w+')
-        stats_file.write('{}\n'.format(scrapy_count))
+        print(CRAWL_ID)
+        if CRAWL_ID:
+            http_interact = self.stats.get_value('log_count/DEBUG')
+            this_time_http_interact = http_interact - self.last_count
+            self.last_count = http_interact
+            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
         if self.tsk.running:
             self.tsk.stop()
 
     def collect(self):
         # 这里收集stats并写入相关的储存。
         # 目前展示是输出到终端
-        scrapy_count = self.stats.get_value('item_scraped_count')
-        if scrapy_count:
-            stats_file = open('stats.txt', 'a+')
-            stats_file.write('{}\n'.format(scrapy_count))
-            logging.info("crawl speed :{}".format(scrapy_count))
-
+        if CRAWL_ID:
+            http_interact = self.stats.get_value('log_count/DEBUG')
+            this_time_http_interact = http_interact - self.last_count
+            self.last_count = http_interact
+            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
 
 class TextCrawlDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
+    def __init__(self, stats):
+        self.stats = stats
+        # 每隔多少秒监控一次已抓取数量
+        self.time = 10.0
+        self.last_count = 0
 
     @classmethod
-    def from_crawler(cls, crawler):
-        # This method is used by Scrapy to create your spiders.
-        s = cls()
-        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
-        return s
+    def from_crawler(cls, crawler, *args, **kwargs):
+        instance = cls(crawler.stats)
+        crawler.signals.connect(instance.spider_opened, signal=signals.spider_opened)
+        crawler.signals.connect(instance.spider_closed, signal=signals.spider_closed)
+        return instance
 
     def process_request(self, request, spider):
+        CRAWL_ID = spider.crawl_id
+        DATABASE = spider.database
         # Called for each request that goes through the downloader
         # middleware.
 
@@ -102,7 +109,40 @@ class TextCrawlDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+        self.tsk = task.LoopingCall(self.collect, spider = spider)
+        self.tsk.start(self.time, now=True)
 
+    def spider_closed(self, spider):
+        CRAWL_ID = spider.crawl_id
+        if CRAWL_ID:
+            http_interact = self.stats.get_value('log_count/DEBUG')
+            this_time_http_interact = http_interact - self.last_count
+            self.last_count = http_interact
+            try:
+                sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
+                pram_ = [CRAWL_ID, str(this_time_http_interact)]
+                spider.database.execute_sql(sql_, pram_)
+            except:
+                logging.error("http interact insert failure")
+            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
+        if self.tsk.running:
+            self.tsk.stop()
+    def collect(self, spider):
+        CRAWL_ID = spider.crawl_id
+        # 这里收集stats并写入相关的储存。
+        # 目前展示是输出到终端
+        if CRAWL_ID:
+            http_interact = self.stats.get_value('log_count/DEBUG')
+            if http_interact:
+                this_time_http_interact = http_interact - self.last_count
+                self.last_count = http_interact
+                try:
+                    sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
+                    pram_ = [CRAWL_ID, str(this_time_http_interact)]
+                    spider.database.execute_sql(sql_, pram_)
+                except:
+                    logging.error("http interact insert failure")
+                logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
 #
 # class RandomProxyMiddleware(object):
 #     """
@@ -145,16 +185,16 @@ class TextCrawlDownloaderMiddleware:
 #         return self._retry(request, exception, spider)
 
 # 随机选择 User-Agent 的下载器中间件
-# class RandomUserAgentMiddleware(object):
-#     def process_request(self, request, spider):
-#         # 从 settings 的 USER_AGENTS 列表中随机选择一个作为 User-Agent
-#         user_agent = random.choice(USER_AGENTS_LIST)
-#         request.headers['User-Agent'] = user_agent
-#         # return None
-#
-#     def process_response(self, request, response, spider):
-#         return response
-#
+class RandomUserAgentMiddleware(object):
+    def process_request(self, request, spider):
+        # 从 settings 的 USER_AGENTS 列表中随机选择一个作为 User-Agent
+        user_agent = random.choice(USER_AGENTS_LIST)
+        request.headers['User-Agent'] = user_agent
+        # return None
+
+    def process_response(self, request, response, spider):
+        return response
+
 #
 # class HttpProxymiddleware(object):
 #     # 一些异常情况汇总

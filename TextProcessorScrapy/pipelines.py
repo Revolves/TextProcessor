@@ -5,27 +5,15 @@
 
 
 import datetime
-# useful for handling different item types with a single interface
-import json
-import os
-# from data_scrapy.settings import REDIS_HOST, REDIS_PORT, REDIS_PARAMS, PROXIES_UNCHECKED_LIST, PROXIES_UNCHECKED_SET
-import time
-
-from TextProcessorScrapy.utils.utils import connect_db, create_table, delete_table, insert_to_db, mkdirs
 import json
 import logging
 import os
+# useful for handling different item types with a single interface
+import time
+
 from TextProcessorScrapy.utils.twitter_utils import get_api, dataget
 
-from scrapy.utils.project import get_project_settings
-
-from TextProcessorScrapy.items import Tweet, User
-
-
 SavePath = 'result'
-
-
-# server = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PARAMS['password'])
 
 
 def CreatePath(path, tag):
@@ -41,8 +29,6 @@ def CreatePath(path, tag):
     SaveFile = path + '{}_'.format(tag) + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f") + '.json'
     if os.path.exists(SaveFile) is False:
         file = open(SaveFile, "a+", newline="", encoding="utf-8-sig")
-        # writer = csv.writer(file)
-        # writer.writerow(["标签", "来源", "标题", "网址", "时间", "内容"])
     else:
         file = open(SaveFile, "a+", newline="", encoding="utf-8-sig")
     return file
@@ -119,7 +105,15 @@ class TwitterPipeline:
                 continue
             self.data.append(detail_)
             self.count += 1
-        return item
+            if self.count % 40 == 0:
+                try:
+                    sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
+                    pram_ = [spider.crawl_id, str(80)]
+                    spider.database.execute_sql(sql_, pram_)
+                except:
+                    logging.error("http interact insert failure")
+                logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
+        # return item
 
     def close_spider(self, spider):
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
@@ -127,6 +121,13 @@ class TwitterPipeline:
             self.count_file.write(str(self.count))
             self.count_file.close()
         self.file.close()
+        try:
+            sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
+            pram_ = [spider.crawl_id, str(self.count%40 * 2)]
+            spider.database.execute_sql(sql_, pram_)
+        except:
+            logging.error("http interact insert failure")
+        logging.info("{} ten seconds http interact :{}".format(spider.crawl_id, self.count%40 * 2))
 
 class FacebookPipeline:
     def __init__(self):

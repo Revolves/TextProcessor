@@ -93,7 +93,7 @@ COMMANDS_MODULE = 'TextProcessorScrapy.commands'
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    'TextProcessorScrapy.middlewares.TextCrawlSpiderMiddleware': 543,
+    'TextProcessorScrapy.middlewares.TextCrawlSpiderMiddleware': None,
     # 'TextProcessorScrapy.middlewares.HttpProxymiddleware': 541
 }
 

@@ -11,8 +11,6 @@ import logging
 import os
 
 import jpype
-import pymysql
-import pyodbc
 
 to_day = datetime.datetime.now()
 logging.basicConfig(level=logging.DEBUG,

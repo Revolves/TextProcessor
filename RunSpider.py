@@ -6,7 +6,6 @@ IDE: PyCharm
 """
 import logging
 
-from scrapy.cmdline import execute
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings

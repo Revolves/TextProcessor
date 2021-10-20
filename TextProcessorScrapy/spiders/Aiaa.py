@@ -23,16 +23,18 @@ class AiaaSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ["www.aiaa.org"]
-        # if args:
-        #     self.keywords = args
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
+        if 'database' in kwargs:
+            self.database = kwargs['database']
 
     def start_requests(self):
         url_head = "http://arc.aiaa.org/action/doSearch?AllField="
         url_end = "&sortBy=Earliest&startPage=0&pageSize=20&"
         logger.info("Aiaa Spider Starting!")
-        yield  scrapy.Request(url_head + self.keyword + url_end, callback=self.parse, dont_filter=True)
+        yield scrapy.Request(url_head + self.keyword + url_end, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
         if "The URL has moved " in response.text or response.text == '':
@@ -67,7 +69,8 @@ class AiaaSpider(scrapy.Spider):
         item['title'] = str(title)
         item['date'] = str(publish_time)
         item['url'] = response.url
-        item['content'] = str(content).replace("\n", "").replace("\\", "/").strip().replace("\xa0", '').replace('\\u', ',')
+        item['content'] = str(content).replace("\n", "").replace("\\", "/").strip().replace("\xa0", '').replace('\\u',
+                                                                                                                ',')
         # yield scrapy.Request(url=href, callback=self.new_parse), item
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return

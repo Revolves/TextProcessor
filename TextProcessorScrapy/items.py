@@ -3,9 +3,11 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+import os
 import re
-import sys, os
+import sys
+
+import scrapy
 
 sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 from TextProcessorScrapy.settings import PROXY_URL_FORMATTER

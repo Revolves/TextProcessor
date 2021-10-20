@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import re
-import time
+
 import scrapy
 
 from ..items import DataItem
@@ -21,10 +21,14 @@ class TiexueSpider(scrapy.Spider):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.allowed_domains = ['bbs.tiexue.net', 'www.baidu.com']
+        self.allowed_domains = ['bbs.tiexue.net', 'baidu.com']
+        if 'crawl_id' in kwargs['crawl_id']:
+            self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
-        url = "https://www.baidu.com/baidu?word=" + self.keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
+        if 'database' in kwargs:
+            self.database = kwargs['database']
+        url = "https://baidu.com/baidu?word=" + self.keyword + "&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on"
         self.start_urls.append(url)
         self.num = 0
         self.count = 0
@@ -38,8 +42,10 @@ class TiexueSpider(scrapy.Spider):
 
         # 获取取下一页url
         nextpagehref = response.xpath('//div [@class="page-inner"]/a[last()]/@href').extract()
-        temp = nextpagehref[0]
-        nextpageurl = "https://www.baidu.com" + temp
+        nextpageurl = None
+        if nextpagehref:
+            temp = nextpagehref[0]
+            nextpageurl = "https://www.baidu.com" + temp
 
         # 一页全爬
         web_node_list = response.xpath('//div[@id="content_left"]//h3/a/@href').extract()
@@ -59,7 +65,8 @@ class TiexueSpider(scrapy.Spider):
         if self.num > 5:
             return
         # 迭代下一页
-        yield scrapy.Request(url=nextpageurl, callback=self.parse)
+        if nextpageurl:
+            yield scrapy.Request(url=nextpageurl, callback=self.parse)
         self.count += 1
 
     def new_parse(self, response):
