@@ -1,0 +1,1252 @@
+2021-10-26 13:38:18 [scrapy.extensions.telnet] INFO: Telnet Password: d1bdab576969f46c
+2021-10-26 13:38:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:38:18 [werkzeug] INFO:  * Restarting with stat
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.HsNasaPipeline']
+2021-10-26 13:43:12 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:12 [nasa] INFO: Spider opened: nasa
+2021-10-26 13:43:12 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-10-26 13:43:12 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:12 [scrapy.extensions.telnet] INFO: Telnet Password: dcba429797b1034c
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.WikiPipeline']
+2021-10-26 13:43:12 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:12 [wiki] INFO: Spider opened: wiki
+2021-10-26 13:43:12 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:12 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:12 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-10-26 13:43:12 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:12 [scrapy.extensions.telnet] INFO: Telnet Password: cdee48c92fbccd80
+2021-10-26 13:43:12 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}
+2021-10-26 13:43:13 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1
+2021-10-26 13:43:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session HTTP/1.1" 200 785
+2021-10-26 13:43:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:43:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/timeouts {"implicit": 1000}
+2021-10-26 13:43:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/timeouts HTTP/1.1" 200 14
+2021-10-26 13:43:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.BaiduPipeline']
+2021-10-26 13:43:13 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:13 [baidu] INFO: Spider opened: baidu
+2021-10-26 13:43:13 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:13 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025
+2021-10-26 13:43:13 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet Password: 11bac3907f4db3b4
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TiexuePipeline']
+2021-10-26 13:43:13 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:13 [tiexue] INFO: Spider opened: tiexue
+2021-10-26 13:43:13 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:13 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6026
+2021-10-26 13:43:13 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet Password: 112e9f7729947eac
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.AiaaPipeline']
+2021-10-26 13:43:13 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:13 [aiaa] INFO: Spider opened: aiaa
+2021-10-26 13:43:13 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:13 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6027
+2021-10-26 13:43:13 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet Password: 7b8b627042b1a958
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.HsNasaPipeline']
+2021-10-26 13:43:13 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:13 [nasa] INFO: Spider opened: nasa
+2021-10-26 13:43:13 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:13 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6028
+2021-10-26 13:43:13 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet Password: a6c65e6e2086ff4d
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.WikiPipeline']
+2021-10-26 13:43:13 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:13 [wiki] INFO: Spider opened: wiki
+2021-10-26 13:43:13 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:13 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6029
+2021-10-26 13:43:13 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:13 [scrapy.extensions.telnet] INFO: Telnet Password: 31427aa04aa9fc8f
+2021-10-26 13:43:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}
+2021-10-26 13:43:14 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1
+2021-10-26 13:43:14 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session HTTP/1.1" 200 785
+2021-10-26 13:43:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:43:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/timeouts {"implicit": 1000}
+2021-10-26 13:43:14 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/timeouts HTTP/1.1" 200 14
+2021-10-26 13:43:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.BaiduPipeline']
+2021-10-26 13:43:14 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:14 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:14 [baidu] INFO: Spider opened: baidu
+2021-10-26 13:43:14 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:14 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:14 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6030
+2021-10-26 13:43:14 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:14 [scrapy.extensions.telnet] INFO: Telnet Password: 7c8671f90d507ee4
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TiexuePipeline']
+2021-10-26 13:43:14 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:14 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:14 [tiexue] INFO: Spider opened: tiexue
+2021-10-26 13:43:14 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:14 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:14 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6031
+2021-10-26 13:43:14 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:43:14 [scrapy.extensions.telnet] INFO: Telnet Password: b0be2d00398bf4a9
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:43:14 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.AiaaPipeline']
+2021-10-26 13:43:14 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:43:14 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:43:14 [aiaa] INFO: Spider opened: aiaa
+2021-10-26 13:43:14 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:43:14 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:43:14 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6032
+2021-10-26 13:43:14 [TextProcessorScrapy.spiders.Aiaa] INFO: Aiaa Spider Starting!
+2021-10-26 13:43:14 [TextProcessorScrapy.spiders.Aiaa] INFO: Aiaa Spider Starting!
+2021-10-26 13:44:27 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:44:27 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E6%9E%AA%E6%A6%B4%E5%BC%B9&ns0=1> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://nasasearch.nasa.gov/search?query=%E6%9E%AA%E6%A6%B4%E5%BC%B9&affiliate=nasa&utf8=%E2%9C%93> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://nasasearch.nasa.gov/search?query=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&affiliate=nasa&utf8=%E2%9C%93> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://arc.aiaa.org/action/doSearch?AllField=%E6%9E%AA%E6%A6%B4%E5%BC%B9&sortBy=Earliest&startPage=0&pageSize=20&> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&ns0=1> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://arc.aiaa.org/action/doSearch?AllField=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&sortBy=Earliest&startPage=0&pageSize=20&> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://www.baidu.com/baidu?word=%E6%9E%AA%E6%A6%B4%E5%BC%B9&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on> from <GET https://baidu.com/baidu?word=%E6%9E%AA%E6%A6%B4%E5%BC%B9&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on>
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0/5794> from <GET https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0>
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://www.baidu.com/baidu?word=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on> from <GET https://baidu.com/baidu?word=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on>
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E6%9E%AA%E6%A6%B4%E5%BC%B9&ns0=1> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&ns0=1> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://arc.aiaa.org/action/doSearch?AllField=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&sortBy=Earliest&startPage=0&pageSize=20&> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://baike.baidu.com/item/%E6%9E%AA%E6%A6%B4%E5%BC%B9> (referer: None)
+2021-10-26 13:44:27 [py.warnings] WARNING: C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\scraper.py:148: UserWarning: The "BaidubaikeSpider.parse" method is a generator and includes a "return" statement with a value different than None. This could lead to unexpected behaviour. Please see https://docs.python.org/3/reference/simple_stmts.html#the-return-statement for details about the semantics of the "return" statement within generators
+  warn_on_generator_with_return_value(spider, callback)
+
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://nasasearch.nasa.gov/search?query=%E6%9E%AA%E6%A6%B4%E5%BC%B9&affiliate=nasa&utf8=%E2%9C%93> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://nasasearch.nasa.gov/search?query=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&affiliate=nasa&utf8=%E2%9C%93> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://arc.aiaa.org/action/doSearch?AllField=%E6%9E%AA%E6%A6%B4%E5%BC%B9&sortBy=Earliest&startPage=0&pageSize=20&> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E6%9E%AA%E6%A6%B4%E5%BC%B9&ns0=1> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&ns0=1> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET http://arc.aiaa.org/action/doSearch?AllField=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&sortBy=Earliest&startPage=0&pageSize=20&> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET http://arc.aiaa.org/action/doSearch?AllField=%E6%9E%AA%E6%A6%B4%E5%BC%B9&sortBy=Earliest&startPage=0&pageSize=20&> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://nasasearch.nasa.gov/search?query=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&affiliate=nasa&utf8=%E2%9C%93> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://nasasearch.nasa.gov/search?query=%E6%9E%AA%E6%A6%B4%E5%BC%B9&affiliate=nasa&utf8=%E2%9C%93> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:27 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/url {"url": "https://baike.baidu.com/item/%E6%9E%AA%E6%A6%B4%E5%BC%B9"}
+2021-10-26 13:44:28 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/url HTTP/1.1" 200 14
+2021-10-26 13:44:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2021-10-26 13:44:28 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:44:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:30 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:44:30 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:44:30 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:44:32 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:44:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:44:34 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:44:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:44:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2021-10-26 13:44:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/elements {"using": "xpath", "value": "//img[contains(@alt, '\u67aa\u69b4\u5f39')]"}
+2021-10-26 13:44:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/elements HTTP/1.1" 200 90
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:14215/session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "b59f875f-2aa8-42da-a540-9ae4d7e6394a", "element-6066-11e4-a52e-4f735466cecf": "b59f875f-2aa8-42da-a540-9ae4d7e6394a"}, "src"]}
+2021-10-26 13:44:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:14215 "POST /session/e85db967b1557dc57ae90a6ee5a583d0/execute/sync HTTP/1.1" 200 147
+2021-10-26 13:44:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:44:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://baike.baidu.com/item/%E6%9E%AA%E6%A6%B4%E5%BC%B9>
+{'attributes': {'img_url': {'图片1': 'https://bkimg.cdn.bcebos.com/pic/14ce36d3d539b60038fd63c6e950352ac65cb78b?x-bce-process=image/resize,m_lfit,w_440,limit_1/format,f_auto'},
+                '中文名': '枪榴弹',
+                '作用': '杀伤野战工事',
+                '使用兵种': '步兵',
+                '分类': '主要分为杀伤型和反装甲型',
+                '特点': '提高了步兵作战能力'},
+ 'content': '枪榴弹是步兵近距离上使用的点面杀伤武器，主要用于杀伤有生目标，摧毁各种轻型装甲目标、永久火力点等野战工事。因此，枪榴弹的装备使用大大提高了步兵在现代战场上对付点、面目标和反装甲的作战能力。[1]\xa0'
+            '枪榴弹的种类较多。按用途，分为杀伤枪榴弹、破甲枪榴弹、多用途枪榴弹、燃烧枪榴弹、照明枪榴弹、发烟枪榴弹、化学枪榴弹、演习训练枪榴弹等；按发射装置，分为尾管式枪榴弹、尾杆式枪榴弹、全入式枪榴弹、环翼式枪榴弹和弹筒合一式枪榴弹等。[2]\xa0'
+            '由战斗部、引信和弹尾部件组成。战斗部的结构与手榴弹相似，形状为圆柱形，内装炸药、化学药剂和其他元件，如破甲枪榴弹的药型罩等。引信有延期时间引信、触发引信、近炸引信和其他引信，使战斗部能在最有利时机作用。弹尾部件有尾管和尾杆两种。发射时尾管套在枪榴弹发射具上，承载发射推力并赋予枪榴弹一定的射向，尾管外有翼片，其作用是保持枪榴弹的飞行稳定。尾杆是早期枪榴弹采用的部件，大多为木杆，杆上刻有射程标记，发射时将尾杆插入筒形发射具，以插入的深度来调整枪榴弹的射程。[2]\xa0'
+            '枪榴弹发射具装在枪口使用，多数现代步枪的枪管口部可兼作枪榴弹发射具。用于发射枪榴弹的枪弹有普通枪弹与空包弹，用普通枪弹发射的枪榴弹必须有弹头吸收器、过弹器或弹头偏离装置。常用的是安装在枪榴弹底部尾管内的弹头吸收器。发射时，弹头吸收器将射来的弹头阻止在弹底部，并将弹头的能量和火药燃气压力转换成枪榴弹动能，使枪榴弹获得一定的初速。有的弹头吸收器还装有辅助装药，可使枪榴弹的飞行速度进一步提高。有过弹器的枪榴弹在战斗部的中心有一条允许弹头经过的通道，有弹头偏离装置的枪榴弹在弹底装有一个使弹头从侧面飞离的装置和气体偏流器。这两种枪榴弹都没有弹头吸收器，但都可以用普通枪弹发射。空包弹是一种不装弹头的枪弹，发射时靠火药燃气推动枪榴弹运动。用空包弹发射的枪榴弹一般重量较大、射程较近。但具有结构比较简单和安全性较高等优点。杀伤枪榴弹的直径一般为35～65毫米，弹全重200～600克，射程300～700米，杀伤半径10～30米。破甲枪榴弹的直径为40～75毫米，弹重300～1000克，直射距离50～100米，垂直穿透装甲钢板的厚度为100～300毫米，穿透混凝土的厚度为300～1000毫米。其他枪榴弹的尺寸根据其战术使命确定。[2]\xa0'
+            '枪榴弹出现较早，19世纪中叶出现了杀伤枪榴弹。第二次世界大战前夕，英国、美国、日本和德国等国家研制成采用尾翼稳定或旋转稳定，直接插入枪口或用杯形发射器发射的杀伤枪榴弹和破甲枪榴弹。20世纪50年代以后，许多国家将制式步枪的枪管口部设计成枪榴弹发射具，发明了弹头吸收器、过弹器和弹头偏离装置等，可用普通枪弹发射枪榴弹。随后，火箭增程枪榴弹、伸缩式枪榴弹、跳炸枪榴弹、多用途枪榴弹等相继问世。法国、比利时和以色列等国还研制成功由杀伤、破甲、燃烧等枪榴弹组成的枪榴弹系列。枪榴弹的发展趋势是：应用新技术，实现弹重轻量化、弹种系列化、功能多元化；探索和采用新工艺、新结构和改进发射方式，如采用增程火箭，增大有效射程等。随着科学技术的发展，新一代枪榴弹的综合性能将大幅度提高。[2]\xa0'
+            '当前枪榴弹的主要发展趋势是：1.弹质量减小，弹种系列化枪榴弹减小弹质量、增大威力是枪榴弹改进设计的目的。关键在于战斗部结构的改进和新材料的应用，通过合理调配弹质量、威力与后坐力三者之间的关系，使枪榴弹达到最佳作战效果。另外，为了满足步兵在未来战场上对付各种目标的需要，枪榴弹正在向着弹种系列化的方向发展。弹种系列化不仅为步兵完成各种不同战斗任务创造了条件，而且给生产、使用、贮存、后勤供应带来极大方便。2.采用实弹发射，简化操作程序枪榴弹采用空包弹发射不仅操作程序复杂，容易贻误战机，而且一旦误装实弹必将造成严重后果。因此，通过捕弹器采用实弹发射是枪榴弹发展的必由之路。捕弹器除了朝通用化、绝对安全型方向发展外，还发展了弹丸偏转器与其相结合的结构。3.改进发射方式，增大有效射程枪榴弹采用实弹发射固然有许多优点，但由于各种枪榴弹的发射装药是一定的，当枪榴弹弹形和弹质量确定后，其射程即为定值。因此，如何改进枪榴弹发射方式，提高枪榴弹的有效射程和射击精度是枪榴弹发展的又一重大课题。利用火箭增程虽可提高枪榴弹射程（可达800m），但仍需解决后坐力大、弹质量大和精度差的问题。4.应用新技术，探索新结构枪榴弹由于受到体积和质量的限制，故新材料、新原理、新结构、新技术在枪榴弹上的应用显得格外重要。当前尽管高强度、高韧性的非金属材料已在枪榴弹上普遍采用，压电引信、电磁引信与其他电子引信正在逐步配置，钢丝缠绕预制破片弹体、高能炸药、新的破甲战斗部结构等已在枪榴弹上应用，但一些传统的概念和结构仍未打破。为全面改善枪榴弹结构，大幅度提高其性能，还有许多技术问题，特别是在发射原理和战斗效能上，需要进一步探索和解决。展望未来，作为步兵简易武器的枪榴弹，在技术上将有新的发展。[1]\xa0',
+ 'date': '',
+ 'keyword': '枪榴弹',
+ 'source': 'baidu',
+ 'title': '枪榴弹',
+ 'url': 'https://baike.baidu.com/item/%E6%9E%AA%E6%A6%B4%E5%BC%B9'}
+2021-10-26 13:44:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.baidu.com/baidu?word=%E6%9E%AA%E6%A6%B4%E5%BC%B9&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on> (referer: None)
+2021-10-26 13:44:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.baidu.com/baidu?word=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on> (referer: None)
+2021-10-26 13:44:38 [scrapy.core.scraper] ERROR: Error downloading <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E6%9E%AA%E6%A6%B4%E5%BC%B9&ns0=1>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\downloader\middleware.py", line 42, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:38 [scrapy.core.scraper] ERROR: Error downloading <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&ns0=1>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\downloader\middleware.py", line 42, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:38 [scrapy.core.scraper] ERROR: Error downloading <GET http://arc.aiaa.org/action/doSearch?AllField=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&sortBy=Earliest&startPage=0&pageSize=20&>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\downloader\middleware.py", line 42, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:38 [scrapy.core.scraper] ERROR: Error downloading <GET http://arc.aiaa.org/action/doSearch?AllField=%E6%9E%AA%E6%A6%B4%E5%BC%B9&sortBy=Earliest&startPage=0&pageSize=20&>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\downloader\middleware.py", line 42, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+2021-10-26 13:44:38 [scrapy.core.scraper] ERROR: Error downloading <GET https://nasasearch.nasa.gov/search?query=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&affiliate=nasa&utf8=%E2%9C%93>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\downloader\middleware.py", line 42, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:38 [scrapy.core.scraper] ERROR: Error downloading <GET https://nasasearch.nasa.gov/search?query=%E6%9E%AA%E6%A6%B4%E5%BC%B9&affiliate=nasa&utf8=%E2%9C%93>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\downloader\middleware.py", line 42, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2021-10-26 13:44:38 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:44:38 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDBEF308>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:44:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 394,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 41533,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 84.764902,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 44, 38, 505271),
+ 'item_scraped_count': 1,
+ 'log_count/CRITICAL': 18,
+ 'log_count/DEBUG': 60,
+ 'log_count/ERROR': 13,
+ 'log_count/INFO': 93,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 13, 740369)}
+2021-10-26 13:44:38 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:44:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0/5794> (referer: None)
+2021-10-26 13:44:38 [TextProcessorScrapy.spiders.Tiexue] INFO: Tiexue Spider Starting!
+2021-10-26 13:45:50 [TextProcessorScrapy.spiders.Tiexue] INFO: Tiexue Spider Starting!
+2021-10-26 13:45:50 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.baidu.com/baidu?word=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&tn=bds&cl=3&ct=2097152&si=tiexue.net&s=on> (referer: None)
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 117, in iter_errback
+    yield next(it)
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\python.py", line 345, in __next__
+    return next(self.data)
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\python.py", line 345, in __next__
+    return next(self.data)
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\spidermiddlewares\referer.py", line 338, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\core\spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\spiders\Tiexue.py", line 63, in parse
+    yield scrapy.Request(url=href, callback=self.new_parse)
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\http\request\__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\http\request\__init__.py", line 68, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: /sf/vsearch?pd=video&wd=%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0&tn=vsearch&lid=d326f3a00001174b&ie=utf-8&rsv_pq=d326f3a00001174b&rsv_spt=5&rsv_bp=1&f=8
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:45:50 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDC616C8>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:45:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 1336,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 157.132489,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 45, 50, 921702),
+ 'log_count/CRITICAL': 12,
+ 'log_count/DEBUG': 54,
+ 'log_count/ERROR': 15,
+ 'log_count/INFO': 68,
+ 'log_count/WARNING': 1,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 13, 789213)}
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:45:50 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDC2E888>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:45:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 1363,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 157.150493,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 45, 50, 924706),
+ 'log_count/CRITICAL': 14,
+ 'log_count/DEBUG': 54,
+ 'log_count/ERROR': 16,
+ 'log_count/INFO': 81,
+ 'log_count/WARNING': 1,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 13, 774213)}
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:45:50 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CD8C9608>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:45:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 1328,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 158.266889,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 45, 50, 940284),
+ 'log_count/CRITICAL': 20,
+ 'log_count/DEBUG': 61,
+ 'log_count/ERROR': 17,
+ 'log_count/INFO': 125,
+ 'log_count/WARNING': 1,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 12, 673395)}
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:45:50 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDAD3748>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:45:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 1422,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 158.260887,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 45, 50, 942283),
+ 'log_count/CRITICAL': 20,
+ 'log_count/DEBUG': 61,
+ 'log_count/ERROR': 18,
+ 'log_count/INFO': 117,
+ 'log_count/WARNING': 1,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 12, 681396)}
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:45:50 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDC72208>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:45:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 1465,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 157.152498,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 45, 50, 955680),
+ 'log_count/CRITICAL': 10,
+ 'log_count/DEBUG': 54,
+ 'log_count/ERROR': 19,
+ 'log_count/INFO': 70,
+ 'log_count/WARNING': 1,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 13, 803182)}
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:45:50 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDCF6808>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:45:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 1390,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 156.058122,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 45, 50, 957679),
+ 'log_count/CRITICAL': 4,
+ 'log_count/DEBUG': 47,
+ 'log_count/ERROR': 20,
+ 'log_count/INFO': 43,
+ 'log_count/WARNING': 1,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 14, 899557)}
+2021-10-26 13:45:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:45:50 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:45:50 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:45:50 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:46:27 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/url {"url": "https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0/5794"}
+2021-10-26 13:46:28 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/url HTTP/1.1" 200 14
+2021-10-26 13:46:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2021-10-26 13:46:28 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 15
+2021-10-26 13:46:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:30 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:46:30 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:46:30 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:46:32 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:46:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:46:34 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:46:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "window.scrollBy(0,1500)", "args": []}
+2021-10-26 13:46:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 14
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2021-10-26 13:46:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 15
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/elements {"using": "xpath", "value": "//img[contains(@alt, '\u822a\u7a7a\u6bcd\u8230')]"}
+2021-10-26 13:46:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/elements HTTP/1.1" 200 406
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "935fcbbd-6a7f-46b0-a091-7298dfe59321", "element-6066-11e4-a52e-4f735466cecf": "935fcbbd-6a7f-46b0-a091-7298dfe59321"}, "src"]}
+2021-10-26 13:46:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 151
+2021-10-26 13:46:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:38 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "8684619a-6013-401d-92e4-d977b8db01d2", "element-6066-11e4-a52e-4f735466cecf": "8684619a-6013-401d-92e4-d977b8db01d2"}, "src"]}
+2021-10-26 13:46:38 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 151
+2021-10-26 13:46:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:40 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "368332f8-a33c-4e77-9b90-6bb97786f7ef", "element-6066-11e4-a52e-4f735466cecf": "368332f8-a33c-4e77-9b90-6bb97786f7ef"}, "src"]}
+2021-10-26 13:46:40 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 152
+2021-10-26 13:46:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:42 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "a12c6f7c-0447-438b-b719-39a837c91e4a", "element-6066-11e4-a52e-4f735466cecf": "a12c6f7c-0447-438b-b719-39a837c91e4a"}, "src"]}
+2021-10-26 13:46:42 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 151
+2021-10-26 13:46:42 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:3224/session/4972a160024c6c022433a0c0387900b4/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0>b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k<arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g<e;g++)g in c&&b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&&!r(\"iPod\")&&!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&&!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&&!(-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\"))&&!(r(\"Trident\")||r(\"MSIE\"))&&!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&&!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&&(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&&F>parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&&y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&&!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&&!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&&!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&&!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&&!(8<=Number(G)),fa=y&&!(9<=Number(G));I&&M&&L(2.3);I&&M&&L(4);J&&M&&L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&&\"value\"==b&&R(a,\"INPUT\")?a.value:fa&&!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&&a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0<c&&(a=[a.slice(0,c),a.slice(c+1)],2==a.length&&b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&&\"value\"==b&&R(a,\"OPTION\")&&null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&&\"string\"!==typeof b&&(b=b.toString());return!!a&&1==a.nodeType&&(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&&!f(e)&&(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&&T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&&a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&&\"src\"==c||g&&\"href\"==c)return(e=Q(a,c))&&(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&&1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u<U.length;u++)if(u in U&&U[u]===c){c=u;break a}c=-1}if(0<=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&&null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&&(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&&X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "6d7c9240-1590-4c78-b57f-28916d547790", "element-6066-11e4-a52e-4f735466cecf": "6d7c9240-1590-4c78-b57f-28916d547790"}, "src"]}
+2021-10-26 13:46:44 [urllib3.connectionpool] DEBUG: http://127.0.0.1:3224 "POST /session/4972a160024c6c022433a0c0387900b4/execute/sync HTTP/1.1" 200 150
+2021-10-26 13:46:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:46:46 [scrapy.core.scraper] DEBUG: Scraped from <200 https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0/5794>
+{'attributes': {'img_url': {'图片1': 'https://bkimg.cdn.bcebos.com/pic/a2cc7cd98d1001e9390192d217456cec54e737d13990?x-bce-process=image/resize,m_lfit,w_440,limit_1/format,f_auto',
+                            '图片2': 'https://bkimg.cdn.bcebos.com/pic/5bafa40f4bfbfbedab64e35b82b8e036afc37931b1f4?x-bce-process=image/resize,m_lfit,w_220,limit_1/format,f_auto',
+                            '图片3': 'https://bkimg.cdn.bcebos.com/pic/0b7b02087bf40ad162d9a416e26706dfa9ec8b1360b8?x-bce-process=image/resize,m_lfit,w_1280,limit_1/format,f_auto',
+                            '图片4': 'https://bkimg.cdn.bcebos.com/pic/8ad4b31c8701a18b87d6266b6467100828381f3050f4?x-bce-process=image/resize,m_lfit,w_220,limit_1/format,f_auto',
+                            '图片5': 'https://bkimg.cdn.bcebos.com/pic/30adcbef76094b36acaf82ff13876bd98d1001e937c7?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_jpg'},
+                '中文名': '航空母舰',
+                '国家': '',
+                '外文名': 'Aircraft Carrier',
+                '定型时间': '1917年7月',
+                '简称': '中国'},
+ 'content': '航空母舰，简称“航母”，是一种以舰载机为主要作战武器的大型水面舰艇，可以提供舰载机的起飞和降落。航空母舰舰体通常拥有巨大的甲板和舰岛，舰岛大多坐落于右舷。航空母舰一般总是一支航空母舰战斗群的核心舰船。舰队中的其它船只提供其保护和供给，而航母则提供空中掩护和远程打击能力。航空母舰大致可分为攻击型航空母舰和多用途航空母舰，二战结束后，随着科技的进步和作战思想的改变美国把航母的作战类型全部综合到一艘航母上即多用途航空母舰；按排水量大小可分为大型航母（排水量6万吨以上），中型航母（排水量3-6万吨）和小型航母（排水量3万吨以下）；按动力装置可分为核动力航空母舰和常规动力航空母舰。发展至今，航空母舰已是现代海军不可或缺的武器，也是海战最重要的舰艇之一。依靠航空母舰，一个国家可以在远离其国土的地方、在不依靠当地的机场的情况下施加军事压力和进行作战。航空母舰已是现代海军不可或缺的利器，也成为了一个国家综合国力的象征。航母初现第一次从停泊的船只上起飞世界上第一个驾驶飞机在军舰上起降的人是美国飞行员尤金·伊利（Eugene '
+            'Ely）。1910年11月14日，尤金·伊利驾驶一架“寇蒂斯”双翼飞机从停泊在港口的“伯明翰号”巡洋舰（USS '
+            'Birmingham '
+            'CS-2）起飞，飞行了一段距离后安全降落在附近的一片海滩上。这是历史上人类第一次驾驶飞机从军舰上起飞。1911年1月18日，勇敢的伊利再次驾驶一架双翼飞机成功降落在处于停泊状态的“宾夕法尼亚号”（USS '
+            'Pennsylvania '
+            'ACR-4）上的一个长31公尺、宽10公尺的木制改装滑行台上。稍作休整后，他驾驶这架飞机从“宾夕法尼亚号”上起飞，完成了一次完整的起降试验。1912年5月2日，英国海军上尉格里高利驾驶着一架“肖特”S.27双翼飞机从以10.5节的航速行驶的“豪伊伯尼亚号”战列舰上起飞，从而创造了飞机从航行中的军舰上起飞的先例。发展历程在第一次世界大战前，水上飞机首先被用于海上侦察。各国海军都喜欢使用这种飞机，它能在水面上进行起飞和降落。但是水上飞机的装载和运输是一个大问题。早期的水上飞机只能被置于船后，由船只来牵引。一但遇上恶劣天气，缺少保护的水上飞机就有进水、发生倾覆的危险。1912年，英国海军把一艘老旧的巡洋舰改装成了世界上第一艘可容纳飞机的船只。后来，英国海军征用了3艘在英吉利海峡营运的渡轮，并把它们全部改装成可以装载水上飞机的军舰，这种船只后来被称为“水上飞机母舰”。它是航空母舰最早的雏形。暴怒号巡洋舰彻底改装后的最终形态在第一次世界大战的日德兰海战中，英国是唯一拥有舰载水上飞机的参战方。英国军方提出将水上飞机用于作战，并要搭配保护它的战斗机。因此不能再只使用没有飞行甲板、无法供空战能力更强的战斗机起飞的水上飞机母舰，必须重新设计另一种新军舰，这即是后来的航空母舰。1917年6月，英国皇家海军暴怒号巡洋舰在建造过程中改变原有设计，将舰艏部分上层建筑全部移除，转而铺设69.5米长的甲板供飞机起飞，这使“暴怒号”成为第一艘可以起降固定翼飞机的船只。不过起飞后的飞机无法返回母舰，只能去陆地的机场着陆。“暴怒号”1917年6月完工服役。1917年8月2日，英国海军少校、“暴怒号”海军航空兵指挥官欧内斯特·邓宁驾驶“幼犬”战斗机用与军舰平行飞行、侧滑着陆的方式降落到航行中的“暴怒号”前甲板上，地勤人员抓住了机翼后缘使飞机停了下来。这成为世界上首次飞机在航行中的军舰上降落的尝试。几天之后，邓宁再次试图尝试这个危险的降落方法时，飞机翻出军舰，坠入海中，邓宁以身殉职。1917年底至1918年初，英国对”暴怒号”进行了大改装，将后主炮和后桅拆除，在后部加装了86.6米长的飞行甲板。这样，以中部上层建筑为界，前部甲板用于飞机起飞，后部甲板用于飞机降落，飞机可以互不干扰地同时进行起降作业。尽管如此，”暴怒号”仍然不具有全通飞行甲板，飞机降落仍然十分困难。所以，此时的“暴怒号”还是一艘很不完善的航空母舰。第一艘安装全通飞行甲板的航空母舰是由一艘建造中的客轮“卡吉林号“改建的英国百眼巨人号航空母舰。它的改造于1918年9月完成。飞行甲板长168米，甲板下是机库，有多部升降机可将飞机升至甲板上。1918年7月19日，七架飞机从”百眼巨人号”航空母舰上起飞，攻击德国停泊在同德恩的飞艇基地。这是第一次从母舰上起飞进行的攻击。百眼巨人号1917年7月，英国开始建造世界上第一艘“纯正血统”的航空母舰，并将其命名为“竞技神号”（又译作“赫尔墨斯号”），以纪念航母的鼻祖——世界上第一艘水上飞机母舰“竞技神号”。信心满满的英国海军由于拥有了世界上第一艘航母，他们完全有理由认为：他们将建成世界上第一艘纯种航母。然而皇家海军忽视了一个正在日益崛起的对手，航空母舰发展史上的又一个“后起之秀”——日本海军。日本海军之所以具有较高的发展速度，其中一个重要原因在于善于向先进的海军强国学习，善于跟踪海军建设中的最新浪潮，一旦看准就不惜血本的大力建造。他们于1919年开始设计，1920年开始建造本国第一艘纯种航空母舰——“凤翔号”。在此之前英国海军订购的“竞技神号”航母于1918年1月开始动工，但由于第一次世界大战的结束，其工期进度明显放慢，直到1923年7月才最终建成。此时日本海军的“凤翔号”由于工期进展迅速，因而抢在1922年年底建成并开始正式服役。日本海军虽然后发但却先制，抢在英国海军之前建成了世界上第一艘纯种航母。美国第一艘航空母舰 '
+            '兰利号美国第一艘航空母舰是1922年3月22日正式启用的兰利号（USS Langley '
+            'CV-1）。“兰利号”并不是一开始就以航空母舰为用途所建造的舰艇，其前身是1913年下水的“木星号”运煤船（USS '
+            'Jupite。1917年美国按照航空母舰标准全新设计建造了AC-3）。美国海军看上它运载煤炭用的腹舱容量充足因此将其改装为航空母舰。在改装中，“木星号”煤仓上甲板的上层建筑及起重机被全部拆除，从舰首至舰尾架设了13个单位桁架，在上面铺设了长165.3米、宽19.8米的全通飞行甲板。在甲板中心设置了一台飞机升降机。“兰利号”的机舱设置在军舰的尾部，原有的6个煤仓中的4个被改成飞机库，其余的被改成航空汽油库、弹药库和升降机械室。一战后，1922年各海军强国签署的《华盛顿海军条约》严格控制了战列舰建造，但条约准许各缔约国利用2艘战列舰改建为排水量3.3万吨的航空母舰。当时，作为东道主的美国正在建造6艘排水量为43200吨的“南达科他”级战列舰。而美国在太平洋战场上的潜在对手——日本海军对这一举动非常敏感。所以在条约签署时，日本的主要目的就是让美国放弃这6艘战列舰。经过反复讨价还价，美国被迫做出让步，暂停这几艘战列舰的建造。但作为交换条件，日本也必须放弃其在建的两艘排水量41000吨的“天城”级战列舰。此次谈判导致了两国第一代大型攻击航母的诞生——“赤城”级和“列克星敦”级。此时的英国由于受到美、日两国的影响也开始不甘寂寞，打算建造航空母舰。但英国在一战中大伤元气，所以最终选择了两艘大型巡洋舰“勇敢号”和“光荣号”作为被改装成航母的军舰。这时，美国的“列克星敦”级的2艘航母（CV-2“列克星敦号”和CV-3“萨拉托加号”）、日本的“赤城”级的“赤城号”、“加贺”级的“加贺号”两艘航母，以及英国的“勇敢号”、“光荣号”、“暴怒号”，并称为世界七大航母。1930年，英国建造的“皇家方舟号”航空母舰采用了全封闭机库、一体化的岛式上层建筑、强力飞行甲板、液压弹射器，被誉为“现代航母的原型”。1936年《华盛顿海军条约》期满失效，海军列强又展开了新一轮军备竞赛。美国的“约克城”级航空母舰、日本的“翔鹤”级航空母舰、英国的“光辉”级航空母舰是这一时期的杰作。二战时期二战时期航空母舰(6张)航空母舰在二战中首度被广泛运用。它是一座浮动的机场，携带战斗机以及轰炸机远离国土执行攻击敌人目标的任务。这使得航空母舰可以由空中来攻击陆地以及海上目标，尤其是那些远远超过一般射程之外的目标。航空母舰上的飞机的作战半径一直在改变海军的战斗理论，敌对双方必须在看不到对方的情况下，互相进行远距离的战斗。这彻底终结了战列舰为海上最强军舰的优势地位。航空母舰在战争中初建功勋是在1940年11月11日，英国海军的“光辉号”航空母舰出动鱼雷轰炸机编队攻击了塔兰托港内的意大利海军并且击沉一艘、击伤三艘战列舰。此举使美国等海上强国意识到航母时代的来临。二战中，航空母舰在太平洋战争战场上起了决定性作用。从日本海军航空母舰偷袭珍珠港，到双方舰队自始至终没有见面的珊瑚海海战，再到运用航空母舰编队进行海上决战的中途岛海战，从此航空母舰取代战列舰成为现代远洋舰队的主干。美国建造了大批“埃塞克斯”级航空母舰，组成庞大的航空母舰编队，成为海战的主角。当代航母二战结束后，世界各国都注重于发展适合本国的航空母舰，以维护本国海上利益。美国在战后对“埃塞克斯”级和“中途岛”级航空母舰进行了现代化改装，改装的项目包括增加斜角飞行甲板、蒸汽弹射器和助降设备，提高了舰载喷气式飞机的使用效率和安全性。高性能的喷气式飞机得以搭载到现代化的航空母舰上，并且航空母舰的排水量越来越大。福莱斯特级航空母舰是美国二战后第一级专为搭载喷气式飞机而建造的常规动力航空母舰。美国在使用这一级航空母舰时仍然发现了一些不足，于是在建造下一级航空母舰时对其进行大规模的改造和升级，这就是“小鹰”级航空母舰。它是世界上排水量最大的一级常规动力航空母舰，也是美国最后一级常规动力航空母舰。美国在建造“小鹰”级航母时，于1958年开工建造了企业号航空母舰（USS '
+            'Enterprise '
+            'CVN-65）。这是世界上第一艘核动力航空母舰。“企业号”于1961年服役，可以称之为“企业”级，但该级只建造了一艘。采用核动力的最大好处是提高续航能力，核动力燃料更换一次可连续航行数十万海里，使航空母舰具备了近乎无限的续航能力，消除了常规动力航空母舰大型烟囱对飞行作业的影响。在看到核动力的优势后，美国海军建造了一系列排水量10万吨的尼米兹级航空母舰。这是世界上威力最大、体积最大、排水量最大的航空母舰，其蓝本是根据小鹰级航空母舰改建的。[1]\xa0'
+            '美国海军于2007年1月16日宣布，美国新一级核动力航空母舰正式命名为“杰拉尔德·R·福特号”（USS Gerald·R· '
+            'Ford, '
+            'CVN-78），以纪念在2006年12月26日晚间去世的美国前总统杰拉尔德·福特。“福特号”在2007年开始建造，于2017年7月22日交付，以取代服役时间超过50年的“企业号”（USS '
+            'Enterprise CVN-65）。这也是美国进入21世纪建造的第一级航空母舰。[2]\xa0'
+            '英国在战后发展了“无敌”级航空母舰，采用滑跃甲板和垂直/短距起降飞机。在1982年英、阿马尔维纳斯群岛（英称福克兰群岛）争端中，英国依靠它在远离本土8000英里的地方取得胜利。到2014年，“无敌”级航空母舰全部退役。2009年，英国新一级航空母舰“伊丽莎白女王”级航空母舰开工建造。该级共两艘航空母舰分别于2017年12月7日[3]\xa0'
+            '和2019年12月10日[4]\xa0'
+            '服役。苏联采用垂直/短距起降飞机的“基辅”级航空母舰（苏联海军称为“重型载机巡洋舰”）安装有远程导弹。而后建成的“库兹涅佐夫号”航空母舰采用滑跃甲板避免了安装复杂的弹射装置。法国在历史上一共拥有过十艘航空母舰。20世纪50年代后期开始，法国进入自主研制航母阶段。两艘“克莱蒙梭”级航空母舰，“克莱蒙梭号”和“福煦号”分别于1961年和1963年开始服役。“戴高乐号”航空母舰是世界上唯一一艘非美国海军隶下的核动力航空母舰，也是法国海军现役唯一一艘航空母舰，是法国海军的象征。“戴高乐号”是法国史上拥有的第十艘航空母舰，其命名源自于法国著名的军事将领与政治家夏尔·戴高乐。“戴高乐号”航空母舰标志着法国建立起全欧洲国家中最完整的国防工业研发体系，绝大多数关键性武器都实现了自主研发生产，许多方面还足以在美苏两强之外独树一帜。中国首艘航母“辽宁号”航空母舰，是中国人民解放军海军第一艘可以搭载固定翼飞机的航空母舰，其前身是苏联建造的“库兹涅佐夫”级航空母舰的二号舰“瓦良格号”。1990年代初期，“瓦良格号”于乌克兰建造时遭逢苏联解体，导致建造工程中断，完工率约为68%。1999年，中国购买了“瓦良格号”，于2002年3月4日抵达大连港，2005年4月26日开始由中国海军继续建造改进。解放军的目标是对此艘未完成建造的航空母舰进行更改制造，及将其用于科研、实验及训练用途。2012年9月25日，正式更名为“辽宁号”，并交付予中国人民解放军海军使用。[5]\xa0'
+            '2019年12月17日，中国首艘国产航母“山东号”航空母舰服役。[6]\xa0'
+            '现代航空母舰飞行甲板(6张)飞行甲板是航空母舰上供飞机起降和停放的上层甲板，按照任务需求可将其划分为起飞区、降落区和停放区。航母需采用比起船体宽度要大得多的飞行甲板。特别是斜直两段式甲板出现后，要进一步将起飞段板和着陆段区别开来，所以飞行甲板宽度更呈增加趋势。一般说来，大型航母的飞行甲板宽度几乎是舰体宽度的2倍，中小型航母的飞行甲板宽度约是舰体宽度的1.5倍。飞行甲板分为直通飞行甲板和斜角飞行甲板。[7]\xa0'
+            '值得一提的是，现代航空母舰的飞行甲板通常为斜角飞行甲板，所以甲板比船体宽得多。从正面看去，飞行甲板向船体两舷张出，形状十分怪异。由于飞行甲板要承受飞机降落时的强烈冲击载荷，因此需用高强度金属制成。斜角飞行甲板斜角飞行甲板(5张)从航母出现直到50年代初，航母的飞行甲板都是直式的。其形状为矩形，防冲网把甲板分成前后两部分：前部供飞机起飞、停放用；后部则是飞机降落区。当防冲网放下时，前后两区合二为一，舰载机就能从舰尾向前做不用弹射器的自由测距滑跑起飞了。随着喷气式飞机的上舰，直式甲板的局限性就显露出来了。上世纪50年代初，英国海军上校卡梅尔提出了斜角甲板设想，经试验后证明它有许多优点，遂逐渐成为现代航母的标准甲板样式。航母甲板分为三部分：舰前部直甲板为起飞区，后半部斜角甲板为着舰区，斜直相交处形成三角形停机区。斜角甲板的斜度以斜角甲板中线与航母首尾中线的夹角来表示。斜角甲板的优点是着舰飞机未能钩住拦阻索时，可马上拉起复飞而不至于与前甲板停放的飞机相撞。另外，舰载机起飞和降落可同时进行。企业号的舰岛（改装后）现代航空母舰通常将上层建筑集中在飞行甲板的右侧，称为“舰岛”。从飞机起降的要求上讲，甲板上空无一物是最理想的，但航母的指挥塔、飞行控制室、航海室、雷达和通信天线等又需要高耸在甲板上。所以现代航空母舰都是将这些上层建筑设计得很紧凑，空出甲板的绝大部分来方便飞机起降。现代航母力求其外型简洁以减少雷达反射截面积，但其中技术非常复杂。已实现了上层建筑的“集结化”包括多功能相控阵雷达、封闭桅杆（AME/S）、电磁辐射系统（MERS）和多功能射频系统（AMRFS）。升降机升降机是将舰载机自机库运输至飞行甲板的装置。早期配置于全通飞行甲板的舰身中线的前中或后方，通常为2-3具。升降机也是甲板上最脆弱的部份，如果升降机故障或是遭到破坏会导致飞机无法起降，进而丧失战斗力。此外，炸弹也可能会击穿升降机，升降机又与堆积弹药与燃料的隔舱接近，一旦引爆将导致极其严重的后果。因此自“胡蜂号”航母起开始将升降机位置调整到舰侧，这除了不妨碍起降作业以及安全外，还有着飞机翼展超过升降机宽度时亦能使用的优点。值得一提的是，第一代超级航母的“福莱斯特”级曾在斜角甲板前方设置一个升降机，目的是要让飞机降落后立刻收入机库。然而后来发现这样的机会其实很少，另外航母航行时泼上来的浪会波及到舰载机。故自“小鹰”级起又将该处升降机位置调整至舰舷侧。现代大型航母的升降机宽20多米、深达15米、可负重100吨，升降速度约为一分钟自机库搬上一架飞机至甲板。   '
+            '航空母舰的机库是容纳和检修舰载机的场所，高度通常占据2～3层甲板高度，是航空母舰上最大、最高的舱室空间。从航母发展历程来看，曾经出现过开放式机库和闭式机库两种。从航空母舰问世直到二战中期，航母上的机库都是开放式的，舰体上甲板就是机库甲板，也就是说把航空母舰的飞行甲板同时作为机库使用。它是一种真正开放的、没有任何隔壁的露天式机库。从二战中后期开始，航母闭式机库逐渐成为潮流。它是一种以飞行甲板为强力甲板，飞行甲板与强力纵梁牢固连接，纵隔壁从飞行甲板直延伸到舰体下都，把机库包在里面的一种机库结构。机库\u3000\u3000'
+            '随着现代作战飞机的尺寸不断加大，为了能够存放全部飞机，航空母舰的机库必须足够的大。因此航空母舰上的机库一般长达 200～250米， '
+            '宽25～33米，高6～9米，以满足舰载机的数量和大小、高度要求。大型航空母舰的机库相当于四五个大型剧院那么大。美军现役的“尼米兹”级核动力航空母舰，机库长208.48米，宽32.92米，高8.08米，能够容纳数十架作战飞机。[12]\xa0'
+            '为了能多停放飞机，舰载机的机翼、机头和机尾最好都做成可折叠的，折叠好的飞机一架挨一架地整齐排列在机库内。为了保证机库的安全，用折叠式防火门将机库分隔成2 '
+            '~ '
+            '4个较短的机库。平时，折叠门收起，就是一个联通的大型机库，这样便于飞机的调动和保养维修。紧急情况下(比如发生火灾)，则可以迅速将折叠门放下，将一个大型机库分隔成几个小机库，这样可防止大火蔓延到整个机库，提高了机库的安全性。航母机库的用途不只是停放舰载机；航母机库通常情况下都不能装满，而是要留下空间用来维修保养舰载机以及飞行作业准备等重要工作场所，机库也是一个物资中转站。机库内的甲板上和飞行甲板一样，设置有停机位、锚链系留、牵引、升降机等配套设备。为了方便对舰载机的检查、维修保养还在机库内配备了电源、液压源、压缩空气源以及氮气源等等供给源和位置，母机库是一个修理所，负责维修保养舰载机以及其它的设备维修；机库除停放舰载机以外的最大功能非修理保养舰载机莫属，除非极度恶劣的天气，都要给维护保养舰载机腾出地方来，弹药库武器库是用来储备炸弹、鱼雷、导弹、火箭等武器的区域，位于船舰底部、水线之下，船头船尾各一处，中间则为机库。这些武器多以半组装方式收纳。为了将其送至甲板，武器库有着比飞机升降机更小的专用升降机（以“尼米兹”级为例，共有九个武器升降机，其外型如一个从甲板向上开启的门，若为不需用到的情况则可盖起来成为甲板的一部份），将武器从库中升到上一层甲板，由各层作业员进行阶段性的组装，再由该甲板的其他升降机往上送（部分通到机库），以防止弹药意外诱爆的情况。另外还有连接到舰岛右侧后方的一个武器集中区域，此处被称作“武器牧场”。若弹药爆炸可利用舰岛作遮掩，以降低对甲板上飞机的损害。第二次世界大战之后的美国航母还需要另外设计与区隔存放与组装核子武器的弹药库，被称为“特殊飞机维护储存区”（Special '
+            'Aircraft Services '
+            'Stores，简称“SASS”）。冷战时期基于核子武器的机密和敏感性，这些弹药库的使用、人员进出管制与保安都有特别的处理和操作程序，没有受到相关训练验证或者是无关的人员一概不得靠近。第一款安装SASS的航母是透过《27A改装案》来加装相关设备与空间的“埃塞克斯”级，在设计阶段就将SASS融入舰身结构的则是“福莱斯特”级航母。蒸汽弹射起飞一架F/A-18准备弹射起飞使用一个平的飞行甲板作为飞机跑道，起飞时一个蒸汽驱动的弹射装置带动飞机在两秒钟内达到起飞速度。只有美国具备生产这种蒸汽弹射器的成熟技术。在工作原理上，蒸汽弹射器使用高压蒸汽推动活塞带动弹射轨道上的滑块，把与之相连的舰载机弹射出去。它体积庞大，工作时要消耗大量蒸汽，淡水浪费严重，只有约6%的蒸汽被利用。为制造和输送蒸汽，航母要备有海水淡化装置、大型锅炉和无数的管线，工作维护量惊人。它的最大缺陷在于因为弹射力度太大而无法弹射无人机——现役的无人机因为重量过轻，在弹射时会被扯碎。蒸汽弹射有两种弹射方式：拖索弹射拖索弹射是50年代开始使用的老方式。顾名思义，就是用钢质拖索牵引飞机加速起飞。这种弹射方式比较少见，各方面都不如前轮牵引弹射好，只有法国的“克莱蒙梭”级航母使用。拖索弹射时，需要8-10名甲板人员先用钢质拖索把飞机挂在滑块上，再用一根索引释放杆把其尾部与弹射器后端固定住。弹射时，猛力前冲的滑块拉断索引释放杆上的定力拉断栓，牵着飞机沿轨道迅速加速，在轨道末端把飞机加速到直起飞速度抛离甲板，拖索从飞机上脱落，滑块返回弹射器起点准备下一次工作。[8]\xa0'
+            '前轮牵引弹射前轮牵引弹射由美国海军在1964年试验成功。采用这种方式的舰载机的前轮支架装上拖曳杆，前轮就直接挂在了滑块上。弹射时由滑块直接拉着飞机前轮加速起飞，这样就不用8-10个甲板人员挂拖索和捡拖索了。这种方式的弹射时间更短，且飞机的方向安全性好。但这种舰载机的前轮需要专门设计。目前美国所有的航空母舰都采用了这种起飞方式。电磁弹射起飞电磁弹射器除此以外，电磁弹射是新一代航母的舰载机起飞方式。与传统的蒸汽弹射器相比，电磁弹射器具有容积小、对舰上辅助系统要求低、效率高、重量轻、运行和维护费用低廉等优点。电磁弹射采用电磁的能量来推动被弹射的物体向外运动。与蒸汽弹射器相比，电磁弹射器的优点主要是体积减小了很多，操纵人数也要少30%左右，而且电磁弹射器的弹射力度可控可以弹射无人机。缺点是耗电，但对于全电力推动的航母和核动力航母来说并不是太大的问题。美国海军从1982年开始进行电磁弹射系统的技术研究，直到2004年秋天电磁弹射器进入成品测试阶段。美国海军测试后选定通用原子能公司作为生产商美国海军技术网站透露，通用原子能公司的系统采用线性电磁加速电动机已经在新泽西州赫斯特湖试验中心完成了测试。目前美国的电磁弹射技术已经运用于“福特”级航空母舰上。[9]\xa0'
+            '电磁弹射器是一个复杂的集成系统，其核心是直线弹射电动机。这种电动机的概念类似磁悬浮列车采用的技术。与磁悬浮列车所不同的是，磁悬浮列车的运动是漂浮在空气中，而弹射电动机带有滚轮，带着一个往复车沿弹射器轨道滑行。工作时，电动机得到供电往复车在电磁力的作用下拉着飞机沿弹射冲程加速到起飞速度飞机脱挂后，往复车受到反向力的制动，低速回到出发的位置。滑跃起飞有些航空母舰在其甲板前端有一个“跳台”帮助飞机起飞，即把甲板的前头部分做成斜坡上翘。舰载机经过滑跑后沿着上翘的斜坡冲出甲板，形成斜抛运动，在刚脱离母舰的一段（几十米）距离内继续在空中加速以达到起飞速度。这种起飞方式不需要复杂的弹射装置，但是飞机起飞时的重量不如弹射起飞，使得舰载机的载油量、载弹量、航程以及作战半径等受到一定的制约。英国、意大利、印度、中国和俄罗斯等国由于技术限制，暂时无法研制真正在技术和工艺上过关的弹射器，所以只能在本国航母上采用滑跃甲板。采用滑跃起飞的航空母舰在舰载机起飞时都必须以20节（36公里/小时）以上速度逆风航行，以加大舰载机相对速度帮助其起飞。垂直起降技术顾名思义就是飞机不需要滑跑就可以起飞和着陆的技术。这是从20世纪50年代末期开始发展的一项航空技术。F35B联合攻击战斗机使用垂直起降技术的飞机机动灵活，具有常规飞机无可比拟的优点。首先，具有垂直起降能力的飞机不需要专门的机场和跑道，降低了使用成本。其次，垂直起降飞机只需要很小的平地就可以起飞和着陆，所以在战争中飞机可以分散配置，便于伪装，不易被敌方发现，大大提高了飞机的战场生存率。最后，由于垂直起降飞机即使在被毁坏的机场跑道上或者是前线的简易机场上也可以升空作战，所以出勤率也大幅提高，并且对敌方的打击具有很高的突然性。但使用垂直起降技术的飞机也有许多缺点。首先是航程短。由于要实现垂直起降，飞机的起飞重量只能是发动机推力的83%-85%，这就使飞机的有效载荷大大受到限制，影响了飞机的载油量和航程。同时，飞机垂直起飞时发动机处在工作的最大状态，耗油量极大，因此限制了飞机的作战半径。例如当“鹞”式飞机的载重量为1060千克时，作战半径只有92公里。所以在实际使用中“鹞”式飞机尽量使用短距起飞的方式以延长飞机的航程。因此垂直起降飞机又称为垂直/短距起降飞机。另外由于垂直起降飞机在实战中经常需要分散在野外，所以它的维护也非常的困难。但随着航空科技的发展，垂直起降技术必将进入一个新的发展高峰。[10]\xa0'
+            '拦阻网着舰减速降落方式采用拦阻索装置和拦阻网装置。拦阻索装置在正常情况下是舰载机缩短着舰滑跑距离的主要降落装置；而拦阻网是在舰载机处于危急情况下着舰时使用的一种应急设备，一般情况下是用不到的，拦阻降落是主要的降落方式，美国现役11艘大型航母、包括法国戴高乐号，以及俄罗斯库兹涅佐夫号和中国辽宁号以及山东号等航空母舰上的舰载机均采用此类降落方式。拦阻索位于大型航母斜角甲板的中心线，一般情况下在距甲板尾端55-60米处起设置第一根拦阻索，然后每隔约14米即设置1根，一连设置4根（但按现在美国航母的发展趋势，将逐渐减为3根）。每根钢索直径大约为3.5厘米，钢索离甲板的高度为35-50厘米，由弓形弹簧张起，且其两端通过滑轮与甲板下方的液压阻尼缓冲器相连。拦阻降落固定翼舰载机降落前，在空中先放下起落架和襟翼，以实现减速与降低高度的目的。与此同时，还将舰载机尾钩放下。舰载机着舰后，仍以约200千米/小时的速度向前冲刺，通过伸出的尾钩，可钩住甲板上弓起的4根拦阻索中任何一根。钩住拦阻索的舰载机带着巨大的能量继续向前滑跑；拦阻索两端连着的液压阻尼缓冲器带动了主活塞支柱，将制动液由液压作动筒挤压进蓄压器，使蓄压器内的空气被急剧压缩，从而产生阻尼力。拦阻索被拉得越长，蓄压器内的空气压力就越大，产生的阻尼力也将越大，从而使舰载机的速度迅速降低。一般情况下，舰载机滑跑60-90米后，就能完全停在甲板上。美国海军现役的MK-7型着舰减速装置，可将时速达195千米的重22.7吨的舰载机在92米内阻拦停住。舰载机在航母上着落，需要服从航母的航空管制程序。按照固定的航线进入下滑坡道。 '
+            '小鹰号航空管制系统这里首先要提到的航母降落的设施就是航空管制系统了。这个系统的核心主要是航空管制雷达和航空管制控制台。以小鹰号为例：我们可以注意到在桅杆右侧有一个方形的抛物面雷达，这个雷达叫做AN/SPN-43 '
+            '空中交通管制雷达。在250英里以内飞行的舰载机都会被这个雷达监控和标记，同时管制控制员会对所有在这个雷达上所看到的舰载机进行统一调度。但小鹰号上的AN/SPN-43雷达是一个很老的雷达系统，只能给航空管制员发送模拟信号，航空管制员需要靠经验去对舰载机进行调度。 '
+            '而在2007年开始，美国海军开始在航母上换装更先进的航空管制雷达系统。并且航空管制信息已经实现了飞机上的数据链系统连接，因此航空管制员的工作强度降低,[11]\xa0'
+            '菲涅耳光学助降系统为了确保舰载机着舰安全，美国海军还配有“菲涅耳”透镜光学着舰系统。它能使驾驶员更好地知道它相对于正确的下滑航道的位置信息，便于安全降落。此外，还配有增益目视舰载机回收系统，该系统是装在着舰系统两侧的两排灯阵，它对夜间着舰的安全性具有很大的作刚，能指示进场飞机的沉降率，进场飞机的精确位置由其跟踪探测系统给出。垂直绿色灯阵有两排，以向驾驶员显示其沉降率太低、太高或最佳。如果舰载机因尾钩放不下来，或尾钩损伤，或舰载机受损，或燃油不多而又无法复飞等原因时，就需迫降。此时，需要临时架设拦阻网，以迫使舰载机减速停止下来。由于飞机上载有大量的航空汽油，发生火灾也是常有的事。而且一旦发生事故，后果极其可怕，往往机毁人亡。舰载机降落流程(拦阻降落)弹射器对维护使用的要求很高。要彻底解决安全降落问题，最好是垂直降落。所以，超短距起飞，垂直降落，已经成了当前航母舰载机在起降方面发展的基本趋势。“海鹞”等垂直/短距起降飞机不需要拦阻索和拦阻网等助降设施，即可直接降落在飞行甲板上。通常“海鹞”战斗机垂直降落时所需的甲板面积直径约为20米。此时，航母不需要掉转船头或做其他机动动作，以保证“海鹞”战斗机迎风着舰。推进系统常规动力航母的动力系统，其实就是相当于把一个中型燃油热电厂的设备搬到一艘大船上。因此，常规动力航母的动力包与热电厂的设备有很大的相似之处，区别主要是蒸汽能源的来源：常规动力航母一般是用燃油锅炉烧柴油或重油。英国的“伊丽莎白女王”级航母的动力是燃气轮机和柴油机联合，有总功率不足的隐患。航母动力包启动前需要进行设备“吹管”，即用高温高压蒸汽，将主蒸汽管道内的杂质和焊渣吹干净，以免伤害汽轮机转子叶片。“辽宁舰”服役初期，前后水线部位侧面冒出黑烟和蒸汽，同时发出很大的噪音，就是在进行首次动力启动前的吹管。 '
+            '西屋A4W核反应堆核动力航母，由于能源来源是核反应堆，几乎可以提供无尽的蒸汽。在船不运动的时候，绝大部分蒸汽用来发电。美国尼米兹级核动力航母使用两具功率各130000马力的西屋A-4W反应堆最大发电功率超过5万千瓦，相当可观。一艘十万吨级超级航母的本身用电量，就相当于一个中小城市。美国福特级核动力航母，电能成了全船动力的核心。其蒸汽轮机大部分动力都用来发电，总发电功率高达10万千瓦级别。预计福特级后期批次的航母，将直接用巨型电动机推动推进螺旋桨。巨型电动机的能源由发电机通过电缆输送，因此整条船，连四根动力大轴都取消了，并且舰载机的弹射和拦阻，都是全电化。这就是最先进的全电舰艇。美国尼米兹级核动力航空母舰是依靠西屋公司的两个核反应堆产生高压蒸汽提供动力和电源。所提供的电力会在舰上长达100千米的主电路内输送。早期航母搭载的舰载机与传统战斗机基本相同。不过为了满足可以在有限空间内收纳、从飞行甲板上起降等要求，专门为舰载设计的飞机产生了。由于在被赋予艰难任务的同时，还要能在海风侵袭的恶劣环境下操作，所以舰载机的寿命通常不会太长。舰载机飞行员必须要具备极高的飞行技巧，毕竟在飞行甲板上起降比在平坦的陆地上起降要困难很多。航空母舰编队(36张)舰载机的种类主要是按照其任务类型来区分。首先，战斗机是用来担负舰队防空与攻击护卫警戒任务的，有时还具有反潜、对地攻击能力。在第二次世界大战时期，还开发出为了击沉敌舰的特殊机种。俯冲轰炸机就是最好的代表，它是一种可以从敌人头顶进行攻击的机种。鱼雷攻击机是可以搭载鱼雷或炸弹的机种，在大战末期整合成攻击机，现在则是采用精密制导炸弹或导弹进行攻击。用以进行搜索的侦察机是不可或缺的，过去曾研发出专用的机体，在现在则有在战斗机上挂载侦察夹舱做成的战略侦察机，以及搭载强大雷达的早期预警机。伴随着攻击机队，可对敌方雷达进行干扰，是一种相当可靠的支援机种。另外，由于战后的潜艇在性能方面有所提升，出现了反潜机，有时这个任务也会交给直升机来担任。至于其他方面，由于垂直/短距起降战斗机只需要用很短的跑道，对于没有长飞行甲板的轻型航母或两栖攻击舰而言，常被当作战斗机使用。舰载机的种类与代表机型舰载机种类主要任务代表机型战斗机空对空战斗美国F-14轰炸机以炸弹对船舰与地面目标进行攻击日本99式舰爆鱼雷机以鱼雷、炸弹进行对舰或对地攻击日本97式舰攻攻击机整合轰炸机与鱼雷机的机种美国A-19战斗攻击机整合战斗机与攻击机的机种美国F/A-18电子战飞机以电子战进行支援美国EA-6侦察机侦查日本二式舰侦预警机依靠雷达搜索敌人美国E-2反潜机搜索、攻击敌潜艇美国S-3运输机运输物资美国C-2航空母舰飞行甲板上的地勤人员通常按照司职分为七类，其中每个人都被指定着有色运动衫（或显眼的外套）。被指派负责某类单独作业的人员佩戴不同颜色的头盔、或穿着特殊记号或者在运动衫及外套上有指定标记的衣服加以区分。蓝：在航母上工作最简单的就是那些穿蓝装的舰员了。踏上航母，你会发现，身着蓝色工作服、头戴白色头盔的升降机操作员随时待命。他们会根据指示将舰载机从机库升至舰面。如果遭受意外攻击，他们会立即将飞机封藏在机库里。飞机轮挡员穿蓝服、戴蓝盔。他们负责抽除和垫上轮挡。穿蓝服、戴蓝盔且工作服上印有“T”字符号的为传令兵，而穿蓝服、戴蓝盔、工作服胸背印有牵引机符号的则是舰上的牵引机司机。黄：飞机准备升空时，航空母舰便转向宜于飞机起飞的航向上。这时引导飞机向前移动的是身穿黄色工作服的飞机起飞指示人员。他们的任务是将飞机准确地放置在蒸汽弹射器上。绿：身穿标有“C”字绿色工作服的弹射器操纵员通过前起落架牵引系统和夹紧装置，将飞机的前起落架与弹射器的往复车紧密相连。准备就绪后，飞行员即按照穿黄色工作服、戴黄帽的指示人员给定的信号，松开刹车、加大功率。随后穿黄服、戴绿帽的飞机弹射官以手势发出起飞信号。白：美国航空母舰上穿白色服装的人数比较多。飞机降落指挥官身着标“LSO”的白色工作服，不戴头盔。他指挥的位置位于左舰后部的一个平台。他需要详细了解降落飞机的特性、气象情况、飞行员情况，并随时与飞行员联系，及时准确操纵灯光信号，确保飞机安全着舰。航母上采用阻拦索以保证飞机减速降落。它能使舰载机在100米内停住。这项工作由身穿绿衣、戴绿头盔的阻拦索操作员承担。中队飞机检查员穿白服、头戴绿盔，工作服上涂有黑白交叉排列图案及中队符号。白服上标有“LOX”符号、戴白头盔的为液氧员。标有“SAFETY”符号的是安全员。医务人员则是白衣白盔且胸背均标有红十字。红：穿红色服装的舰员通常承担极具危险性的工作。如飞机失事救护员、爆炸物处理员、消防员和飞机军械员，都身穿红色工作服、戴红头盔。褐：直升机器材检查员穿褐色工作服、戴红帽，外场机械员则为褐服绿帽。紫：航空燃料员一般是紫服紫帽，工作服上还印有“F”标志。（注：带有*的是双舰岛）国家名称舷号满载排水量/吨级别起飞方式动力服役时间现役航母美国尼米兹号航空母舰CVN-68100,000尼米兹级蒸汽弹射核动力1975-05-03艾森豪威尔号航空母舰CVN-69101,6001977-10-18卡尔·文森号航空母舰CVN-70101,3001982-03-13罗斯福号航空母舰CVN-71104,6001986-10-25林肯号航空母舰CVN-72104,1121989-11-11华盛顿号航空母舰CVN-73104,2001992-07-04斯坦尼斯号航空母舰CVN-74103,3001995-12-09杜鲁门号航空母舰CVN-75103,9001998-07-25里根号航空母舰CVN-76101,4002003-07-12布什号航空母舰CVN-77102,0002009-01-10福特号航空母舰CVN-78112,000福特级电磁弹射2017-07-22中国辽宁号航空母舰1660,900库兹涅佐夫级001型滑跃常规动力2012-09-25山东号航空母舰1763,000002型2019-12-17英国伊丽莎白女王号航空母舰*CVA-0165,000伊丽莎白女王级短距常规动力2017-12-07威尔士亲王号航空母舰*CVA-0265,0002019-12-10意大利加富尔号航空母舰55027,100加富尔级短距常规动力2008-03-27加里波底号航空母舰55113,850加里波底级1985-09-30印度维克拉玛蒂亚号航空母舰R3345,000基辅级滑跃常规动力2013-11-16俄罗斯库兹涅佐夫号航空母舰06361,390库兹涅佐夫级滑跃常规动力1991-01-21法国戴高乐号航空母舰R9142,500戴高乐级蒸汽弹射核动力2001-05-18泰国差克里·纳吕贝特号航空母舰R-91111,400阿斯图里亚斯级短距常规动力1997-08-10（现役，已停用）在建已下水航母土耳其阿纳多卢号航空母舰未知约28,000未知滑跃常规动力预计2020年后美国肯尼迪号航空母舰CVN-79120,000福特级电磁弹射核动力预计2020年后印度维克兰特号航空母舰R4440,000维克兰特级滑跃常规动力预计2025年后在建未下水航母中国未知未知90,000003型电磁弹射核动力未知美国企业号航空母舰CVN-80132,000福特级电磁弹射核动力未知规划中航母中国未知未知未知004型电磁弹射核动力未知美国米勒号航空母舰CVN-81未知福特级电磁弹射核动力未知印度维沙尔号航空母舰R5565,000维沙尔级电磁弹射常规动力未知韩国未知未知未知未知未知未知未知',
+ 'date': '',
+ 'keyword': '航空母舰',
+ 'source': 'baidu',
+ 'title': '航空母舰',
+ 'url': 'https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E6%AF%8D%E8%88%B0/5794'}
+2021-10-26 13:46:46 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:46:46 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 0 pages/min), scraped 1 items (at 1 items/min)
+2021-10-26 13:46:46 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:46:46 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:46:46 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDCAA648>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:46:46 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 875,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 475059,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 211.659077,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 46, 46, 524588),
+ 'item_scraped_count': 1,
+ 'log_count/CRITICAL': 8,
+ 'log_count/DEBUG': 94,
+ 'log_count/ERROR': 21,
+ 'log_count/INFO': 72,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 14, 865511)}
+2021-10-26 13:46:46 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post2_5595909_1.html> from <GET http://www.baidu.com/link?url=3Z0A4RlVzLj6PrESkRFCn1sWuDF2lDiXw-HUp0AZ9OLlC4c8bt4oIGJFd7Cbea211ATvWfg4k4zFgkf3Zg3GlK>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_13464323_1.html> from <GET http://www.baidu.com/link?url=LMcjEgmeqkC-ehRbLKkRepYFNFWSQpxdfw1P0VpEOPWzqJOl4Lum_2eTbpBOeaYf2j0MELPVOO9xmUXXdQGJsa>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://book.tiexue.net/Book15394/Content710063.html> from <GET http://www.baidu.com/link?url=Gn1IqHGMki7LsKUM4LpDuOk5LUQWNjchbGFqgDZ0t-tsJvhBd72x_DxADJCPlHVhjKwbAdPs5xqoMFFxs6tQuq>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_12172404_1.html> from <GET http://www.baidu.com/link?url=hM3BDcLN2v_sPPkB2KJIRFMvmUISZSdUO4MONybSw-z0_WMCFev8Sy_d343EB9yh6a-5FaGCcjZKS2ERRBzBva>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_9325634_1.html> from <GET http://www.baidu.com/link?url=_GQr95WqSMbJAypHiyHpGge72ZxQWkoUBPkMWyWASJVpcAw4BOvLMGlmRGu2KD-YtQRy1h6Y8Wt_9uhpZleHcK>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_5650903_1.html> from <GET http://www.baidu.com/link?url=W3IvdpDLzOZjEIz6as_7lnGTch5S9fz7EjsK6fkhWfhEkIzEH2DWG9ANs5Mx7xRaseNqe61ReRv5m8802B7OGK>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post2_5200734_1.html> from <GET http://www.baidu.com/link?url=NDFiUxhVdZVU89-FYc2FFPEDnlzafbon2rj45AVv_1MXHJy_GSUsdD-pMOralS1IhXuBpZRMBAlzqkst-c7nra>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post2_13230661_1.html> from <GET http://www.baidu.com/link?url=Gzk2PXqK13qy_lbNBjY6lEsHxt9NYMx8D3NJ3D0lHTXiUxg-SlUXKOlr7L86cp8wDyIsXKTXfnyg2uc5noJ2hq>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post2_2890496_1.html> from <GET http://www.baidu.com/link?url=w1Z1YOXehEIKFEQFLsSElbur1XW1YMPCdt0YKBIglU3c_7Cxe1LmXcV7YZ3YWFRn4NxskougJB1ZQzg1k209Wa>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_13409405_1.html> from <GET http://www.baidu.com/link?url=0hmnGZ5erKjXnX7GYpqs7COZOYDNQaVvEGbc2WplWmP7QyG0xmGz0JcmznNfsYqMaHPIVgaSDhvK2PtsW21Twq>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://book.tiexue.net/Book0/Content1659132.html> from <GET http://www.baidu.com/link?url=gO7UsA_Q5oAGHPW8WiI5Dq0f6yLPrN-SvecMv2AXT1-LCNs8ngipNZ5HKkrwMLVNsNGLN88xNq4fi0ItJFprxK>
+2021-10-26 13:46:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_4387077_1.html?s=data> from <GET http://www.baidu.com/link?url=gmLOP2fmpKkRs8pZHRgIjCa1tdFXSy7zerFPiDj2JDHIt8zU3PGaSCGvXDH_Qft-pmN1ASLjRrRJsyD4qK7TJa>
+2021-10-26 13:46:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_13464323_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_12172404_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.tiexue.net/Book15394/Content710063.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post2_5595909_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_9325634_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post2_2890496_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post2_5200734_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://book.tiexue.net/Book0/Content1659132.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_13409405_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post2_13230661_1.html> (referer: None)
+2021-10-26 13:46:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_4387077_1.html?s=data> (referer: None)
+2021-10-26 13:47:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_5650903_1.html> (referer: None)
+2021-10-26 13:47:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://bbs.tiexue.net/post2_5595909_1.html>
+None
+2021-10-26 13:47:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://bbs.tiexue.net/post2_5200734_1.html>
+None
+2021-10-26 13:47:05 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:47:05 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDCD0C48>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:47:05 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 5385,
+ 'downloader/request_count': 10,
+ 'downloader/request_method_count/GET': 10,
+ 'downloader/response_bytes': 127767,
+ 'downloader/response_count': 10,
+ 'downloader/response_status_count/200': 5,
+ 'downloader/response_status_count/302': 5,
+ 'elapsed_time_seconds': 230.120139,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 47, 5, 2746),
+ 'log_count/CRITICAL': 6,
+ 'log_count/DEBUG': 113,
+ 'log_count/ERROR': 22,
+ 'log_count/INFO': 65,
+ 'log_count/WARNING': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 5,
+ 'scheduler/dequeued': 10,
+ 'scheduler/dequeued/memory': 10,
+ 'scheduler/enqueued': 10,
+ 'scheduler/enqueued/memory': 10,
+ 'spider_exceptions/ValueError': 1,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 14, 882607)}
+2021-10-26 13:47:05 [scrapy.core.engine] INFO: Spider closed (finished)
+2021-10-26 13:47:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post_5835678_1.html> from <GET http://www.baidu.com/link?url=iI73TctXlpXw31Nn2ql3u4nHP_ej2mDFwdUF82fpw4FkCx3KHipehTixaPtpSvnml5aiyVLjpaD4bENeuilmNq>
+2021-10-26 13:47:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://bbs.tiexue.net/post2_13361745_1.html> from <GET http://www.baidu.com/link?url=bUI9fgjqhVtoh6D45JhJNQjm-SPSWt1Ibe-n81Mx9iXWM7-phOlEEjItdNzlYTxT1crZJnFSfyb6xlXnWkh0JK>
+2021-10-26 13:47:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://bbs.tiexue.net/post_5650903_1.html>
+None
+2021-10-26 13:47:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post2_13361745_1.html> (referer: None)
+2021-10-26 13:47:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://bbs.tiexue.net/post_5835678_1.html> (referer: None)
+2021-10-26 13:47:05 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-10-26 13:47:05 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TextCrawlDownloaderMiddleware.spider_closed of <TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware object at 0x00000194CDC04088>>
+Traceback (most recent call last):
+  File "C:\Users\adm\AppData\Roaming\Python\Python37\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\Anaconda\envs\HS\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 127, in spider_closed
+    # 这里收集stats并写入相关的储存。
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 138, in collect
+    pram_ = [cid, str(count)]
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1315, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 98, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "D:\Anaconda\envs\HS\lib\site-packages\flask\app.py", line 1284, in add_url_rule
+    "existing endpoint function: %s" % endpoint
+AssertionError: View function mapping is overwriting an existing endpoint function: pushData
+2021-10-26 13:47:05 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 12080,
+ 'downloader/request_count': 22,
+ 'downloader/request_method_count/GET': 22,
+ 'downloader/response_bytes': 414896,
+ 'downloader/response_count': 22,
+ 'downloader/response_status_count/200': 11,
+ 'downloader/response_status_count/302': 11,
+ 'elapsed_time_seconds': 231.900397,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 10, 26, 5, 47, 5, 656581),
+ 'item_scraped_count': 3,
+ 'log_count/CRITICAL': 16,
+ 'log_count/DEBUG': 125,
+ 'log_count/ERROR': 23,
+ 'log_count/INFO': 118,
+ 'log_count/WARNING': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 11,
+ 'scheduler/dequeued': 22,
+ 'scheduler/dequeued/memory': 22,
+ 'scheduler/enqueued': 22,
+ 'scheduler/enqueued/memory': 22,
+ 'start_time': datetime.datetime(2021, 10, 26, 5, 43, 13, 756184)}
+2021-10-26 13:47:05 [scrapy.core.engine] INFO: Spider closed (finished)

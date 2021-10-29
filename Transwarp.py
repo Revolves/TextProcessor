@@ -20,7 +20,7 @@ class Transwarp:
         # 开启jvm
         try:
             jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath, "-Djava.ext.dirs=%s" % self.dependency_path)
-        except:
+        except OSError:
             jpype.shutdownJVM()
             jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath,
                            "-Djava.ext.dirs=%s" % self.dependency_path)

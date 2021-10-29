@@ -19,6 +19,9 @@ PROXIES_UNCHECKED_SET = 'proxies:unchecked:set'
 
 # 代理地址的格式化字符串
 PROXY_URL_FORMATTER = '%(schema)s://%(ip)s:%(port)s'
+EXTENSTONS = {
+    'scrapy.telnet.TelnetConsole': None,
+}
 
 # 通用请求头字段
 DEFAULT_REQUEST_HEADERS = {

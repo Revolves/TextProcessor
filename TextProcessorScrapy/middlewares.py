@@ -4,17 +4,46 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import logging
 import random
+import threading
+import time
 
 from scrapy import signals
 # from TextProcessorScrapy.utils.utils import get_random_ip
 from twisted.internet import task
 
 from TextProcessorScrapy.settings import USER_AGENTS_LIST
+from flask import Flask
 
 # useful for handling different item types with a single interface
 
 CRAWL_ID = None
 DATABASE = None
+COUNT = 0
+FIRST = True
+INTERACT = 0
+SPIDERSNUMBER = 1
+DB = None
+
+
+def insert_http_interact():
+    global SPIDERSNUMBER
+    while SPIDERSNUMBER > 0:
+        time.sleep(10)
+        global CRAWL_ID, INTERACT, COUNT
+        if DB is not None:
+            try:
+                sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?, hs.sequence_get_id.NEXTVAL)"
+                pram_ = [CRAWL_ID, str(INTERACT)]
+                DB.execute_sql(sql_, pram_)
+            except:
+                logging.error("http interact insert failure")
+            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, str(INTERACT * SPIDERSNUMBER)))
+            INTERACT = 0
+
+
+insert_th = threading.Thread(target=insert_http_interact)
+insert_th.start()
+
 
 class TextCrawlSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -35,11 +64,11 @@ class TextCrawlSpiderMiddleware:
         return instance
 
     def spider_opened(self):
-        self.tsk = task.LoopingCall(self.collect)
-        self.tsk.start(self.time, now=True)
+        pass
+        # self.tsk = task.LoopingCall(self.collect)
+        # self.tsk.start(self.time, now=True)
 
     def spider_closed(self):
-        print(CRAWL_ID)
         if CRAWL_ID:
             http_interact = self.stats.get_value('log_count/DEBUG')
             this_time_http_interact = http_interact - self.last_count
@@ -51,11 +80,10 @@ class TextCrawlSpiderMiddleware:
     def collect(self):
         # 这里收集stats并写入相关的储存。
         # 目前展示是输出到终端
-        if CRAWL_ID:
-            http_interact = self.stats.get_value('log_count/DEBUG')
-            this_time_http_interact = http_interact - self.last_count
-            self.last_count = http_interact
-            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
+        http_interact = self.stats.get_value('log_count/DEBUG')
+        this_time_http_interact = http_interact - self.last_count
+        self.last_count = http_interact
+
 
 class TextCrawlDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -75,8 +103,6 @@ class TextCrawlDownloaderMiddleware:
         return instance
 
     def process_request(self, request, spider):
-        CRAWL_ID = spider.crawl_id
-        DATABASE = spider.database
         # Called for each request that goes through the downloader
         # middleware.
 
@@ -109,40 +135,40 @@ class TextCrawlDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-        self.tsk = task.LoopingCall(self.collect, spider = spider)
+        global FIRST, CRAWL_ID, DB, SPIDERSNUMBER
+        self.tsk = task.LoopingCall(self.collect, spider=spider)
         self.tsk.start(self.time, now=True)
+        if FIRST:
+            CRAWL_ID = spider.crawl_id
+            DB = spider.database
+            SPIDERSNUMBER = spider.spiders_count
+            FIRST = False
 
     def spider_closed(self, spider):
-        CRAWL_ID = spider.crawl_id
-        if CRAWL_ID:
-            http_interact = self.stats.get_value('log_count/DEBUG')
-            this_time_http_interact = http_interact - self.last_count
-            self.last_count = http_interact
-            try:
-                sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
-                pram_ = [CRAWL_ID, str(this_time_http_interact)]
-                spider.database.execute_sql(sql_, pram_)
-            except:
-                logging.error("http interact insert failure")
-            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
-        if self.tsk.running:
-            self.tsk.stop()
+        try:
+            if self.tsk.running:
+                self.tsk.stop()
+            self.collect(spider)
+        except:
+            pass
+        global SPIDERSNUMBER
+        SPIDERSNUMBER -= 1
+
     def collect(self, spider):
-        CRAWL_ID = spider.crawl_id
-        # 这里收集stats并写入相关的储存。
-        # 目前展示是输出到终端
+        global COUNT, CRAWL_ID, INTERACT, SPIDERSNUMBER
+
         if CRAWL_ID:
             http_interact = self.stats.get_value('log_count/DEBUG')
             if http_interact:
                 this_time_http_interact = http_interact - self.last_count
                 self.last_count = http_interact
-                try:
-                    sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
-                    pram_ = [CRAWL_ID, str(this_time_http_interact)]
-                    spider.database.execute_sql(sql_, pram_)
-                except:
-                    logging.error("http interact insert failure")
-                logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
+                INTERACT += this_time_http_interact
+                # t = threading.Thread(target=pushData, args=(this_time_http_interact,))
+                # t = threading.Thread(target=insert, args=(CRAWL_ID, this_time_http_interact, spider.database,))
+                # t.start()
+                # COUNT += 1
+
+
 #
 # class RandomProxyMiddleware(object):
 #     """

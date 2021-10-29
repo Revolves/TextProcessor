@@ -1,0 +1,496 @@
+2021-10-26 13:47:13 [scrapy.extensions.telnet] INFO: Telnet Password: 59ee49a2a9304a3e
+2021-10-26 13:47:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.HsNasaPipeline']
+2021-10-26 13:47:13 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:13 [nasa] INFO: Spider opened: nasa
+2021-10-26 13:47:13 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:13 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:13 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-10-26 13:47:14 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:14 [scrapy.extensions.telnet] INFO: Telnet Password: 6642a87ffc576b63
+2021-10-26 13:47:14 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:14 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:14 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:14 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.WikiPipeline']
+2021-10-26 13:47:14 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:14 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:14 [wiki] INFO: Spider opened: wiki
+2021-10-26 13:47:14 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:14 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:14 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-10-26 13:47:14 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:14 [scrapy.extensions.telnet] INFO: Telnet Password: f6cdb26fd318a1ea
+2021-10-26 13:47:14 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:12852/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}
+2021-10-26 13:47:14 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1
+2021-10-26 13:47:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:12852 "POST /session HTTP/1.1" 200 785
+2021-10-26 13:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:12852/session/8f90a03d9427681149307328dbd97d27/timeouts {"implicit": 1000}
+2021-10-26 13:47:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:12852 "POST /session/8f90a03d9427681149307328dbd97d27/timeouts HTTP/1.1" 200 14
+2021-10-26 13:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.BaiduPipeline']
+2021-10-26 13:47:15 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:15 [baidu] INFO: Spider opened: baidu
+2021-10-26 13:47:15 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:15 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:15 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025
+2021-10-26 13:47:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:15 [scrapy.extensions.telnet] INFO: Telnet Password: b436be3cc9ed846e
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TiexuePipeline']
+2021-10-26 13:47:15 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:15 [tiexue] INFO: Spider opened: tiexue
+2021-10-26 13:47:15 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:15 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:15 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6026
+2021-10-26 13:47:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:15 [scrapy.extensions.telnet] INFO: Telnet Password: 640a1d3eb08acac8
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.AiaaPipeline']
+2021-10-26 13:47:15 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:15 [aiaa] INFO: Spider opened: aiaa
+2021-10-26 13:47:15 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:15 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:15 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6027
+2021-10-26 13:47:16 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:16 [scrapy.extensions.telnet] INFO: Telnet Password: 77e403c18a4fd7a4
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.HsNasaPipeline']
+2021-10-26 13:47:16 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:16 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:16 [nasa] INFO: Spider opened: nasa
+2021-10-26 13:47:16 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:16 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:16 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6028
+2021-10-26 13:47:16 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:16 [scrapy.extensions.telnet] INFO: Telnet Password: f0f1890abd5233b0
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.WikiPipeline']
+2021-10-26 13:47:16 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:16 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:16 [wiki] INFO: Spider opened: wiki
+2021-10-26 13:47:16 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:16 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:16 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6029
+2021-10-26 13:47:16 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:16 [scrapy.extensions.telnet] INFO: Telnet Password: 552851fdadaee8e8
+2021-10-26 13:47:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:1196/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}
+2021-10-26 13:47:17 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1
+2021-10-26 13:47:17 [urllib3.connectionpool] DEBUG: http://127.0.0.1:1196 "POST /session HTTP/1.1" 200 785
+2021-10-26 13:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:1196/session/50e87037da7c772c531b3070ea6221d3/timeouts {"implicit": 1000}
+2021-10-26 13:47:17 [urllib3.connectionpool] DEBUG: http://127.0.0.1:1196 "POST /session/50e87037da7c772c531b3070ea6221d3/timeouts HTTP/1.1" 200 14
+2021-10-26 13:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 13:47:17 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:17 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:17 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.BaiduPipeline']
+2021-10-26 13:47:17 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:17 [baidu] INFO: Spider opened: baidu
+2021-10-26 13:47:17 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:17 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:17 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6030
+2021-10-26 13:47:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:18 [scrapy.extensions.telnet] INFO: Telnet Password: a9a880b47ac45499
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TiexuePipeline']
+2021-10-26 13:47:18 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:18 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:18 [tiexue] INFO: Spider opened: tiexue
+2021-10-26 13:47:18 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:18 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:18 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6031
+2021-10-26 13:47:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_12.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 13:47:18 [scrapy.extensions.telnet] INFO: Telnet Password: 39f1df9288ec1b2d
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 13:47:18 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.AiaaPipeline']
+2021-10-26 13:47:18 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 13:47:18 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 13:47:18 [aiaa] INFO: Spider opened: aiaa
+2021-10-26 13:47:18 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-10-26 13:47:18 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\HS\lib\site-packages\twisted\internet\defer.py", line 191, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "E:\workspace\TextProcessor\TextProcessorScrapy\middlewares.py", line 130, in collect
+    @app.route('/{}'.format(str(COUNT)))
+NameError: name 'app' is not defined
+2021-10-26 13:47:18 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6032
+2021-10-26 13:47:18 [TextProcessorScrapy.spiders.Aiaa] INFO: Aiaa Spider Starting!
+2021-10-26 13:47:18 [TextProcessorScrapy.spiders.Aiaa] INFO: Aiaa Spider Starting!

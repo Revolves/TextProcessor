@@ -105,29 +105,22 @@ class TwitterPipeline:
                 continue
             self.data.append(detail_)
             self.count += 1
-            if self.count % 40 == 0:
-                try:
-                    sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
-                    pram_ = [spider.crawl_id, str(80)]
-                    spider.database.execute_sql(sql_, pram_)
-                except:
-                    logging.error("http interact insert failure")
-                logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
+
         # return item
 
     def close_spider(self, spider):
+        try:
+            sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?, hs.sequence_get_id.NEXTVAL)"
+            pram_ = [spider.crawl_id, str(self.count)]
+            spider.database.execute_sql(sql_, pram_)
+        except:
+            logging.error("http interact insert failure")
+        logging.info("{} ten seconds http interact :{}".format(spider.crawl_id, str(self.count)))
         json.dump(self.data, self.file, indent=4, ensure_ascii=False)
         if self.first is False:
             self.count_file.write(str(self.count))
             self.count_file.close()
         self.file.close()
-        try:
-            sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?)"
-            pram_ = [spider.crawl_id, str(self.count%40 * 2)]
-            spider.database.execute_sql(sql_, pram_)
-        except:
-            logging.error("http interact insert failure")
-        logging.info("{} ten seconds http interact :{}".format(spider.crawl_id, self.count%40 * 2))
 
 class FacebookPipeline:
     def __init__(self):

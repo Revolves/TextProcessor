@@ -17,6 +17,7 @@ from scrapy.utils.project import get_project_settings
 from twisted.internet import reactor, defer, error
 from TextProcessorScrapy.spiders.Baidu import BaidubaikeSpider
 from Transwarp import Transwarp
+from flask import Flask
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -156,9 +157,9 @@ def upload_crawl_file(path_list, connect):
         for file in path_list:
             size_ = path_list[file]
             # print(file)
-            connect.upload_file(file, "\\text_crawl_file\\")
+            # connect.upload_file(file, "\\text_crawl_file\\")
             # os.remove(file)
-            sql_ = "INSERT INTO hs.text_crawl_file  VALUES (?, ?, ?, ?, ?)"
+            sql_ = "INSERT INTO hs.text_crawl_file_temp  VALUES (?, ?, ?, ?, ?)"
             date_ = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
             filename_ = file.split("\\")[-1]
             format_ = file.split('.')[-1]
@@ -198,33 +199,41 @@ def stop(*args, **kwargs):
             pass
 
 
-def start_spiders(transwarp):
+def start_spiders(transwarp=None, info=None):
     """
     启动爬虫
 
     :return:
     """
     # transwarp = Transwarp("Transwarp/JavaJar/DB.jar", "Transwarp/libs")
-    # transwarp.connect_incpetor()
+    # transwarp.connect_inceptor()
     # transwarp.connect_hdfs()
 
     status_url = "http://localhost:8080/text/textCrawler"
     info_url = "http://localhost:8080/site/siteJobManage"
     while True:
         # info = control_info(info_url)  # 控制信息
-        info = {"sites": ['nasa', 'wiki', 'baidu', 'twitter', 'tiexue', 'aiaa', 'facebook'],
-                "keywords": ['target', 'under water'], "crawl_id": "crawler1"}
+        keywords = []
+        f = open('file/keys.txt', 'r')
+        _f = f.readline()
+        while _f:
+            keywords.append(_f.replace('\n', ''))
+            _f = f.readline()
+        if info is None:
+            info = {"sites": ['nasa', 'wiki', 'baidu', 'tiexue', 'aiaa'],
+                    "keywords": ['枪榴弹', '航空母舰'], "crawl_id": "crawler1"}
         # while control_status(status_url):
         if info is not False:
             logger.info('TextCrawler On!')
             if info is not None:
                 keywords = info['keywords']
                 sites = info['sites']
+                spiders_count = len(keywords) * len(sites)
                 configure_logging()
                 runner = CrawlerRunner(get_project_settings())
                 for keyword in keywords:
                     for site in sites:
-                        runner.crawl(site, keyword=keyword, crawl_id=info['crawl_id'], database=transwarp)
+                        runner.crawl(site, keyword=keyword, crawl_id=info['crawl_id'], database=transwarp, spiders_count=spiders_count)
                         d = runner.join()
                         d.addBoth(stop)
                 reactor.run()

@@ -1,0 +1,6 @@
+2021-10-26 13:25:55 [scrapy.extensions.telnet] INFO: Telnet Password: 6f4c0d515e25303b
+2021-10-26 13:25:55 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 13:25:55 [werkzeug] INFO:  * Restarting with stat

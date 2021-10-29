@@ -1,0 +1,417 @@
+2021-10-26 20:40:41 [scrapy.extensions.telnet] INFO: Telnet Password: fb0734e96360fe82
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.HsNasaPipeline']
+2021-10-26 20:40:41 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:41 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:41 [nasa] INFO: Spider opened: nasa
+2021-10-26 20:40:41 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-10-26 20:40:41 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:41 [scrapy.extensions.telnet] INFO: Telnet Password: 52ecfe89f2221d92
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.WikiPipeline']
+2021-10-26 20:40:41 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:41 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:41 [wiki] INFO: Spider opened: wiki
+2021-10-26 20:40:41 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2021-10-26 20:40:41 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:41 [scrapy.extensions.telnet] INFO: Telnet Password: 7054606135fc91db
+2021-10-26 20:40:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:42 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:5524/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}
+2021-10-26 20:40:42 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1
+2021-10-26 20:40:42 [urllib3.connectionpool] DEBUG: http://127.0.0.1:5524 "POST /session HTTP/1.1" 200 784
+2021-10-26 20:40:42 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 20:40:42 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:5524/session/a811a215a62ce0b27613031d4e65176e/timeouts {"implicit": 1000}
+2021-10-26 20:40:42 [urllib3.connectionpool] DEBUG: http://127.0.0.1:5524 "POST /session/a811a215a62ce0b27613031d4e65176e/timeouts HTTP/1.1" 200 14
+2021-10-26 20:40:42 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.BaiduPipeline']
+2021-10-26 20:40:42 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:42 [baidu] INFO: Spider opened: baidu
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025
+2021-10-26 20:40:42 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet Password: cf51d7250f30af5a
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TiexuePipeline']
+2021-10-26 20:40:42 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:42 [tiexue] INFO: Spider opened: tiexue
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6026
+2021-10-26 20:40:42 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet Password: 734a2d2da45ca68c
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.AiaaPipeline']
+2021-10-26 20:40:42 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:42 [aiaa] INFO: Spider opened: aiaa
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6027
+2021-10-26 20:40:42 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet Password: 0e7ae97a688feb4e
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.HsNasaPipeline']
+2021-10-26 20:40:42 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:42 [nasa] INFO: Spider opened: nasa
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6028
+2021-10-26 20:40:42 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet Password: 5252b3db72b65c5b
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.WikiPipeline']
+2021-10-26 20:40:42 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:42 [wiki] INFO: Spider opened: wiki
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6029
+2021-10-26 20:40:42 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:42 [scrapy.extensions.telnet] INFO: Telnet Password: 9d5e2bafcf251fa4
+2021-10-26 20:40:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:43 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:4865/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--headless"]}}}
+2021-10-26 20:40:43 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1
+2021-10-26 20:40:44 [urllib3.connectionpool] DEBUG: http://127.0.0.1:4865 "POST /session HTTP/1.1" 200 784
+2021-10-26 20:40:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 20:40:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:4865/session/98c12e76d3d155084e66eaf49c37e71e/timeouts {"implicit": 1000}
+2021-10-26 20:40:44 [urllib3.connectionpool] DEBUG: http://127.0.0.1:4865 "POST /session/98c12e76d3d155084e66eaf49c37e71e/timeouts HTTP/1.1" 200 14
+2021-10-26 20:40:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.BaiduPipeline']
+2021-10-26 20:40:44 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:44 [baidu] INFO: Spider opened: baidu
+2021-10-26 20:40:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6030
+2021-10-26 20:40:44 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:44 [scrapy.extensions.telnet] INFO: Telnet Password: 2737eddb72068a1c
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.TiexuePipeline']
+2021-10-26 20:40:44 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:44 [tiexue] INFO: Spider opened: tiexue
+2021-10-26 20:40:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6031
+2021-10-26 20:40:44 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 8,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2021_10_26_17.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders']}
+2021-10-26 20:40:44 [scrapy.extensions.telnet] INFO: Telnet Password: 6f30663f99479ae5
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-10-26 20:40:44 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.AiaaPipeline']
+2021-10-26 20:40:44 [scrapy.core.engine] INFO: Spider opened
+2021-10-26 20:40:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-10-26 20:40:44 [aiaa] INFO: Spider opened: aiaa
+2021-10-26 20:40:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6032
+2021-10-26 20:40:44 [TextProcessorScrapy.spiders.Aiaa] INFO: Aiaa Spider Starting!
+2021-10-26 20:40:44 [TextProcessorScrapy.spiders.Aiaa] INFO: Aiaa Spider Starting!
+2021-10-26 20:40:54 [root] INFO: crawler1 ten seconds http interact :0
