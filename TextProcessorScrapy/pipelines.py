@@ -33,6 +33,7 @@ def CreatePath(path, tag):
         file = open(SaveFile, "a+", newline="", encoding="utf-8-sig")
     return file
 
+
 def create_count_file(path, tag, keyword):
     index_path = path + '/count'
     if os.path.exists(index_path) is False:
@@ -43,6 +44,7 @@ def create_count_file(path, tag, keyword):
     except:
         time.sleep(1)
         return open(count_file, 'w', encoding='utf-8')
+
 
 class HsNasaPipeline:
     def __init__(self):
@@ -122,6 +124,7 @@ class TwitterPipeline:
             self.count_file.close()
         self.file.close()
 
+
 class FacebookPipeline:
     def __init__(self):
         self.tag = 'facebook'
@@ -169,6 +172,7 @@ class ProxyPoolPipeline(object):
     #     added = server.sadd(PROXIES_UNCHECKED_SET, item._get_url())
     #     return added == 0
 
+
 class AiaaPipeline:
     def __init__(self):
         self.tag = 'aiaa'
@@ -193,6 +197,7 @@ class AiaaPipeline:
             self.count_file.write(str(self.count))
             self.count_file.close()
         self.file.close()
+
 
 class WikiPipeline:
     def __init__(self):
@@ -222,6 +227,7 @@ class WikiPipeline:
             self.count_file.close()
         self.file.close()
 
+
 class BaiduPipeline:
     def __init__(self):
         self.tag = 'baidu'
@@ -249,6 +255,7 @@ class BaiduPipeline:
             self.count_file.write(str(self.count))
             self.count_file.close()
 
+
 class JanesPipeline:
     def __init__(self):
         self.tag = 'janes'
@@ -275,6 +282,7 @@ class JanesPipeline:
             self.count_file.write(str(self.count))
             self.count_file.close()
         self.file.close()
+
 
 class TiexuePipeline:
     def __init__(self):

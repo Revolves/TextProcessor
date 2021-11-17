@@ -4,13 +4,10 @@ date: 2021/8/15
 time: 16:07
 IDE: PyCharm  
 """
-import csv
 import datetime
 import json
 import logging
 import os
-
-import jpype
 
 to_day = datetime.datetime.now()
 logging.basicConfig(level=logging.DEBUG,
@@ -23,144 +20,82 @@ logger = logging.getLogger(__name__)
 
 class DataCleaning:
     def __init__(self, file_path):
-        self.TotalData = 0
-        self.EnableData = 0
-        self.UselessData = 0
+        """
+
+        :param file_path: 目录根目录
+        """
         self.FilePath = file_path
-        self.CommitData = []
-        self.connect_db()
-
-    def get_dirs(self, main_dir):
-        """
-        获取目录结构
-        :param main_dir:
-        :return:
-        """
-        list_dirs = []
-        for root, dirs, files in os.walk(main_dir):
-            for _dir in dirs:
-                list_dirs.append(os.path.join(root, _dir))
-        return list_dirs
-
-    def get_file(self, dir_path):
-        """
-        获取目录下文件
-        :param dir_path:
-        :return:
-        """
-        list_json = []
-        for _dir in dir_path:
-            for root, dirs, files in os.walk(_dir):
-                for file in files:
-                    if file.endswith(".json"):  # 过滤得到json文件
-                        list_json.append(os.path.join(root, file))
-
-        return list_json  # 得到所有的jpg文件和json文件的列表(包含路径)
 
     def data_clean(self):
         """
-        数据处理并存入数据库
+        数据清洗
+
         :return:
         """
-        DataFile = self.get_file(self.get_dirs(self.FilePath))
-        Useful = True  # 数据可用性
-        for File in DataFile:
-            with open(File, 'r', encoding='utf-8-sig') as file_json:
-                try:
-                    Data = json.load(file_json)
-                except:
-                    logger.exception('NO DATA')
-                    continue
-                self.TotalData += len(Data)
-                if len(Data) > 0:
-                    for _data in Data:
-                        if len(_data['content'].replace(' ', '').replace("\n", '')) <= 20 or _data['content'] == '':
-                            self.UselessData += 1
-                        else:
-                            self.CommitData.append(_data)
-                if len(self.CommitData) > 500:
-                    self.commit_data(self.CommitData)
-                    self.CommitData = []
-        # self.save_csv(self.CommitData)
-        self.commit_data(self.CommitData)
-        Precision = (self.TotalData - self.UselessData) / self.TotalData
-        logger.info('Precision：{}'.format(Precision))
-        print('查准率：{}'.format(Precision))
-        return (self.TotalData - self.UselessData) / self.TotalData
+        start = datetime.datetime.now()
+        dir_list = self.get_dirs(self.FilePath)
+        for d in dir_list:
+            file_list = self.get_file(self.FilePath + '/' + d)
+            self.file_cat(file_list)
+        end = datetime.datetime.now()
+        logger.info("本次清洗用时：{}".format(end - start))
 
-    def connect_db(self):
+    @staticmethod
+    def get_dirs(main_dir):
         """
-        使用jar jdbc连接数据库
+        获取目录结构
+
+        :param main_dir: 根目录
+        :return: 根目录文件夹列表
+        """
+        return os.listdir(main_dir)
+
+    @staticmethod
+    def get_file(dir_path):
+        """
+        获取目录下文件（清除不符合要求文件夹）
+
+        :param dir_path: 目录
+        :return: 目录下所有符合要求文件列表
+        """
+        list_json = []
+        for root, dirs, files in os.walk(dir_path):
+            for file in files:
+                if file.endswith(".json"):  # 过滤得到json文件
+                    file_path = os.path.join(root, file)
+                    file_size = os.stat(file_path).st_size
+                    if file_size > 10:
+                        list_json.append(file_path)
+                    else:
+                        os.remove(file_path)
+
+        return list_json  # 得到所有的jpg文件和json文件的列表(包含路径)
+
+    @staticmethod
+    def file_cat(file_list):
+        """
+        将一类爬虫数据归一到一个文件
+
+        :param file_list: 文件列表
         :return:
         """
-        jarpath = os.path.join(os.path.abspath("."), r"file\DB.jar")
-        dependency_path = os.path.join(os.path.abspath('.'), r'file\libs')
-        # 获取jvm.dll 的文件路径
-        jvmPath = jpype.getDefaultJVMPath()
-
-        # 开启jvm
-        jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % jarpath, "-Djava.ext.dirs=%s" % dependency_path)
-        self.javaClass = jpype.JClass("DB.ConnectDB")
-        javaInstance = self.javaClass()
-        self.javaClass.LinkDB()
-
-    def save_csv(self, data):
-        """
-        将数据保存为csv
-        :return:
-        """
-        csv_file = open("data.csv", "w+", encoding='utf-8')
-        csv_writer = csv.writer(csv_file)
-        for _data in data:
-            if 'attributes' in _data:
-                _params = (str(_data['keyword']),
-                           str(_data['source']),
-                           str(_data['title']),
-                           str(_data['url']),
-                           str(_data['date']),
-                           str(_data['content']),
-                           str(_data['attributes']))
-            else:
-                _params = (str(_data['keyword']),
-                           str(_data['source']),
-                           str(_data['title']),
-                           str(_data['url']),
-                           str(_data['date']),
-                           str(_data['content']),
-                           '')
-            csv_writer.writerow(_params)
-        csv_file.close()
-
-    def commit_data(self, data):
-        """
-        提交数据
-        :param data:
-        :param connect:
-        :return:
-        """
-        for _data in data:
-            if 'attributes' in _data:
-                _params = [str(_data['keyword']),
-                           str(_data['source']),
-                           str(_data['title']),
-                           str(_data['url']),
-                           str(_data['date']),
-                           str(_data['content']),
-                           str(_data['attributes'])]
-            else:
-                _params = [str(_data['keyword']),
-                           str(_data['source']),
-                           str(_data['title']),
-                           str(_data['url']),
-                           str(_data['date']),
-                           str(_data['content']),
-                           '']
-            self.javaClass.InsertData(_params)
-        logger.info('this time commit {} data'.format(len(data)))
-        print('this time commit {} data'.format(len(data)))
+        if len(file_list) == 0:
+            return
+        data = []
+        for file in file_list:
+            f = open(file, 'r', encoding='utf-8-sig')
+            f_json = json.load(f)
+            for _ in f_json:
+                if len(str(_['content'])) > 20 and len(str(_['title']).replace(" ", "")) > 0:
+                    if _ not in data:
+                        data.append(_)
+            f.close()
+            os.remove(file)
+        file = open(file_list[0], "w", newline="", encoding="utf-8-sig")
+        json.dump(data, file, indent=4, ensure_ascii=False)
+        file.close()
 
 
 if __name__ == '__main__':
     DC = DataCleaning('result')
     DC.data_clean()
-

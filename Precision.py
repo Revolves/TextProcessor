@@ -67,10 +67,13 @@ def pers_sim(a, b):
     # return {"文本的皮尔森相似度:":np.sum(a*b) / (np.sqrt(np.sum(a ** 2)) * np.sqrt(np.sum(b ** 2)))}
     return np.sum(a * b) / (np.sqrt(np.sum(a ** 2)) * np.sqrt(np.sum(b ** 2)))
 
-class TextSimilarity(object):
-    def __init__(self, file_a, file_b):
+class TextSimilarity:
+    def __init__(self, file_a, file_b='baseline'):
         """
         加载目标文件为字符串
+
+        :param file_a: 输入数据集
+        :param file_b: 基准集
         """
         str_a = ''
         str_b = ''
@@ -257,9 +260,9 @@ class TextSimilarity(object):
         '''
         pass
 
-
-ts = TextSimilarity(r"E:\workspace\保存文件\HS_savefile\result\zh\wiki", r"E:\workspace\保存文件\HS_savefile\result\nasa")
-print("ts.splitWordSimlaryty:{}".format(ts.splitWordSimlaryty(sim=cos_sim)))
-print("ts.JaccardSim: {}".format(ts.JaccardSim()))
-# print("ts.levenshteinDistance:{}".format(ts.levenshteinDistance()))
-# print("ts.minimumEditDistance:{}".format(ts.minimumEditDistance()))
+if __name__ == '__main__':
+    ts = TextSimilarity(r"E:\workspace\保存文件\HS_savefile\result\zh\wiki", r"E:\workspace\保存文件\HS_savefile\result\nasa")
+    print("ts.splitWordSimlaryty:{}".format(ts.splitWordSimlaryty(sim=cos_sim)))
+    print("ts.JaccardSim: {}".format(ts.JaccardSim()))
+    # print("ts.levenshteinDistance:{}".format(ts.levenshteinDistance()))
+    # print("ts.minimumEditDistance:{}".format(ts.minimumEditDistance()))

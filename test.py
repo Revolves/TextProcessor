@@ -11,15 +11,38 @@ import time
 i = 0
 
 
-def loop_print():
-    while True:
-        time.sleep(10)
-        global i
-        print(i)
+class Foo:
+    def __init__(self, name):
+        self.name = name
+
+    def __getitem__(self, item):
+        print(self.__dict__[item])
+
+    def __setitem__(self, key, value):
+        print('obj[key]= vlaue时我执行')
+        self.__dict__[key] = value
+
+    def __delitem__(self, key):
+        print('del obj[key]时,我执行')
+        self.__dict__.pop(key)
+
+    def __delattr__(self, item):
+        print('del obj.key时,我执行')
+        self.__dict__.pop(item)
 
 
-t = threading.Thread(target=loop_print)
-t.start()
-while True:
-    i += 1
-    time.sleep(1)
+f1 = Foo('sb')
+
+f1['age'] = 18
+
+f1['age1'] = 19
+
+del f1.age1
+
+del f1['age']
+
+f1['name'] = 'alex'
+
+print(f1.__dict__)
+l = os.listdir('result')
+print(l)

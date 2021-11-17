@@ -14,15 +14,17 @@ logging.basicConfig(level=logging.DEBUG,
                     )
 logger = logging.getLogger(__name__)
 
+
 class FacebookSpider(scrapy.Spider):
     name = 'facebook'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.FacebookPipeline': 300},
-        'REDIRECT_ENABLED' : False,
+        'REDIRECT_ENABLED': False,
         'HTTPERROR_ALLOWED_CODES': [302, 301],
-        'CONCURRENT_REQUESTS' : 8,
+        'CONCURRENT_REQUESTS': 8,
         'COOKIES_ENABLED': True
     }
+
     def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ['facebook.com']
@@ -37,10 +39,11 @@ class FacebookSpider(scrapy.Spider):
 
     def start_requests(self):
         self.count = -1
-         # 登录账户
+        # 登录账户
         try:
             try:
-                self.driver.get('https://facebook.com/?stype=lo&jlou=AfcFaK2ov8XLonPVvzBvlW-hIShxrA1nbAwDVg1CPMo5TSXJNtdG7Xb_KE6SOxa2sv2Gnk4o43Lvgt9NoSXSq-tsR0H1-eUxIGf-rgp1P5hTAg&smuh=47658&lh=Ac8jNUuHrt8XoyfC-hU')
+                self.driver.get(
+                    'https://facebook.com/?stype=lo&jlou=AfcFaK2ov8XLonPVvzBvlW-hIShxrA1nbAwDVg1CPMo5TSXJNtdG7Xb_KE6SOxa2sv2Gnk4o43Lvgt9NoSXSq-tsR0H1-eUxIGf-rgp1P5hTAg&smuh=47658&lh=Ac8jNUuHrt8XoyfC-hU')
             except:
                 self.driver.find_element_by_id('reload-button').click()
             # 输入账户密码
@@ -68,21 +71,23 @@ class FacebookSpider(scrapy.Spider):
         try:
             self.driver.get(response.url)
             self.scroll_to_bottom()
-            results = self.driver.find_elements_by_xpath('//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
+            results = self.driver.find_elements_by_xpath(
+                '//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
             for result in results:
                 item = DataItem()
                 item['keyword'] = self.keyword
                 item['source'] = 'facebook'
                 item['url'] = result.find_element_by_xpath('/a').get_attribute("href")
-                item['content'] = result.find_element_by_xpath('//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]').get_attribute("textContent")
-                item['date'] = result.find_element_by_xpath('//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]/span').get_attribute("textContent")
+                item['content'] = result.find_element_by_xpath(
+                    '//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]').get_attribute("textContent")
+                item['date'] = result.find_element_by_xpath(
+                    '//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]/span').get_attribute("textContent")
                 item['title'] = item['content'][0:30]
                 if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
                     return
                 yield item
         except:
             pass
-
 
     def scroll_to_bottom(self):
         """
@@ -103,4 +108,3 @@ class FacebookSpider(scrapy.Spider):
             height = new_height
             time.sleep(2)
             new_height = self.driver.execute_script(js)
-

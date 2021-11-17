@@ -14,10 +14,11 @@ from scrapy import signals
 from scrapy.crawler import CrawlerRunner, Crawler
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings
-from twisted.internet import reactor, defer, error
+from twisted.internet import reactor, error
+
 from TextProcessorScrapy.spiders.Baidu import BaidubaikeSpider
 from Transwarp import Transwarp
-from flask import Flask
+from DataCleaning import DataCleaning
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
@@ -130,6 +131,10 @@ def crawl_file_list(root):
     :param root: 爬取文件的保存主目录
     :return: 文件列表
     """
+    # 进行数据清洗
+    DC = DataCleaning(root)
+    DC.data_clean()
+
     file_list = {}
     for root, dirs, files in os.walk(root):
         for file in files:
@@ -237,12 +242,12 @@ def start_spiders(transwarp=None, info=None):
                         d = runner.join()
                         d.addBoth(stop)
                 reactor.run()
-                # for keyword in keywords:
-                #     logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
-                # logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
-                # sql_ = "DELETE FROM hs.text_crawl_http_interact WHERE crawl_id = ? "
-                # pram_ = [info['crawl_id']]
-                # transwarp.execute_sql(sql_, pram_)
+                for keyword in keywords:
+                    logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
+                logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
+                sql_ = "DELETE FROM hs.text_crawl_http_interact WHERE crawl_id = ? "
+                pram_ = [info['crawl_id']]
+                transwarp.execute_sql(sql_, pram_)
             break
         break
     pass
