@@ -70,19 +70,19 @@
 </property>
 <property>
     <name>dfs.namenode.rpc-address.nameservice1.nn1</name>
-    <value>tdh-1:8020</value>
+    <value>202.119.84.51:8020</value>
 </property>
 <property>
     <name>dfs.namenode.rpc-address.nameservice1.nn2</name>
-    <value>tdh-2:8020</value>
+    <value>192.10.84.112:8020</value>
 </property>
 <property>
     <name>dfs.namenode.http-address.nameservice1.nn1</name>
-    <value>tdh-1:50070</value>
+    <value>202.119.84.51:50070</value>
 </property>
 <property>
     <name>dfs.namenode.http-address.nameservice1.nn2</name>
-    <value>tdh-2:50070</value>
+    <value>192.10.84.112:50070</value>
 </property>
 <property>
     <name>dfs.ha.automatic-failover.enabled.nameservice1</name>
@@ -90,7 +90,7 @@
 </property>
 <property>
     <name>dfs.namenode.shared.edits.dir.nameservice1</name>
-    <value>qjournal://tdh-1:8485;tdh-2:8485;tdh-3:8485/nameservice1</value>
+    <value>qjournal://202.119.84.51:8485;192.10.84.112:8485;192.10.84.113:8485/nameservice1</value>
 </property>
 <property>
     <name>dfs.client.failover.proxy.provider.nameservice1</name>
@@ -130,7 +130,7 @@
 </property>
 <property>
     <name>license.zookeeper.quorum</name>
-    <value>tdh-1:2291,tdh-2:2291,tdh-3:2291</value>
+    <value>202.119.84.51:2291,192.10.84.112:2291,192.10.84.113:2291</value>
 </property>
 <property>
     <name>dfs.journalnode.edits.dir</name>

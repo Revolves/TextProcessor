@@ -11,11 +11,12 @@ import os
 
 import requests
 from scrapy import signals
+import scrapy
 from scrapy.crawler import CrawlerRunner, Crawler
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings
 from twisted.internet import reactor, error
-
+from threading import Thread
 from TextProcessorScrapy.spiders.Baidu import BaidubaikeSpider
 from Transwarp import Transwarp
 from DataCleaning import DataCleaning
@@ -37,39 +38,11 @@ WEB_MAP = {"百度百科": 'baidu',
 SITE_to_SPIDER = {"百度百科": BaidubaikeSpider}
 NUM = 0
 
-
-class CrawlRunner:
-
+class run_thread(Thread):
     def __init__(self):
-        self.running_crawlers = []
-
-    def spider_closing(self, spider):
-        logger.info("Spider closed: %s" % spider)
-        self.running_crawlers.remove(spider)
-        if not self.running_crawlers:
-            reactor.stop()
-
+        Thread.__init__(self)
     def run(self):
-        settings = get_project_settings()
-        logging.basicConfig(level=logging.DEBUG,
-                            format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
-                            datefmt='%Y-%m-%d %T'
-                            )
-        logger = logging.getLogger(__name__)
-        to_crawl = [SITE_to_SPIDER["百度百科"]]
-
-        for spider in to_crawl:
-            crawler = Crawler(settings)
-            crawler_obj = spider()
-            self.running_crawlers.append(crawler_obj)
-
-            crawler.signals.connect(self.spider_closing, signal=signals.spider_closed)
-            crawler.configure()
-            crawler.crawl(crawler_obj, keywords=['手榴弹'])
-            crawler.start()
-
-        reactor.run()
-
+        start_spiders()
 
 def control_status(url):
     """
@@ -138,7 +111,7 @@ def crawl_file_list(root):
     file_list = {}
     for root, dirs, files in os.walk(root):
         for file in files:
-            if file.endswith(".json") or file.endswith(".pdf"):  # 过滤得到json文件
+            if file.endswith(".json") or file.endswith(".pdf") or file.endswith(".bz2"):  # 过滤得到json文件
                 file_path = os.path.join(os.path.abspath("."), os.path.join(root, file))
                 file_size = os.stat(file_path).st_size  # 文件大小
                 if file_size <= 10:
@@ -161,10 +134,10 @@ def upload_crawl_file(path_list, connect):
     try:
         for file in path_list:
             size_ = path_list[file]
-            # print(file)
-            # connect.upload_file(file, "\\text_crawl_file\\")
+            logger.info("上传文件：{}".format(file))
+            connect.upload_file(file, "\\text_crawl_file\\")
             # os.remove(file)
-            sql_ = "INSERT INTO hs.text_crawl_file_temp  VALUES (?, ?, ?, ?, ?)"
+            sql_ = "INSERT INTO hs.text_crawl_file  VALUES (?, ?, ?, ?, ?)"
             date_ = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
             filename_ = file.split("\\")[-1]
             format_ = file.split('.')[-1]
@@ -213,21 +186,17 @@ def start_spiders(transwarp=None, info=None):
     # transwarp = Transwarp("Transwarp/JavaJar/DB.jar", "Transwarp/libs")
     # transwarp.connect_inceptor()
     # transwarp.connect_hdfs()
-
-    status_url = "http://localhost:8080/text/textCrawler"
-    info_url = "http://localhost:8080/site/siteJobManage"
     while True:
-        # info = control_info(info_url)  # 控制信息
-        keywords = []
-        f = open('file/keys.txt', 'r')
-        _f = f.readline()
-        while _f:
-            keywords.append(_f.replace('\n', ''))
-            _f = f.readline()
-        if info is None:
-            info = {"sites": ['nasa', 'wiki', 'baidu', 'tiexue', 'aiaa'],
-                    "keywords": ['枪榴弹', '航空母舰'], "crawl_id": "crawler1"}
-        # while control_status(status_url):
+        # keywords = []
+        # f = open('file/keys.txt', 'r')
+        # _f = f.readline()
+        # while _f:
+        #     keywords.append(_f.replace('\n', ''))
+        #     _f = f.readline()
+        # if info is None:
+        # info = {"sites": ['nasa', 'wiki', 'baidu', 'tiexue', 'aiaa', 'janes', 'twitter'],
+        #         "keywords": ['earth fortification', '马公机场', '澎湖机场', '西屿雷达站', '花莲机场', '直升机', '装甲防护车', '装甲扫雷车', '装甲运输车', '装甲救护车', '装甲侦察车'], "crawl_id": "crawler1"}
+        info = {"sites": ['wiki'], "keywords":['马公机场'], 'crawl_id': 'crawler1'}
         if info is not False:
             logger.info('TextCrawler On!')
             if info is not None:
@@ -242,21 +211,31 @@ def start_spiders(transwarp=None, info=None):
                         d = runner.join()
                         d.addBoth(stop)
                 reactor.run()
-                for keyword in keywords:
-                    logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
-                logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
-                sql_ = "DELETE FROM hs.text_crawl_http_interact WHERE crawl_id = ? "
-                pram_ = [info['crawl_id']]
-                transwarp.execute_sql(sql_, pram_)
+                # for keyword in keywords:
+                #     logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
+                # logger.info(upload_crawl_file(crawl_file_list("result\\"), transwarp))
+                # sql_ = "DELETE FROM hs.text_crawl_http_interact WHERE crawl_id = ? "
+                # pram_ = [info['crawl_id']]
+                # transwarp.execute_sql(sql_, pram_)
             break
         break
     pass
 
 
+
+
 if __name__ == '__main__':
     'TODO:'
     # start_spiders()
-    transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
+    transwarp = Transwarp("Transwarp/JavaJar/InceptorUtil.jar", "Transwarp/libs")
+    transwarp.connect_hdfs()
+    # transwarp.make_dir('/hs/')
     transwarp.connect_inceptor()
+    # t = run_thread()
+    # t.start()
+    # logger.info(upload_crawl_file(crawl_file_list(r"E:\workspace\保存文件\补充\DBpedia"), transwarp))
     start_spiders(transwarp)
     # transwarp.connect_hdfs()
+    # print(crawl_file_list("result\\"))
+
+    

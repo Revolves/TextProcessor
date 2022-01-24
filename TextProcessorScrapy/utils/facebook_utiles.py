@@ -14,4 +14,4 @@ prefs = {
 }
 options.add_experimental_option('prefs', prefs)
 # 设置chrome浏览器无界面模式
-options.add_argument('--headless')
+# options.add_argument('--headless')

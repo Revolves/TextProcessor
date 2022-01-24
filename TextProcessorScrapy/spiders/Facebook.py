@@ -38,7 +38,6 @@ class FacebookSpider(scrapy.Spider):
             self.database = kwargs['database']
 
     def start_requests(self):
-        self.count = -1
         # 登录账户
         try:
             try:
@@ -67,26 +66,28 @@ class FacebookSpider(scrapy.Spider):
     def parse(self, response):
         print(response.url)
         logger.info("Facebook Spider starting!")
-        self.count += 1
         try:
             self.driver.get(response.url)
             self.scroll_to_bottom()
-            results = self.driver.find_elements_by_xpath(
-                '//div[@role="main"]//div[@class="jb3vyjys hv4rvrfc ihqw7lf3 dati1w0a"]')
+            results = self.driver.find_elements_by_xpath('//div[@role="feed"]/div/div') # //div[@role="main"]/div/div[1]/div/div/div/div/div
+            print(results.text)
             for result in results:
+                print(result.text)
                 item = DataItem()
                 item['keyword'] = self.keyword
                 item['source'] = 'facebook'
-                item['url'] = result.find_element_by_xpath('/a').get_attribute("href")
+                item['url'] = result.find_element_by_xpath('//a[@role="link"]').get_attribute("href")
                 item['content'] = result.find_element_by_xpath(
-                    '//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]').get_attribute("textContent")
+                    '//div[@class="kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql ii04i59q"]').get_attribute("textContent").replace('\n','')
                 item['date'] = result.find_element_by_xpath(
-                    '//span[@class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7"]/span').get_attribute("textContent")
+                    '//span/b').get_attribute("textContent").replace('=', '')  #    //div[@role="main"]/div/div[1]/div/div/div/div/div//span/b
                 item['title'] = item['content'][0:30]
-                if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
-                    return
+                print(item)
+                # if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
+                #     continue
                 yield item
-        except:
+        except Exception as e:
+            print(e)
             pass
 
     def scroll_to_bottom(self):

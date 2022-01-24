@@ -6,7 +6,7 @@
 </property>
 <property>
     <name>ha.zookeeper.quorum</name>
-    <value>tdh-1:2181,tdh-2:2181,tdh-3:2181</value>
+    <value>202.119.84.51:2181,192.10.84.112:2181,192.10.84.113:2181</value>
 </property>
 <property>
     <name>ha.zookeeper.parent-znode</name>
@@ -70,7 +70,7 @@
 </property>
 <property>
     <name>hadoop.security.group.mapping.ldap.url</name>
-    <value>ldap://tdh-1:10389 ldap://tdh-2:10389</value>
+    <value>ldap://202.119.84.51:10389 ldap://192.10.84.112:10389</value>
 </property>
 <property>
     <name>hadoop.security.group.mapping.ldap.base</name>

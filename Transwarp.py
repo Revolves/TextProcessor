@@ -20,14 +20,19 @@ class Transwarp:
         # 开启jvm
         try:
             jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath, "-Djava.ext.dirs=%s" % self.dependency_path)
-        except OSError:
-            jpype.shutdownJVM()
-            jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath,
-                           "-Djava.ext.dirs=%s" % self.dependency_path)
-        self.hdfs = jpype.JClass("DB.HdfsUtil")
-        # self.hdfs = jpype.JClass("java.lang.Class").forName("DB.HdfsUtil")
-        self.inceptor = jpype.JClass("DB.InceptorUtil")
-        javaInstance = self.hdfs("Transwarp\\hdfs\\")
+            self.inceptor = jpype.JClass("DB.InceptorUtil")
+            self.hdfs = jpype.JClass("DB.HdfsUtil")
+
+            javaInstance = self.hdfs("Transwarp\\hdfs\\")
+        # except OSError:
+        #     jpype.shutdownJVM()
+        #     jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath,
+        #                    "-Djava.ext.dirs=%s" % self.dependency_path)
+        except OSError:  
+            self.hdfs = jpype.JClass("DB.HdfsUtil")
+            # self.hdfs = jpype.JClass("java.lang.Class").forName("DB.HdfsUtil")
+            self.inceptor = jpype.JClass("DB.InceptorUtil")
+            javaInstance = self.hdfs("Transwarp\\hdfs\\")
 
     def connect_hdfs(self):
         """

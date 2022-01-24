@@ -32,7 +32,7 @@ def insert_http_interact():
         global CRAWL_ID, INTERACT, COUNT
         if DB is not None:
             try:
-                sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (?, ?, hs.sequence_get_id.NEXTVAL)"
+                sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (hs.sequence_get_id.NEXTVAL,?, ?)"
                 pram_ = [CRAWL_ID, str(INTERACT)]
                 DB.execute_sql(sql_, pram_)
             except:

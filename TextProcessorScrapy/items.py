@@ -21,6 +21,9 @@ class VideoItem(scrapy.Item):
     title = scrapy.Field()
     video = scrapy.Field()
 
+class ImageItem(scrapy.Item):
+    image_urls = scrapy.Field()
+    keyword = scrapy.Field()
 
 class DataItem(scrapy.Item):
     keyword = scrapy.Field()  # 标签

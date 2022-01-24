@@ -10,7 +10,8 @@ import logging
 import os
 # useful for handling different item types with a single interface
 import time
-
+import scrapy
+from scrapy.pipelines.images import ImagesPipeline
 from TextProcessorScrapy.utils.twitter_utils import get_api, dataget
 
 SavePath = 'result'
@@ -310,3 +311,20 @@ class TiexuePipeline:
             self.count_file.write(str(self.count))
             self.count_file.close()
         self.file.close()
+
+class ImagePipeline(ImagesPipeline):
+    def get_media_requests(self, item, info):
+        if 'attributes' in item:
+            for url in item['attronites']:
+                yield scrapy.Request(url)
+    # 保存图片时重命名
+    def item_completed(self, results, item, info):
+        # print(results)
+        # print("*"* 30)
+        # 列表推导式，获取图片的保存路径
+        image_url = [x["path"] for ok, x in results if ok]
+
+        # 重命名，由于都是jpg文件，所以直接拼上了
+        os.rename(SavePath+image_url[0], SavePath + item["keyword"] + ".jpg")    
+        return item
+        

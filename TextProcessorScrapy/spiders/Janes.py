@@ -2,7 +2,7 @@ import logging
 from datetime import datetime, date, timedelta
 
 import scrapy
-from selenium import webdriver
+# from selenium import webdriver
 
 from ..items import DataItem
 
@@ -149,26 +149,26 @@ class JanesSpider(scrapy.Spider):
             return
         yield item
 
-    @staticmethod
-    def get_driver():
-        chrome_opt = webdriver.ChromeOptions()
-        # 禁止加载图片和css
-        prefs = {"profile.managed_default_content_settings.images": 2,
-                 'permissions.default.stylesheet': 2,
-                 'profile.default_content_setting_values':
-                     {'notifications': 2}  # 禁止谷歌浏览器弹出通知消息
-                 }
-        chrome_opt.add_experimental_option("prefs", prefs)
-        # 禁止打印日志
-        chrome_opt.add_experimental_option('excludeSwitches', ['enable-logging'])
-        chrome_opt.add_argument('--disable-gpu')  # 禁用GPU
-        chrome_opt.add_argument('log-level=3')
-        # chrome_opt.add_argument('disable-cache')  # 禁用缓存
-        # 设置无界面浏览器
-        # chrome_opt.add_argument('headless')
-        # 打开浏览器
-        driver = webdriver.Chrome(chrome_options=chrome_opt)
-        # 最大化窗口
-        driver.maximize_window()
-        driver.implicitly_wait(2)
-        return driver
+    # @staticmethod
+    # def get_driver():
+    #     chrome_opt = webdriver.ChromeOptions()
+    #     # 禁止加载图片和css
+    #     prefs = {"profile.managed_default_content_settings.images": 2,
+    #              'permissions.default.stylesheet': 2,
+    #              'profile.default_content_setting_values':
+    #                  {'notifications': 2}  # 禁止谷歌浏览器弹出通知消息
+    #              }
+    #     chrome_opt.add_experimental_option("prefs", prefs)
+    #     # 禁止打印日志
+    #     chrome_opt.add_experimental_option('excludeSwitches', ['enable-logging'])
+    #     chrome_opt.add_argument('--disable-gpu')  # 禁用GPU
+    #     chrome_opt.add_argument('log-level=3')
+    #     # chrome_opt.add_argument('disable-cache')  # 禁用缓存
+    #     # 设置无界面浏览器
+    #     # chrome_opt.add_argument('headless')
+    #     # 打开浏览器
+    #     driver = webdriver.Chrome(chrome_options=chrome_opt)
+    #     # 最大化窗口
+    #     driver.maximize_window()
+    #     driver.implicitly_wait(2)
+    #     return driver

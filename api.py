@@ -2,10 +2,8 @@
 from flask import Flask, request
 import json
 from Transwarp import Transwarp
-from MultisiteSchedule import start_spiders
-
+from MultisiteSchedule import *
 # from ZGJSProcessor import ZGJSProcessor
-
 app = Flask(__name__)  # 创建一个服务，赋值给APP
 
 
@@ -19,21 +17,26 @@ def homepage():
 
 @app.route('/text_crawler', methods=['post', 'get'])
 def start_textCrawler():
-    status = request.values['status']
-    crawl_id = request.values['crawl_id']
-    keywords = request.values['keywords']
-    data_type = request.values['data_type']
-    sites = request.values['website']
-    data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords}
-    # status = request.args.get('status')
-    # j_data = json.loads(data)
-    print(data_dict)
-    transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
+        
+    # status = request.values['status']
+    # crawl_id = request.values['crawl_id']
+    # keywords = request.values['keywords']
+    # data_type = request.values['data_type']
+    # sites = request.values['website']
+    # data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords}
+    # print(data_dict)
+    data_dict = {}
+    transwarp = Transwarp("Transwarp/JavaJar/InceptorUtil.jar", "Transwarp/libs")
     transwarp.connect_inceptor()
-    start_spiders(transwarp=transwarp, info=data_dict)
+    transwarp.connect_hdfs()
+    start_spiders(transwarp=transwarp)
 
     return 'success'
 
+@app.route('/text_crawler/stop', methods=['post', 'get'])
+def spider_stop():
+    stop()
+    return 'stop'
 
 @app.route('/test', methods=['post', 'get'])
 def get_status():
@@ -62,7 +65,7 @@ def return_speed():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6008, debug=True)
+    app.run(host='0.0.0.0', port=60009, debug=True, use_reloader=False)
     # 运行Flask应用
     # 127.0.0.1----回环地址IP， 每台主机都有====localhost
     # 如何设置， 使得服务奇特主机的浏览器可以访问?  '0.0.0.0'开放所有的IP， 使得可以访问

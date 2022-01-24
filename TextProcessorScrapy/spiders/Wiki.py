@@ -8,7 +8,8 @@ from ..items import BaiduWikiItem
 class WikiSpider(scrapy.Spider):
     name = 'wiki'
     custom_settings = {
-        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.WikiPipeline': 400},
+        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.WikiPipeline': 400,
+                            'TextProcessorScrapy.pipelines.ImagePipeline': 300},
     }
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
