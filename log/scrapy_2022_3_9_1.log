@@ -1,0 +1,2486 @@
+2022-03-09 11:46:52 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:46:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:33253/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:46:53 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:33253
+2022-03-09 11:46:54 [urllib3.connectionpool] DEBUG: http://127.0.0.1:33253 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:46:54 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:54 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:33253/session/c8a2926595dca640a86c7adfd55337d3/timeouts {"implicit": 1000}
+2022-03-09 11:46:54 [urllib3.connectionpool] DEBUG: http://127.0.0.1:33253 "POST /session/c8a2926595dca640a86c7adfd55337d3/timeouts HTTP/1.1" 200 14
+2022-03-09 11:46:54 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:54 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:46:54 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:46:54 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:46:54 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:46:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:46:54 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:46:54 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:46:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:46:55 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51311/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:46:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:51311
+2022-03-09 11:46:56 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51311 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:46:56 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:56 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51311/session/fbcbcdb20ae3863aeeb816842c03c899/timeouts {"implicit": 1000}
+2022-03-09 11:46:56 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51311 "POST /session/fbcbcdb20ae3863aeeb816842c03c899/timeouts HTTP/1.1" 200 14
+2022-03-09 11:46:56 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:46:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:46:56 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:46:56 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:46:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:46:56 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:46:56 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:46:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:46:57 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:38647/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:46:57 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:38647
+2022-03-09 11:46:57 [urllib3.connectionpool] DEBUG: http://127.0.0.1:38647 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:46:57 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:57 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:38647/session/de03a797921f800a575721f657ff9d98/timeouts {"implicit": 1000}
+2022-03-09 11:46:57 [urllib3.connectionpool] DEBUG: http://127.0.0.1:38647 "POST /session/de03a797921f800a575721f657ff9d98/timeouts HTTP/1.1" 200 14
+2022-03-09 11:46:57 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:57 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:46:57 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:46:57 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:46:57 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:46:57 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:46:57 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:46:57 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:46:57 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:46:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39583/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:46:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:39583
+2022-03-09 11:46:58 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39583 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:46:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39583/session/11035e8cebf5f899039111788d7ca653/timeouts {"implicit": 1000}
+2022-03-09 11:46:58 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39583 "POST /session/11035e8cebf5f899039111788d7ca653/timeouts HTTP/1.1" 200 14
+2022-03-09 11:46:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:58 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:46:58 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:46:58 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:46:58 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:46:58 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:46:58 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:46:58 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:46:58 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:46:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:32919/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:46:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:32919
+2022-03-09 11:46:59 [urllib3.connectionpool] DEBUG: http://127.0.0.1:32919 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:46:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:59 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:32919/session/b136d3c27f82f9aa0869dc196792e290/timeouts {"implicit": 1000}
+2022-03-09 11:46:59 [urllib3.connectionpool] DEBUG: http://127.0.0.1:32919 "POST /session/b136d3c27f82f9aa0869dc196792e290/timeouts HTTP/1.1" 200 14
+2022-03-09 11:46:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:46:59 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:46:59 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:46:59 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:46:59 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:46:59 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:46:59 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:46:59 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:46:59 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:00 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52777/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:00 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:52777
+2022-03-09 11:47:02 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52777 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:02 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52777/session/b1546465a4585c7af17ca4ca3e17c636/timeouts {"implicit": 1000}
+2022-03-09 11:47:02 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52777 "POST /session/b1546465a4585c7af17ca4ca3e17c636/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:02 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:02 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:02 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:03 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:53179/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:03 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:53179
+2022-03-09 11:47:04 [urllib3.connectionpool] DEBUG: http://127.0.0.1:53179 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:04 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:04 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:53179/session/4b22eeaeecffeae6ca2b2baa719c7e9a/timeouts {"implicit": 1000}
+2022-03-09 11:47:04 [urllib3.connectionpool] DEBUG: http://127.0.0.1:53179 "POST /session/4b22eeaeecffeae6ca2b2baa719c7e9a/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:04 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:04 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:04 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:04 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:04 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:05 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:37997/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:05 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:37997
+2022-03-09 11:47:06 [urllib3.connectionpool] DEBUG: http://127.0.0.1:37997 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:37997/session/1b83ac1bc5730c5a13c787856bfebcbb/timeouts {"implicit": 1000}
+2022-03-09 11:47:06 [urllib3.connectionpool] DEBUG: http://127.0.0.1:37997 "POST /session/1b83ac1bc5730c5a13c787856bfebcbb/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:06 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:06 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:06 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:06 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:06 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:06 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:06 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:06 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:54151/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:07 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:54151
+2022-03-09 11:47:08 [urllib3.connectionpool] DEBUG: http://127.0.0.1:54151 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:08 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:54151/session/e06144797d01f181e1d51246be4f2002/timeouts {"implicit": 1000}
+2022-03-09 11:47:08 [urllib3.connectionpool] DEBUG: http://127.0.0.1:54151 "POST /session/e06144797d01f181e1d51246be4f2002/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:08 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:08 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:08 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:08 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:08 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:08 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:08 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39815/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:09 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:39815
+2022-03-09 11:47:09 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39815 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39815/session/027422f1b2bc8fba1055efa214cefb9f/timeouts {"implicit": 1000}
+2022-03-09 11:47:09 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39815 "POST /session/027422f1b2bc8fba1055efa214cefb9f/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:09 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:09 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:09 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:09 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:09 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:09 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:09 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:09 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:36571/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:10 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:36571
+2022-03-09 11:47:11 [urllib3.connectionpool] DEBUG: http://127.0.0.1:36571 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:11 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:11 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:36571/session/ae3a6c950e6c4e48a69cd1043009808a/timeouts {"implicit": 1000}
+2022-03-09 11:47:11 [urllib3.connectionpool] DEBUG: http://127.0.0.1:36571 "POST /session/ae3a6c950e6c4e48a69cd1043009808a/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:11 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:11 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:11 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:11 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:11 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:11 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:11 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:11 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:12 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49729/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:12 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:49729
+2022-03-09 11:47:12 [urllib3.connectionpool] DEBUG: http://127.0.0.1:49729 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:12 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:49729/session/f93f1b0da4c44f0490408b0a89593165/timeouts {"implicit": 1000}
+2022-03-09 11:47:12 [urllib3.connectionpool] DEBUG: http://127.0.0.1:49729 "POST /session/f93f1b0da4c44f0490408b0a89593165/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:12 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:12 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:12 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:12 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:12 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:12 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:12 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:55503/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:13 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:55503
+2022-03-09 11:47:14 [urllib3.connectionpool] DEBUG: http://127.0.0.1:55503 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:55503/session/3fbb3ec4afe470c288e9074c12076a92/timeouts {"implicit": 1000}
+2022-03-09 11:47:14 [urllib3.connectionpool] DEBUG: http://127.0.0.1:55503 "POST /session/3fbb3ec4afe470c288e9074c12076a92/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:14 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:14 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:14 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:14 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:14 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:14 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:14 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:14 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:33881/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:15 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:33881
+2022-03-09 11:47:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:33881 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:33881/session/63c6f2b09e64ccf1224efc6fb93bf9d7/timeouts {"implicit": 1000}
+2022-03-09 11:47:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:33881 "POST /session/63c6f2b09e64ccf1224efc6fb93bf9d7/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:15 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:15 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:16 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:46901/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:16 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:46901
+2022-03-09 11:47:17 [urllib3.connectionpool] DEBUG: http://127.0.0.1:46901 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:46901/session/e1da37a2381f7249cd16a56db253024b/timeouts {"implicit": 1000}
+2022-03-09 11:47:17 [urllib3.connectionpool] DEBUG: http://127.0.0.1:46901 "POST /session/e1da37a2381f7249cd16a56db253024b/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:17 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:17 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:17 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:17 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:17 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:17 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:17 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:46189/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:18 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:46189
+2022-03-09 11:47:18 [urllib3.connectionpool] DEBUG: http://127.0.0.1:46189 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:46189/session/b812504a15833f3950ee3ae62a977d17/timeouts {"implicit": 1000}
+2022-03-09 11:47:18 [urllib3.connectionpool] DEBUG: http://127.0.0.1:46189 "POST /session/b812504a15833f3950ee3ae62a977d17/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:18 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:18 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:18 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:18 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:18 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:18 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:19 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:60183/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:60183
+2022-03-09 11:47:20 [urllib3.connectionpool] DEBUG: http://127.0.0.1:60183 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:20 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:20 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:60183/session/f69311030dedef2732f0ee6ab0fcb781/timeouts {"implicit": 1000}
+2022-03-09 11:47:20 [urllib3.connectionpool] DEBUG: http://127.0.0.1:60183 "POST /session/f69311030dedef2732f0ee6ab0fcb781/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:20 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:20 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:20 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:20 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:20 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:20 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:20 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:20 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:20 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:21 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59835/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:21 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:59835
+2022-03-09 11:47:22 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59835 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:22 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:22 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59835/session/fb007979855f89d38f8f057ce20ace9d/timeouts {"implicit": 1000}
+2022-03-09 11:47:22 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59835 "POST /session/fb007979855f89d38f8f057ce20ace9d/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:22 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:22 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:23 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:44805/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:23 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:44805
+2022-03-09 11:47:23 [urllib3.connectionpool] DEBUG: http://127.0.0.1:44805 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:23 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:23 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:44805/session/888be314453f3f55857b52b352f74bf3/timeouts {"implicit": 1000}
+2022-03-09 11:47:23 [urllib3.connectionpool] DEBUG: http://127.0.0.1:44805 "POST /session/888be314453f3f55857b52b352f74bf3/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:23 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:23 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:23 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:23 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:23 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:24 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:36379/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:24 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:36379
+2022-03-09 11:47:24 [urllib3.connectionpool] DEBUG: http://127.0.0.1:36379 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:24 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:24 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:36379/session/f8c72a5733cdc678b674f3664df83786/timeouts {"implicit": 1000}
+2022-03-09 11:47:24 [urllib3.connectionpool] DEBUG: http://127.0.0.1:36379 "POST /session/f8c72a5733cdc678b674f3664df83786/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:24 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:24 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:24 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:24 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:24 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:24 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:24 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:24 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:24 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:25 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:47403/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:25 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:47403
+2022-03-09 11:47:26 [urllib3.connectionpool] DEBUG: http://127.0.0.1:47403 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:26 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:47403/session/4a690108000812213b64676d5954e3ca/timeouts {"implicit": 1000}
+2022-03-09 11:47:26 [urllib3.connectionpool] DEBUG: http://127.0.0.1:47403 "POST /session/4a690108000812213b64676d5954e3ca/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:26 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:26 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:26 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:26 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:27 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:41837/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:41837
+2022-03-09 11:47:27 [urllib3.connectionpool] DEBUG: http://127.0.0.1:41837 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:27 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:27 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:41837/session/0b439a3aa1aab8d77b5079e801729c73/timeouts {"implicit": 1000}
+2022-03-09 11:47:27 [urllib3.connectionpool] DEBUG: http://127.0.0.1:41837 "POST /session/0b439a3aa1aab8d77b5079e801729c73/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:27 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:27 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:27 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:27 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:27 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:27 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:27 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:27 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:55719/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:28 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:55719
+2022-03-09 11:47:28 [urllib3.connectionpool] DEBUG: http://127.0.0.1:55719 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:55719/session/2b5b24bfa4c515fe8ba146dfb0c0b46d/timeouts {"implicit": 1000}
+2022-03-09 11:47:28 [urllib3.connectionpool] DEBUG: http://127.0.0.1:55719 "POST /session/2b5b24bfa4c515fe8ba146dfb0c0b46d/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:28 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:28 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:28 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:28 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:28 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:28 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:28 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:28 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:29 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39209/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:29 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:39209
+2022-03-09 11:47:29 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39209 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:29 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:29 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39209/session/ab5e6d277ad070ff605f4432fd180f8f/timeouts {"implicit": 1000}
+2022-03-09 11:47:29 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39209 "POST /session/ab5e6d277ad070ff605f4432fd180f8f/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:29 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:29 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:29 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:29 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:29 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:29 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:29 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:29 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:29 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:30 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39391/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:30 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:39391
+2022-03-09 11:47:31 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39391 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:31 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:31 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:39391/session/64325146997d569618f379b1c41eaff6/timeouts {"implicit": 1000}
+2022-03-09 11:47:31 [urllib3.connectionpool] DEBUG: http://127.0.0.1:39391 "POST /session/64325146997d569618f379b1c41eaff6/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:31 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:31 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:31 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:31 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:31 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:31 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:31 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:31 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:31 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:35239/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:32 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:35239
+2022-03-09 11:47:33 [urllib3.connectionpool] DEBUG: http://127.0.0.1:35239 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:33 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:33 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:35239/session/f38d3ba65e6a3c96bc54742c58876c38/timeouts {"implicit": 1000}
+2022-03-09 11:47:33 [urllib3.connectionpool] DEBUG: http://127.0.0.1:35239 "POST /session/f38d3ba65e6a3c96bc54742c58876c38/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:33 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:33 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:33 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:33 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:33 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:33 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:33 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:33 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:33 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:42891/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:34 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:42891
+2022-03-09 11:47:34 [urllib3.connectionpool] DEBUG: http://127.0.0.1:42891 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:42891/session/e162a9fa549ee7d7f1f085486ce4a796/timeouts {"implicit": 1000}
+2022-03-09 11:47:34 [urllib3.connectionpool] DEBUG: http://127.0.0.1:42891 "POST /session/e162a9fa549ee7d7f1f085486ce4a796/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:34 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:34 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:34 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:34 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:34 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:34 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:34 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:34 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:35 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59739/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:35 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:59739
+2022-03-09 11:47:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59739 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59739/session/b2b221c596fa1ffc3e0744af6fdd3f68/timeouts {"implicit": 1000}
+2022-03-09 11:47:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59739 "POST /session/b2b221c596fa1ffc3e0744af6fdd3f68/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:36 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:36 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:36 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:36 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:36 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:36 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:36 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:36 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:37 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:58899/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:37 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:58899
+2022-03-09 11:47:37 [urllib3.connectionpool] DEBUG: http://127.0.0.1:58899 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:37 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:37 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:58899/session/be34a7b485c1e514f90a894dad91c60c/timeouts {"implicit": 1000}
+2022-03-09 11:47:37 [urllib3.connectionpool] DEBUG: http://127.0.0.1:58899 "POST /session/be34a7b485c1e514f90a894dad91c60c/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:37 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:37 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:37 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:37 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:37 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:38 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:38 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:38 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:39 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:47869/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:39 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:47869
+2022-03-09 11:47:40 [urllib3.connectionpool] DEBUG: http://127.0.0.1:47869 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:40 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:47869/session/24a2baa09deb8715dfd9acef6bd64ca0/timeouts {"implicit": 1000}
+2022-03-09 11:47:40 [urllib3.connectionpool] DEBUG: http://127.0.0.1:47869 "POST /session/24a2baa09deb8715dfd9acef6bd64ca0/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:40 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:40 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:40 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:40 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:40 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:40 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:40 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:40 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:41 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:54609/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:41 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:54609
+2022-03-09 11:47:46 [urllib3.connectionpool] DEBUG: http://127.0.0.1:54609 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:54609/session/28ec73c7818a7b05408111725ad001b6/timeouts {"implicit": 1000}
+2022-03-09 11:47:47 [urllib3.connectionpool] DEBUG: http://127.0.0.1:54609 "POST /session/28ec73c7818a7b05408111725ad001b6/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:47 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:47 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:47 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:47 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:47 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:47 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:48 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51579/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:48 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:51579
+2022-03-09 11:47:55 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51579 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:47:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:55 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51579/session/5ea0c3ab62384eb692ede3b7981c089f/timeouts {"implicit": 1000}
+2022-03-09 11:47:55 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51579 "POST /session/5ea0c3ab62384eb692ede3b7981c089f/timeouts HTTP/1.1" 200 14
+2022-03-09 11:47:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:47:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:47:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:47:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:47:55 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:47:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:47:55 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:47:55 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:47:55 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:47:56 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:50925/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:47:56 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:50925
+2022-03-09 11:48:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:50925 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:48:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:48:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:50925/session/39ed2c3621d3c1800793b4b521eb0e60/timeouts {"implicit": 1000}
+2022-03-09 11:48:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:50925 "POST /session/39ed2c3621d3c1800793b4b521eb0e60/timeouts HTTP/1.1" 200 14
+2022-03-09 11:48:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:48:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:48:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:48:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:48:15 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:48:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:48:15 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:48:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:48:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:48:16 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52255/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:48:16 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:52255
+2022-03-09 11:49:17 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52255 "POST /session HTTP/1.1" 500 736
+2022-03-09 11:49:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:49:18 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 11:49:18 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 11:49:19 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:49:19 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:49:21 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:60377/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:49:21 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:60377
+2022-03-09 11:49:48 [urllib3.connectionpool] DEBUG: http://127.0.0.1:60377 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:49:48 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:49:48 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:60377/session/733ea06eb09d6ecca1bd8e254d536683/timeouts {"implicit": 1000}
+2022-03-09 11:49:48 [urllib3.connectionpool] DEBUG: http://127.0.0.1:60377 "POST /session/733ea06eb09d6ecca1bd8e254d536683/timeouts HTTP/1.1" 200 14
+2022-03-09 11:49:48 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:49:48 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:49:48 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:49:48 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:49:48 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:49:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:49:48 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:49:48 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:49:48 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:49:49 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59809/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:49:49 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:59809
+2022-03-09 11:49:54 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59809 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:49:54 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:49:54 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59809/session/4962aa04362503b45c54f7b4361cee90/timeouts {"implicit": 1000}
+2022-03-09 11:49:54 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59809 "POST /session/4962aa04362503b45c54f7b4361cee90/timeouts HTTP/1.1" 200 14
+2022-03-09 11:49:54 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:49:54 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:49:54 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:49:54 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:49:54 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:49:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:49:54 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:49:54 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:49:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:49:55 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59681/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:49:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:59681
+2022-03-09 11:50:49 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59681 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:50:49 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:50:49 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:59681/session/e972b33c7f36c5728a3edb9b77080fe4/timeouts {"implicit": 1000}
+2022-03-09 11:50:49 [urllib3.connectionpool] DEBUG: http://127.0.0.1:59681 "POST /session/e972b33c7f36c5728a3edb9b77080fe4/timeouts HTTP/1.1" 200 14
+2022-03-09 11:50:49 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:50:49 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:50:49 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:50:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:50:50 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:50:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:50:50 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:50:50 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:50:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:50:51 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:43341/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:50:51 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:43341
+2022-03-09 11:52:29 [urllib3.connectionpool] DEBUG: http://127.0.0.1:43341 "POST /session HTTP/1.1" 500 736
+2022-03-09 11:52:29 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:52:30 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 11:52:30 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 11:52:30 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:52:30 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:52:31 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:38109/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:52:31 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:38109
+2022-03-09 11:53:18 [urllib3.connectionpool] DEBUG: http://127.0.0.1:38109 "POST /session HTTP/1.1" 200 753
+2022-03-09 11:53:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:53:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:38109/session/1e2248e998768959a0aa94d5832913a9/timeouts {"implicit": 1000}
+2022-03-09 11:53:18 [urllib3.connectionpool] DEBUG: http://127.0.0.1:38109 "POST /session/1e2248e998768959a0aa94d5832913a9/timeouts HTTP/1.1" 200 14
+2022-03-09 11:53:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:53:18 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-09 11:53:18 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-09 11:53:18 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.BaiduPipeline']
+2022-03-09 11:53:18 [scrapy.core.engine] INFO: Spider opened
+2022-03-09 11:53:18 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-09 11:53:18 [baidu] INFO: Spider opened: baidu
+2022-03-09 11:53:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:53:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:53:19 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56677/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:53:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:56677
+2022-03-09 11:54:21 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56677 "POST /session HTTP/1.1" 500 736
+2022-03-09 11:54:21 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:54:23 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 11:54:23 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 11:54:24 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:54:24 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:54:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56519/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:54:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:56519
+2022-03-09 11:57:06 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56519 "POST /session HTTP/1.1" 500 736
+2022-03-09 11:57:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:57:09 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:57:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:57:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:55779/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:57:13 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:55779
+2022-03-09 11:58:22 [urllib3.connectionpool] DEBUG: http://127.0.0.1:55779 "POST /session HTTP/1.1" 500 736
+2022-03-09 11:58:22 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:58:23 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 11:58:23 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 11:58:23 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:58:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:58:25 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:37821/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:58:25 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:37821
+2022-03-09 11:59:27 [urllib3.connectionpool] DEBUG: http://127.0.0.1:37821 "POST /session HTTP/1.1" 500 746
+2022-03-09 11:59:27 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 11:59:27 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 11:59:28 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 11:59:39 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:40645/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 11:59:39 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:40645
+2022-03-09 12:01:29 [urllib3.connectionpool] DEBUG: http://127.0.0.1:40645 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:01:54 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:02:00 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:02:00 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:02:01 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:02:01 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:02:04 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:53539/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:02:04 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:53539
+2022-03-09 12:03:26 [urllib3.connectionpool] DEBUG: http://127.0.0.1:53539 "POST /session HTTP/1.1" 500 746
+2022-03-09 12:03:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:03:26 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:03:26 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+
+2022-03-09 12:03:26 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:03:26 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:03:26 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:03:26 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+
+2022-03-09 12:03:26 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:03:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:03:27 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:55933/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:03:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:55933
+2022-03-09 12:04:31 [urllib3.connectionpool] DEBUG: http://127.0.0.1:55933 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:04:31 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:04:31 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:04:31 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:04:31 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:04:31 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:04:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:44083/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:04:32 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:44083
+2022-03-09 12:05:33 [urllib3.connectionpool] DEBUG: http://127.0.0.1:44083 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:05:33 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:05:33 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:05:33 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:05:33 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:05:33 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:05:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:58727/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:05:34 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:58727
+2022-03-09 12:06:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:58727 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:06:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:06:36 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:06:36 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:06:36 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:06:36 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:06:38 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56557/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:06:38 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:56557
+2022-03-09 12:07:41 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56557 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:07:41 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:07:42 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:07:42 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:07:43 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:07:43 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:07:47 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:47161/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:08:03 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:47161
+2022-03-09 12:09:07 [urllib3.connectionpool] DEBUG: http://127.0.0.1:47161 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:09:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:09:08 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:09:08 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:09:08 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:09:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:09:12 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:36759/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:09:12 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:36759
+2022-03-09 12:10:16 [urllib3.connectionpool] DEBUG: http://127.0.0.1:36759 "POST /session HTTP/1.1" 500 736
+2022-03-09 12:10:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:10:16 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:10:16 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+
+2022-03-09 12:10:17 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:10:17 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:10:19 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:58879/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:10:19 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:58879
+2022-03-09 12:11:27 [urllib3.connectionpool] DEBUG: http://127.0.0.1:58879 "POST /session HTTP/1.1" 500 746
+2022-03-09 12:11:27 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:11:27 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:11:27 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+
+2022-03-09 12:11:27 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:11:27 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:11:29 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:40487/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:11:29 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:40487
+2022-03-09 12:13:08 [urllib3.connectionpool] DEBUG: http://127.0.0.1:40487 "POST /session HTTP/1.1" 500 746
+2022-03-09 12:13:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-09 12:13:09 [twisted] CRITICAL: Unhandled error in Deferred:
+2022-03-09 12:13:09 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 1661, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 86, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/crawler.py", line 98, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spiders/__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "/code/TextProcessorScrapy/spiders/Baidu.py", line 45, in __init__
+    self.browser = webdriver.Chrome(options=options)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 81, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+
+2022-03-09 12:13:10 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_9_1.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-09 12:13:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-09 12:13:11 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:37187/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"profile.default_content_setting_values": {"notifications": 2, "images": 2}}, "extensions": [], "args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]}}}
+2022-03-09 12:13:11 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:37187

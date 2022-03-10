@@ -68,7 +68,7 @@ USER_AGENTS_LIST = [
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 8
+CONCURRENT_REQUESTS = 16
 REACTOR_THREADPOOL_MAXSIZE = 20
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -85,8 +85,8 @@ CONCURRENT_REQUESTS_PER_IP = 128
 # REDIRECT_ENABLED = True
 COMMANDS_MODULE = 'TextProcessorScrapy.commands'
 # Disable Telnet Console (enabled by default)
-# TELNETCONSOLE_ENABLED = False
-
+TELNETCONSOLE_ENABLED = False
+download_timeout = 20
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -123,6 +123,7 @@ ITEM_PIPELINES = {
     # 'TextProcessorScrapy.pipelines.FacebookPipeline': 300
 
 }
+IMAGES_STORE = "result/Images"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

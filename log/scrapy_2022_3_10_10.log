@@ -1,0 +1,773 @@
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware',
+ 'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [wiki] INFO: Spider opened: wiki
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:22 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'TextProcessorScrapy',
+ 'COMMANDS_MODULE': 'TextProcessorScrapy.commands',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 32,
+ 'CONCURRENT_REQUESTS_PER_IP': 128,
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'TextProcessorScrapy.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 20,
+ 'SPIDER_MODULES': ['TextProcessorScrapy.spiders'],
+ 'TELNETCONSOLE_ENABLED': False}
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['TextProcessorScrapy.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 01:51:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['TextProcessorScrapy.pipelines.ImagePipeline',
+ 'TextProcessorScrapy.pipelines.WikiPipeline']
+2022-03-10 01:51:22 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 01:51:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E7%9B%B4%E5%8D%87%E6%9C%BA&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E7%9B%B4%E5%8D%87%E6%9C%BA&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E4%BE%A6%E5%AF%9F%E8%BD%A6&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E4%BE%A6%E5%AF%9F%E8%BD%A6&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E9%A9%AC%E5%85%AC%E6%9C%BA%E5%9C%BA&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E9%A9%AC%E5%85%AC%E6%9C%BA%E5%9C%BA&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A5%BF%E5%B1%BF%E9%9B%B7%E8%BE%BE%E7%AB%99&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%A5%BF%E5%B1%BF%E9%9B%B7%E8%BE%BE%E7%AB%99&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E9%98%B2%E6%8A%A4%E8%BD%A6&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E9%98%B2%E6%8A%A4%E8%BD%A6&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%8A%B1%E8%8E%B2%E6%9C%BA%E5%9C%BA&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%8A%B1%E8%8E%B2%E6%9C%BA%E5%9C%BA&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%95%91%E6%8A%A4%E8%BD%A6&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%95%91%E6%8A%A4%E8%BD%A6&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%89%AB%E9%9B%B7%E8%BD%A6&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%89%AB%E9%9B%B7%E8%BD%A6&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E6%BE%8E%E6%B9%96%E6%9C%BA%E5%9C%BA&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E6%BE%8E%E6%B9%96%E6%9C%BA%E5%9C%BA&ns0=1>
+2022-03-10 01:51:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E8%BF%90%E8%BE%93%E8%BD%A6&ns0=1> from <GET https://zh.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E8%BF%90%E8%BE%93%E8%BD%A6&ns0=1>
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E4%BE%A6%E5%AF%9F%E8%BD%A6&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E9%A9%AC%E5%85%AC%E6%9C%BA%E5%9C%BA&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E9%98%B2%E6%8A%A4%E8%BD%A6&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%8A%B1%E8%8E%B2%E6%9C%BA%E5%9C%BA&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%95%91%E6%8A%A4%E8%BD%A6&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%89%AB%E9%9B%B7%E8%BD%A6&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E8%BF%90%E8%BE%93%E8%BD%A6&ns0=1> (referer: None)
+2022-03-10 01:51:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E7%9B%B4%E5%8D%87%E6%9C%BA&ns0=1> (referer: None)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E6%BE%8E%E6%B9%96%E6%9C%BA%E5%9C%BA&ns0=1> (referer: None)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A5%BF%E5%B1%BF%E9%9B%B7%E8%BE%BE%E7%AB%99&ns0=1> (referer: None)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BE%93%E9%80%81%E8%BD%A6> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E9%98%B2%E6%8A%A4%E8%BD%A6&ns0=1)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E4%BE%A6%E5%AF%9F%E8%BD%A6&ns0=1)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%95%91%E6%8A%A4%E8%BD%A6&ns0=1)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E6%89%AB%E9%9B%B7%E8%BD%A6&ns0=1)
+2022-03-10 01:51:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BE%93%E9%80%81%E8%BD%A6>
+{'keyword': '装甲防护车', 'source': 'wiki', 'title': '装甲输送车', 'url': 'https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BE%93%E9%80%81%E8%BD%A6', 'date': ' ', 'content': '装甲输送车（英文：Armoured personnel carrier，缩写：APC）又称装甲运兵车，指在战场上输送步兵的装甲车辆，一般具有高速、较低的防护力和战斗力等特点。装甲输送车除了可以运输步兵外，还可以运输物资或补给品，暂时充当装甲补给车。在必要时，也可以使用车上的武器攻击敌人。\xa0加拿大：\xa0中华民国 ：\xa0中华人民共和国：\xa0芬兰：\xa0法国：\xa0德国：\xa0以色列：\xa0日本：\xa0俄罗斯：\xa0新加坡：\xa0瑞士：\xa0美国：\xa0乌克兰：\xa0土耳其：装甲输送车出现的时间与战车约略同期，第一次世界大战末期，英国推出专门用来运输步兵的马克IX型坦克。由于坦克本身的成本较当时使用的卡车高出许多，有些国家是以加装装甲的汽车权充兼作运输的用途。1930年代许多国家开始发展机械化部队，由于全履带车的造价与维护成本依旧居高不下，为了配合战车的运动速度与越野能力，半履带车加上防护装甲之后成为最常见的型态。二次世界大战期间，美国的M3半履带车与德国SdKfz 251半履带车是最著名的代表。这些车辆拥有防御小口径武器与弹药破片的侧面装甲，但是欠缺顶部的保护。车体上以携带机枪最为常见。而战争中期以后盟军开始将M4中型坦克改装成装甲输送车使用。到冷战时期，由于核战阴影的威胁、履带动力装置成本下降加上铝合金的使用，装甲输送车开始具备封闭式车身，为了与步兵共同作战而演化出步兵战斗车这类重武装车种。', 'attributes': {'装甲输送车': {}}}
+2022-03-10 01:51:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6>
+{'keyword': '装甲侦察车', 'source': 'wiki', 'title': '装甲车', 'url': 'https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6', 'date': ' ', 'content': '装甲车辆是具有装甲防护的各种车辆的统称。坦克和自走炮也是广义的重型装甲车辆，但是在习惯上通常因作战用途另外独立分类，而装甲车辆多半是指防护力与火力较坦克弱的车种，而自行炮在原则上不一定要有装甲。装甲车的特性为具有高度的越野机动性能，有一定的防护和火力，分为履带式和轮式两种。一般军用装甲车会装备一至三门中小口径火炮及数挺机枪，一些还装有反坦克导弹，结构以装甲车体、武器系统、动力装置等组成。为了增强防护和方便成员下车战斗。大多数军用装甲车辆可以在水上行驶，可以执行运输、侦察、指挥、救护、伴随、支援坦克及步兵作战等多种任务，还有执行专门任务的装甲车辆，如装甲回收车、装甲指挥车、装甲扫雷车、装甲架桥车等。在警用领域多用于镇压暴乱等问题。步兵战车和装甲输送车作用相近，都是运送步兵机动作战用的装甲车辆，两者不同的地方是步兵战车的防护力较好，火力较大，能够让步兵乘车作战，本身也能够伴随下车作战的步兵，提供火力支援速度较好，装甲输送车则更接近于有装甲的运输车辆。装甲输送车为在战场上输送步兵的装甲车辆，一般具有高速、较低的防护力和战斗力等特点。装甲输送车除了可以运输步兵外，还可以运输物资或补给品，暂时充当装甲补给车。装甲侦察车指装有侦察设备的装甲车辆，速度较快但装甲比其它装甲车辆要薄，多用于战场侦察，一般可分为轮式和履带式两种。较著名的装甲侦察车，有德国的狐式轻型装甲侦察车、山猫装甲侦察车，法国的雷诺VBC90轮式侦察车（英语：VBC-90）等等。装甲指挥车是具有装甲保护的移动指挥站，提供指挥官与支援的参谋和其他人员协调部队的相关事宜。装甲指挥车是早期以卡车或者是拖车为基础的移动指挥所衍生出来的架构，用意在于提供指挥单位快速移动，持续掌握情势与下达命令命且提供一些保护。大部分的装甲指挥车是从装甲输送车改装而成，扩大内部的空间以容纳额外的人员，通讯器材与其他设备。在到达预定指挥地点之后，部分装甲指挥车还有另外设置的顶蓬可以伸出车外，进一步的扩大人员使用的空间。装甲通信车是指装有通信设备的装甲车辆，常见的设计有两种型态，一种是将通信装备与装甲指挥车合并在一起，因此并非单纯的通信车辆。另外一种是做为地面通信的活动中转站，以延伸无线电通信的有效距离，或者是克服地形对通信的遮蔽效应，强化地面单位之间的联络与资讯交换。目前各国陆军很少装备单纯的装甲通信车，不过有不少国家配备由一般运输车辆改装的通信车辆来支援地面部队的通信需求。装甲救护车，指在战场环境下实行人员救护的装甲车辆，一般只装备一至两挺机枪作为自卫武器，防护力亦很弱。主要用于抢救人员，并将重伤员运送至后方。装甲扫雷车特指装有清除地雷装置的装甲车辆，以协助地面部队扩速通过地雷区。装甲扫雷车可以是专门设计用来清除地雷，或者是将清除工具附加在一般用途的坦 克底盘上，无论是车轮或是履带型态的扫雷车都可见于不同国家的部队当中。装甲扫雷车并非用于清除整个被发现的地雷区，而是将地雷区清理出一至数条的安全通道，提供地面部队人员和车辆安全通过。排除的地雷可能在过程中加以引爆，或者是移动到安全的地方之后另外加以处理。由于清理的过程当中，扫雷车可能碰触或者是引爆其他尚未发现的地雷或者是爆裂物，车辆本身对于底盘和车辆底部的保护需要特别加强，以免被地雷或者是爆裂物瘫痪而无法完成清除的任务。装甲架桥车指装有车桥及其架设、撤收装置的装甲车辆，主要用于快速架设桥梁，令部队迅速通过河流，普遍装备于工兵部队。装甲架桥车可由一般坦克或自走炮底盘改装而成，部分会保留机枪作防卫用途。步兵坦 克和装甲输送车 - 当示威活动和抗争会转变成失控的暴乱或群众暴力时，警方有时会出动警用装甲车控制场面。一般具有水炮功能，而车窗经特别制造，不易打碎。各地警方大多都有装甲车，以防范暴乱发生。保安公司常用，用来运载现金或其他贵重物品，又称“解款车”或“运钞车”。另外政要及富豪也会使用经过改装、具有防弹甚至抗炸能力的汽车。', 'attributes': {'装甲车': {}}}
+2022-03-10 01:51:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6>
+{'keyword': '装甲救护车', 'source': 'wiki', 'title': '装甲车', 'url': 'https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6', 'date': ' ', 'content': '装甲车辆是具有装甲防护的各种车辆的统称。坦克和自走炮也是广义的重型装甲车辆，但是在习惯上通常因作战用途另外独立分类，而装甲车辆多半是指防护力与火力较坦克弱的车种，而自行炮在原则上不一定要有装甲。装甲车的特性为具有高度的越野机动性能，有一定的防护和火力，分为履带式和轮式两种。一般军用装甲车会装备一至三门中小口径火炮及数挺机枪，一些还装有反坦克导弹，结构以装甲车体、武器系统、动力装置等组成。为了增强防护和方便成员下车战斗。大多数军用装甲车辆可以在水上行驶，可以执行运输、侦察、指挥、救护、伴随、支援坦克及步兵作战等多种任务，还有执行专门任务的装甲车辆，如装甲回收车、装甲指挥车、装甲扫雷车、装甲架桥车等。在警用领域多用于镇压暴乱等问题。步兵战车和装甲输送车作用相近，都是运送步兵机动作战用的装甲车辆，两者不同的地方是步兵战车的防护力较好，火力较大，能够让步兵乘车作战，本身也能够伴随下车作战的步兵，提供火力支援速度较好，装甲输送车则更接近于有装甲的运输车辆。装甲输送车为在战场上输送步兵的装甲车辆，一般具有高速、较低的防护力和战斗力等特点。装甲输送车除了可以运输步兵外，还可以运输物资或补给品，暂时充当装甲补给车。装甲侦察车指装有侦察设备的装甲车辆，速度较快但装甲比其它装甲车辆要薄，多用于战场侦察，一般可分为轮式和履带式两种。较著名的装甲侦察车，有德国的狐式轻型装甲侦察车、山猫装甲侦察车，法国的雷诺VBC90轮式侦察车（英语：VBC-90）等等。装甲指挥车是具有装甲保护的移动指挥站，提供指挥官与支援的参谋和其他人员协调部队的相关事宜。装甲指挥车是早期以卡车或者是拖车为基础的移动指挥所衍生出来的架构，用意在于提供指挥单位快速移动，持续掌握情势与下达命令命且提供一些保护。大部分的装甲指挥车是从装甲输送车改装而成，扩大内部的空间以容纳额外的人员，通讯器材与其他设备。在到达预定指挥地点之后，部分装甲指挥车还有另外设置的顶蓬可以伸出车外，进一步的扩大人员使用的空间。装甲通信车是指装有通信设备的装甲车辆，常见的设计有两种型态，一种是将通信装备与装甲指挥车合并在一起，因此并非单纯的通信车辆。另外一种是做为地面通信的活动中转站，以延伸无线电通信的有效距离，或者是克服地形对通信的遮蔽效应，强化地面单位之间的联络与资讯交换。目前各国陆军很少装备单纯的装甲通信车，不过有不少国家配备由一般运输车辆改装的通信车辆来支援地面部队的通信需求。装甲救护车，指在战场环境下实行人员救护的装甲车辆，一般只装备一至两挺机枪作为自卫武器，防护力亦很弱。主要用于抢救人员，并将重伤员运送至后方。装甲扫雷车特指装有清除地雷装置的装甲车辆，以协助地面部队扩速通过地雷区。装甲扫雷车可以是专门设计用来清除地雷，或者是将清除工具附加在一般用途的坦 克底盘上，无论是车轮或是履带型态的扫雷车都可见于不同国家的部队当中。装甲扫雷车并非用于清除整个被发现的地雷区，而是将地雷区清理出一至数条的安全通道，提供地面部队人员和车辆安全通过。排除的地雷可能在过程中加以引爆，或者是移动到安全的地方之后另外加以处理。由于清理的过程当中，扫雷车可能碰触或者是引爆其他尚未发现的地雷或者是爆裂物，车辆本身对于底盘和车辆底部的保护需要特别加强，以免被地雷或者是爆裂物瘫痪而无法完成清除的任务。装甲架桥车指装有车桥及其架设、撤收装置的装甲车辆，主要用于快速架设桥梁，令部队迅速通过河流，普遍装备于工兵部队。装甲架桥车可由一般坦克或自走炮底盘改装而成，部分会保留机枪作防卫用途。步兵坦 克和装甲输送车 - 当示威活动和抗争会转变成失控的暴乱或群众暴力时，警方有时会出动警用装甲车控制场面。一般具有水炮功能，而车窗经特别制造，不易打碎。各地警方大多都有装甲车，以防范暴乱发生。保安公司常用，用来运载现金或其他贵重物品，又称“解款车”或“运钞车”。另外政要及富豪也会使用经过改装、具有防弹甚至抗炸能力的汽车。', 'attributes': {'装甲车': {}}}
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:25 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1604,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 39470,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 3.007423,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 25, 615230),
+ 'httpcompression/response_bytes': 141127,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 27,
+ 'log_count/INFO': 36,
+ 'memusage/max': 67399680,
+ 'memusage/startup': 67399680,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 607807)}
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6>
+{'keyword': '装甲扫雷车', 'source': 'wiki', 'title': '装甲车', 'url': 'https://zh.wikipedia.org/wiki/%E8%A3%85%E7%94%B2%E8%BD%A6', 'date': ' ', 'content': '装甲车辆是具有装甲防护的各种车辆的统称。坦克和自走炮也是广义的重型装甲车辆，但是在习惯上通常因作战用途另外独立分类，而装甲车辆多半是指防护力与火力较坦克弱的车种，而自行炮在原则上不一定要有装甲。装甲车的特性为具有高度的越野机动性能，有一定的防护和火力，分为履带式和轮式两种。一般军用装甲车会装备一至三门中小口径火炮及数挺机枪，一些还装有反坦克导弹，结构以装甲车体、武器系统、动力装置等组成。为了增强防护和方便成员下车战斗。大多数军用装甲车辆可以在水上行驶，可以执行运输、侦察、指挥、救护、伴随、支援坦克及步兵作战等多种任务，还有执行专门任务的装甲车辆，如装甲回收车、装甲指挥车、装甲扫雷车、装甲架桥车等。在警用领域多用于镇压暴乱等问题。步兵战车和装甲输送车作用相近，都是运送步兵机动作战用的装甲车辆，两者不同的地方是步兵战车的防护力较好，火力较大，能够让步兵乘车作战，本身也能够伴随下车作战的步兵，提供火力支援速度较好，装甲输送车则更接近于有装甲的运输车辆。装甲输送车为在战场上输送步兵的装甲车辆，一般具有高速、较低的防护力和战斗力等特点。装甲输送车除了可以运输步兵外，还可以运输物资或补给品，暂时充当装甲补给车。装甲侦察车指装有侦察设备的装甲车辆，速度较快但装甲比其它装甲车辆要薄，多用于战场侦察，一般可分为轮式和履带式两种。较著名的装甲侦察车，有德国的狐式轻型装甲侦察车、山猫装甲侦察车，法国的雷诺VBC90轮式侦察车（英语：VBC-90）等等。装甲指挥车是具有装甲保护的移动指挥站，提供指挥官与支援的参谋和其他人员协调部队的相关事宜。装甲指挥车是早期以卡车或者是拖车为基础的移动指挥所衍生出来的架构，用意在于提供指挥单位快速移动，持续掌握情势与下达命令命且提供一些保护。大部分的装甲指挥车是从装甲输送车改装而成，扩大内部的空间以容纳额外的人员，通讯器材与其他设备。在到达预定指挥地点之后，部分装甲指挥车还有另外设置的顶蓬可以伸出车外，进一步的扩大人员使用的空间。装甲通信车是指装有通信设备的装甲车辆，常见的设计有两种型态，一种是将通信装备与装甲指挥车合并在一起，因此并非单纯的通信车辆。另外一种是做为地面通信的活动中转站，以延伸无线电通信的有效距离，或者是克服地形对通信的遮蔽效应，强化地面单位之间的联络与资讯交换。目前各国陆军很少装备单纯的装甲通信车，不过有不少国家配备由一般运输车辆改装的通信车辆来支援地面部队的通信需求。装甲救护车，指在战场环境下实行人员救护的装甲车辆，一般只装备一至两挺机枪作为自卫武器，防护力亦很弱。主要用于抢救人员，并将重伤员运送至后方。装甲扫雷车特指装有清除地雷装置的装甲车辆，以协助地面部队扩速通过地雷区。装甲扫雷车可以是专门设计用来清除地雷，或者是将清除工具附加在一般用途的坦 克底盘上，无论是车轮或是履带型态的扫雷车都可见于不同国家的部队当中。装甲扫雷车并非用于清除整个被发现的地雷区，而是将地雷区清理出一至数条的安全通道，提供地面部队人员和车辆安全通过。排除的地雷可能在过程中加以引爆，或者是移动到安全的地方之后另外加以处理。由于清理的过程当中，扫雷车可能碰触或者是引爆其他尚未发现的地雷或者是爆裂物，车辆本身对于底盘和车辆底部的保护需要特别加强，以免被地雷或者是爆裂物瘫痪而无法完成清除的任务。装甲架桥车指装有车桥及其架设、撤收装置的装甲车辆，主要用于快速架设桥梁，令部队迅速通过河流，普遍装备于工兵部队。装甲架桥车可由一般坦克或自走炮底盘改装而成，部分会保留机枪作防卫用途。步兵坦 克和装甲输送车 - 当示威活动和抗争会转变成失控的暴乱或群众暴力时，警方有时会出动警用装甲车控制场面。一般具有水炮功能，而车窗经特别制造，不易打碎。各地警方大多都有装甲车，以防范暴乱发生。保安公司常用，用来运载现金或其他贵重物品，又称“解款车”或“运钞车”。另外政要及富豪也会使用经过改装、具有防弹甚至抗炸能力的汽车。', 'attributes': {'装甲车': {}}}
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:25 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1586,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 41639,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 3.12236,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 25, 765781),
+ 'httpcompression/response_bytes': 155252,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 28,
+ 'log_count/INFO': 11,
+ 'memusage/max': 67973120,
+ 'memusage/startup': 67973120,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 643421)}
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:25 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1586,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 41229,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 3.144852,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 25, 779401),
+ 'httpcompression/response_bytes': 151063,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 28,
+ 'log_count/INFO': 21,
+ 'memusage/max': 67973120,
+ 'memusage/startup': 67973120,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 634549)}
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:25 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1586,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 41546,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 3.168394,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 25, 784093),
+ 'httpcompression/response_bytes': 151557,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 28,
+ 'log_count/INFO': 38,
+ 'memusage/max': 67706880,
+ 'memusage/startup': 67706880,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 615699)}
+2022-03-10 01:51:25 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E6%BE%8E%E6%B9%96%E6%A9%9F%E5%A0%B4> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E6%BE%8E%E6%B9%96%E6%9C%BA%E5%9C%BA&ns0=1)
+2022-03-10 01:51:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E6%BE%8E%E6%B9%96%E6%A9%9F%E5%A0%B4> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E9%A9%AC%E5%85%AC%E6%9C%BA%E5%9C%BA&ns0=1)
+2022-03-10 01:51:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E6%BE%8E%E6%B9%96%E6%A9%9F%E5%A0%B4>
+{'keyword': '澎湖机场', 'source': 'wiki', 'title': '澎湖机场', 'url': 'https://zh.wikipedia.org/wiki/%E6%BE%8E%E6%B9%96%E6%A9%9F%E5%A0%B4', 'date': ' ', 'content': "澎湖机场（闽南语白话字：.mw-parser-output .IPA{font-family:'Charis SIL','Doulos SIL','Linux Libertine','Segoe UI','Lucida Sans Unicode','Code2000','Gentium','Gentium Alternative','TITUS Cyberbit Basic','Arial Unicode MS','IPAPANNEW','Chrysanthi Unicode','GentiumAlt','Bitstream Vera','Bitstream Cyberbit','Hiragino Kaku Gothic Pro','Lucida Grande',sans-serif;text-decoration:none!important}.mw-parser-output .IPA a:link,.mw-parser-output .IPA a:visited{text-decoration:none!important}Phîⁿ-ô͘/Phêⁿ-ô͘ Ki-tiû；IATA代码：MZG；ICAO代码：RCQC），是一座位于台湾澎湖县湖西乡隘门村的军民合用机场，为该县主要联外机场，旧名“马公机场”。民用部分由交通部民用航空局马公航空站[注 1]管理及营运；军用部分为空军马公基地。由立荣航空、华信航空、德安航空营运台北松山、台中、台南、嘉义、高雄、金门及七美共7条航线，主要以ATR72-600、A321-200、DHC6-400等机型执飞。2019冠状病毒病疫情爆发，国际线需求下降，但离岛航线需求大增，华信航空部分航班由台湾虎航A320-200营运。", 'attributes': {'澎湖机场': {'img_url': ['https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/ROCAF_F-5A_in_Makung_AB_1974.jpg/250px-ROCAF_F-5A_in_Makung_AB_1974.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan.jpg/250px-F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%282%29.jpg/250px-F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%282%29.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%283%29.jpg/250px-F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%283%29.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Magong_Airport.jpg/150px-Magong_Airport.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%A9%BA%E8%BB%8D%E7%AC%AC%E4%B8%80%E6%88%B0%E8%A1%93%E6%88%B0%E9%AC%A5%E6%A9%9F%E8%81%AF%E9%9A%8A.png/80px-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%A9%BA%E8%BB%8D%E7%AC%AC%E4%B8%80%E6%88%B0%E8%A1%93%E6%88%B0%E9%AC%A5%E6%A9%9F%E8%81%AF%E9%9A%8A.png', 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Aerial_view_of_Magong_Airport.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Taiwan_location_map.svg/250px-Taiwan_location_map.svg.png'], '机场类型': '军民合用', '营运者': '军用： 中华民国空军民用： 交通部民用航空局', '服务城市': '澎湖县', '地理位置': '中华民国（台湾）澎湖县湖西乡隘门村126-5号', '启用日期': '军用：1937年民用：1977年8月1日(1977-08-01)', '海拔高度': '103英尺（31米）', '坐标': '23°34′07″N 119°37′42″E\ufeff / \ufeff23.56861°N 119.62833°E\ufeff / 23.56861; 119.62833坐标：23°34′07″N 119°37′42″E\ufeff / \ufeff23.56861°N 119.62833°E\ufeff / 23.56861; 119.62833', '网址': 'www.mkport.gov.tw', '方向': ';;;方向;;长度;;表面;;;米;;英尺;;;02/20;;3,000;;9,843;;混凝土;;', '客运量': '客运量2,320,249 人次货运量6,060.863 公吨起降架次35,682 次', '繁体字': ' 澎湖機場 ', '简化字': ' 澎湖机场 ', '标音': "标音官话-汉语拼音 Péng hú Háng kōng zhàn -威妥玛拼音 Pʻêng2 hu2 hang2 k'ung chan4 -耶鲁拼音 Péng hú háng kūng jàn -注音符号ㄆㄥˊ ㄏㄨˊ ㄏㄤˊ ㄎㄨㄥ ㄓㄢˋ闽语-闽南语白话字 Phîⁿ-ô͘/Phêⁿ-ô͘  hái-khang-chām -台罗拼音 Phînn-ôo/Phênn-ôo hâng-khong-tsām 客家话-客家话拼音 Pang2 fu2 hong2 kung1 zam4 -客语白话字 Phàng-fù hòng-khûng chham ", '汉语': '澎湖航空站'}}}
+2022-03-10 01:51:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E6%BE%8E%E6%B9%96%E6%A9%9F%E5%A0%B4>
+{'keyword': '马公机场', 'source': 'wiki', 'title': '澎湖机场', 'url': 'https://zh.wikipedia.org/wiki/%E6%BE%8E%E6%B9%96%E6%A9%9F%E5%A0%B4', 'date': ' ', 'content': "澎湖机场（闽南语白话字：.mw-parser-output .IPA{font-family:'Charis SIL','Doulos SIL','Linux Libertine','Segoe UI','Lucida Sans Unicode','Code2000','Gentium','Gentium Alternative','TITUS Cyberbit Basic','Arial Unicode MS','IPAPANNEW','Chrysanthi Unicode','GentiumAlt','Bitstream Vera','Bitstream Cyberbit','Hiragino Kaku Gothic Pro','Lucida Grande',sans-serif;text-decoration:none!important}.mw-parser-output .IPA a:link,.mw-parser-output .IPA a:visited{text-decoration:none!important}Phîⁿ-ô͘/Phêⁿ-ô͘ Ki-tiû；IATA代码：MZG；ICAO代码：RCQC），是一座位于台湾澎湖县湖西乡隘门村的军民合用机场，为该县主要联外机场，旧名“马公机场”。民用部分由交通部民用航空局马公航空站[注 1]管理及营运；军用部分为空军马公基地。由立荣航空、华信航空、德安航空营运台北松山、台中、台南、嘉义、高雄、金门及七美共7条航线，主要以ATR72-600、A321-200、DHC6-400等机型执飞。2019冠状病毒病疫情爆发，国际线需求下降，但离岛航线需求大增，华信航空部分航班由台湾虎航A320-200营运。", 'attributes': {'澎湖机场': {'img_url': ['https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/ROCAF_F-5A_in_Makung_AB_1974.jpg/250px-ROCAF_F-5A_in_Makung_AB_1974.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan.jpg/250px-F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%282%29.jpg/250px-F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%282%29.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%283%29.jpg/250px-F-4_bubble_check_on_Makung_Air_Base%2C_Taiwan_%283%29.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Magong_Airport.jpg/150px-Magong_Airport.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%A9%BA%E8%BB%8D%E7%AC%AC%E4%B8%80%E6%88%B0%E8%A1%93%E6%88%B0%E9%AC%A5%E6%A9%9F%E8%81%AF%E9%9A%8A.png/80px-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%A9%BA%E8%BB%8D%E7%AC%AC%E4%B8%80%E6%88%B0%E8%A1%93%E6%88%B0%E9%AC%A5%E6%A9%9F%E8%81%AF%E9%9A%8A.png', 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Aerial_view_of_Magong_Airport.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Taiwan_location_map.svg/250px-Taiwan_location_map.svg.png'], '机场类型': '军民合用', '营运者': '军用： 中华民国空军民用： 交通部民用航空局', '服务城市': '澎湖县', '地理位置': '中华民国（台湾）澎湖县湖西乡隘门村126-5号', '启用日期': '军用：1937年民用：1977年8月1日(1977-08-01)', '海拔高度': '103英尺（31米）', '坐标': '23°34′07″N 119°37′42″E\ufeff / \ufeff23.56861°N 119.62833°E\ufeff / 23.56861; 119.62833坐标：23°34′07″N 119°37′42″E\ufeff / \ufeff23.56861°N 119.62833°E\ufeff / 23.56861; 119.62833', '网址': 'www.mkport.gov.tw', '方向': ';;;方向;;长度;;表面;;;米;;英尺;;;02/20;;3,000;;9,843;;混凝土;;', '客运量': '客运量2,320,249 人次货运量6,060.863 公吨起降架次35,682 次', '繁体字': ' 澎湖機場 ', '简化字': ' 澎湖机场 ', '标音': "标音官话-汉语拼音 Péng hú Háng kōng zhàn -威妥玛拼音 Pʻêng2 hu2 hang2 k'ung chan4 -耶鲁拼音 Péng hú háng kūng jàn -注音符号ㄆㄥˊ ㄏㄨˊ ㄏㄤˊ ㄎㄨㄥ ㄓㄢˋ闽语-闽南语白话字 Phîⁿ-ô͘/Phêⁿ-ô͘  hái-khang-chām -台罗拼音 Phînn-ôo/Phênn-ôo hâng-khong-tsām 客家话-客家话拼音 Pang2 fu2 hong2 kung1 zam4 -客语白话字 Phàng-fù hòng-khûng chham ", '汉语': '澎湖航空站'}}}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1568,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 49176,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 3.727992,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 26, 295000),
+ 'httpcompression/response_bytes': 199809,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 32,
+ 'log_count/INFO': 76,
+ 'memusage/max': 66859008,
+ 'memusage/startup': 66859008,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 567008)}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E7%9B%B4%E5%8D%87%E6%A9%9F> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E7%9B%B4%E5%8D%87%E6%9C%BA&ns0=1)
+2022-03-10 01:51:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E8%8A%B1%E8%93%AE%E6%A9%9F%E5%A0%B4> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%8A%B1%E8%8E%B2%E6%9C%BA%E5%9C%BA&ns0=1)
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1568,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 48923,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 3.766078,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 26, 325494),
+ 'httpcompression/response_bytes': 199399,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 34,
+ 'log_count/INFO': 86,
+ 'memusage/max': 66588672,
+ 'memusage/startup': 66588672,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 559416)}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/SdKfz_252%E5%8D%8A%E5%B1%A5%E5%B8%A6%E8%BD%A6> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A3%85%E7%94%B2%E8%BF%90%E8%BE%93%E8%BD%A6&ns0=1)
+2022-03-10 01:51:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E7%9B%B4%E5%8D%87%E6%A9%9F>
+{'keyword': '直升机', 'source': 'wiki', 'title': '直升机', 'url': 'https://zh.wikipedia.org/wiki/%E7%9B%B4%E5%8D%87%E6%A9%9F', 'date': ' ', 'content': '直升机是一种由水平旋转的动力旋翼提供向上升力和飞行推进力的飞行器，是旋翼航空器的主要种类。直升机具有大多数固定翼飞机所不具备的垂直起降、悬停和随意向前、向后或侧向飞行的能力，这些特点使得直升机在很多狭窄、崎岖、缺乏跑道的复杂环境下有许多优势。与固定翼飞机相比，直升机的缺点是速度低、耗油量较高、航程较短、载重较少。直升机旋翼产生升力的原理与固定翼飞机的机翼相似，通过翼剖面与空气发生相对运动使得旋翼产生上弱下强的气压差，进而产生升力并通过旋翼的主轴传递给机身，使其可以克服重力实现飞行。和固定翼飞机的机翼一样，直升机旋桨能够产生的升力大小取决于气流速度和其桨叶水平投影面积的总和；但直升机不像固定翼飞机那样必须依赖整个机体的向前运动才能让机翼产生气流，而是依靠翼片的旋转产生与空气的相对运动。但旋翼在提供升力的同时也会产生反扭矩（与旋翼的转动方向相反、角动量相等的反作用扭矩）并传递到机身上，这使得最为常见的单旋翼直升机在浮空时会向着旋桨相反的方向自旋。为了平衡反扭矩，直升机需要在机尾位置产生一个与旋翼方向相同、角动量相等的水平旋转推力抵消反力矩，最常见的做法是在机尾末端安装一个垂直的小型螺旋桨（即尾桨）提供推力。而双旋翼和多旋翼直升机多采用让反向旋转的旋翼之间的扭矩相互抵消的方法来清除反扭矩，并可以利用各个旋翼的转速差别来改变飞行状态。在附图的运作说明中可以见得，由上俯视一个顺时针旋转的主翼，它的尾桨会是向黄色箭头所指方向推力的。直升机和自转旋翼机的外观相似，但是飞行原理和性能并不同。自转旋翼机的发动机只驱动尾部的螺旋桨提供前进推力，主旋桨并没有动力源，必须依赖向前运动时的相对反向气流才能被动旋转产生升力。自转旋翼机虽然构造比较简单和低价也可以做到短程起降，但完全没有垂直起降、悬停、随意侧飞和倒飞的能力，不如直升机的性能广泛，是介乎于固定翼飞机和直升机中间的一种对跑道要求较低的飞行器。用途较狭而专业化的航空机构通常拥有直升机，但鲜有采用旋翼机。人类梦想的飞行方式是原地腾空而起，既能自由飞翔又能悬停于空中，并且随意实现定点着陆。例如阿拉伯人的飞毯，希腊神的战车，都是垂直起落飞行器。其中最有价值、最具代表性的是中国古代玩具竹蜻蜓和意大利人达·芬奇关于垂直起降航空器的画作。李约瑟误以为中国晋朝葛洪所著的《抱朴子》有纪录类似竹蜻蜓最早的动力机械[1]，但实际上文章说的是服丹修练成仙成功时，人可以飞行[2]。《简明不列颠百科全书》第9卷写道：“直升机是人类最早的飞行设想之一，多年来人们一直相信最早提出这一想法的是达·芬奇，但现在都知道，中国人比中世纪的欧洲人更早做出了直升机玩具。”这种玩具于14世纪传到欧洲。“英国航空之父”乔治·凯利（1773年－1857年）曾制造过几个竹蜻蜓，用钟表发条作为动力来驱动旋转，飞行高度曾达27米。随着生产力的发展和人类文明的进步，直升机的发展史由幻想时期进入了探索时期。欧洲产业革命之后，机械工业迅速倔起，尤其是本世纪初汽车和轮船的发展，为飞行器准备了发动机和可供借鉴的螺旋桨。经过航空先驱者们勇敢而艰苦的创造和试验，1903年莱特兄弟（Wright brothers）制造的固定翼飞机飞行成功。在此期间，尽管在发展直升机方面，航空先驱们付出了相当的艰辛和努力，但由于直升机技术的复杂性和发动机性能不佳，它的成功飞行比飞机迟了30多年。20世纪初为直升机发展的探索期，多种试验性机型相继问世。试验机方案的多样性表明了探索阶段的技术不成熟性。经过多年实践，这些方案中只有纵列式和共轴双旋翼式保留了下来，至今仍在应用。双桨横列式方案未在直升机家族中延续，但在倾转旋翼飞机中得到了继承和发展。俄国人尤利耶夫另辟捷径，提出了利用尾桨来配平旋翼反扭矩的设计方案并于1912年制造出了试验机。这种单旋翼带尾桨式直升机成为至今最流行的形式。经过20世纪初的努力探索，为直升机发展积累了可贵的经验并取得显著进展，有多架试验机实现了短暂的垂直升空和短距飞行，但离实用还有很大距离。飞机工业的发展使航空发动机的性能迅速提高，为直升机的成功提供了重要条件。旋翼技术的第一次突破，归功于西班牙人Ciervao，他为了创造“不失速”的飞机以解决固定翼飞机的安全问题，采用自转旋翼代替机翼，发明了自转旋翼机。旋翼技术在自转旋翼机上的成功应用和发展，为直升机的诞生提供了另一个重要条件。1907年8月，法国人保罗·科尔尼研制出一架全尺寸载人直升机，并在同年11月13日试飞成功。这架直升机被称为“人类第一架直升机”。1938年，年轻的德国人汉纳赖奇驾驶一架双旋翼直升机在柏林体育场进行了一次完美的飞行表演。这架直升机被直升机界认为是世界上第一种试飞成功的直升机。1936年，德国福克公司在对早期直升机进行多方面改进之后，公开展示了自己制造的FW-61直升机，1年后该机创造了多项世界纪录。[3]1939年春，美国的伊戈尔·伊万诺维奇·西科尔斯基完成了VS-300直升机的全部设计工作，同年夏天制造出一架原型机。这种单旋翼带尾桨直升机构型成为现在最常见的直升机构型。20世纪40年代，美国沃特-西科斯基公司研制的一种2座轻型直升机R-4，它是世界上第一种投入批量生产的直升机，也是美国陆军航空兵、海军、海岸警卫队和英国空军、海军使用的第一种军用直升机。该机的公司编号为VS-316，VS-316A。美国陆军航空兵的编号为R-4，美国海军和海岸防卫队的编号为HNS-1，英国空军将其命名为“食蚜虻1”（Hoverfly 1），英国海军将其命名为“牛虻”（Gadfly）。到30年代末期，在法国、德国、美国和前苏联都有直升机试飞成功，并迅速改进达到了能够实用的程度。第二次世界大战的军事需要，加速了这一进程，促使直升机发展由探索期进入实用期，直升机开始投入生产线生产。到二战结束时，德国工厂已生产了30多架直升机，美国交付的R5、R6直升机已达400多架。[4]20世纪的后半期直升机进入航空实用期，特别是越战期间大量直升机部属到战场，战后直升机的应用领域不断扩展，数量迅速增加。每年八月第三个星期日被列为世界直升机日。单旋翼直升机（monocopter或unicopter）是直升机的主要类型，使用单一的主旋翼（main rotor）产生升力，但因为角动量守恒的原因，必须配有一个反扭矩机制去抵消主旋翼旋转造成的机体反向旋转。有尾桨例子：西科斯基UH-60涵道式尾桨例子：欧直EC-135无尾桨例子：麦道MD520N双旋翼直升机（bicopter）使用两个旋翼合作产生升力，可以用方向相反的旋转互相抵消反扭矩，因此不需要在尾部安装垂直旋桨。纵列式代表：波音CH-47D横列式代表：米里Mi-12倾转式代表：贝尔-波音V-22共轴式代表：卡莫夫Ka-27交错式代表：H-43卡曼公司双旋翼交叉式直升机K-600多旋翼直升机（multicopter）使用三个以上的旋翼来产生升力，是民用无人航空载具的主流类型。最常见的设计是四旋翼直升机（quadcopter），有四个大小相同、分布位置接近对称的旋翼来达到悬停、维持姿态及平飞。小型四旋翼飞行器大疆悟2无人机大疆御Air 2无人机六旋翼无人机直升机的起落架分为滑橇式和轮式两种，轮式又分可收放和不可收放式。滑橇式一般用于轻型直升机；轮式多用在中型、重型直升机。[5][6]直升机的操纵系统有别于固定翼航空器，通常由以下部分组成：单旋翼带尾桨直升机的操纵系统说明表直升机依照用途可分为民用与军用两种。作为民间工作，没有武装且仅有该用途所需的装备的直升机即为民用直升机。依其用途目前主要可分为下列几种：增加装甲和武器，同时加强性能以供军事用途的直升机便为军用直升机。依其用途目前主要可分为下列五种：', 'attributes': {'直升机': {'img_url': ['https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Russian_Air_Force_Kamov_Ka-50.jpg/220px-Russian_Air_Force_Kamov_Ka-50.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rotor_Antitorque_System.svg/220px-Rotor_Antitorque_System.svg.png', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Helicopter_rescue_sancy_takeoff.jpg/220px-Helicopter_rescue_sancy_takeoff.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mil_Mi-6%2C_54RED%2C_Russian_Air_Force.jpg/220px-Mil_Mi-6%2C_54RED%2C_Russian_Air_Force.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/F-WWPB_%288970712548%29.jpg/240px-F-WWPB_%288970712548%29.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Hatzerim_270613_Apache.jpg/220px-Hatzerim_270613_Apache.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/LAPD_Bell_206_Jetranger.jpg/300px-LAPD_Bell_206_Jetranger.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Antitorque.jpg/303px-Antitorque.jpg'], '航空器专题': ';;;航空器专题;;;单纯利用空气浮力（浮空器）;;;无动力;;动力;;;;气球;;;飞艇;;;空气浮力和空气动力混合;;;无动力;;动力;;;;混合系留气球;风筝式系留气球;;;混合飞艇;;;单纯利用空气动力;;;无动力;;动力;;;无动力固定翼;;动力固定翼;;;;滑翔机;悬挂式滑翔机;滑翔伞;风筝;;;飞机;动力滑翔伞;滚筒飞行器;地效飞行器;;;;;半固定翼和旋翼;;;;;;倾转旋翼机;环翼机;;;无动力旋翼;;动力旋翼;;;;旋翼风筝;;;自转旋翼机;旋翼式螺旋桨飞机;直升机;;;;;扑翼;;;;;;扑翼机;;;其他;;;无动力;;动力;;;;;;飞行实验器;飞行汽车;飞天车;;'}}}
+2022-03-10 01:51:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E6%B5%B7%E8%BB%8D%E6%B5%B7%E6%B4%8B%E7%9B%A3%E5%81%B5%E6%8C%87%E6%8F%AE%E9%83%A8> (referer: https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&limit=20&offset=0&profile=default&search=%E8%A5%BF%E5%B1%BF%E9%9B%B7%E8%BE%BE%E7%AB%99&ns0=1)
+2022-03-10 01:51:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E8%8A%B1%E8%93%AE%E6%A9%9F%E5%A0%B4>
+{'keyword': '花莲机场', 'source': 'wiki', 'title': '花莲机场', 'url': 'https://zh.wikipedia.org/wiki/%E8%8A%B1%E8%93%AE%E6%A9%9F%E5%A0%B4', 'date': ' ', 'content': '花莲机场（阿美语：Pahikukiyan nu Kalinku，太鲁阁语：Rduwan Msangay Asu Skiya Skangki，IATA代码：HUN；ICAO代码：RCYU）是位于台湾花莲县新城乡的机场，场区位在花莲市中心北方，横亘整个新城乡最南部。该机场为一军民合用机场（英语：Civil enclave），也是东台湾第一座国际机场，主要由中华民国空军管理，分为山侧的空军佳山基地、以及海侧的空军花莲基地；民用部分位于海侧，称为花莲航空站，由交通部民用航空局经营。由于本场为军民合用，机场内有大量军事设施，故禁止于起降时对机场内摄影。花莲机场的前身是日治时期的“花莲港北飞行场”，兴建于1936年，属于军民共用的机场，由日本航空运输（日语：日本航空輸送）经营。第二次世界大战结束后，由中华民国政府接收。※视评估扩充5~7号登机门及空桥，扩建工程第一期第一阶段并无建设。国内航线由立荣航空及华信航空营运台北松山、台中及高雄共3条航线，主要以ATR72-600机型执飞。国际航线由韩国低成本航空公司易斯达航空营运韩国首尔仁川、釜山共2条包机航线，主要以B737-800机型执飞，目前因2019冠状病毒病关系停航。', 'attributes': {'花莲机场': {'img_url': ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Hualien_Air_Force_Base_entrance_20120210.jpg/220px-Hualien_Air_Force_Base_entrance_20120210.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/%E5%8D%B3%E5%B0%87%E9%99%8D%E8%90%BD%E6%96%BC%E8%8A%B1%E8%93%AE%E6%A9%9F%E5%A0%B4%E7%9A%84%E8%8F%AF%E4%BF%A1%E8%88%AA%E7%A9%BA%28%E6%94%9D%E6%96%BC%E8%8A%B1%E8%93%AE%E5%B8%82%E5%9C%8B%E5%BC%B7%E9%87%8C%29.jpg/220px-%E5%8D%B3%E5%B0%87%E9%99%8D%E8%90%BD%E6%96%BC%E8%8A%B1%E8%93%AE%E6%A9%9F%E5%A0%B4%E7%9A%84%E8%8F%AF%E4%BF%A1%E8%88%AA%E7%A9%BA%28%E6%94%9D%E6%96%BC%E8%8A%B1%E8%93%AE%E5%B8%82%E5%9C%8B%E5%BC%B7%E9%87%8C%29.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Road_signs_in_Hualien_Airport.jpg/220px-Road_signs_in_Hualien_Airport.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%A9%BA%E8%BB%8D%E7%AC%AC%E4%BA%94%E6%88%B0%E8%A1%93%E6%B7%B7%E5%90%88%E8%81%AF%E9%9A%8A.png/80px-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E7%A9%BA%E8%BB%8D%E7%AC%AC%E4%BA%94%E6%88%B0%E8%A1%93%E6%B7%B7%E5%90%88%E8%81%AF%E9%9A%8A.png', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/HuaLien_Airport.jpg/280px-HuaLien_Airport.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Taiwan_location_map.svg/250px-Taiwan_location_map.svg.png'], '机场类型': '军民合用', '所有者': '交通部民用航空局国防部空军司令部', '营运者': '军用： 中华民国空军民用： 交通部民用航空局', '服务城市': '花莲市', '地理位置': '中华民国（台湾）花莲县新城乡嘉里村机场一号', '启用日期': '1962年5月16日(1962-05-16)', '海拔高度': '51英尺（16米）', '坐标': '24°01′24″N 121°36′36″E\ufeff / \ufeff24.02333°N 121.61000°E\ufeff / 24.02333; 121.61000坐标：24°01′24″N 121°36′36″E\ufeff / \ufeff24.02333°N 121.61000°E\ufeff / 24.02333; 121.61000', '网址': 'www.hulairport.gov.tw', '方向': ';;;方向;;长度;;表面;;;米;;英尺;;;03/21;;2,751;;9,026;;混凝土;;', '客运量': '客运量214,279人次货运量402.2公吨起降架次4,799次', '国家（地区）': '中华民国（台湾）', '位置': '花莲县', '类型': '航空安检站', '出入境管理机关': '内政部移民署国境事务大队基隆港国境事务队', '海关': '财政部关务署基隆关', '繁体字': ' 花蓮機場 ', '简化字': ' 花莲机场 ', '标音': "标音官话-汉语拼音 Huā lián  Jī chǎng -威妥玛拼音 hua lien2 chi ch'ang3 -耶鲁拼音 Hwā lyán Jī chǎng -注音符号ㄏㄨㄚ ㄌㄧㄢˊ ㄐㄧ ㄔㄤˇ闽语-闽南语白话字 Hoa-liân Ki-tiûⁿ -台罗拼音 Hua-liân Ki-tiûnn 客家话-客家话拼音 Fa1 lian2  Gi1 cong2 -客语白话字 Fâ-lièn Kî-chhòng "}}}
+2022-03-10 01:51:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/SdKfz_252%E5%8D%8A%E5%B1%A5%E5%B8%A6%E8%BD%A6>
+{'keyword': '装甲运输车', 'source': 'wiki', 'title': 'SdKfz 252半履带车', 'url': 'https://zh.wikipedia.org/wiki/SdKfz_252%E5%8D%8A%E5%B1%A5%E5%B8%A6%E8%BD%A6', 'date': ' ', 'content': '第252号特种车辆（德语：Sonderkraftfahrzeug 252，简称：Sd.Kfz. 252），又称轻型装甲弹药运输车（leichter gepanzerter Munitionskraftwagen），是纳粹德国在二战期间使用的一款轻型半履带装甲运输车。Sd.Kfz. 252的设计基于Sd.Kfz. 250半履带车，并使用同款底盘。1940年6月至12月由德马格（英语：Demag）和韦格曼（英语：Krauss-Maffei Wegmann）负责生产。1941年1月至9月则由德意志造船厂负责生产，一共制造了413辆[1]。主要用途是为突击炮部队运输弹药，在东西线皆有使用。为了增加弹药运载能力，使用Sd.Ah. 32/1（Sonder-Anhänger 32/1） 拖车，可以额外运载36枚75毫米炮弹[2]。法国战役期间，第640和659突击炮连使用了Sd.Kfz. 252。在东线，使用者为第184、190和210突击炮营[3]。1941年之后停止生产，被Sd.Kfz. 250/6半履带车取代[4]。', 'attributes': {'SdKfz 252半履带车': {'img_url': ['https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Bundesarchiv_Bild_101I-154-1968-16%2C_Russland%2C_Sch%C3%BCtzenpanzer_im_Gel%C3%A4nde.jpg/181px-Bundesarchiv_Bild_101I-154-1968-16%2C_Russland%2C_Sch%C3%BCtzenpanzer_im_Gel%C3%A4nde.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Balkenkreuz.svg/30px-Balkenkreuz.svg.png', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Sd.Kfz._252_01.png/300px-Sd.Kfz._252_01.png'], '类型': '轻型半履带装甲弹药运输车', '原产地': '纳粹德国', '服役期间': '1940年-？', '参与战争／冲突': '二战', '研发者': '德马格（英语：Demag）', '生产商': '德马格（英语：Demag）、韦格曼（英语：Krauss-Maffei Wegmann）、德意志造船厂', '生产日期': '1940年6月至12月（德马格、韦格曼)，1941年1月至9月（德意志造船厂）', '制造数量': '413', '重量': '5.73吨', '长度': '4.7米', '宽度': '1.95米', '高度': '1.8米', '操作人数': '2', '发动机': '迈巴赫HL42 TRKM 6缸水冷引擎', '作战范围': '320公里 公路175公里 越野', '速度': '65公里/小时'}}}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1532,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 64369,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 4.263449,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 26, 859917),
+ 'httpcompression/response_bytes': 250471,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 39,
+ 'log_count/INFO': 61,
+ 'memusage/max': 67362816,
+ 'memusage/startup': 67362816,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 596468)}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E6%B5%B7%E8%BB%8D%E6%B5%B7%E6%B4%8B%E7%9B%A3%E5%81%B5%E6%8C%87%E6%8F%AE%E9%83%A8>
+{'keyword': '西屿雷达站', 'source': 'wiki', 'title': '中华民国海军海洋监侦指挥部', 'url': 'https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E6%B5%B7%E8%BB%8D%E6%B5%B7%E6%B4%8B%E7%9B%A3%E5%81%B5%E6%8C%87%E6%8F%AE%E9%83%A8', 'date': ' ', 'content': '海军海洋监侦指挥部为中华民国海军岸置地对海雷达部队。', 'attributes': {'中华民国海军海洋监侦指挥部': {'存在时期': '1965年至今', '国家或地区': '中华民国', '效忠于': '中华民国', '军种': ' 中华民国海军', '种类': '雷达部队', '规模': '指挥部', '隶属于': '海军舰队指挥部', '装备': '机动雷达车、维星车、电战车、机动诱标车', '别称': '海侦部', 'img_url': ['https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/ROCN_Rear_Admiral%27s_Flag.svg/25px-ROCN_Rear_Admiral%27s_Flag.svg.png']}}}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1568,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 51650,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 4.391215,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 26, 980560),
+ 'httpcompression/response_bytes': 226328,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 40,
+ 'log_count/INFO': 71,
+ 'memusage/max': 67096576,
+ 'memusage/startup': 67096576,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 589345)}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1604,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 38653,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 4.356575,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 26, 982270),
+ 'httpcompression/response_bytes': 140641,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 40,
+ 'log_count/INFO': 46,
+ 'memusage/max': 67706880,
+ 'memusage/startup': 67706880,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 625695)}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:51:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1676,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 44119,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 2,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 4.412411,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 51, 26, 989681),
+ 'httpcompression/response_bytes': 179735,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 40,
+ 'log_count/INFO': 84,
+ 'memusage/max': 66859008,
+ 'memusage/startup': 66859008,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 577270)}
+2022-03-10 01:51:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:51:43 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=earth%20fortification&ns0=1> (failed 1 times): Connection was refused by other side: 111: Connection refused.
+2022-03-10 01:52:04 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=earth%20fortification&ns0=1> (failed 2 times): Connection was refused by other side: 111: Connection refused.
+2022-03-10 01:52:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 01:52:25 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=earth%20fortification&ns0=1> (failed 3 times): Connection was refused by other side: 111: Connection refused.
+2022-03-10 01:52:25 [scrapy.core.scraper] ERROR: Error downloading <GET https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=earth%20fortification&ns0=1>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    return (yield download_func(request=request, spider=spider))
+twisted.internet.error.ConnectionRefusedError: Connection was refused by other side: 111: Connection refused.
+2022-03-10 01:52:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 01:52:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.internet.error.ConnectionRefusedError': 3,
+ 'downloader/request_bytes': 1420,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'elapsed_time_seconds': 63.525353,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 1, 52, 26, 74009),
+ 'log_count/DEBUG': 42,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 110,
+ 'memusage/max': 101003264,
+ 'memusage/startup': 66252800,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.internet.error.ConnectionRefusedError': 2,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2022, 3, 10, 1, 51, 22, 548656)}
+2022-03-10 01:52:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-03-10 01:52:26 [DataCleaning] INFO: 本次清洗用时：0:00:00.010489
+2022-03-10 01:52:26 [__main__] INFO: 上传文件：/code/./result/wiki/wiki_澎湖机场_澎湖机场_20220310015126077047.json
+2022-03-10 01:52:26 [__main__] ERROR: 'NoneType' object has no attribute 'upload_file'
+Traceback (most recent call last):
+  File "MultisiteSchedule.py", line 277, in upload_crawl_file
+    connect.upload_file(file, "/text_crawl_file/")
+AttributeError: 'NoneType' object has no attribute 'upload_file'
+2022-03-10 01:52:26 [__main__] INFO: upload crawl file failure
+2022-03-10 01:52:26 [__main__] INFO: upload crawl file success
+2022-03-10 01:52:26 [__main__] INFO: scrapy finished

@@ -19,6 +19,9 @@ class FacebookSpider(scrapy.Spider):
     name = 'facebook'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.FacebookPipeline': 300},
+        'DOWNLOADER_MIDDLEWARES': { 
+                            'TextProcessorScrapy.middlewares.ProxyMiddleware': 90,
+                                    },
         'REDIRECT_ENABLED': False,
         'HTTPERROR_ALLOWED_CODES': [302, 301],
         'CONCURRENT_REQUESTS': 8,
@@ -28,12 +31,13 @@ class FacebookSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         self.allowed_domains = ['facebook.com']
-        self.driver = webdriver.Chrome("file/chromedriver.exe", options=options)
+        self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(3)
         if 'crawl_id' in kwargs['crawl_id']:
             self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
+            self.keyword = kwargs['keyword'].split('_')[-1]
+            self.keyword_type = kwargs['keyword'].split('_')[0]
         if 'database' in kwargs:
             self.database = kwargs['database']
 

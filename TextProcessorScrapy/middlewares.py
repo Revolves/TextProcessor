@@ -2,17 +2,20 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from asyncio.log import logger
 import logging
+import os
 import random
+import sys
 import threading
 import time
 
 from scrapy import signals
 # from TextProcessorScrapy.utils.utils import get_random_ip
 from twisted.internet import task
+from hashlib import md5
 
 from TextProcessorScrapy.settings import USER_AGENTS_LIST
-from flask import Flask
 
 # useful for handling different item types with a single interface
 
@@ -24,6 +27,9 @@ INTERACT = 0
 SPIDERSNUMBER = 1
 DB = None
 
+def rowkey_id_gen():
+    return md5(str(time.time()).encode()).hexdigest()
+
 
 def insert_http_interact():
     global SPIDERSNUMBER
@@ -32,14 +38,13 @@ def insert_http_interact():
         global CRAWL_ID, INTERACT, COUNT
         if DB is not None:
             try:
-                sql_ = "INSERT INTO  hs.text_crawl_http_interact  VALUES (hs.sequence_get_id.NEXTVAL,?, ?)"
-                pram_ = [CRAWL_ID, str(INTERACT)]
+                sql_ = "INSERT INTO  hsold.text_crawl_http_interact  VALUES (?, hs.sequence_get_id.NEXTVAL,?,?)"
+                pram_ = [rowkey_id_gen(),CRAWL_ID, str(INTERACT)]
                 DB.execute_sql(sql_, pram_)
             except:
                 logging.error("http interact insert failure")
             logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, str(INTERACT * SPIDERSNUMBER)))
             INTERACT = 0
-
 
 insert_th = threading.Thread(target=insert_http_interact)
 insert_th.start()
@@ -138,6 +143,8 @@ class TextCrawlDownloaderMiddleware:
         global FIRST, CRAWL_ID, DB, SPIDERSNUMBER
         self.tsk = task.LoopingCall(self.collect, spider=spider)
         self.tsk.start(self.time, now=True)
+        self.tsk1 = task.LoopingCall(self.check_stop, spider=spider)
+        self.tsk1.start(self.time, now=True)
         if FIRST:
             CRAWL_ID = spider.crawl_id
             DB = spider.database
@@ -168,6 +175,16 @@ class TextCrawlDownloaderMiddleware:
                 # t.start()
                 # COUNT += 1
 
+    def check_stop(self, spider):
+        if os.path.isfile('stop_signal/{}'.format(spider.crawl_id)):
+            os.remove('stop_signal/{}'.format(spider.crawl_id))
+            spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
+            sys.exit('Actively Stop the Crawler')
+            try:
+                spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
+            except Exception as e:
+                logger.exception("Actively Stop Exception:{}".format(e))
+                self.spider_closed(spider)
 
 #
 # class RandomProxyMiddleware(object):
@@ -276,3 +293,15 @@ class RandomUserAgentMiddleware(object):
 #             if proxy["times"] < 10:
 #                 self.rds.hdel("xila_hash", key)
 #             return request.replace(dont_filter=True)
+class ProxyMiddleware(object): 
+    # overwrite process request 
+    def process_request(self, request, spider): 
+        # 设置代理的主机和端口号
+        request.meta['proxy'] = "http://127.0.0.1:7890"
+
+        # # 设置代理的认证用户名和密码
+        # proxy_user_pass = "user:password"
+        # encoded_user_pass = base64.encodestring(proxy_user_pass)
+
+        # # 设置代理
+        # request.headers['Proxy-Authorization'] = 'Basic ' + encoded_user_pass

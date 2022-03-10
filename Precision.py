@@ -17,6 +17,9 @@ import jieba.posseg as pseg
 import numpy as np
 from jieba import analyse
 
+from MultisiteSchedule import rowkey_id_gen
+from Transwarp import Transwarp
+
 '''
 文本相似度的计算，基于几种常见的算法的实现
 '''
@@ -77,18 +80,28 @@ class TextSimilarity:
         """
         str_a = ''
         str_b = ''
-        if not os.path.isfile(file_a) and not os.path.isdir(file_a):
-            print(file_a, "is not file")
-            return
-        elif not os.path.isdir(file_b) and not os.path.isfile(file_b):
-            print(file_b, "is not dir")
-            return
-        else:
-            if not os.path.isdir(file_a):
-                with open(file_a, 'r') as f:
-                    for line in f.readlines():
-                        str_a += line.strip()
-                    f.close()
+        # if not os.path.isfile(file_a) and not os.path.isdir(file_a):
+        #     print(file_a, "is not file")
+        #     return
+        # elif not os.path.isdir(file_b) and not os.path.isfile(file_b):
+        #     print(file_b, "is not dir")
+        #     return
+        # else:
+        try:
+            if type([]) == type(file_a):
+                for fname in file_a:
+                    if os.stat('./baseline/' + fname).st_size < 10:
+                        continue
+                    with open('./baseline/' + fname, 'r', encoding='utf-8-sig') as f:
+                        load_json = json.load(f)
+                        for _ in load_json:
+                            str_a += _['content']
+            elif not os.path.isdir(file_a):
+                with open(file_a, 'r',encoding='utf-8-sig') as f:
+                    load_json = json.load(f)
+                    for _ in load_json:
+                        str_a += _['content']
+            
             else:
                 for dirfile in os.walk(file_a):
                     for fname in dirfile[2]:
@@ -98,25 +111,23 @@ class TextSimilarity:
                             load_json = json.load(f)
                             for _ in load_json:
                                 str_a += _['content']
-                            # for line in f.readlines():
-                            #     str_a += line.strip()
-                            f.close()
             if not os.path.isdir(file_b):
-                with open(file_b, 'r') as f:
-                    for line in f.readlines():
-                        str_b += line.strip()
-                    f.close()
+                with open(file_b, 'r', encoding='utf-8-sig') as f:
+                    load_json = json.load(f)
+                    for _ in load_json:
+                        str_b += _['content']
             else:
                 for dirfile in os.walk(file_b):
                     for fname in dirfile[2]:
-                        if os.stat(dirfile[0] + '/' + fname).st_size < 10:
+                        if os.stat(dirfile[0] + '/' + fname).st_size < 10 or not (dirfile[0] + '/' + fname).endswith('json'):
                             continue
                         with open(dirfile[0] + '/' + fname, 'r', encoding='utf-8-sig') as f:
                             load_json = json.load(f)
                             for _ in load_json:
                                 str_b += _['content']
-                            f.close()
-
+        except Exception as e:
+            print(e)
+            pass
         self.str_a = str_a
         self.str_b = str_b
 
@@ -261,8 +272,9 @@ class TextSimilarity:
         pass
 
 if __name__ == '__main__':
-    ts = TextSimilarity(r"E:\workspace\保存文件\HS_savefile\result\zh\wiki", r"E:\workspace\保存文件\HS_savefile\result\nasa")
+    ts = TextSimilarity(r"./baseline/baseline_aiaa_1.json", r"result")
     print("ts.splitWordSimlaryty:{}".format(ts.splitWordSimlaryty(sim=cos_sim)))
     print("ts.JaccardSim: {}".format(ts.JaccardSim()))
     # print("ts.levenshteinDistance:{}".format(ts.levenshteinDistance()))
     # print("ts.minimumEditDistance:{}".format(ts.minimumEditDistance()))
+    

@@ -5,16 +5,22 @@ time: 15:21
 IDE: PyCharm
 """
 import datetime
+import imp
 import os
 import random
 import time
+from turtle import st
 from Transwarp import Transwarp
 import pandas as pd
-transwarp = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
+transwarp = Transwarp("Transwarp/JavaJar/InceptorUtil.jar", "Transwarp/libs")
 transwarp.connect_inceptor()
 transwarp.connect_hdfs()
-transwarp1 = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
-transwarp1.connect_inceptor()
+
+# transwarp1 = Transwarp("Transwarp/JavaJar/Util.jar", "Transwarp/libs")
+# transwarp1.connect_inceptor()
+transwarp.upload_file("Transwarp/JavaJar/Util.jar", "//text_crawl")
+# cmdline.execute(['scrapy'])
+# print(type(md5(str(time.time()).encode()).hexdigest()))
 # transwarp.execute_sql('CREATE TABLE hs.show_text_interact(id STRING, http_interact STRING) CLUSTERED BY (id) into 2 buckets stored \
 #                                 as HYPERDRIVE TBLProperties ("transactional"="true")',[])
 # transwarp.execute_sql('CREATE TABLE hs.show_text_location(loc STRING, id STRING,  count STRING) CLUSTERED BY (loc) into 2 buckets stored \

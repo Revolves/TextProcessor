@@ -13,26 +13,24 @@ class Transwarp:
     def __init__(self, jar_path, dependency_path):
         self.jarpath = os.path.join(os.path.abspath("."), jar_path)
         self.dependency_path = os.path.join(os.path.abspath('.'), dependency_path)
+        hdfs_file = os.path.join(os.path.abspath('.'), 'Transwarp/hdfs')
+        print(hdfs_file)
         print("jar_path:{}".format(self.jarpath))
-        print("dependency_path:".format(self.dependency_path))
+        print("dependency_path:{}".format(self.dependency_path))
         # 获取jvm.dll 的文件路径
         jvmPath = jpype.getDefaultJVMPath()
         # 开启jvm
         try:
             jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath, "-Djava.ext.dirs=%s" % self.dependency_path)
-            self.inceptor = jpype.JClass("DB.InceptorUtil")
-            self.hdfs = jpype.JClass("DB.HdfsUtil")
-
-            javaInstance = self.hdfs("Transwarp\\hdfs\\")
-        # except OSError:
-        #     jpype.shutdownJVM()
-        #     jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath,
-        #                    "-Djava.ext.dirs=%s" % self.dependency_path)
-        except OSError:  
-            self.hdfs = jpype.JClass("DB.HdfsUtil")
-            # self.hdfs = jpype.JClass("java.lang.Class").forName("DB.HdfsUtil")
-            self.inceptor = jpype.JClass("DB.InceptorUtil")
-            javaInstance = self.hdfs("Transwarp\\hdfs\\")
+        except:
+            pass
+            # jpype.shutdownJVM()
+            # jpype.startJVM(jvmPath, "-ea", "-Djava.class.path=%s" % self.jarpath,
+            #                "-Djava.ext.dirs=%s" % self.dependency_path)
+        self.hdfs = jpype.JClass("DB.HdfsUtil")
+        # self.hdfs = jpype.JClass("java.lang.Class").forName("DB.HdfsUtil")
+        self.inceptor = jpype.JClass("DB.InceptorUtil")
+        javaInstance = self.hdfs(hdfs_file)
 
     def connect_hdfs(self):
         """
@@ -41,7 +39,7 @@ class Transwarp:
         try:
             self.hdfs.GetHdfsClient()
         except Exception as e:
-            print("{}/n 连接失败")
+            print("{} 连接失败".format(e))
 
     def connect_inceptor(self):
         """
@@ -119,14 +117,16 @@ class Transwarp:
         """
         return self.hdfs.uploadFiles(path_from, path_to)
 
-    def close(self):
+    def close_inceptor(self):
         """
         断开连接
 
         :return:
         """
-        self.hdfs.CloseHdfs()
+        self.inceptor.CloseConnect()
 
+    def close_hdfs(self):
+        self.hdfs.CloseHdfs()
 
 # hdfs_util = Transwarp('JavaJar/Util.jar', 'libs/')
 # hdfs_util.connect_hdfs()

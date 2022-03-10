@@ -4,12 +4,18 @@ import time
 
 import scrapy
 from ..items import BaiduWikiItem
+from bs4 import BeautifulSoup as bs
+HTTPS = "https:"
+reg = re.compile("\\[.*]")
 
 class WikiSpider(scrapy.Spider):
     name = 'wiki'
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.WikiPipeline': 400,
                             'TextProcessorScrapy.pipelines.ImagePipeline': 300},
+        'DOWNLOADER_MIDDLEWARES': { 
+                            'TextProcessorScrapy.middlewares.ProxyMiddleware': 90,
+                                    }
     }
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -18,7 +24,8 @@ class WikiSpider(scrapy.Spider):
         if 'crawl_id' in kwargs['crawl_id']:
             self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
+            self.keyword = kwargs['keyword'].split('_')[-1]
+            self.keyword_type = kwargs['keyword'].split('_')[0]
         if 'database' in kwargs:
             self.database = kwargs['database']
         url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
@@ -29,29 +36,7 @@ class WikiSpider(scrapy.Spider):
     # 进入一级解析，starturl解析
     def parse(self, response):
         hreflist = []
-        # self.keyword = self.keywords[self.number]
-        self.number += 1
-        # 只爬一条
-        # web_node_list = response.xpath('//div[@id="content_left"]//div [@class="result c-container new-pmd"][1]//h3/a/@href').extract()
-        # hreflist.append(web_node_list[0])
 
-        # 获取关键字
-        currenturl = response.request.url
-        findsearchword = re.compile(r".*&search=(.*)&ns0=1")
-        searchworditem = str(currenturl).replace("%20", " ")
-        searchkeyword = re.findall(findsearchword, searchworditem)
-        searchword = searchkeyword[0]
-
-        # 获取下一页url
-        next_page_list = response.xpath('//p [@class="mw-search-pager-bottom"]/a')
-        next_page_url = ''
-        for next_link in next_page_list:
-            link_href_text = next_link.xpath('./text()').extract_first()
-            if link_href_text == "next 20":
-                next_href = next_link.xpath('./@href').extract_first()
-                if next_href != None:
-                    next_page_url = "https://en.wikipedia.org/" + next_href
-                    break
 
         # 一页全爬,此时获取的是域名之后的那段网址
         web_node_list_href = response.xpath('//ul [@class="mw-search-results"]//li [@class="mw-search-result"]//div [@class="mw-search-result-heading"]/a/@href').extract()
@@ -63,11 +48,8 @@ class WikiSpider(scrapy.Spider):
         for href in hreflist:
             self.count += 1
             yield scrapy.Request(url=href, callback=self.new_parse)
-            if self.count > 50:
+            if self.count > 10:
                 return
-        # 迭代
-        if next_page_url:
-            yield scrapy.Request(url=next_page_url, callback=self.parse)
 
 
     def new_parse(self, response):
@@ -103,50 +85,70 @@ class WikiSpider(scrapy.Spider):
 
         #获取属性
         attributes = {}
-        tablename = response.xpath('//table[@class="infobox vcard"]/tbody/tr[1]/th [@colspan="2"]//text()').extract_first()
-        attributes.setdefault("name", tablename)
+        soup = bs(response.text, "html.parser")
+        info_title = soup.find("h1", {'class', 'firstHeading'}).text.split('[')[0]  # 获取主页标题
+        info_tables = soup.find_all("table", {'class', 'infobox'})  # 包含信息的表格
 
-        if tablename == None:
-            attributes = None
-        else:
-            tableimg = response.xpath('//table[@class="infobox vcard"]/tbody/tr/td[@class="infobox-image"]//img/@src').extract_first()
-            if tableimg != None:
-                tableimg = "https:" + tableimg
-            attributes.setdefault("img", tableimg)
+        image_urls = []  # 页面图像连接集合 （//div[@class='thumbinner']）图像标签
+        flag_name = True  # 是否获取表名
+        # flag_image = True  # 是否已保存图像
+        weapon_name = info_title  # 装备名
+        attributes[weapon_name] = {}
 
-            img_des = response.xpath('//table[@class="infobox vcard"]/tbody/tr/td[@class="infobox-image"]/div [@class="infobox-caption"]//text()').extract()
-            temp_img_des = ""
-            for i_d in img_des:
-                temp_img_des = temp_img_des + i_d
-            attributes.setdefault("img_des", temp_img_des)
+        # 搜索页面中的图像
+        images = soup.find_all("div", {'class', 'thumbinner'})
+        for image in images:
+            try:
+                image_urls.append(HTTPS + image.find('a', ('class', 'image')).find('img')['src'])
+            except:
+                continue
 
-            tr_list = response.xpath('//table[@class="infobox vcard"]/tbody/tr/th[contains(@class,"infobox-label")]')
-            for tr in tr_list:
-                # 获取属性名
-                attribute_str = tr.xpath('.//text()').extract()
+        # 获取页面表格信息
+        for table in info_tables:
+            table = table.find('tbody')
+            for tr in table.children:
+                # print("tr 1 :{}".format(tr))
+                # 装备名称
+                if flag_name is False:
+                    flag_name = True
+                    if tr.find('span'):
+                        weapon_name = tr.find('span').text
+                    else:
+                        for th in tr.find_all('th'):
+                            print(th)
+                            weapon_name = th.contents[0].replace("/", ',').replace("\xa0", '').strip("\n")
+                            continue
+                    if weapon_name == '':
+                        weapon_name = info_title
+                    attributes[weapon_name] = {}
+                    continue
+                try:
+                    """
+                    获取表格信息
+                    """
+                    # 表格内的图像
+                    if weapon_name == '':
+                        weapon_name = info_title
+                    if tr.find('a', ('class', 'image')) is not None:
+                        # flag_image = False
+                        img = tr.find('a', ('class', 'image')).find('img')  # 图像标签
+                        image_urls.append(HTTPS + img['src'])
+                        attributes[weapon_name]['img_url'] = image_urls
+                        continue
 
-                # 拼接属性名
-                temp_at = ""
-                for a_s in attribute_str:
-                    temp_at = temp_at + a_s
-                temp_at = " ".join(temp_at.split())  ##解码问题gbk无法识别\xa0
-
-                # 获取属性值
-                # attribute_vul = tr.xpath('../td/a [not(@class="reference")]//text()').extract()
-                attribute_vul = tr.xpath('./following-sibling::td//text()').extract()
-
-                # 拼接属性值
-                temp_vul = ""
-                for a_v in attribute_vul:
-                    temp_vul = temp_vul + a_v
-                temp_vul = " ".join(temp_vul.split()).replace("\n", " ").replace("\'", "\"")
-
-                # 正则替换参考提示字符
-                pattern = re.compile(r'\[\d]')
-                temp_vul = re.sub(pattern, " ", temp_vul)
-
-                # 加入字典
-                attributes.setdefault(temp_at, temp_vul)
+                    # 表格内容
+                    if tr.find('td') and tr.find('th'):
+                        th = tr.find('th').text.replace("/", ',').replace("\xa0", '').strip("\n").strip("•").strip(" ")  # 属性名
+                        if th == "舰种": # 统一标签名
+                            th = "类型"
+                        td = tr.find('td').text.replace("\xa0", '').replace("\n", ";")  # 属性值
+                        attributes[weapon_name][th] = re.sub(reg, '', td)
+                except:
+                    """
+                    出现异常，输出当前标签
+                    """
+                    # print(tr)
+                    pass
 
         item = {"keyword": self.keyword, "source": Source, "title": Title, "url": Website, "date": Date, "content": Content, "attributes": attributes}
 

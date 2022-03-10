@@ -15,9 +15,9 @@ from scrapy.pipelines.images import ImagesPipeline
 from TextProcessorScrapy.utils.twitter_utils import get_api, dataget
 
 SavePath = 'result'
+imgSavePath = 'result/Images'
 
-
-def CreatePath(path, tag):
+def CreatePath(path, tag, keyword, keyword_type):
     """
     判断保存路径是否存在，如果不存在则创建
     :param tag:
@@ -27,7 +27,7 @@ def CreatePath(path, tag):
     path = path + '/{}/'.format(tag)
     if os.path.exists(path) is False:
         os.makedirs(path)
-    SaveFile = path + '{}_'.format(tag) + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f") + '.json'
+    SaveFile = path + '{}_{}_{}_'.format(tag, keyword, keyword_type) + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f") + '.json'
     if os.path.exists(SaveFile) is False:
         file = open(SaveFile, "a+", newline="", encoding="utf-8-sig")
     else:
@@ -46,11 +46,20 @@ def create_count_file(path, tag, keyword):
         time.sleep(1)
         return open(count_file, 'w', encoding='utf-8')
 
+def create_url_file(path, keyword):
+    index_path = path + '/url'
+    if os.path.exists(index_path) is False:
+        os.makedirs((index_path))
+    count_file = index_path + '/{}_{}'.format(str(datetime.datetime.now().strftime("%Y%m%d%H%M%S")), keyword)
+    try:
+        return open(count_file, 'w', encoding='utf-8')
+    except:
+        time.sleep(1)
+        return open(count_file, 'w', encoding='utf-8')
 
 class HsNasaPipeline:
     def __init__(self):
         self.tag = 'nasa'
-        self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
         self.first = True
@@ -60,6 +69,7 @@ class HsNasaPipeline:
         保存
         """
         if self.first:
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
@@ -73,23 +83,23 @@ class HsNasaPipeline:
         if self.first is False:
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+        if self.file is not None:
+            self.file.close()
 
 
 class TwitterPipeline:
     def __init__(self):
         self.tag = 'twitter'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
 
         # test
-        consumer_key = "ioTGfhxK3Fylub82QJmLMB6mB"
-        consumer_secret = "fg19r72exdPQfNa0HzBRNPzUrPKZI4YvU4FVDEmlWxkaVcFuKs"
-        access_key = "1372722615991738368-bQ4nwuK0vKY95zAIoIAaeqP44DYg56"
-        access_secret = "qjZnegLBlk7OvBKGrjFvfjRV6rPu0descZhLdtaILLVlH"
-
+        consumer_key = "FSiynF6liTsZ5vnNzdKRH4vlA"
+        consumer_secret = "kDStWMyzjR7op26DhuWeTB4Q6efRSvrjC4a4zX3PWXiTjN7Lt4"
+        access_key = "1372722615991738368-5OFRZJkDCHLujlW0GUpqAdXHiKETXF"
+        access_secret = "FfF6dNyZcOBwx1IZGhWQHQWMb1iQ2XLa73Wvk8IJlVfzI"
+        self.file = None
         self.api = get_api(consumer_key, consumer_secret, access_key, access_secret)
 
     def process_item(self, item, spider):
@@ -97,6 +107,7 @@ class TwitterPipeline:
         保存
         """
         if self.first:
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
         results = dataget(self.api, item['keyword'])
@@ -119,23 +130,25 @@ class TwitterPipeline:
         except:
             logging.error("http interact insert failure")
         logging.info("{} ten seconds http interact :{}".format(spider.crawl_id, str(self.count)))
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        
         if self.first is False:
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+            self.file.close()
 
 
 class FacebookPipeline:
     def __init__(self):
         self.tag = 'facebook'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
+        self.file = None
 
     def process_item(self, item, spider):
         if self.first:
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
 
@@ -146,11 +159,12 @@ class FacebookPipeline:
         return item
 
     def close_spider(self, spider):
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        
         if self.first is False:
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+            self.file.close()
 
 
 class ViedoPipeline:
@@ -177,7 +191,6 @@ class ProxyPoolPipeline(object):
 class AiaaPipeline:
     def __init__(self):
         self.tag = 'aiaa'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
@@ -185,6 +198,7 @@ class AiaaPipeline:
     def process_item(self, item, spider):
         if self.first:
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
             self.first = False
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
@@ -193,17 +207,17 @@ class AiaaPipeline:
         return item
 
     def close_spider(self, spider):
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        
         if self.first is False:
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+            self.file.close()
 
 
 class WikiPipeline:
     def __init__(self):
         self.tag = 'wiki'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
@@ -215,6 +229,8 @@ class WikiPipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -222,17 +238,17 @@ class WikiPipeline:
         return item
 
     def close_spider(self, spider):
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        
         if self.first is False:
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+            self.file.close()
 
 
 class BaiduPipeline:
     def __init__(self):
         self.tag = 'baidu'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
@@ -244,23 +260,23 @@ class BaiduPipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
         return item
 
     def close_spider(self, spider):
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
-        self.file.close()
         if self.first is False:
-            self.count_file.write(str(self.count))
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+            self.count_file.write(str(len(self.data)))
             self.count_file.close()
-
+            self.file.close()
 
 class JanesPipeline:
     def __init__(self):
         self.tag = 'janes'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
@@ -272,23 +288,25 @@ class JanesPipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
         return item
 
     def close_spider(self, spider):
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
         if self.first is False:
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+            self.file.close()
 
 
 class TiexuePipeline:
     def __init__(self):
         self.tag = 'tiexue'
-        self.file = CreatePath(SavePath, self.tag)
         self.first = True
         self.data = []
         self.count = 0
@@ -300,31 +318,50 @@ class TiexuePipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
             self.first = False
+            self.file = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
-        # return item
+        return item
 
     def close_spider(self, spider):
-        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        
         if self.first is False:
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
-        self.file.close()
+            self.file.close()
 
 class ImagePipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
-        if 'attributes' in item:
-            for url in item['attronites']:
-                yield scrapy.Request(url)
+        if 'attributes' in item and item['attributes'] is not None:
+            if 'img_url' in item['attributes']:
+                if(type({}) == type(item['attributes']['img_url'])):
+                    for url in item['attributes']['img_url'].values():
+                        yield scrapy.Request(url)
+                elif(type([]) == type(item['attributes']['img_url'])):
+                    for url in item['attributes']['img_url']:
+                        yield scrapy.Request(url)
     # 保存图片时重命名
     def item_completed(self, results, item, info):
-        # print(results)
-        # print("*"* 30)
+        index_path = SavePath + '/url'
+        if os.path.exists(index_path) is False:
+            os.makedirs((index_path))
+    #     print("*"* 30)
         # 列表推导式，获取图片的保存路径
-        image_url = [x["path"] for ok, x in results if ok]
-
+        image_path = [x["path"] for ok, x in results if ok]
+        image_url = [x["url"] for ok, x in results if ok]
+        count = 0
         # 重命名，由于都是jpg文件，所以直接拼上了
-        os.rename(SavePath+image_url[0], SavePath + item["keyword"] + ".jpg")    
+        url_file = open(index_path + '/' + item["keyword"], 'w+')
+        img_to_url = {}
+        for img, url in zip(image_path, image_url):
+            imgname = imgSavePath + '/' + item["keyword"] + '_{}'.format(str(count)) + ".jpg"
+            while os.path.isfile(imgname):
+                count += 1
+                imgname = imgSavePath + '/' + item["keyword"] + '_{}'.format(str(count)) + ".jpg"
+            os.rename(imgSavePath + '/' + img, imgname)
+            img_to_url[item["keyword"] + '_{}'.format(str(count)) + ".jpg"] = url
+        json.dump(img_to_url, url_file, indent=4, ensure_ascii=False)    
         return item
-        

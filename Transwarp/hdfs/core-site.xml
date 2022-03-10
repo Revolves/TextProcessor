@@ -6,7 +6,7 @@
 </property>
 <property>
     <name>ha.zookeeper.quorum</name>
-    <value>202.119.84.51:2181,192.10.84.112:2181,192.10.84.113:2181</value>
+    <value>tdh04:2181,tdh02:2181,tdh03:2181</value>
 </property>
 <property>
     <name>ha.zookeeper.parent-znode</name>
@@ -30,7 +30,7 @@
 </property>
 <property>
     <name>hadoop.http.authentication.kerberos.principal</name>
-    <value>HTTP/tdh-1@TDH</value>
+    <value>HTTP/tdh02@TDHPB</value>
 </property>
 <property>
     <name>hadoop.http.authentication.kerberos.keytab</name>
@@ -46,11 +46,11 @@
 </property>
 <property>
     <name>hadoop.security.authentication.cas.server.loginUrl</name>
-    <value>https://202.119.84.51:8393/cas/login</value>
+    <value>https://192.10.84.127:8393/cas/login</value>
 </property>
 <property>
     <name>hadoop.security.authentication.cas.server.prefix</name>
-    <value>https://202.119.84.51:8393/cas</value>
+    <value>https://192.10.84.127:8393/cas</value>
 </property>
 <property>
     <name>hadoop.security.authentication.oauth2.enabled</name>
@@ -58,7 +58,7 @@
 </property>
 <property>
     <name>hadoop.security.authentication.web.oauth2.enabled</name>
-    <value>false</value>
+    <value>true</value>
 </property>
 <property>
     <name>hadoop.security.group.mapping</name>
@@ -70,7 +70,7 @@
 </property>
 <property>
     <name>hadoop.security.group.mapping.ldap.url</name>
-    <value>ldap://202.119.84.51:10389 ldap://192.10.84.112:10389</value>
+    <value>ldap://tdh02:10389</value>
 </property>
 <property>
     <name>hadoop.security.group.mapping.ldap.base</name>
@@ -183,6 +183,10 @@
 <property>
     <name>transwarp.docker.network.policy</name>
     <value>io.transwarp.docker.DockerNetworkPolicyHostGW</value>
+</property>
+<property>
+    <name>hadoop.security.auth_to_local</name>
+    <value>RULE:[1:$1@$0](^.*@.*$)s/^(.*)@.*$/$1/g RULE:[2:$1@$0](^.*@.*$)s/^(.*)@.*$/$1/g DEFAULT</value>
 </property>
 <property>
     <name>fs.trash.interval</name>

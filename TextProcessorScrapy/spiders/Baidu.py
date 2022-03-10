@@ -5,23 +5,27 @@ import scrapy
 from selenium import webdriver
 
 from ..items import BaiduWikiItem
-
+from scrapy.spidermiddlewares.httperror import HttpError
+from twisted.internet.error import DNSLookupError
+from twisted.internet.error import TimeoutError, TCPTimedOutError
 
 class BaidubaikeSpider(scrapy.Spider):
     name = 'baidu'
     custom_settings = {
-        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.BaiduPipeline': 400},
+        'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.BaiduPipeline': 400,
+                            'TextProcessorScrapy.pipelines.ImagePipeline': 300},
     }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.allowed_domains = ['www.baike.baidu.com']
+        self.allowed_domains = ['baidu.com']
         # if 'keywords' in kwargs:
         #     self.keywords = kwargs['keywords']
         if 'crawl_id' in kwargs['crawl_id']:
             self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
+            self.keyword = kwargs['keyword'].split('_')[-1]
+            self.keyword_type = kwargs['keyword'].split('_')[0]
         if 'database' in kwargs:
             self.database = kwargs['database']
         self.start_urls.append("https://baike.baidu.com/item/" + self.keyword)
@@ -35,12 +39,22 @@ class BaidubaikeSpider(scrapy.Spider):
         }
         options.add_experimental_option('prefs', prefs)
         # 设置chrome浏览器无界面模式
-        options.add_argument('--headless')
+        options.add_argument('--no-sandbox') #让Chrome在root权限下运行
+
+        options.add_argument('--disable-dev-shm-usage')
+
+        options.add_argument('--headless') # 无界面模式
         self.browser = webdriver.Chrome(options=options)
         # browser.maximize_window()  # 浏览器窗口最大化
         self.browser.implicitly_wait(1)  # 隐形等待10秒
 
     '''回调函数，子类必须重写这个方法，否侧抛出异常'''
+
+    def start_requests(self):
+        for u in self.start_urls:
+            yield scrapy.Request(u, callback=self.parse,
+                                    errback=self.errback_httpbin,
+                                    dont_filter=True)
 
     def parse(self, response):
         self.number += 1
@@ -117,3 +131,27 @@ class BaidubaikeSpider(scrapy.Spider):
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return
         yield item
+    
+    def errback_httpbin(self, failure):
+        # log all failures
+        self.logger.error(repr(failure))
+
+        # in case you want to do something special for some errors,
+        # you may need the failure's type:
+
+        if failure.check(HttpError):
+            # these exceptions come from HttpError spider middleware
+            # you can get the non-200 response
+            response = failure.value.response
+            self.logger.error('HttpError on %s', response.url)
+
+        elif failure.check(DNSLookupError):
+            # this is the original request
+            request = failure.request
+            self.logger.error('DNSLookupError on %s', request.url)
+
+        elif failure.check(TimeoutError, TCPTimedOutError):
+            request = failure.request
+            self.logger.error('TimeoutError on %s', request.url)
+
+    

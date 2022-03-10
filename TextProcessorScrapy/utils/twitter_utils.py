@@ -12,8 +12,8 @@ def get_api(consumer_key, consumer_secret, access_key, access_secret):
     """获取API"""
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
-    api = tweepy.API(auth, wait_on_rate_limit=True,
-                     wait_on_rate_limit_notify=True)
+    api = tweepy.API(auth, wait_on_rate_limit=True)
+                     #wait_on_rate_limit_notify=True)
     return api
 
 
@@ -35,7 +35,7 @@ def get_publishTime(Time):
 def dataget(api, keyword):
     result = []
     count = 0
-    for Status in tweepy.Cursor(api.search, keyword, tweet_mode='extended', show_user=True).items():
+    for Status in tweepy.Cursor(api.search_tweets, keyword, tweet_mode='extended').items():
         # print(Status)
         item = {'keyword': keyword, 'date': get_publishTime(Status.created_at),
                 'url': get_twitter_url(Status.author.screen_name, Status.id)}

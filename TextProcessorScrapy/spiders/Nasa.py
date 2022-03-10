@@ -15,6 +15,9 @@ class nasaSpider(scrapy.Spider):
     name = "nasa"
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.HsNasaPipeline': 400},
+        'DOWNLOADER_MIDDLEWARES': { 
+                            'TextProcessorScrapy.middlewares.ProxyMiddleware': 90,
+                                    }
     }
 
     def __init__(self, *args, **kwargs):
@@ -27,7 +30,8 @@ class nasaSpider(scrapy.Spider):
         if 'crawl_id' in kwargs['crawl_id']:
             self.crawl_id = kwargs['crawl_id']
         if 'keyword' in kwargs:
-            self.keyword = kwargs['keyword']
+            self.keyword = kwargs['keyword'].split('_')[-1]
+            self.keyword_type = kwargs['keyword'].split('_')[0]
         if 'database' in kwargs:
             self.database = kwargs['database']
         self.start_urls.append(url_header + self.keyword + url_late)

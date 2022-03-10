@@ -10,11 +10,11 @@
 </property>
 <property>
     <name>dfs.namenode.kerberos.principal</name>
-    <value>hdfs/_HOST@TDH</value>
+    <value>hdfs/_HOST@TDHPB</value>
 </property>
 <property>
     <name>dfs.namenode.kerberos.internal.spnego.principal</name>
-    <value>HTTP/_HOST@TDH</value>
+    <value>HTTP/_HOST@TDHPB</value>
 </property>
 <property>
     <name>dfs.journalnode.keytab.file</name>
@@ -22,11 +22,11 @@
 </property>
 <property>
     <name>dfs.journalnode.kerberos.principal</name>
-    <value>hdfs/_HOST@TDH</value>
+    <value>hdfs/_HOST@TDHPB</value>
 </property>
 <property>
     <name>dfs.journalnode.kerberos.internal.spnego.principal</name>
-    <value>HTTP/_HOST@TDH</value>
+    <value>HTTP/_HOST@TDHPB</value>
 </property>
 <property>
     <name>dfs.datanode.data.dir.perm</name>
@@ -38,11 +38,11 @@
 </property>
 <property>
     <name>dfs.datanode.kerberos.principal</name>
-    <value>hdfs/_HOST@TDH</value>
+    <value>hdfs/_HOST@TDHPB</value>
 </property>
 <property>
     <name>dfs.web.authentication.kerberos.principal</name>
-    <value>HTTP/_HOST@TDH</value>
+    <value>HTTP/_HOST@TDHPB</value>
 </property>
 <property>
     <name>dfs.web.authentication.kerberos.keytab</name>
@@ -70,19 +70,19 @@
 </property>
 <property>
     <name>dfs.namenode.rpc-address.nameservice1.nn1</name>
-    <value>202.119.84.51:8020</value>
+    <value>tdh02:8020</value>
 </property>
 <property>
     <name>dfs.namenode.rpc-address.nameservice1.nn2</name>
-    <value>192.10.84.112:8020</value>
+    <value>tdh03:8020</value>
 </property>
 <property>
     <name>dfs.namenode.http-address.nameservice1.nn1</name>
-    <value>202.119.84.51:50070</value>
+    <value>tdh02:50070</value>
 </property>
 <property>
     <name>dfs.namenode.http-address.nameservice1.nn2</name>
-    <value>192.10.84.112:50070</value>
+    <value>tdh03:50070</value>
 </property>
 <property>
     <name>dfs.ha.automatic-failover.enabled.nameservice1</name>
@@ -90,7 +90,7 @@
 </property>
 <property>
     <name>dfs.namenode.shared.edits.dir.nameservice1</name>
-    <value>qjournal://202.119.84.51:8485;192.10.84.112:8485;192.10.84.113:8485/nameservice1</value>
+    <value>qjournal://tdh04:8485;tdh02:8485;tdh03:8485/nameservice1</value>
 </property>
 <property>
     <name>dfs.client.failover.proxy.provider.nameservice1</name>
@@ -130,7 +130,7 @@
 </property>
 <property>
     <name>license.zookeeper.quorum</name>
-    <value>202.119.84.51:2291,192.10.84.112:2291,192.10.84.113:2291</value>
+    <value>tdh04:2291,tdh05:2291,tdh02:2291</value>
 </property>
 <property>
     <name>dfs.journalnode.edits.dir</name>
@@ -146,11 +146,11 @@
 </property>
 <property>
     <name>dfs.datanode.failed.volumes.tolerated</name>
-    <value>1</value>
+    <value>2</value>
 </property>
 <property>
     <name>dfs.datanode.data.dir</name>
-    <value>/vdir/mnt/disk1/hadoop/data,/vdir/mnt/disk2/hadoop/data,/vdir/mnt/disk3/hadoop/data,/vdir/mnt/disk4/hadoop/data</value>
+    <value>/vdir/mnt/disk1/hadoop/data,/vdir/mnt/disk2/hadoop/data,/vdir/mnt/disk3/hadoop/data,/vdir/mnt/disk4/hadoop/data,/vdir/mnt/disk5/hadoop/data,/vdir/mnt/disk6/hadoop/data</value>
 </property>
 <property>
     <name>dfs.datanode.handler.count</name>
@@ -177,8 +177,12 @@
     <value>true</value>
 </property>
 <property>
+    <name>dfs.namenode.kerberos.principal.pattern</name>
+    <value>*</value>
+</property>
+<property>
     <name>dfs.datanode.du.reserved</name>
-    <value>787415361126</value>
+    <value>1599878533939</value>
 </property>
 <property>
     <name>dfs.namenode.acls.enabled</name>
