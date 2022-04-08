@@ -1,0 +1,6 @@
+[2022-03-28 10:11:59] [    INFO] [  werkzeug ] -  * Running on http://0.0.0.0:6008/ (Press CTRL+C to quit) (_internal.py:113)
+[2022-03-28 10:15:00] [    INFO] [  werkzeug ] - 127.0.0.1 - - [28/Mar/2022 10:15:00] "[33mGET /wexinj HTTP/1.1[0m" 404 - (_internal.py:113)
+[2022-03-28 10:15:00] [    INFO] [  werkzeug ] - 127.0.0.1 - - [28/Mar/2022 10:15:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 - (_internal.py:113)
+[2022-03-28 10:15:03] [    INFO] [  werkzeug ] - 127.0.0.1 - - [28/Mar/2022 10:15:03] "[33mGET /wexin HTTP/1.1[0m" 404 - (_internal.py:113)
+[2022-03-28 10:15:14] [    INFO] [  werkzeug ] -  * Running on http://0.0.0.0:6008/ (Press CTRL+C to quit) (_internal.py:113)
+[2022-03-28 10:15:18] [    INFO] [  werkzeug ] - 127.0.0.1 - - [28/Mar/2022 10:15:18] "[37mGET /weixin HTTP/1.1[0m" 200 - (_internal.py:113)
