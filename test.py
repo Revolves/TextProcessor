@@ -11,8 +11,9 @@ import datetime
 from hashlib import md5
 import os
 import random
-import time
 from turtle import st
+
+from async_timeout import sys
 from Transwarp import Transwarp
 import pandas as pd
 
@@ -20,6 +21,7 @@ import datetime
 from threading import Timer
 
 item = {'a': 'aaaaa', 'b': 'bbbbbbb'}
-
-item['all_content'] = '，'.join([x for x in item.values()])
-print(item.values())
+try:
+    raise Exception("1")
+except Exception as e:
+    print(e)

@@ -43,6 +43,11 @@ class BaidubaikeSpider(scrapy.Spider):
         options.add_argument('--no-sandbox') #让Chrome在root权限下运行
         options.add_argument('--disable-dev-shm-usage') 
         options.add_argument('--headless') # 无界面模式
+        options.add_argument('--ignore-certificate-errors') # 忽略证书错误
+        options.add_argument('-ignore -ssl-errors')     
+        options.add_argument('--disable-software-rasterizer')    
+        options.add_argument('--log-level=3')
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
         self.driver = webdriver.Chrome(options=options)
         # driver.maximize_window()  # 浏览器窗口最大化
         self.driver.implicitly_wait(1)  # 隐形等待10秒

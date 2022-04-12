@@ -10,6 +10,7 @@ import datetime
 import json
 import logging
 import os
+import sys
 import time
 from unicodedata import name
 
@@ -326,6 +327,16 @@ def stop(*args, **kwargs):
         except error.ReactorNotRunning:
             pass
 
+def crawling(crawl_id, connect):
+    sql_ = "SELECT crawl_id FROM hsold.text_crawler_running"
+    crawling_list = connect.execute_sql(sql_, [])
+    if(len(crawling_list) == 0):
+        clear_http_table_sql_ = "DELETE FROM hsold.show_text_keyword"
+        print("No crawler")
+    insert_crawl_id_sql_ = "INSERT INTO hsold.text_crawler_running VALUES (?, ?)"
+    pram_ = [rowkey_id_gen(), crawl_id]
+    connect.execute_sql(insert_crawl_id_sql_, pram_)
+
 
 def start_spiders(transwarp=None, info=None, local = None):
     """
@@ -378,7 +389,8 @@ def start_spiders(transwarp=None, info=None, local = None):
 
     print(info)
     # return
-    if info is not False:
+    #   run spiders
+    try:
         logger.info('TextCrawler On!')
         if info is not None:
             keywords = info['keywords']
@@ -386,7 +398,6 @@ def start_spiders(transwarp=None, info=None, local = None):
             spiders_count = len(keywords) * len(sites)
             configure_logging()
             runner = CrawlerRunner(get_project_settings())
-            label_to_type = {}
             for keyword in keywords:
                 for site in sites:
                     if site == 'wiki' and is_chinese(keyword):
@@ -400,41 +411,49 @@ def start_spiders(transwarp=None, info=None, local = None):
             except error.ReactorAlreadyRunning:
                 pass
             
-            # 上传关键字爬取状态（数量）
-            for keyword in keywords:
-                logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
-            
-            # 上传hdfs和文件信息到
-            logger.info(upload_crawl_file(crawl_file_list("./result"), transwarp))
-            
-            # 上传爬取图片
-            logger.info(upload_crawl_img_new('result/url', 'result/Images', transwarp))
+    except Exception as e:
+        print("scrapy finished, INFO: {}".format(e))
+    finally:
+        # 完成任务结束后续任务
+        # 上传关键字爬取状态（数量）
+        # for keyword in keywords:
+        #     logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
+        
+        # 上传hdfs和文件信息到
+        logger.info(upload_crawl_file(crawl_file_list("./result"), transwarp))
+        
+        # 上传爬取图片
+        logger.info(upload_crawl_img_new('result/url', 'result/Images', transwarp))
 
-            # 删除本次http交互量
-            sql_ = "DELETE FROM hsold.text_crawl_http_interact WHERE crawl_id = ? "
-            pram_ = [info['crawl_id']]
-            logger.info('scrapy finished')
-            transwarp.execute_sql(sql_, pram_)
-    stop()
+        # 删除本次http交互量
+        sql_ = "DELETE FROM hsold.text_crawl_http_interact WHERE crawl_id = ?"
+        pram_ = [info['crawl_id']]
+        transwarp.execute_sql(sql_, pram_)
+        # 删除程序运行状态
+        sql_ = "DELETE FROM hsold.text_crawler_running WHERE crawl_id = ?"
+        transwarp.execute_sql(sql_, pram_)
+        logger.info('scrapy finished')
+    # stop()
     pass
 
 
 if __name__ == '__main__':
     # start_spiders()
     transwarp = Transwarp("Transwarp/JavaJar/InceptorUtil.jar", "Transwarp/libs")
-    transwarp.connect_hdfs()
+    # transwarp.connect_hdfs()
     # transwarp.download_file('.','/hs/text_crawl_file/nasa_20210913223012944432.json')
     transwarp.connect_inceptor()
+    # crawling('local', transwarp)
     # transwarp.upload_file(r"E:\workspace\ConnectDB\out\artifacts\InceptorUtil\Util.jar", "/text_crawl")
     info = {'crawl_id':'local', 'sites':['wiki_zh', 'baidu', 'twitter'], 'keywords': ['目标_花莲机场', '武器弹药_穿甲弹', '装备_M1A2坦克'], 'status': "1"}
-    # start_spiders(info=info, transwarp=None)
+    start_spiders(info=info, transwarp=None)
     # 上传关键字爬取状态（数量）
     # for keyword in keywords:
     #     logger.info(insert_crawl_stats(keyword=keyword, crawl_id=info['crawl_id'], connect=transwarp))
     
-    # 上传hdfs和文件信息到
-    logger.info(upload_crawl_file(crawl_file_list("result"), transwarp))
+    # # 上传hdfs和文件信息到
+    # logger.info(upload_crawl_file(crawl_file_list("result"), transwarp))
     
-    # 上传爬取图片
-    logger.info(upload_crawl_img_new('result/url', 'result/Images', transwarp))
-    # start_spiders(local='file/taiwan.json')
+    # # 上传爬取图片
+    # logger.info(upload_crawl_img_new('result/url', 'result/Images', transwarp))
+    # # start_spiders(local='file/taiwan.json')

@@ -40,7 +40,7 @@ def insert_http_interact():
         global CRAWL_ID, INTERACT, COUNT
         if DB is not None:
             try:
-                sql_ = "INSERT INTO  hsold.text_crawl_http_interact  VALUES (?, hs.sequence_get_id.NEXTVAL,?,?)"
+                sql_ = "INSERT INTO  hsold.text_crawl_http_interact  VALUES (?, hsold.sequence_get_id.NEXTVAL,?,?)"
                 pram_ = [rowkey_id_gen(),CRAWL_ID, str(INTERACT)]
                 DB.execute_sql(sql_, pram_)
             except:
@@ -174,7 +174,6 @@ class TextCrawlDownloaderMiddleware:
 
     def collect(self, spider):
         global COUNT, CRAWL_ID, INTERACT, SPIDERSNUMBER
-
         if CRAWL_ID:
             http_interact = self.stats.get_value('log_count/DEBUG')
             if http_interact:
@@ -189,8 +188,8 @@ class TextCrawlDownloaderMiddleware:
     def check_stop(self, spider):
         if os.path.isfile('stop_signal/{}'.format(spider.crawl_id)):
             os.remove('stop_signal/{}'.format(spider.crawl_id))
-            spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
-            sys.exit('Actively Stop the Crawler')
+            # spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
+            raise Exception('Actively Stop the Crawler')
             try:
                 spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
             except Exception as e:

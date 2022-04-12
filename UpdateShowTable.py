@@ -54,7 +54,7 @@ def updateShowHttpInteract(connect):
     connect.connect_inceptor()
     sql_ = 'SELECT ten_sceonds_interact FROM (SELECT ten_sceonds_interact, get_id FROM hsold.text_crawl_http_interact ORDER BY get_id DESC  LIMIT 10 )ORDER BY get_id'
     result = connect.execute_sql(sql_, [])
-    print(result)
+    # print(result)
     for i in range(10):
         print(result[i])
         sql_ = 'UPDATE hsold.show_text_interact SET http_interact = {} WHERE id = \"{}\"'.format(result[i], i)
