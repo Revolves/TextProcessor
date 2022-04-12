@@ -83,7 +83,6 @@ class FacebookSpider(scrapy.Spider):
                     '//div[@class="kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql ii04i59q"]').get_attribute("textContent").replace('\n','')
                 item['date'] = result.find_element_by_xpath(
                     '//span/b').get_attribute("textContent").replace('=', '')  #    //div[@role="main"]/div/div[1]/div/div/div/div/div//span/b
-                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 item['title'] = item['content'][0:30]
                 print(item)
                 # if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':

@@ -420,7 +420,6 @@ def start_spiders(transwarp=None, info=None, local = None):
 
 
 if __name__ == '__main__':
-    'TODO:'
     # start_spiders()
     transwarp = Transwarp("Transwarp/JavaJar/InceptorUtil.jar", "Transwarp/libs")
     transwarp.connect_hdfs()

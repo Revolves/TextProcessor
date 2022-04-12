@@ -1,12 +1,10 @@
-# 1. 导入Flask类
-from ast import keyword
-import os, re
+import os
+
 from flask import Flask, request
-import json
-from Transwarp import Transwarp
-from MultisiteSchedule import start_spiders, stop, rowkey_id_gen
+
+from MultisiteSchedule import start_spiders, rowkey_id_gen
 from Precision import TextSimilarity, cos_sim
-from scrapy import cmdline
+from Transwarp import Transwarp
 
 stop_signal = 'stop_signal'
 app = Flask(__name__)  # 创建一个服务，赋值给APP
@@ -24,6 +22,8 @@ WEB_MAP = {"baidu": 'baidu',
            "facebook": "facebook",
            "jane's": "janes"
            }
+
+
 @app.route('/')
 def homepage():
     return "主页"
@@ -36,7 +36,7 @@ def start_text_crawler():
     keywords = request.values['keywords']
     data_type = request.values['data_type']
     sites = request.values['website']
-    data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords, "status": status, "data_type":data_type}
+    data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords, "status": status, "data_type": data_type}
     # # status = request.args.get('status')
     # # j_data = json.loads(data)
     print(data_dict)
@@ -46,6 +46,7 @@ def start_text_crawler():
     start_spiders(transwarp=transwarp, info=data_dict)
 
     return 'success'
+
 
 @app.route('/text_crawler_stop', methods=['post', 'get'])
 def stop_text_crawler():
@@ -58,7 +59,7 @@ def stop_text_crawler():
     if os.path.isdir(stop_signal) is False:
         os.mkdir(stop_signal)
     if status == '0':
-        f = open('{}/{}'.format(stop_signal,crawl_id),'w')
+        f = open('{}/{}'.format(stop_signal, crawl_id), 'w')
         f.close()
     return 'stop'
 
@@ -70,7 +71,7 @@ def test_start_text_crawler():
     keywords = request.values['keywords']
     data_type = request.values['data_type']
     sites = request.values['website']
-    data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords, "status": status, "data_type":data_type}
+    data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords, "status": status, "data_type": data_type}
     # # status = request.args.get('status')
     # # j_data = json.loads(data)
     print(data_dict)
@@ -80,6 +81,7 @@ def test_start_text_crawler():
     start_spiders(transwarp=transwarp, info=data_dict)
 
     return 'success'
+
 
 @app.route('/text_test_stop', methods=['post', 'get'])
 def test_stop_text_crawler():
@@ -92,9 +94,10 @@ def test_stop_text_crawler():
     if os.path.isdir(stop_signal) is False:
         os.mkdir(stop_signal)
     if status == '0':
-        f = open('{}/{}'.format(stop_signal,crawl_id),'w')
+        f = open('{}/{}'.format(stop_signal, crawl_id), 'w')
         f.close()
     return 'stop'
+
 
 @app.route('/text_crawler_precision', methods=['post', 'get'])
 def compute_precision():
@@ -104,10 +107,10 @@ def compute_precision():
         return '0'
     crawl_id = request.values['crawl_id']
     files_data = request.values['files']
-    print(str(type(files_data))+":"+files_data)
+    print(str(type(files_data)) + ":" + files_data)
     file_name_list = files_data.split(',')
     print(crawl_id, file_name_list)
-    crawl_file = r'./result' 
+    crawl_file = r'./result'
     ts = TextSimilarity(file_name_list, crawl_file)
     precision = (str(ts.splitWordSimlaryty(sim=cos_sim)))
     if crawl_id is not None:
@@ -117,6 +120,7 @@ def compute_precision():
         transwarp.execute_sql(sql_, pram_)
         transwarp.close_inceptor()
     return str(ts.splitWordSimlaryty(sim=cos_sim))
+
 
 @app.route('/test', methods=['post', 'get'])
 def get_status():
@@ -131,6 +135,7 @@ def get_status():
     print(status, crawl_id, keywords, data_type, websites)
     # print(status)# 使用request.args.get方式获取拼接的入参数据
     return 'success'
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=6008, debug=True, use_reloader=False)

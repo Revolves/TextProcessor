@@ -71,7 +71,6 @@ class AiaaSpider(scrapy.Spider):
         item['source'] = "AIAA"
         item['title'] = str(title)
         item['date'] = str(publish_time)
-        item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
         item['url'] = response.url
         item['content'] = str(content).replace("\n", "").replace("\\", "/").strip().replace("\xa0", '').replace('\\u',
                                                                                                                 ',')

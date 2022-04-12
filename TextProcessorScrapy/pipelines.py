@@ -19,11 +19,14 @@ from TextProcessorScrapy.utils.twitter_utils import get_api, dataget
 
 SavePath = 'result'
 imgSavePath = 'result/Images'
-csv_header =['rowkey_id', 'keyword', 'source', 'title', 'url', 'date', 'content', 'attributes', 'all_content']
+csv_header = ['rowkey_id', 'keyword', 'source', 'title', 'url', 'date', 'content', 'attributes', 'all_content']
+
 
 def CreatePath(path, tag, keyword, keyword_type):
     """
     判断保存路径是否存在，如果不存在则创建
+    :param keyword_type:
+    :param keyword:
     :param tag:
     :param path:
     :return:
@@ -31,10 +34,12 @@ def CreatePath(path, tag, keyword, keyword_type):
     path = path + '/{}/'.format(tag)
     if os.path.exists(path) is False:
         os.makedirs(path)
-    SaveFile_json = path + '{}_{}_{}_'.format(tag, keyword, keyword_type) + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f") + '.json'
-    SaveFile_csv = path + '{}_{}_{}_'.format(tag, keyword, keyword_type) + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f") + '.csv'
+    SaveFile_json = path + '{}_{}_{}_'.format(tag, keyword, keyword_type) + datetime.datetime.now().strftime(
+        "%Y%m%d%H%M%S%f") + '.json'
+    SaveFile_csv = path + '{}_{}_{}_'.format(tag, keyword, keyword_type) + datetime.datetime.now().strftime(
+        "%Y%m%d%H%M%S%f") + '.csv'
     file_json = open(SaveFile_json, "a+", newline="", encoding="utf-8-sig")
-    file_csv =  open(SaveFile_csv, "a+", newline="", encoding="utf-8-sig")
+    file_csv = open(SaveFile_csv, "a+", newline="", encoding="utf-8-sig")
     csv_writer = csv.DictWriter(file_csv, csv_header)
     csv_writer.writeheader()
     return file_json, csv_writer
@@ -43,24 +48,27 @@ def CreatePath(path, tag, keyword, keyword_type):
 def create_count_file(path, id, tag, keyword):
     index_path = path + '/count'
     if os.path.exists(index_path) is False:
-        os.makedirs((index_path))
-    count_file = index_path + '/{}_{}_{}_{}'.format(str(datetime.datetime.now().strftime("%Y%m%d%H%M%S")), id, tag, keyword)
+        os.makedirs(index_path)
+    count_file = index_path + '/{}_{}_{}_{}'.format(str(datetime.datetime.now().strftime("%Y%m%d%H%M%S")), id, tag,
+                                                    keyword)
     try:
         return open(count_file, 'w', encoding='utf-8')
     except:
         time.sleep(1)
         return open(count_file, 'w', encoding='utf-8')
 
+
 def create_url_file(path, keyword):
     index_path = path + '/url'
     if os.path.exists(index_path) is False:
-        os.makedirs((index_path))
+        os.makedirs(index_path)
     count_file = index_path + '/{}_{}'.format(str(datetime.datetime.now().strftime("%Y%m%d%H%M%S")), keyword)
     try:
         return open(count_file, 'w', encoding='utf-8')
     except:
         time.sleep(1)
         return open(count_file, 'w', encoding='utf-8')
+
 
 class HsNasaPipeline:
     def __init__(self):
@@ -85,12 +93,13 @@ class HsNasaPipeline:
     def close_spider(self, spider):
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
@@ -121,7 +130,7 @@ class TwitterPipeline:
         results = dataget(self.api, item['keyword'])
         for result in results:
             detail_ = {"keyword": result["keyword"], "source": result["source"], "title": result["title"],
-                       "url": result["url"],'rowkey_id': md5(str(time.time()).encode()).hexdigest(),
+                       "url": result["url"],
                        "date": result["date"], "content": result["content"], }
             if len(detail_['content'].replace(' ', '').replace("\n", '')) <= 20 or detail_['content'] == '':
                 continue
@@ -134,18 +143,19 @@ class TwitterPipeline:
         if self.first is False:
             try:
                 sql_ = "INSERT INTO  hsold.text_crawl_http_interact  VALUES (?, hs.sequence_get_id.NEXTVAL,?,?)"
-                pram_ = [md5(str(time.time()).encode()).hexdigest(),spider.crawl_id, str(self.count)]
+                pram_ = [md5(str(time.time()).encode()).hexdigest(), spider.crawl_id, str(self.count)]
                 spider.database.execute_sql(sql_, pram_)
             except:
                 logging.error("http interact insert failure")
             logging.info("{} ten seconds http interact :{}".format(spider.crawl_id, str(self.count)))
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
@@ -172,15 +182,16 @@ class FacebookPipeline:
     def close_spider(self, spider):
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
 
 
 class AiaaPipeline:
@@ -201,15 +212,16 @@ class AiaaPipeline:
         return item
 
     def close_spider(self, spider):
-        
+
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
@@ -229,7 +241,7 @@ class WikiPipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, spider.crawl_id, self.tag, item["keyword"])
             self.first = False
-            
+
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -239,12 +251,13 @@ class WikiPipeline:
     def close_spider(self, spider):
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
@@ -264,7 +277,7 @@ class BaiduPipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, spider.crawl_id, self.tag, item["keyword"])
             self.first = False
-            
+
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"], "attributes": item["attributes"]}
         self.data.append(detail_)
@@ -273,15 +286,17 @@ class BaiduPipeline:
     def close_spider(self, spider):
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(len(self.data)))
             self.count_file.close()
             self.file.close()
+
 
 class JanesPipeline:
     def __init__(self):
@@ -297,7 +312,7 @@ class JanesPipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, spider.crawl_id, self.tag, item["keyword"])
             self.first = False
-            
+
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
@@ -306,12 +321,13 @@ class JanesPipeline:
     def close_spider(self, spider):
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
                 item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
@@ -331,7 +347,7 @@ class TiexuePipeline:
         if self.first:
             self.count_file = create_count_file(SavePath, spider.crawl_id, self.tag, item["keyword"])
             self.first = False
-            
+
         detail_ = {"keyword": item["keyword"], "source": item["source"], "title": item["title"], "url": item["url"],
                    "date": item["date"], "content": item["content"]}
         self.data.append(detail_)
@@ -340,14 +356,17 @@ class TiexuePipeline:
     def close_spider(self, spider):
         if self.first is False:
             self.file, self.file_csv = CreatePath(SavePath, self.tag, spider.keyword, spider.keyword_type)
+            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             for item in self.data:
                 if 'attributes' in item:
                     item['attributes'] = str(item['attributes'])
+                item['all_content'] = '，'.join([x for x in item.values()])
+                item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
                 self.file_csv.writerow(item)
-            json.dump(self.data, self.file, indent=4, ensure_ascii=False)
             self.count_file.write(str(self.count))
             self.count_file.close()
             self.file.close()
+
 
 class ImagePipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
@@ -355,12 +374,13 @@ class ImagePipeline(ImagesPipeline):
             if 'img_url' in item['attributes']:
                 for url in item['attributes']['img_url'].values():
                     yield scrapy.Request(url)
+
     # 保存图片时重命名
     def item_completed(self, results, item, info):
         index_path = SavePath + '/url'
         if os.path.exists(index_path) is False:
             os.makedirs((index_path))
-    #     print("*"* 30)
+        #     print("*"* 30)
         # 列表推导式，获取图片的保存路径
         image_path = [x["path"] for ok, x in results if ok]
         image_url = [x["url"] for ok, x in results if ok]
@@ -375,5 +395,5 @@ class ImagePipeline(ImagesPipeline):
                 imgname = imgSavePath + '/' + item["keyword"] + '_{}'.format(str(count)) + ".jpg"
             os.rename(imgSavePath + '/' + img, imgname)
             img_to_url[item["keyword"] + '_{}'.format(str(count)) + ".jpg"] = url
-        json.dump(img_to_url, url_file, indent=4, ensure_ascii=False)    
+        json.dump(img_to_url, url_file, indent=4, ensure_ascii=False)
         return item

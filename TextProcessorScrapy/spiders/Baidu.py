@@ -126,7 +126,6 @@ class BaidubaikeSpider(scrapy.Spider):
         item['content'] = str(content)
         item['attributes'] = attr
         item['url'] = response.url
-        item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
         item['date'] = ''
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return

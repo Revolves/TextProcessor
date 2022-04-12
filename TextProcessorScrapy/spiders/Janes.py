@@ -143,7 +143,6 @@ class JanesSpider(scrapy.Spider):
         item['date'] = str(publish_time)
         item['keyword'] = self.keyword
         item['url'] = response.url
-        item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
         item['content'] = str(news_text)
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return

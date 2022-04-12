@@ -92,9 +92,8 @@ class TiexueSpider(scrapy.Spider):
 
         Keyword = self.keyword
         item = DataItem()
-        item = {"keyword": Keyword, "source": Source, "title": Title, "url": Website, "date": Date,
-                "content": Content}
-        item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
+        item = {"keyword": Keyword, "source": Source, "title": Title, "url": Website, "date": Date, "content": Content,
+                }
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return
         yield item

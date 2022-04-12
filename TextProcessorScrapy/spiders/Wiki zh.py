@@ -143,7 +143,6 @@ class WikiSpider(scrapy.Spider):
                     pass
 
         item = {"keyword": self.keyword, "source": Source, "title": Title, "url": Website, "date": ' ', "content": Content, "attributes": attributes[weapon_name]}
-        item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
 
         yield item
 

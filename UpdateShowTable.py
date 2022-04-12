@@ -1,33 +1,35 @@
 import os
-import sys
-from utils import rowkey_id_gen
-import datetime
 from threading import Timer
-import time
+
+from Transwarp import Transwarp
+from utils import rowkey_id_gen
 
 # 网站名字转换列表
 siteTransfer = {
-    'aiaa':'AIAA',
-    'baidu':'百度百科',
-    'wiki':'维基百科',
-    'tiexue':'铁血论坛',
-    'twitter':'Twitter',
-    'facebook':'Facebook',
-    'nasa':'NASA',
-    'janes':'Janes',
+    'aiaa': 'AIAA',
+    'baidu': '百度百科',
+    'wiki': '维基百科',
+    'tiexue': '铁血论坛',
+    'twitter': 'Twitter',
+    'facebook': 'Facebook',
+    'nasa': 'NASA',
+    'janes': 'Janes',
 }
+
 
 def updateShowTextStatus(sites_count_list, connect):
     """
     更新hsold.show_text_status\\
-    
+
     """
     connect.connect_inceptor()
     for site in sites_count_list:
-        sql_ = 'UPDATE hsold.show_text_status SET count = count + \"{}\" WHERE site = \"{}\"'.format(sites_count_list[site], site)
+        sql_ = 'UPDATE hsold.show_text_status SET count = count + \"{}\" WHERE site = \"{}\"'.format(
+            sites_count_list[site], site)
         connect.execute_sql(sql_, [])
     connect.close_inceptor()
     pass
+
 
 def updateShowTextKeyword(connect):
     """
@@ -59,7 +61,7 @@ def updateShowHttpInteract(connect):
         connect.execute_sql(sql_, [])
     connect.connect_inceptor()
     pass
-    
+
 
 def updateTextCrawlStatus(keywords_count_list, connect):
     """
@@ -87,6 +89,7 @@ def updateTextCrawlStatus(keywords_count_list, connect):
             connect.execute_sql(sql_, param_)
     connect.close_inceptor()
 
+
 def getCrawlStatus():
     """
     更新hsold.show_text_status表 和 hsold.text_crawl_status
@@ -101,16 +104,19 @@ def getCrawlStatus():
 
     """
     count_path = (r'./result/count/')
-    last_site_count_list = {'aiaa':[],'baidu':[],'wiki':[],'tiexue':[],'twitter':[],'facebook':[],'nasa':[],'janes':[]}
-    site_file_list = {} # 按网站分类文件
+    if os.path.isdir(count_path) is False:
+        return {}, {}
+    last_site_count_list = {'aiaa': [], 'baidu': [], 'wiki': [], 'tiexue': [], 'twitter': [], 'facebook': [],
+                            'nasa': [], 'janes': []}
+    site_file_list = {}  # 按网站分类文件
     crawl_id_list = []
     for file in os.listdir(r'./result/count/'):
         if file.split('_')[2] in site_file_list:
             site_file_list[file.split('_')[2]].append(file)
         else:
             site_file_list[file.split('_')[2]] = [file]
-    keywords_count_list = {} # 按关键词分类获取数量
-    sites_count_list = {}   # 按网站分获取数量
+    keywords_count_list = {}  # 按关键词分类获取数量
+    sites_count_list = {}  # 按网站分获取数量
     for site in site_file_list:
         countAdd = 0
         # 遍历文件列表
@@ -119,7 +125,7 @@ def getCrawlStatus():
             if file.split('_')[1] not in keywords_count_list:
                 keywords_count_list[file.split('_')[1]] = {}
             if os.stat(count_path + file).st_size > 0:
-                #获取文件内容
+                # 获取文件内容
                 with open(count_path + file, 'r') as f:
                     count = int(f.read())
                     if site in sites_count_list:
@@ -131,28 +137,30 @@ def getCrawlStatus():
                         keywords_count_list[file.split('_')[1]][file.split('_')[-1]] += count
                     else:
                         keywords_count_list[file.split('_')[1]][file.split('_')[-1]] = count
-                # os.remove(count_path + file)
+                os.remove(count_path + file)
 
     return keywords_count_list, sites_count_list
-    
-def run():
+
+
+def run(connect):
     keywords_count_list, sites_count_list = getCrawlStatus()
     if keywords_count_list != {}:
-        print(keywords_count_list, sites_count_list)
+        # print(keywords_count_list, sites_count_list)
+        updateTextCrawlStatus(keywords_count_list, connect)
+        updateShowHttpInteract(connect)
+        updateShowTextKeyword(connect)
+        updateShowTextStatus(sites_count_list, connect)
+    loop_monitor(connect)
 
-    # updateTextCrawlStatus(keywords_count_list, crawl_id, connect)
-    # updateShowHttpInteract(connect)
-    # updateShowTextKeyword(connect)
-    # updateShowTextStatus(sites_count_list, connect)
-    loop_monitor( )
 
-def loop_monitor():
-    t = Timer(5, run)
+def loop_monitor(connect):
+    t = Timer(30, run, (connect,))
     t.start()
     return t
+
+
 if __name__ == "__main__":
-    t= loop_monitor()
-    print(1111)
-    sys.exit()
+    transwarp = Transwarp("Transwarp/JavaJar/InceptorUtil.jar", "Transwarp/libs")
+    t = loop_monitor(transwarp)
     # keywords_count_list, sites_count_list = getCrawlStatus()
     # print(keywords_count_list, sites_count_list)

@@ -46,7 +46,6 @@ class nasaSpider(scrapy.Spider):
         content = ''.join(content_list).replace('\r', '').replace('\t', '').replace('\n', ' ').replace('\xa0',
                   ' ').replace("'","''")
         item = response.meta['item']
-        item['rowkey_id'] = md5(str(time.time()).encode()).hexdigest()
         item['content'] = content
         if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
             return
