@@ -57,3 +57,10 @@ def dataget(api, keyword):
             break
     return result
 
+# consumer_key = "FSiynF6liTsZ5vnNzdKRH4vlA"
+# consumer_secret = "kDStWMyzjR7op26DhuWeTB4Q6efRSvrjC4a4zX3PWXiTjN7Lt4"
+# access_key = "1372722615991738368-5OFRZJkDCHLujlW0GUpqAdXHiKETXF"
+# access_secret = "FfF6dNyZcOBwx1IZGhWQHQWMb1iQ2XLa73Wvk8IJlVfzI"
+
+# api = get_api(consumer_key, consumer_secret, access_key, access_secret)
+# print(dataget(api, '花莲'))

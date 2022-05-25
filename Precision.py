@@ -71,7 +71,7 @@ def pers_sim(a, b):
     return np.sum(a * b) / (np.sqrt(np.sum(a ** 2)) * np.sqrt(np.sum(b ** 2)))
 
 class TextSimilarity:
-    def __init__(self, file_a, file_b='baseline'):
+    def __init__(self, file_a, file_b):
         """
         加载目标文件为字符串
 
@@ -80,50 +80,55 @@ class TextSimilarity:
         """
         str_a = ''
         str_b = ''
-        if not os.path.isfile(file_a) and not os.path.isdir(file_a):
-            print(file_a, "is not file")
-            return
-        elif not os.path.isdir(file_b) and not os.path.isfile(file_b):
-            print(file_b, "is not dir")
-            return
-        else:
-            if not os.path.isdir(file_a):
-                with open(file_a, 'r',encoding='utf-8-sig') as f:
+        # if not os.path.isfile(file_a) and not os.path.isdir(file_a):
+        #     print(file_a, "is not file")
+        #     return
+        # elif not os.path.isdir(file_b) and not os.path.isfile(file_b):
+        #     print(file_b, "is not dir")
+        #     return
+        # else:
+        if type([]) == type(file_a):
+            for fname in file_a:
+                if os.stat('baseline' + '/' + fname).st_size < 10:
+                    continue
+                with open('baseline' + '/' + fname, 'r', encoding='utf-8-sig') as f:
                     load_json = json.load(f)
                     for _ in load_json:
                         str_a += _['content']
-            elif type([]) == type(file_a):
-                for fname in file_a:
+        elif not os.path.isdir(file_a):
+            with open(file_a, 'r',encoding='utf-8-sig') as f:
+                load_json = json.load(f)
+                for _ in load_json:
+                    str_a += _['content']
+        
+        else:
+            for dirfile in os.walk(file_a):
+                for fname in dirfile[2]:
                     if os.stat(dirfile[0] + '/' + fname).st_size < 10:
                         continue
                     with open(dirfile[0] + '/' + fname, 'r', encoding='utf-8-sig') as f:
                         load_json = json.load(f)
                         for _ in load_json:
                             str_a += _['content']
-            else:
-                for dirfile in os.walk(file_a):
-                    for fname in dirfile[2]:
-                        if os.stat(dirfile[0] + '/' + fname).st_size < 10:
-                            continue
-                        with open(dirfile[0] + '/' + fname, 'r', encoding='utf-8-sig') as f:
-                            load_json = json.load(f)
-                            for _ in load_json:
-                                str_a += _['content']
-            if not os.path.isdir(file_b):
-                with open(file_b, 'r', encoding='utf-8-sig') as f:
-                    load_json = json.load(f)
-                    for _ in load_json:
-                        str_b += _['content']
-            else:
-                for dirfile in os.walk(file_b):
-                    for fname in dirfile[2]:
-                        if os.stat(dirfile[0] + '/' + fname).st_size < 10 or not (dirfile[0] + '/' + fname).endswith('json'):
-                            continue
-                        with open(dirfile[0] + '/' + fname, 'r', encoding='utf-8-sig') as f:
-                            load_json = json.load(f)
-                            for _ in load_json:
-                                str_b += _['content']
-
+        if not os.path.isdir(file_b):
+            with open(file_b, 'r', encoding='utf-8-sig') as f:
+                load_json = json.load(f)
+                for _ in load_json:
+                    str_b += _['content']
+        else:
+            for dirfile in os.walk(file_b):
+                for fname in dirfile[2]:
+                    if os.stat(dirfile[0] + '/' + fname).st_size < 10 or not (dirfile[0] + '/' + fname).endswith('json'):
+                        continue
+                    with open(dirfile[0] + '/' + fname, 'r', encoding='utf-8-sig') as f:
+                        load_json = json.load(f)
+                        for _ in load_json:
+                            str_b += _['content']
+        if str_b == '':
+            with open('./file/default.json', 'r', encoding='utf-8-sig') as f:
+                load_json = json.load(f)
+                for _ in load_json:
+                    str_b += _['content']
         self.str_a = str_a
         self.str_b = str_b
 
@@ -268,6 +273,6 @@ class TextSimilarity:
         pass
 
 if __name__ == '__main__':
-    ts = TextSimilarity(r"baseline\baseline_aiaa_1.json", r"result")
+    ts = TextSimilarity(["baseline_aiaa_1.json"], r"result")
     print("ts.splitWordSimlaryty:{}".format(ts.splitWordSimlaryty(sim=cos_sim)))
     print("ts.JaccardSim: {}".format(ts.JaccardSim()))

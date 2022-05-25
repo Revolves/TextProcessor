@@ -3,6 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
+from cProfile import label
 import os
 import re
 import sys
@@ -44,6 +45,8 @@ class BaiduWikiItem(scrapy.Item):
     content = scrapy.Field()  # 内容
     rowkey_id = scrapy.Field()
     attributes = scrapy.Field()  # 属性
+    crawl_id = scrapy.Field() # 爬虫id标识
+    label_type = scrapy.Field() # 关键词类别
 
 
 class ProxyPoolItem(scrapy.Item):

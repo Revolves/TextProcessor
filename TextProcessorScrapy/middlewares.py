@@ -18,35 +18,52 @@ from twisted.internet import task
 from hashlib import md5
 
 from TextProcessorScrapy.settings import USER_AGENTS_LIST
+from utils import crawl_img_list, crawling, post_processing
 # from utils.UpdateShowTable import *
 # useful for handling different item types with a single interface
 
-CRAWL_ID = None
-DATABASE = None
-COUNT = 0
-FIRST = True
-INTERACT = 0
-SPIDERSNUMBER = 1
-DB = None
+CRAWLER_LIST = {} # 保存每个爬虫任务的运行状态，结束后清除
 
 def rowkey_id_gen():
     return md5(str(time.time()).encode()).hexdigest()
 
-
-def insert_http_interact():
-    global SPIDERSNUMBER
-    while SPIDERSNUMBER > 0:
-        time.sleep(10)
-        global CRAWL_ID, INTERACT, COUNT
-        if DB is not None:
+def insert_http_interact(crawl_id, connect):
+    """
+    插入爬取过程（交互量、结束状态）
+    :param :
+    
+    :return :
+    """
+    global CRAWLER_LIST
+    err = False
+    while CRAWLER_LIST[crawl_id]['spiders_count'] > 0 or CRAWLER_LIST[crawl_id]['interact'] > 0:
+        if connect is not None:
             try:
                 sql_ = "INSERT INTO  hsold.text_crawl_http_interact  VALUES (?, hsold.sequence_get_id.NEXTVAL,?,?)"
-                pram_ = [rowkey_id_gen(),CRAWL_ID, str(INTERACT)]
-                DB.execute_sql(sql_, pram_)
-            except:
-                logging.error("http interact insert failure")
-            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, str(INTERACT * SPIDERSNUMBER)))
-            INTERACT = 0
+                pram_ = [rowkey_id_gen(), crawl_id, str(CRAWLER_LIST[crawl_id]['interact'])]
+                connect.execute_sql(sql_, pram_)
+                logging.info("{} ten seconds http interact :{}".format(crawl_id, str(CRAWLER_LIST[crawl_id]['interact'])))
+                CRAWLER_LIST[crawl_id]['interact'] = 0
+            except Exception as e:
+                logging.info("http interact insert failure :{}".format(e))
+             # err = True 
+        time.sleep(10)
+        if 'stop' in CRAWLER_LIST[crawl_id]:
+            break
+        # print(CRAWLER_LIST[crawl_id]['spiders_count'])
+    if 'stop' in CRAWLER_LIST[crawl_id]:
+        if os.path.isfile('stop_signal/{}'.format(crawl_id)):
+            os.remove('stop_signal/{}'.format(crawl_id))
+        crawling(crawl_id, connect, '采集停止')
+    else:
+        crawling(crawl_id, connect, '采集正常结束')
+    del CRAWLER_LIST[crawl_id]
+    time.sleep(3)
+
+    # 删除本次爬取交互量,上传爬取文件
+    post_processing(connect=connect, crawl_id=crawl_id)
+
+    logging.info('{} finished'.format(crawl_id))
 
 # def updateShowTable():
 #     global CRAWL_ID, COUNT
@@ -57,9 +74,8 @@ def insert_http_interact():
 #         updateShowTextKeyword(DB)
 #         updateShowTextStatus(sites_count_list, DB)
 
-insert_th = threading.Thread(target=insert_http_interact)
-insert_th.start()
-
+# insert_th = threading.Thread(target=insert_http_interact)
+# insert_th.start()
 
 class TextCrawlSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -85,11 +101,11 @@ class TextCrawlSpiderMiddleware:
         # self.tsk.start(self.time, now=True)
 
     def spider_closed(self):
-        if CRAWL_ID:
-            http_interact = self.stats.get_value('log_count/DEBUG')
-            this_time_http_interact = http_interact - self.last_count
-            self.last_count = http_interact
-            logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
+        # if CRAWL_ID:
+            # http_interact = self.stats.get_value('log_count/DEBUG')
+            # this_time_http_interact = http_interact - self.last_count
+            # self.last_count = http_interact
+            # logging.info("{} ten seconds http interact :{}".format(CRAWL_ID, this_time_http_interact))
         if self.tsk.running:
             self.tsk.stop()
 
@@ -106,6 +122,7 @@ class TextCrawlDownloaderMiddleware:
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
     def __init__(self, stats):
+        # logging.info("TextCrawlDownloaderMiddleware")
         self.stats = stats
         # 每隔多少秒监控一次已抓取数量
         self.time = 10.0
@@ -151,51 +168,70 @@ class TextCrawlDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-        global FIRST, CRAWL_ID, DB, SPIDERSNUMBER
+        global CRAWLER_LIST
+        # print(CRAWLER_LIST)
         self.tsk = task.LoopingCall(self.collect, spider=spider)
         self.tsk.start(self.time, now=True)
         self.tsk1 = task.LoopingCall(self.check_stop, spider=spider)
         self.tsk1.start(self.time, now=True)
-        if FIRST:
-            CRAWL_ID = spider.crawl_id
-            DB = spider.database
-            SPIDERSNUMBER = spider.spiders_count
-            FIRST = False
+        if spider.crawl_id not in CRAWLER_LIST:
+            CRAWLER_LIST[spider.crawl_id] = {}
+            # DB = spider.database
+            CRAWLER_LIST[spider.crawl_id]['spiders_count'] = spider.spiders_count
+            CRAWLER_LIST[spider.crawl_id]['interact'] = 0
+            # FIRST = False
+            CRAWLER_LIST[spider.crawl_id]['insert_th'] = threading.Thread(target=insert_http_interact, args=(spider.crawl_id, spider.database,))
+            CRAWLER_LIST[spider.crawl_id]['insert_th'].start()
+
 
     def spider_closed(self, spider):
+        spider.logger.info('Spider closed: %s' % spider.name)
         try:
             if self.tsk.running:
                 self.tsk.stop()
             self.collect(spider)
-        except:
-            pass
-        global SPIDERSNUMBER
-        SPIDERSNUMBER -= 1
+        except Exception as e:
+            print(e)
+        try:
+            if self.tsk1.running:
+                self.tsk1.stop()
+            # self.check_stop(spider)
+        except Exception as e:
+            print(e)
+        # if spider.name != 'Twitter':
+        global CRAWLER_LIST
+        if spider.crawl_id in CRAWLER_LIST:
+            CRAWLER_LIST[spider.crawl_id]['spiders_count'] -= 1
 
     def collect(self, spider):
-        global COUNT, CRAWL_ID, INTERACT, SPIDERSNUMBER
-        if CRAWL_ID:
+        global CRAWLER_LIST
+        if spider.crawl_id in CRAWLER_LIST:
             http_interact = self.stats.get_value('log_count/DEBUG')
             if http_interact:
                 this_time_http_interact = http_interact - self.last_count
+                print(this_time_http_interact)
                 self.last_count = http_interact
-                INTERACT += this_time_http_interact
-                # t = threading.Thread(target=pushData, args=(this_time_http_interact,))
-                # t = threading.Thread(target=insert, args=(CRAWL_ID, this_time_http_interact, spider.database,))
-                # t.start()
-                # COUNT += 1
-
+                CRAWLER_LIST[spider.crawl_id]['interact'] += this_time_http_interact
     def check_stop(self, spider):
+        # print('check_stop')
         if os.path.isfile('stop_signal/{}'.format(spider.crawl_id)):
-            os.remove('stop_signal/{}'.format(spider.crawl_id))
+            # os.remove('stop_signal/{}'.format(spider.crawl_id))
             # spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
-            raise Exception('Actively Stop the Crawler')
+            global CRAWLER_LIST
+            CRAWLER_LIST[spider.crawl_id]['stop'] = True
+            CRAWLER_LIST[spider.crawl_id]['spiders_count'] = 0
+            # raise KeyboardInterrupt
             try:
                 spider.crawler.engine.close_spider(spider, 'Actively Stop the Crawler')
             except Exception as e:
                 logger.exception("Actively Stop Exception:{}".format(e))
                 self.spider_closed(spider)
 
+class ProxyMiddleware(object): 
+    # overwrite process request 
+    def process_request(self, request, spider): 
+        # 设置代理的主机和端口号
+        request.meta['proxy'] = "http://127.0.0.1:7890"
 #
 # class RandomProxyMiddleware(object):
 #     """

@@ -4,6 +4,7 @@ import time
 
 import scrapy
 from selenium import webdriver
+from scrapy import signals
 
 from ..items import BaiduWikiItem
 from scrapy.spidermiddlewares.httperror import HttpError
@@ -52,6 +53,12 @@ class BaidubaikeSpider(scrapy.Spider):
         # driver.maximize_window()  # 浏览器窗口最大化
         self.driver.implicitly_wait(1)  # 隐形等待10秒
 
+    # @classmethod
+    # def from_crawler(cls, crawler, *args, **kwargs):
+    #     spider = super(BaidubaikeSpider, cls).from_crawler(crawler, *args, **kwargs)
+    #     crawler.signals.connect(spider.item_scraped, signal=signals.item_scraped)
+    #     return spider
+
     '''回调函数，子类必须重写这个方法，否侧抛出异常'''
 
     def start_requests(self):
@@ -63,9 +70,10 @@ class BaidubaikeSpider(scrapy.Spider):
     def parse(self, response):
         self.number += 1
         # self.keyword = self.keywords[self.number]
-        name = response.xpath("//dl/dd/h1/text()").get()
+        name = str(response.xpath('//*[@class="lemmaWgt-lemmaTitle-title J-lemma-title"]/span//text()').get()).strip()
         item = BaiduWikiItem()
-        # 简介
+        # # 简介
+        content = ''
         try:
             cont = ""
             content1 = response.xpath("//div[@label-module='para']//text()").extract()
@@ -78,10 +86,12 @@ class BaidubaikeSpider(scrapy.Spider):
                 cont = content1.replace('\"', '\'')
                 content = cont.replace('\\', '')
             else:
-                return item
+                yield item
         except:
             content = ""
         # 属性
+        # if content == '':
+        #     return
         attr = dict()
         attr_names = response.xpath("//dt[@class='basicInfo-item name']//text()").extract()
         attr_values = response.xpath("//dd[@class='basicInfo-item value']//text()").extract()
@@ -127,13 +137,13 @@ class BaidubaikeSpider(scrapy.Spider):
         attr['img_url'] = img_url
         item['source'] = 'baidu'
         item['keyword'] = self.keyword
-        item['title'] = str(name)
+        item['title'] = item['title'] = name if name is not None else self.keyword
         item['content'] = str(content)
         item['attributes'] = attr
         item['url'] = response.url
         item['date'] = ''
-        if len(item['content'].replace(' ', '').replace("\n", '')) <= 20 or item['content'] == '':
-            return
+        item['crawl_id'] = self.crawl_id
+        item['label_type'] = self.keyword_type
         yield item
 
     def errback_httpbin(self, failure):

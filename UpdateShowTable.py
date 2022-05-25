@@ -1,8 +1,10 @@
+from hashlib import md5
 import os
 from threading import Timer
+import time
 
 from Transwarp import Transwarp
-from utils import rowkey_id_gen
+
 
 # 网站名字转换列表
 siteTransfer = {
@@ -16,6 +18,8 @@ siteTransfer = {
     'janes': 'Janes',
 }
 
+def rowkey_id_gen():
+    return md5(str(time.time()).encode()).hexdigest()
 
 def updateShowTextStatus(sites_count_list, connect):
     """
@@ -52,7 +56,7 @@ def updateShowHttpInteract(connect):
     从hsold.text_crawl_http_interact获取get_id最大10个值覆盖插入hsold.show_http_interact
     """
     connect.connect_inceptor()
-    sql_ = 'SELECT ten_sceonds_interact FROM (SELECT ten_sceonds_interact, get_id FROM hsold.text_crawl_http_interact ORDER BY get_id DESC  LIMIT 10 )ORDER BY get_id'
+    sql_ = 'SELECT ten_sceonds_interact FROM (SELECT ten_sceonds_interact, get_id FROM hsold.text_crawl_http_interact ORDER BY get_id DESC  LIMIT 10 ) ORDER BY get_id'
     result = connect.execute_sql(sql_, [])
     # print(result)
     for i in range(10):

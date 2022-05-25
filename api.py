@@ -2,10 +2,11 @@ import os
 
 from flask import Flask, request
 
-from MultisiteSchedule import start_spiders, rowkey_id_gen
+from MultisiteSchedule import start, start_spiders, rowkey_id_gen
 from Precision import TextSimilarity, cos_sim
 from Transwarp import Transwarp
-
+from crochet import setup
+setup()
 stop_signal = 'stop_signal'
 app = Flask(__name__)  # 创建一个服务，赋值给APP
 
@@ -124,21 +125,15 @@ def compute_precision():
 
 @app.route('/test', methods=['post', 'get'])
 def get_status():
-    # data = request.get_data()
-    status = request.values['status']
-    crawl_id = request.values['crawl_id']
-    keywords = request.values['keywords']
-    data_type = request.values['data_type']
-    websites = request.values['website']
-    # status = request.args.get('status')
-    # j_data = json.loads(data)
-    print(status, crawl_id, keywords, data_type, websites)
-    # print(status)# 使用request.args.get方式获取拼接的入参数据
+    transwarp.connect_inceptor()
+    transwarp.connect_hdfs()
+    # data_dict = None
+    data_dict = {'crawl_id':rowkey_id_gen(), 'sites':['baidu', 'wiki'], 'keywords': ['目标_花莲机场', '装备_坦克'], 'status': "1"}
+    start(transwarp=transwarp, info=data_dict)
     return 'success'
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6008, debug=True, use_reloader=False)
+    app.run(host='0.0.0.0', port=60008, debug=True, use_reloader=False)
     # 运行Flask应用
     # 127.0.0.1----回环地址IP， 每台主机都有====localhost
     # 如何设置， 使得服务奇特主机的浏览器可以访问?  '0.0.0.0'开放所有的IP， 使得可以访问

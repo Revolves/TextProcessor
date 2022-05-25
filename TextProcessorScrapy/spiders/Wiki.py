@@ -14,6 +14,11 @@ class WikiSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {'TextProcessorScrapy.pipelines.WikiPipeline': 400,
                             'TextProcessorScrapy.pipelines.ImagePipeline': 300},
+        'DOWNLOADER_MIDDLEWARES': { 
+                            'TextProcessorScrapy.middlewares.ProxyMiddleware': 90,
+                            'TextProcessorScrapy.middlewares.TextCrawlDownloaderMiddleware': 543,
+                            'TextProcessorScrapy.middlewares.RandomUserAgentMiddleware': 515,
+                                    }
     }
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -139,7 +144,7 @@ class WikiSpider(scrapy.Spider):
                         th = tr.find('th').text.replace("/", ',').replace("\xa0", '').strip("\n").strip("•").strip(" ")  # 属性名
                         if th == "舰种": # 统一标签名
                             th = "类型"
-                        td = tr.find('td').text.replace("\xa0", '').replace("\n", ";")  # 属性值
+                        td = tr.find('td').text.encode('GBK', 'ignore').decode('GBK').replace("\xa0", '').replace("\n", ";")  # 属性值
                         attributes[weapon_name][th] = re.sub(reg, '', td)
                 except:
                     """
@@ -148,7 +153,8 @@ class WikiSpider(scrapy.Spider):
                     # print(tr)
                     pass
 
-        item = {"keyword": self.keyword, "source": Source, "title": Title, "url": Website, "date": Date, "content": Content, "attributes": attributes}
+        item = {"keyword": self.keyword, "source": Source, "title": Title, "url": Website, "date": Date, 
+        "content": Content, "attributes": attributes[weapon_name], 'crawl_id': self.crawl_id, 'label_type':self.keyword_type}
 
         yield item
 
